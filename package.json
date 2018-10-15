@@ -1,0 +1,36 @@
+{
+  "name": "Killer-Whale",
+  "version": "1.0.0",
+  "description": "一个使用web可视化构建RN项目的工具",
+  "main": "index.js",
+  "scripts": {
+    "start": "umi dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhaleCloud-mars/Killer-Whale.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhaleCloud-mars/Killer-Whale/issues"
+  },
+  "homepage": "https://github.com/WhaleCloud-mars/Killer-Whale#readme",
+  "dependencies": {
+    "react-beautiful-dnd": "^9.0.2",
+    "react-native-web": "^0.9.3",
+    "umi": "^2.1.2",
+    "umi-plugin-react": "^1.1.1",
+    "whale-rn": "^0.0.1-beta05"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-umi": "^0.1.5",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}

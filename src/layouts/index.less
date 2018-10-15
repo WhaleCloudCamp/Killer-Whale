@@ -1,0 +1,29 @@
+.panel {
+    background-color: white;
+    height: 100vh;
+    border: 1px solid rgb(212, 220, 226);
+
+}
+.rowclass {
+  height: 100%;
+  display: flex;
+  .colclass {
+    flex-shrink: 0;
+    border-right: 1px solid rgb(212, 220, 226);
+    border-color: rgb(212, 220, 226);
+    .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .comlist {
+        margin-right: -0.3125rem;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding: 0.625rem 0.625rem 0.625rem 0.9375rem;
+    }
+    }
+  }
+}
