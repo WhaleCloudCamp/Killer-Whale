@@ -1,3 +1,5 @@
+const path = require('path')
+
 export default {
   plugins: [
     ['umi-plugin-react',{
@@ -15,6 +17,10 @@ export default {
     }]
   ],
   alias: {
-    "react-native$": "react-native-web"
+    "react-native$": "react-native-web",
+    components:path.resolve(__dirname,'src/components'),
+    utils:path.resolve(__dirname,'src/utils'),
+    services:path.resolve(__dirname,'src/services'),
+    models:path.resolve(__dirname,'src/models'),
   },
 };

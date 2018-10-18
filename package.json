@@ -19,11 +19,12 @@
   },
   "homepage": "https://github.com/WhaleCloud-mars/Killer-Whale#readme",
   "dependencies": {
+    "react-art": "^16.5.2",
     "react-beautiful-dnd": "^9.0.2",
     "react-native-web": "^0.9.3",
     "umi": "^2.1.2",
     "umi-plugin-react": "^1.1.1",
-    "whale-rn": "^0.0.1-beta05"
+    "whale-rn": "^0.0.1-beta.6"
   },
   "devDependencies": {
     "eslint": "^5.7.0",

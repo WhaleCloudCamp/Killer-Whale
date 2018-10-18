@@ -5,7 +5,7 @@ const Example = ({list,handleClick}) => {
   return (
     <div>
       Example  work
-      <Button type="danger" onClick={handleClick} >Example</Button>
+      <Button type="danger" onClick={handleClick} title={}>Example</Button>
       { JSON.stringify(list)}
     </div>
   );

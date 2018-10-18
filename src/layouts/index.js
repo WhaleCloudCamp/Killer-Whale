@@ -2,40 +2,79 @@ import { Row, Col, Menu } from "antd";
 import Link from "umi/link";
 import withRouter from "umi/withRouter";
 import { connect } from "dva";
+import { DragDropContext } from "react-beautiful-dnd";
+import DroppableContent from "components/DroppableContent";
+import DraggableContent from "components/DraggableContent";
 import styles from "./index.less";
+// import { Button } from "whale-rn";
+import WhaleRn from "whale-rn";
+import {getItemById} from "utils/data_utils"
+const App = ({ global, dispatch }) => {
+  const { sourceData, components, showItemId} = global;
+  const onDragEnd = result => {
+    console.log(result);
+    dispatch({ type: "global/dndAction", payload: result });
+  };
+  const clickDrag = item =>{
+    dispatch({ type: "global/showItem", payload: item });
+  }
 
-const App = props => {
-  const { global } = props;
-  const { components } = global;
+  const showItem = getItemById(components,showItemId);
 
   return (
-    <div className={styles.panel}>
-      <Row className={styles.rowclass}>
-        <Col span={8} className={styles.colclass}>
-          <div className={styles.content}>
-            <div
-              style={{
-                overflow: "auto"
-              }}
-            >
-              {components.map((item, index) => {
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className={styles.panel}>
+        <Row className={styles.rowclass}>
+          <Col span={8} className={styles.colclass}>
+            <DroppableContent droppableId="leftPanel">
+              {sourceData.map((item, index) => {
+                const Com = WhaleRn[item.type];
+
+                if (!item.props) {
+                  item.props = {};
+                }
                 return (
-                  <div className={styles.comlist} key={index}>
-                    {item}
-                  </div>
+                  <DraggableContent
+                    draggableId={item.id}
+                    key={"leftPanel" + item.id}
+                    index={index}
+                  >
+                    {Com && <Com {...item.props} style={item.style}/>}
+                  </DraggableContent>
                 );
               })}
-            </div>
-          </div>
-        </Col>
-        <Col span={8} className={styles.colclass}>
-          展示和布局
-        </Col>
-        <Col span={8} className={styles.colclass}>
-          属性
-        </Col>
-      </Row>
-    </div>
+            </DroppableContent>
+          </Col>
+          <Col span={8} className={styles.colclass}>
+            <DroppableContent
+              droppableId="centerPanel"
+              dropStyle={{ }}
+            >
+              {components.map((item, index) => {
+                const { component, id } = item;
+                const Com = WhaleRn[component.type];
+                if (!component.props) {
+                  component.props = {};
+                }
+                return (
+                  <DraggableContent
+                    draggableId={id}
+                    key={"centerPanel" + id}
+                    index={index}
+                    onClick = {()=>clickDrag(item)}
+                  >
+                    {Com && <Com {...component.props} />}
+                  </DraggableContent>
+                );
+              })}
+            </DroppableContent>
+          </Col>
+          <Col span={8} className={styles.colclass}>
+            {showItem&&JSON.stringify(showItem)}
+          </Col>
+        </Row>
+      </div>
+    </DragDropContext>
   );
 };
 
