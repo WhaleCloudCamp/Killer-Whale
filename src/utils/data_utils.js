@@ -1,3 +1,4 @@
+import comjson from '../assets/components-description.json';
 const testAction = {
   destination: {
     droppableId: "centerPanel",
@@ -25,7 +26,7 @@ const testComData = [
     id: 12341232,
     component: {
       type: "Button",
-      props: { title: "确定", onClick: e => console.log("1232") },
+      props: { title: "确定1232" },
       style: {
         height: 200,
         width: 100
@@ -64,13 +65,14 @@ const testSouData = [
     type: "Label",
     props: { type: "default", size: "xl", text: "标题" },
     style: {
-      height: 200,
+      height: 2000,
       width: 100
     }
   }
 ];
 
 export function getTestSouData() {
+  
   return testSouData;
 }
 export function getTestComData() {

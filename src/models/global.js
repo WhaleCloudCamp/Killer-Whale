@@ -42,9 +42,29 @@ export default {
         }
       });
     },
-    *changeItem({ payload }, { call, put }) {
+    *changeItem({ payload }, { call, put ,select}) {
       const { showItemId, components } = yield select(state => state.global);
-      const showItem = getItemById(components, showItemId);
+     console.log(components);
+     console.log(payload);
+     
+      const data = components.map(item=>{
+        if(item.id === payload.id){
+          console.log(payload);
+          
+          return payload;
+        }else{
+          return item;
+        }
+      })
+     console.log(components);
+     console.log(data);
+
+      yield put({
+        type: "save",
+        payload: {
+          components: components
+        }
+      });
     },
     *throwError() {
       throw new Error("hi error");
