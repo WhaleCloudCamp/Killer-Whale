@@ -12,7 +12,7 @@ function App({global,dispatch}) {
         <div className={styles.normal}>
             <div className={styles.col}>
                 <div className={styles.tip+" "+styles.leftPadding}>
-                    <img src={classify} className={styles.classify}/>
+                    <img src={classify} className={styles.classify} alt=""/>
                 </div>
               <div className={styles.leftContent}>
                 <div className={styles.title+" "+styles.leftPadding}>
@@ -22,8 +22,8 @@ function App({global,dispatch}) {
                   <div className={styles.itemTip}>
                     <span className={styles.sizeTipText}>Size</span>
                     <div className={styles.itemIcon}>
-                      <img src={more} className={styles.more}/>
-                      <img src={plus} className={styles.plus}/>
+                      <img src={more} className={styles.more} alt=""/>
+                      <img src={plus} className={styles.plus} alt=""/>
                     </div>
                   </div>
                   <div className={styles.itemContent}>
@@ -37,8 +37,8 @@ function App({global,dispatch}) {
                   <div className={styles.itemTip}>
                     <span className={styles.sizeTipText}>Color</span>
                     <div className={styles.itemIcon}>
-                      <img src={more} className={styles.more}/>
-                      <img src={plus} className={styles.plus}/>
+                      <img src={more} className={styles.more} alt=""/>
+                      <img src={plus} className={styles.plus} alt=""/>
                     </div>
                   </div>
                   <div className={styles.itemContent}>
@@ -58,8 +58,8 @@ function App({global,dispatch}) {
                   <div className={styles.itemTip}>
                     <span className={styles.sizeTipText}>Alignment</span>
                     <div className={styles.itemIcon}>
-                      <img src={more} className={styles.more}/>
-                      <img src={plus} className={styles.plus}/>
+                      <img src={more} className={styles.more} alt=""/>
+                      <img src={plus} className={styles.plus} alt=""/>
                     </div>
                   </div>
                   <div className={styles.itemContent}>
@@ -83,11 +83,11 @@ function App({global,dispatch}) {
                     </div>
                     <div className={styles.selectItemThird}>
                       <span className={styles.tipText}>Composer</span>
-                      <img src={triangle} className={styles.triangle}/>
+                      <img src={triangle} className={styles.triangle} alt=""/>
                     </div>
                   </div>
                   <div>
-                    <img src={share} className={styles.share}/>
+                    <img src={share} className={styles.share} alt=""/>
                   </div>
                 </div>
               <div className={styles.centerContent}>
@@ -99,7 +99,7 @@ function App({global,dispatch}) {
 
             <div className={styles.col}>
                 <div className={styles.tipRight}>
-                  <img src={bell} className={styles.bell}/>
+                  <img src={bell} className={styles.bell} alt=""/>
                   <div className={styles.blueCircle}>
 
                   </div>
