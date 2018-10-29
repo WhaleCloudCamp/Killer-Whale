@@ -9,9 +9,10 @@
   display: flex;
   .colclass {
     flex-shrink: 0;
+    padding-top: 15px;
     border-right: 1px solid rgb(212, 220, 226);
     border-color: rgb(212, 220, 226);
-    overflow: auto;
+    //overflow: auto;
     .content {
       height: 100%;
       display: flex;
@@ -24,7 +25,7 @@
         -webkit-box-pack: justify;
         justify-content: space-between;
         padding: 0.625rem 0.625rem 0.625rem 0.9375rem;
-    }
+      }
     }
   }
 }
@@ -33,4 +34,8 @@
 .centerPanel{
   height: 100vh;
   min-width: 375px;
+}
+.centerContent {
+  display: flex;
+  justify-content: center;
 }

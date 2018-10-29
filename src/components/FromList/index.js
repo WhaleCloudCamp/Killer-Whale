@@ -77,11 +77,11 @@ class RegistrationForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <h2>
-          ID:
+          ID:&nbsp;
           {data.id}
         </h2>
         <h2>
-          类型:
+          类型:&nbsp;
           {data.component.type}
         </h2>
         <h2>属性:</h2>

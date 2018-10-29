@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a7c16723-03af-4dbc-9d76-bc3061db5002" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/test/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FromList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FromList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/layout/index.less" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,72 +17,92 @@
     <session id="130530280">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="eslintrc" value="1" />
-          <entry key="js" value="2" />
-          <entry key="less" value="1" />
-          <entry key="md" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="js" value="8" />
+          <entry key="json" value="1" />
+          <entry key="less" value="2" />
+          <entry key="md" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="2" />
-          <entry key="Less" value="1" />
-          <entry key="Markdown" value="1" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="8" />
+          <entry key="Less" value="2" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="4" />
+          <entry key="ESLintLanguageService" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="936" />
-          <entry key="less" value="572" />
-          <entry key="txt" value="9" />
+          <entry key="js" value="997" />
+          <entry key="less" value="601" />
+          <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="936" />
-          <entry key="Less" value="572" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JavaScript" value="997" />
+          <entry key="Less" value="601" />
+          <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/test/index.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/layout/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state relative-caret-position="133">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/FromList/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="626">
+              <caret line="99" column="43" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#3595#4779#0" />
-                <element signature="e#4852#5177#0" />
+                <element signature="e#0#132#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/test/index.less">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="184" column="22" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
+            <state relative-caret-position="209">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/layout/index.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -96,6 +117,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/pages/test/index.less" />
         <option value="$PROJECT_DIR$/src/pages/test/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/layout/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/layout/index.less" />
+        <option value="$PROJECT_DIR$/src/components/FromList/index.js" />
       </list>
     </option>
   </component>
@@ -146,6 +170,33 @@
               <item name="Killer-Whale" type="b2602c69:ProjectViewProjectNode" />
               <item name="Killer-Whale" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Killer-Whale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Killer-Whale" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="DraggableContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Killer-Whale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Killer-Whale" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="DroppableContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Killer-Whale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Killer-Whale" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="FromList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Killer-Whale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Killer-Whale" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -153,7 +204,7 @@
               <item name="Killer-Whale" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -208,7 +259,8 @@
       <workItem from="1540517485312" duration="86000" />
       <workItem from="1540517914755" duration="6531000" />
       <workItem from="1540538705238" duration="2797000" />
-      <workItem from="1540778780343" duration="1820000" />
+      <workItem from="1540778780343" duration="2034000" />
+      <workItem from="1540781726660" duration="6397000" />
     </task>
     <task id="LOCAL-00001" summary="button界面">
       <created>1540524249270</created>
@@ -217,17 +269,24 @@
       <option name="project" value="LOCAL" />
       <updated>1540524249270</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test修改">
+      <created>1540780643435</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540780643435</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11234000" />
+    <option name="totallyTimeSpent" value="17845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26077098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26455027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -242,8 +301,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4988662" visible="true" weight="0.32934928" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5011338" side_tool="true" weight="0.32934928" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49811035" visible="true" weight="0.32934928" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50188965" side_tool="true" weight="0.32934928" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -264,7 +323,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="button界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="button界面" />
+    <MESSAGE value="test修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="test修改" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pages/index.js">
@@ -292,21 +352,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/test/index.less">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="184" column="22" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
+        <state relative-caret-position="114">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/test/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="417">
+          <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#3595#4779#0" />
-            <element signature="e#4852#5177#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/test/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/DraggableContent/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/DroppableContent/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/layout/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/layout/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FromList/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="99" column="43" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
