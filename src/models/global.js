@@ -1,6 +1,5 @@
-import { routerRedux } from "dva/router";
-const sourceData = getTestSouData();
-const components = getTestComData();
+import { gPage } from 'services/api';
+
 import {
   getTestSouData,
   getTestComData,
@@ -39,6 +38,17 @@ export default {
         type: "save",
         payload: {
           showItemId: payload.id || null
+        }
+      });
+    },
+    *gPage({ payload }, { call, put ,select}) {
+      const {components} = yield select(state=>state.global)
+      console.log(components)
+      const response = yield call(gPage,{components});
+      yield put({
+        type: "save",
+        payload: {
+          text: response||'no data'
         }
       });
     },

@@ -24,7 +24,15 @@ export default {
     components: path.resolve(__dirname, "src/components"),
     utils: path.resolve(__dirname, "src/utils"),
     services: path.resolve(__dirname, "src/services"),
+    assets: path.resolve(__dirname, "src/assets"),
     models: path.resolve(__dirname, "src/models")
   },
-  extraBabelIncludes:[/whale-rn/]
+  extraBabelIncludes:[/whale-rn/],
+  proxy: {
+    '/api/': {
+      target: 'http://localhost:3000/',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 };
