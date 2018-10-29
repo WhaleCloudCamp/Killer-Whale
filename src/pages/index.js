@@ -1,4 +1,4 @@
-import { Row, Col, Menu, Button } from "antd";
+import { Row, Col, Menu, Button as AntdButton } from "antd";
 import Link from "umi/link";
 import withRouter from "umi/withRouter";
 import { connect } from "dva";
@@ -8,6 +8,7 @@ import DraggableContent from "components/DraggableContent";
 import FromList from "components/FromList";
 import styles from "./index.less";
 import WhaleRn from "whale-rn";
+import {Button} from "antd-mobile-rn";
 import { getItemById } from "utils/data_utils";
 
 const App = ({ global, dispatch }) => {
@@ -31,6 +32,7 @@ const App = ({ global, dispatch }) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
+    <Button>123322</Button>
       <div className={styles.panel}>
         <Row className={styles.rowclass}>
           <Col span={8} className={styles.colclass}>
@@ -70,7 +72,7 @@ const App = ({ global, dispatch }) => {
                     onClick={() => clickDrag(item)}
                   >
                     {Com && (
-                      <Com {...component.props} style={component.style} />
+                      <Com {...component.props} title="确定1232" style={component.style} />
                     )}
                   </DraggableContent>
                 );
@@ -84,7 +86,7 @@ const App = ({ global, dispatch }) => {
               }}
             >
               {showItem && <FromList data={showItem} onSubmit={onSubmit} />}
-              <Button onClick={gPage}>保存</Button>
+              <AntdButton onClick={gPage}>保存</AntdButton>
             </div>
           </Col>
         </Row>

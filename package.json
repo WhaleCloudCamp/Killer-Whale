@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/WhaleCloud-mars/Killer-Whale#readme",
   "dependencies": {
+    "antd-mobile-rn": "^2.3.0",
     "classnames": "^2.2.6",
     "hash": "^0.2.1",
     "react-art": "^16.5.2",
