@@ -1,16 +1,12 @@
-import { Row, Col, Menu, Button as AntdButton } from "antd";
-import Link from "umi/link";
+import { Row, Col, Button as AntdButton } from "antd";
 import withRouter from "umi/withRouter";
 import { connect } from "dva";
 import { DragDropContext } from "react-beautiful-dnd";
-import DroppableContent from "components/DroppableContent";
-import DraggableContent from "components/DraggableContent";
-import FromList from "components/FromList";
+import * as Whale from "components";
 import styles from "./index.less";
-import WhaleRn from "whale-rn";
-import {Button} from "antd-mobile-rn";
 import { getItemById } from "utils/data_utils";
 
+const { DroppableContent, DraggableContent, FromList } = Whale;
 const App = ({ global, dispatch }) => {
   const { sourceData, components, showItemId } = global;
   const onDragEnd = result => {
@@ -32,13 +28,12 @@ const App = ({ global, dispatch }) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-    <Button>123322</Button>
       <div className={styles.panel}>
         <Row className={styles.rowclass}>
           <Col span={8} className={styles.colclass}>
             <DroppableContent droppableId="leftPanel">
               {sourceData.map((item, index) => {
-                const Com = WhaleRn[item.type];
+                const Com = Whale[item.type];
 
                 if (!item.props) {
                   item.props = {};
@@ -59,7 +54,7 @@ const App = ({ global, dispatch }) => {
             <DroppableContent droppableId="centerPanel" dropStyle={{}}>
               {components.map((item, index) => {
                 const { component, id } = item;
-                const Com = WhaleRn[component.type];
+                const Com = Whale[component.type];
                 if (!component.props) {
                   component.props = {};
                 }
@@ -72,7 +67,11 @@ const App = ({ global, dispatch }) => {
                     onClick={() => clickDrag(item)}
                   >
                     {Com && (
-                      <Com {...component.props} title="确定1232" style={component.style} />
+                      <Com
+                        {...component.props}
+                        title="确定1232"
+                        style={component.style}
+                      />
                     )}
                   </DraggableContent>
                 );

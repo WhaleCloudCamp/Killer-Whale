@@ -21,7 +21,8 @@ export default {
   ],
   alias: {
     "react-native$": "react-native-web",
-    components: path.resolve(__dirname, "src/components"),
+    "use-components-library": "antd-mobile-rn",
+    components: path.resolve(__dirname, "src/components/index"),
     utils: path.resolve(__dirname, "src/utils"),
     services: path.resolve(__dirname, "src/services"),
     assets: path.resolve(__dirname, "src/assets"),
