@@ -10,6 +10,10 @@ import styles from "./index.less";
 import WhaleRn from "whale-rn";
 import { getItemById } from "utils/data_utils";
 import classNames from 'classnames/bind';
+import classify from '../../assets/classify.png';
+import triangle from "../../assets/triangle.png";
+import share from "../../assets/share.png";
+import bell from "../../assets/bell.png";
 
 let cx = classNames.bind(styles);
 const App = ({ global, dispatch }) => {
@@ -35,11 +39,13 @@ const App = ({ global, dispatch }) => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className={styles.panel}>
         <Row className={styles.rowclass}>
-          <Col span={6} className={styles.colclass}>
+          <Col span={7} className={styles.colclass}>
+            <div className={styles.tip}>
+              <img src={classify} className={styles.classify} alt=""/>
+            </div>
             <DroppableContent droppableId="leftPanel">
               {sourceData.map((item, index) => {
                 const Com = WhaleRn[item.type];
-                console.log(item);
                 if (!item.props) {
                   item.props = {};
                 }
@@ -55,10 +61,30 @@ const App = ({ global, dispatch }) => {
               })}
             </DroppableContent>
           </Col>
-          <Col span={12} className={cx({
+          <Col span={8} className={cx({
             colclass: true,
-            centerContent: true,
+            centerContent: false,
           })}>
+            <div className={styles.tip}>
+              <div className={styles.circle}>
+
+              </div>
+              <div className={styles.tipSelect}>
+                {/*<div className={styles.selectItemOne}>*/}
+                  {/*<span className={styles.tipText}>Theme</span>*/}
+                {/*</div>*/}
+                <div className={styles.selectCenter}>
+                  <span className={styles.tipText}>Editor</span>
+                </div>
+                {/*<div className={styles.selectItemThird}>*/}
+                  {/*<span className={styles.tipText}>Composer</span>*/}
+                  {/*<img src={triangle} className={styles.triangle} alt=""/>*/}
+                {/*</div>*/}
+              </div>
+              <div>
+                <img src={share} className={styles.share} alt=""/>
+              </div>
+            </div>
             <DroppableContent droppableId="centerPanel" dropStyle={{}}>
               {components.map((item, index) => {
                 const { component, id } = item;
@@ -82,7 +108,13 @@ const App = ({ global, dispatch }) => {
               })}
             </DroppableContent>
           </Col>
-          <Col span={6} className={styles.colclass}>
+          <Col span={9} className={styles.colclass}>
+            <div className={styles.tipRight}>
+              <img src={bell} className={styles.bell} alt=""/>
+              <div className={styles.blueCircle}>
+
+              </div>
+            </div>
             <div
               style={{
                 padding: "0px 20px 20px 20px"
