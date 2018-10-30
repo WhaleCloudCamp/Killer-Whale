@@ -1,11 +1,11 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 
-const grid = 8;
+const grid = 20;
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
-  padding: `0 0 ${grid}px 0`,
+  padding: `0 0 ${grid}px ${grid}px`,
   //   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
