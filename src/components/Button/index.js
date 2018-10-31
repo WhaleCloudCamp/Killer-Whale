@@ -1,3 +1,3 @@
-import {Button} from 'use-components-library';
-
+import {Button} from 'antd-mobile';
+import 'antd-mobile/lib/button/style';
 export default Button;

@@ -1,3 +1,3 @@
-import {SearchBar} from 'use-components-library';
-
+import {SearchBar} from 'antd-mobile';
+import 'antd-mobile/lib/search-bar/style';
 export default SearchBar;

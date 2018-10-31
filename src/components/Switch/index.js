@@ -1,3 +1,3 @@
-import {Switch} from 'use-components-library'
+import {Switch} from 'antd-mobile'
 
 export default Switch

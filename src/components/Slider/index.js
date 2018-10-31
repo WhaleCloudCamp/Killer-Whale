@@ -1,5 +1,5 @@
-import {Slider} from 'use-components-library';
-
+import {Slider} from 'antd-mobile';
+import 'antd-mobile/lib/slider/style';
 export default Slider;
 
 

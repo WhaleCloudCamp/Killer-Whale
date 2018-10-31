@@ -1,5 +1,5 @@
-import {Grid} from 'use-components-library';
-
+import {Grid} from 'antd-mobile';
+import 'antd-mobile/lib/grid/style';
 export default Grid;
 
 

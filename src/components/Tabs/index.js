@@ -1,3 +1,3 @@
-import {Tabs} from 'use-components-library';
-
+import {Tabs} from 'antd-mobile';
+import 'antd-mobile/lib/tabs/style';
 export default Tabs;

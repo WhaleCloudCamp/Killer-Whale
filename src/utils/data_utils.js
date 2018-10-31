@@ -67,12 +67,14 @@ const testSouData = [
       loading: bool,
     },
     defaultProps: {
+      type: 'ghost',
+      children: '确定',
       pressIn: false,
       disabled: false,
       activeStyle: {},
       loading: false,
     },
-    style: { width: 100, height: 30 }
+    style: { width: 100, height: 40 }
   },
   {
     id: 534434,
@@ -94,26 +96,26 @@ const testSouData = [
       disabled: false,
       color: '#4dd865'
     },
-    style: { width: 30, height: 30, margin: 5, }
+    style: {   margin: 5, }
   },
   {
     id: 534435,
     type: "Radio",
     props: {
-      name: '性别',
+      title: '协议',
       defaultChecked: true,
       checked: true,
       disabled: false,
 
     },
     proTypes: {
-      name: string,
+      title: string,
       defaultChecked: bool,
       checked: bool,
       disabled: bool,
     },
     defaultProps: {
-      name: '性别',
+      title: '协议',
       defaultChecked: true,
       checked: true,
       disabled: false,
@@ -201,7 +203,7 @@ const testSouData = [
       tabBarTextStyle: { fontSize: 16 },
 
     },
-    style: { width: '100%',height:30 }
+    style: { width: '100%', height: 30 }
 
   },
 
@@ -312,7 +314,7 @@ const testSouData = [
       step: number,
       value: number,
       disabled: bool,
-      maximumTrackTintColor:string
+      maximumTrackTintColor: string
 
     },
     defaultProps: {
@@ -323,7 +325,7 @@ const testSouData = [
       disabled: false,
       maximumTrackTintColor: 'blue'
     },
-    style: { width: '100%', height: 20, backgroundColor: 'black', marginTop: 10 },
+    style: { width: '100%', height: 10,  },
 
   },
   {
@@ -335,7 +337,6 @@ const testSouData = [
       step: 1,
       value: 50,
       disabled: false,
-      readOnly: true,
 
     },
     proTypes: {
@@ -344,18 +345,18 @@ const testSouData = [
       step: number,
       value: number,
       disabled: bool,
-      readOnly: bool,
+
 
     },
     defaultProps: {
       min: 0,
       max: 100,
       step: 1,
-      value: 3,
+      value: 50,
       disabled: false,
 
     },
-    style: { width: '100%', height: 30 },
+    style: { width:'100%', height: 30 },
 
   },
   {
@@ -392,12 +393,14 @@ const testSouData = [
       disabled: false,
       closable: true,
       selected: true,
+      content:'美女'
     },
     proTypes: {
       small: bool,
       disabled: bool,
       closable: bool,
       selected: bool,
+      content:string,
 
     },
     defaultProps: {
@@ -405,45 +408,45 @@ const testSouData = [
       disabled: false,
       closable: true,
       selected: true,
+      content:'美女'  
+    },
+    style: {width:30,height:25},
+
+  },
+  {
+    id: 534445,
+    type: "SearchBar",
+    props: {
+
+      value: '张三',
+      placeholder: '请输入关键字',
+      showCancelButton: false,
+      cancelText: '取消',
+      disabled: false,
+
+    },
+    proTypes: {
+
+      value: string,
+      placeholder: string,
+      showCancelButton: bool,
+      cancelText: string,
+      disabled: bool,
+
+
+    },
+    defaultProps: {
+
+      value: '张三',
+      placeholder: '请输入关键字',
+      showCancelButton: false,
+      cancelText: '取消',
+      disabled: false,
 
     },
     style: {},
 
   },
-  // {
-  //   id: 534445,
-  //   type: "SearchBar",
-  //   props: {
-
-  //     value: '张三',
-  //     placeholder: '请输入关键字',
-  //     showCancelButton: false,
-  //     cancelText: '取消',
-  //     disabled: false,
-
-  //   },
-  //   proTypes: {
-
-  //     value: string,
-  //     placeholder: string,
-  //     showCancelButton: bool,
-  //     cancelText: string,
-  //     disabled: bool,
-
-
-  //   },
-  //   defaultProps: {
-
-  //     value: '张三',
-  //     placeholder: '请输入关键字',
-  //     showCancelButton: false,
-  //     cancelText: '取消',
-  //     disabled: false,
-
-  //   },
-  //   style: {},
-
-  // },
 
   {
     id: 534446,
@@ -504,67 +507,350 @@ const testSouData = [
     id: 534448,
     type: "Grid",
     props: {
-     data:[{icon:'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',text:'Name1'},{icon:'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',text:'Name2'}],
-     columnNum:2,
-     hasLine:true,
-     isCarousel:false,
-     carouselMaxRow:2,
-     itemStyle:{backgroundColor:'red',width:60,height:50}
+      data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name1' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name2' }],
+      columnNum: 2,
+      hasLine: true,
+      isCarousel: false,
+      carouselMaxRow: 2,
+      itemStyle: { backgroundColor: 'red', }
     },
     proTypes: {
-      data:array,
-      columnNum:number,
-      hasLine:bool,
-      isCarousel:bool,
-      carouselMaxRow:number,
-      itemStyle:string
+      data: array,
+      columnNum: number,
+      hasLine: bool,
+      isCarousel: bool,
+      carouselMaxRow: number,
+      itemStyle: string
     },
     defaultProps: {
-      data:[{icon:'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',text:'Name1'},{icon:'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',text:'Name2'}],
-      columnNum:2,
-      hasLine:true,
-      isCarousel:false,
-      carouselMaxRow:2,
-      itemStyle:{backgroundColor:'red',width:60,height:50}
+      data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name1' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name2' }],
+      columnNum: 2,
+      hasLine: true,
+      isCarousel: false,
+      carouselMaxRow: 2,
+      itemStyle: { backgroundColor: 'red' }
     },
-    style: { width:10 },
+    style: {width:'100%'},
 
   },
-  
+
   {
     id: 534449,
     type: "InputItem",
     props: {
-      type:'text',
-      clear:true,
-      error:true,
-      value:'',
-      extra:'元',
-      placeholder:'有标签'
-      
+      type: 'text',
+      clear: true,
+      error: true,
+      value: '',
+      extra: '元',
+      placeholder: '有标签',
+
     },
     proTypes: {
-      type:string,
-      value:string,
-      placeholder:string,
-      clear:bool,
-      error:bool,
-      extra:string,
+      type: string,
+      value: string,
+      placeholder: string,
+      clear: bool,
+      error: bool,
+      extra: string,
     },
     defaultProps: {
-      type:'text',
-      clear:true,
-      error:true,
-      value:'',
-      extra:'元',
-      placeholder:'有标签'
-      
+      type: 'text',
+      clear: true,
+      error: true,
+      value: '',
+      extra: '元',
+      placeholder: '有标签'
+
     },
-    style: { width:'100%' },
+    style: { width: '100%',},
 
   },
+  {
+    id: 534450,
+    type: "Carousel",
+    props: {
+      autoplay: true,
+      infinite: true,
+      autoplayInterval: 3000,
+      dots: true,
+      vertical:false
+    },
+    proTypes: {
+      autoplay: bool,
+      infinite: bool,
+      autoplayInterval: number,
+      dots: bool,
+      vertical:bool
+    },
+    defaultProps: {
+      autoplay: true,
+      infinite: true,
+      autoplayInterval: 3000,
+      dots: true,
+      vertical:false
+    },
+    style: { width: '100%' },
 
-  
+  },
+  {
+    id: 534451,
+    type: "NoticeBar",
+    props: {
+       mode:'closable',
+       titles:'这是一个通知栏.........',
+       marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+    },
+    proTypes: {
+      mode:string,
+      marqueeProps:string,
+      titles:string
+
+    },
+    defaultProps: {
+      mode:'closable',
+      marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+      title:'这是一个通知栏.........',
+    },
+    style: { width: '100%' },
+
+  },
+  {
+    id: 534452,
+    type: "TextareaItem",
+    props: {
+      rows:4,
+      placeholder:'固定行数、多行带计数、高度自适应',
+      count:100,
+      autoHeight:true,
+      editable:true,
+      clear:false
+    },
+    proTypes: {
+      rows:number,
+      placeholder:string,
+      count:number,
+      autoHeight:bool,
+      editable:bool,
+      clear:bool
+
+    },
+    defaultProps: {
+      rows:4,
+      placeholder:'固定行数、多行带计数、高度自适应',
+      count:100,
+      autoHeight:true,
+      editable:true,
+      clear:false
+    },
+    style: { width: '100%', paddingVertical: 5,borderColor: 'gray',borderWidth: 0.5,  },
+
+  },
+  {
+    id: 534453,
+    type: "DatePicker",
+    props: {
+      mode:'date',
+      minDate:new Date(2015, 7, 6),
+      maxDate:new Date(2026, 11, 3),
+      format:"YYYY-MM-DD"
+    },
+    proTypes: {
+      mode:string,
+      minDate:string,
+      maxDate:string,
+      format:string
+    },
+    defaultProps: {
+      mode:'date',
+      minDate:new Date(2015, 7, 6),
+      maxDate:new Date(2026, 11, 3),
+      format:"YYYY-MM-DD"
+    },
+    style: { width: '100%', paddingVertical: 5  },
+
+  },
+  {
+    id: 534454,
+    type: "DatePickerView",
+    props: {
+      mode:'date',
+      minDate:new Date(2015, 7, 6),
+      maxDate:new Date(2026, 11, 3),
+      format:"YYYY-MM-DD",
+      minuteStep:1,
+
+    },
+    proTypes: {
+      mode:string,
+      minDate:string,
+      maxDate:string,
+      format:string,
+      minuteStep:number,
+    },
+    defaultProps: {
+      mode:'date',
+      minDate:new Date(2015, 7, 6),
+      maxDate:new Date(2026, 11, 3),
+      format:"YYYY-MM-DD",
+      minuteStep:1,
+    },
+    style: { width: '100%' },
+  }, {
+    id: 534455,
+    type: "ImagePicker",
+    props: {
+      files:[{
+        url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
+        id: '2121',
+      },{
+          url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
+          id: '2122',
+        },],
+      selectable:true
+    },
+    proTypes: {
+      files:array,
+      selectable:bool
+    },
+    defaultProps: {
+      files:[{
+        url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
+        id: '2121',
+      },{
+          url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
+          id: '2122',
+        },],
+      selectable:true
+    },
+    style: { width: '100%',height:50 },
+  },
+  {
+    id: 534456,
+    type: "PickerView",
+    props: {
+      data:[ [
+        {
+          label: '2013',
+          value: '2013',
+        },
+        {
+          label: '2014',
+          value: '2014',
+        },
+      ],
+      [
+        {
+          label: '春',
+          value: '春',
+        },
+        {
+          label: '夏',
+          value: '夏',
+        },
+      ],],
+      cascade:false,
+    
+    },
+    proTypes: {
+      data:array,
+      cascade:bool
+    },
+    defaultProps: {
+    data:[  [
+      {
+        label: '2013',
+        value: '2013',
+      },
+      {
+        label: '2014',
+        value: '2014',
+      },
+    ],
+    [
+      {
+        label: '春',
+        value: '春',
+      },
+      {
+        label: '夏',
+        value: '夏',
+      },
+    ],],
+      cascade:false,
+    },
+    style: { width: 200,height:100},
+  },
+  {
+    id: 534457,
+    type: "NavBar",
+    props: {
+      title:"标题",
+      styleRightText:{ color: 'white' }, //右文本样式
+      styleTitle:{ color: 'white' }, //标题样式
+      isShowBk:true, //是否显示返回键
+      isShowDel:true, //是否显示左边第二个图标
+      isShowFirstRightIcon:true, //是否显示右边第一个图标
+      isShowLastRightIcon:true, //是否显示右边第二个图标
+      isShowRightText:true
+    
+    },
+    proTypes: {
+      title:string,
+      styleRightText:string,
+      styleTitle:string,
+      isShowBk:bool, 
+      isShowDel:bool, 
+      isShowFirstRightIcon:bool,
+      isShowLastRightIcon:bool,
+      isShowRightText:bool
+    },
+    defaultProps: {
+      title:"标题",
+      styleRightText:{ color: 'white' }, //右文本样式
+      styleTitle:{ color: 'white' }, //标题样式
+      isShowBk:true, //是否显示返回键
+      isShowDel:true, //是否显示左边第二个图标
+      isShowFirstRightIcon:true, //是否显示右边第一个图标
+      isShowLastRightIcon:true, //是否显示右边第二个图标
+      isShowRightText:true
+    },
+    style:{ backgroundColor: '#0C83FF' },
+  },
+  {
+    id: 534458,
+    type: "List",
+    props: {
+     
+    },
+    proTypes: {
+      
+    },
+    defaultProps: {
+   
+    },
+    style:{ backgroundColor: '#0C83FF' },
+  },
+  {
+    id: 534459,
+    type: "Agreement",
+    props: {
+      defaultChecked:true,
+      checked:true,
+      disabled:false
+    },
+    proTypes: {
+      defaultChecked:bool,
+      checked:bool,
+      disabled:bool,
+    },
+    defaultProps: {
+      defaultChecked:true,
+      checked:true,
+      disabled:false
+    },
+    style:{ backgroundColor: '#0C83FF' },
+  },
 ];
 
 export function getTestSouData() {
