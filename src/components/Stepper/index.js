@@ -1,4 +1,4 @@
-import {Stepper} from 'use-components-library';
+import {Stepper} from 'antd-mobile';
 
 export default Stepper;
 

@@ -1,3 +1,3 @@
-import {Flex} from 'use-components-library';
+import {Flex} from 'antd-mobile';
 
 export default Flex;

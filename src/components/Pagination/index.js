@@ -1,3 +1,3 @@
-import {Pagination} from 'use-components-library';
+import {Pagination} from 'antd-mobile';
 
 export default Pagination;
