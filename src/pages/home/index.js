@@ -1,17 +1,21 @@
-import { Row, Col, Icon, Select, InputNumber,Button } from "antd";
+import { Row, Col, Icon, Select, InputNumber, Collapse } from "antd";
 import { connect } from "dva";
 import styles from "./index.less";
 import classify from "assets/classify.png";
 import share from "assets/share.png";
 import more from "assets/more.png";
+import * as Whale from "components";
 
 // import classnames from "classnames";
 
 // import phone from "assets/phone.png";
 const Option = Select.Option;
 
+const Panel = Collapse.Panel;
+const DraggableContent = Whale.DraggableContent;
+
 const App = ({ global, dispatch }) => {
-  const { cneterscale = 100,sourceData, components, showItemId } = global;
+  const { cneterscale = 100, sourceData, components, showItemId } = global;
   const handleChange = value => {
     dispatch({ type: "global/changeScale", payload: value });
   };
@@ -23,20 +27,50 @@ const App = ({ global, dispatch }) => {
             <img src={classify} className={styles.classify} alt="" />
           </div>
           <div>
-            <div className={styles.title}>
-              <span className={styles.sizeTipText}>Button按钮</span>
-              <div className={styles.itemIcon}>
-                <img src={more} className={styles.more} alt="" />
-              </div>
-            </div>
-            <div>
-              <div className={styles.itemContent}>
-                <span className={styles.itemContentText}>大</span>
-              </div>
-              <div className={styles.itemContent}>
-                <span className={styles.itemContentText}>小</span>
-              </div>
-            </div>
+            <Collapse defaultActiveKey={["button"]} accordion style={{
+                maxHeight: '600px',
+                overflow: 'auto'
+            }}>
+              {sourceData.map((item, index) => {
+                const Com = Whale[item.type];
+                if (!item.props) {
+                  item.props = {};
+                }
+                return (
+                  <Panel header={item.type} key={item.type}>
+                    <DraggableContent
+                      draggableId={item.id}
+                      key={"leftPanel" + item.id}
+                      index={index}
+                    >
+                      {Com && (
+                        <Com
+                          {...item.props}
+                          style={item.style}
+                          key={`leftPanel${item.type}${item.id}`}
+                        />
+                      )}
+                    </DraggableContent>
+                  </Panel>
+                );
+              })}
+            </Collapse>
+            {
+              // <div className={styles.title}>
+              //   <span className={styles.sizeTipText}>Button按钮</span>
+              //   <div className={styles.itemIcon}>
+              //     <img src={more} className={styles.more} alt="" />
+              //   </div>
+              // </div>
+              // <div>
+              //   <div className={styles.itemContent}>
+              //     <span className={styles.itemContentText}>大</span>
+              //   </div>
+              //   <div className={styles.itemContent}>
+              //     <span className={styles.itemContentText}>小</span>
+              //   </div>
+              // </div>
+            }
           </div>
         </Col>
         <Col
@@ -91,8 +125,7 @@ const App = ({ global, dispatch }) => {
             {
               // <img src={phone} className={styles.centerImg} />
             }
-            <div className={styles.centerDiv}>1231232313313131323233
-            </div>
+            <div className={styles.centerDiv}>1231232313313131323233</div>
           </div>
         </Col>
         <Col span={6} className={styles.colclass}>
