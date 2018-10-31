@@ -74,7 +74,7 @@ const testSouData = [
       activeStyle: {},
       loading: false,
     },
-    style: { width: 100, height: 40 }
+    style: {  }
   },
   {
     id: 534434,
