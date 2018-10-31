@@ -3,9 +3,7 @@ import Link from "umi/link";
 import withRouter from "umi/withRouter";
 import { connect } from "dva";
 import { DragDropContext } from "react-beautiful-dnd";
-import DroppableContent from "components/DroppableContent";
-import DraggableContent from "components/DraggableContent";
-import FromList from "components/FromList";
+import {DraggableContent,DroppableContent,FromList,Button as MobileBtn} from "components";
 import styles from "./index.less";
 import WhaleRn from "whale-rn";
 import { getItemById } from "utils/data_utils";
@@ -37,28 +35,34 @@ const App = ({ global, dispatch }) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
+
       <div className={styles.panel}>
+
         <Row className={styles.rowclass}>
           <Col span={7} className={styles.colclass}>
             <div className={styles.tip}>
               <img src={classify} className={styles.classify} alt=""/>
             </div>
             <DroppableContent droppableId="leftPanel">
-              {sourceData.map((item, index) => {
-                const Com = WhaleRn[item.type];
-                if (!item.props) {
-                  item.props = {};
-                }
-                return (
-                  <DraggableContent
-                    draggableId={item.id}
-                    key={"leftPanel" + item.id}
-                    index={index}
-                  >
-                    {Com && <Com {...item.props} style={item.style} />}
-                  </DraggableContent>
-                );
-              })}
+    <MobileBtn type="primary" size="large">123</MobileBtn>
+
+              {
+              //   sourceData.map((item, index) => {
+              //   const Com = WhaleRn[item.type];
+              //   if (!item.props) {
+              //     item.props = {};
+              //   }
+              //   return (
+              //     <DraggableContent
+              //       draggableId={item.id}
+              //       key={"leftPanel" + item.id}
+              //       index={index}
+              //     >
+              //       {Com && <Com {...item.props} style={item.style} />}
+              //     </DraggableContent>
+              //   );
+              // })
+            }
             </DroppableContent>
           </Col>
           <Col span={8} className={cx({

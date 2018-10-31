@@ -1,0 +1,223 @@
+.panel {
+  background-color: white;
+  // height: 100vh;
+  border: 1px solid rgb(212, 220, 226);
+  //border: 1px solid #D4DCE2;
+  border-radius: 10px;
+  // margin: 15px;
+}
+.rowclass {
+  // height: 100%;
+  display: flex;
+  .colclass {
+    flex-shrink: 0;
+    //padding-top: 15px;
+    //overflow: auto;
+    .content {
+      // height: 100%;
+      display: flex;
+      flex-direction: column;
+      .comlist {
+        margin-right: -0.3125rem;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding: 0.625rem 0.625rem 0.625rem 0.9375rem;
+      }
+    }
+  }
+}
+.colclass:not(:last-child) {
+  border-right: 1px solid rgb(212, 220, 226);
+  //border-color: rgb(212, 220, 226);
+}
+
+.centerPanel {
+  // height: 100vh;
+  min-width: 375px;
+}
+.centerContent {
+  display: flex;
+  justify-content: center;
+}
+.tip {
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #d4dce2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 14px;
+}
+.classify {
+  width: 22px;
+}
+.circle {
+  height: 40px;
+  width: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 1px #d4dce2 solid;
+}
+.tipSelect {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.selectItemOne {
+  width: 30%;
+  text-align: center;
+  border-top: 1px solid #d4dce2;
+  border-bottom: 1px solid #d4dce2;
+  border-left: 1px solid #d4dce2;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.tipText {
+  font-size: 20px;
+  font-weight: bold;
+  color: #687683;
+}
+.selectCenter {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #b8c2cb;
+  border-radius: 15px;
+  //background: #F5F7F9;
+}
+.selectItemThird {
+  width: 40%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #d4dce2;
+  border-bottom: 1px solid #d4dce2;
+  border-right: 1px solid #d4dce2;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.triangle {
+  width: 20px;
+  margin-left: 10px;
+}
+.share {
+  width: 30px;
+}
+.tipRight {
+  height: 40px;
+  border-bottom: 1px solid #d4dce2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 14px;
+}
+.bell {
+  width: 30px;
+}
+.blueCircle {
+  height: 40px;
+  width: 40px;
+  background: #0488fb;
+  border-radius: 50%;
+  border: 1px #d4dce2 solid;
+}
+
+
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d4dce2;
+}
+.itemContent {
+  text-align: center;
+  padding: 7px 20px;
+  border-bottom: 1px solid #d4dce2;
+}
+.leftPadding {
+  padding-left: 20px;
+}
+.sizeModule {
+  border-top: 1px solid #d4dce2;
+}
+.itemTip {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 18px;
+}
+.sizeTipText {
+  color: #6e7b88;
+  font-size: 20px;
+}
+.itemIcon {
+  display: flex;
+  align-items: center;
+}
+
+.itemContentText {
+  font-size: 20px;
+  color: #333333;
+}
+.more {
+  width: 20px;
+  transform: rotate(90deg);
+  margin-right: 10px;
+}
+.centerDiv {
+  width: 375px;
+  height: 667px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #d4dce2;
+  // margin-top: 5px;
+  border-top: none;
+  // 定位
+  // position: absolute;
+  // top: 5px;
+  // left: 30px;
+ 
+}
+.centerImg {
+  width: 433px;
+  position: absolute;
+  top: -96px;
+  z-index: 2;
+}
+
+.centerMain {
+  // 定位
+  // position: relative;
+  // height: 100%;
+  // overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform-origin:50% 0 ;
+}
+.centerTip{
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #d4dce2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 14px;
+  // border-left: 1px solid #D4DCE2;
+  // border-right: 1px solid #D4DCE2;
+}

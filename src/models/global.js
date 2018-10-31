@@ -10,6 +10,7 @@ import {
 export default {
   namespace: "global",
   state: {
+    cneterscale:100,
     text: "hello umi+dva",
     login: false,
     sourceData: getTestSouData(),
@@ -22,6 +23,17 @@ export default {
     }
   },
   effects: {
+    *changeScale({payload},{call,put,select}){
+      yield put({
+        type: "save",
+        payload: {
+          cneterscale: payload
+        }
+      });
+    },
+    *delItem({payload},{call,put,select}){
+      console.log('delete',payload)
+    },
     *dndAction({ payload }, { call, put, select }) {
       const { sourceData, components } = yield select(state => state.global);
       const data = dndAction(sourceData, components, payload);
@@ -55,26 +67,26 @@ export default {
     *changeItem({ payload }, { call, put ,select}) {
       const { showItemId, components } = yield select(state => state.global);
      console.log(components);
-     console.log(payload);
+     console.log('payload',payload);
      
       const data = components.map(item=>{
         if(item.id === payload.id){
-          console.log(payload);
+          console.log('12331321',item);
           
-          return payload;
+          // return payload;
         }else{
-          return item;
+          // return item;
         }
       })
      console.log(components);
      console.log(data);
 
-      yield put({
-        type: "save",
-        payload: {
-          components: components
-        }
-      });
+      // yield put({
+      //   type: "save",
+      //   payload: {
+      //     components: data
+      //   }
+      // });
     },
     *throwError() {
       throw new Error("hi error");

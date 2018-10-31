@@ -1,5 +1,5 @@
 import React from "react";
-import { DragSource } from 'react-dnd';
+import { DragSource } from "react-dnd";
 const cardSource = {
   canDrag(props) {
     return true;
@@ -8,17 +8,17 @@ const cardSource = {
     return monitor.getItem().id === props.draggableId;
   },
   beginDrag(props, monitor, component) {
-    console.log("begin",monitor)
-    const item = { id: props.draggableId,sourceId:monitor.sourceId };
+    console.log("begin", monitor);
+    const item = { id: props.draggableId, sourceId: monitor.sourceId };
     return item;
   },
-  endDrag(props, monitor, component) {},
+  endDrag(props, monitor, component) {}
 };
 function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
     connectDragPreview: connect.dragPreview(),
-    isDragging: monitor.isDragging(),
+    isDragging: monitor.isDragging()
   };
 }
 const grid = 20;
@@ -39,16 +39,26 @@ const DraggableContent = ({
   onClick,
   index,
   draggableId,
-  connectDragSource, connectDragPreview, isDragging 
+  connectDragSource,
+  connectDragPreview,
+  isDragging,
+  style={},
+  handleStyle={}
 }) => {
-  return connectDragSource(
-    <div onClick={onClick} style={getItemStyle(isDragging)}>
-      {children}
-    </div>
-  );
+  // connectDragPreview && connectDragPreview(children);
+  const opacity = isDragging ? 0.4 : 1;
+  console.log(isDragging)
+  return (
+			connectDragSource &&
+			connectDragSource(
+        <div>
+{children}					
+				</div>,
+			)
+  )
 };
 
 const Types = {
-  CARD: 'card',
+  CARD: "card"
 };
 export default DragSource(Types.CARD, cardSource, collect)(DraggableContent);

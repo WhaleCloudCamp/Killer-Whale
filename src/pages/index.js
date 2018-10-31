@@ -6,7 +6,7 @@ import * as Whale from "components";
 import styles from "./index.less";
 import { getItemById } from "utils/data_utils";
 
-const { DroppableContent, DraggableContent, FromList } = Whale;
+const { DroppableContent, DraggableContent, DraggableTitle, DroppableTitle,FromList } = Whale;
 const App = ({ global, dispatch }) => {
   const { sourceData, components, showItemId } = global;
   const onDragEnd = result => {
@@ -25,72 +25,78 @@ const App = ({ global, dispatch }) => {
     dispatch({ type: "global/gPage" });
   };
   const showItem = getItemById(components, showItemId);
+  console.log("sourceData", sourceData);
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className={styles.panel}>
-        <Row className={styles.rowclass}>
-          <Col span={8} className={styles.colclass}>
-            <DroppableContent droppableId="leftPanel">
-              {sourceData.map((item, index) => {
-                const Com = Whale[item.type];
+    <div className={styles.panel}>
+      <Row className={styles.rowclass}>
+        <Col span={8} className={styles.colclass}>
+          <DroppableContent droppableId="leftPanel">
+            {sourceData.map((item, index) => {
+              const Com = Whale[item.type];
 
-                if (!item.props) {
-                  item.props = {};
-                }
-                return (
-                  <DraggableContent
-                    draggableId={item.id}
-                    key={"leftPanel" + item.id}
-                    index={index}
-                  >
-                    {Com && <Com {...item.props} style={item.style} />}
-                  </DraggableContent>
-                );
-              })}
-            </DroppableContent>
-          </Col>
-          <Col span={8} className={styles.colclass}>
-            <DroppableContent droppableId="centerPanel" dropStyle={{}}>
-              {components.map((item, index) => {
-                const { component, id } = item;
-                const Com = Whale[component.type];
-                if (!component.props) {
-                  component.props = {};
-                }
+              if (!item.props) {
+                item.props = {};
+              }
+              return (
+                <DroppableTitle
+                  draggableId={item.id}
+                  key={"leftPanel" + item.id}
+                  index={index}
+                >
+                  {Com && (
+                    <Com
+                      {...item.props}
+                      style={item.style}
+                      key={`leftPanel${item.type}${item.id}`}
+                    />
+                  )}
+                </DroppableTitle>
+              );
+            })}
+          </DroppableContent>
+        </Col>
+        <Col span={8} className={styles.colclass}>
+          <DroppableContent droppableId="centerPanel" dropStyle={{}}>
+            {components.map((item, index) => {
+              const { component, id } = item;
+              const Com = Whale[component.type];
+              if (!component.props) {
+                component.props = {};
+              }
 
-                return (
-                  <DraggableContent
-                    draggableId={id}
-                    key={"centerPanel" + id}
-                    index={index}
-                    onClick={() => clickDrag(item)}
-                  >
-                    {Com && (
-                      <Com
-                        {...component.props}
-                        title="确定1232"
-                        style={component.style}
-                      />
-                    )}
-                  </DraggableContent>
-                );
-              })}
-            </DroppableContent>
-          </Col>
-          <Col span={8} className={styles.colclass}>
-            <div
-              style={{
-                padding: "20px"
-              }}
-            >
-              {showItem && <FromList data={showItem} onSubmit={onSubmit} />}
-              <AntdButton onClick={gPage}>保存</AntdButton>
-            </div>
-          </Col>
-        </Row>
-      </div>
-    </DragDropContext>
+              return (
+                <DraggableContent
+                  draggableId={id}
+                  key={"centerPanel" + id}
+                  index={index}
+                  onClick={() => clickDrag(item)}
+                >
+                  {Com && (
+                    <Com
+                      {...component.props}
+                      title="确定1232"
+                      style={component.style}
+                      key={`centerPanel${component.type}${id}`}
+                    />
+                  )}
+                </DraggableContent>
+              );
+            })}
+          </DroppableContent>
+        </Col>
+        <Col span={8} className={styles.colclass}>
+          <div
+            style={{
+              padding: "20px"
+            }}
+          >
+            {showItem && <FromList showItem={showItem} onSubmit={onSubmit} />}
+            <AntdButton onClick={gPage}>保存</AntdButton>
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
