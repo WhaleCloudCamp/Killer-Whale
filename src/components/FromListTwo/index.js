@@ -58,6 +58,9 @@ class RegistrationForm extends React.Component {
       wrapperCol: {
         xs: { span: 14},
         sm: { span: 14 }
+      },
+      label: {
+        fontSize: "20px"
       }
     };
     const tailFormItemLayout = {
@@ -72,6 +75,12 @@ class RegistrationForm extends React.Component {
         }
       }
     };
+    const labelStyle = {
+      fontSize: "16px",
+      float: "left",
+      paddingLeft: "10px",
+      fontWeight: "500"
+    };
 
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -83,7 +92,7 @@ class RegistrationForm extends React.Component {
           }}>
             <Row type="flex" align="middle">
               <Col span={10}>
-                <span style={{paddingLeft: "10px",fontWeight: "bold"}}>ID</span>
+                <span style={{paddingLeft: "10px",fontWeight: "bold", fontSize: "16px"}}>ID</span>
               </Col>
               <Col span={14}>
                 <div style={{}}>
@@ -98,7 +107,7 @@ class RegistrationForm extends React.Component {
           }}>
             <Row type="flex" align="middle">
               <Col span={10}>
-                <span style={{paddingLeft: "10px",fontWeight: "bold"}}>类型</span>
+                <span style={{paddingLeft: "10px",fontWeight: "bold", fontSize: "16px"}}>类型</span>
               </Col>
               <Col span={14}>
                 <div style={{}}>
@@ -114,12 +123,13 @@ class RegistrationForm extends React.Component {
             <div style={{
               width: "100%"
             }}>
-              <span style={{paddingLeft: "10px",fontWeight: "bold"}}>属性</span>
+              <span style={{paddingLeft: "10px",fontWeight: "bold", fontSize: "16px"}}>属性</span>
             </div>
             <div>
               {Object.keys(data.component.props).map((key, index) => {
+                let keyNode = React.createElement('label',{style: labelStyle},key);
                 return (
-                  <FormItem {...formItemLayout} label={key} key={index}>
+                  <FormItem {...formItemLayout} label={keyNode} key={index} colon={false}>
                     {getFieldDecorator(data.id+"-component-props-" + key, {
                       initialValue: data.component.props[key] || ""
                     })(<Input />)}
@@ -130,17 +140,18 @@ class RegistrationForm extends React.Component {
           </div>
 
           <div style={{
-            paddingTop: "10px"
+            // paddingTop: "10px"
           }}>
             <div style={{
               width: "100%"
             }}>
-              <span style={{paddingLeft: "10px",fontWeight: "bold"}}>属性</span>
+              <span style={{paddingLeft: "10px",fontWeight: "bold", fontSize: "16px"}}>样式</span>
             </div>
             <div>
               {Object.keys(data.component.style).map((key, index) => {
+                let keyNode = React.createElement('label',{style:labelStyle},key);
                 return (
-                  <FormItem {...formItemLayout} label={key} key={index}>
+                  <FormItem {...formItemLayout} label={keyNode} key={index} colon={false}>
                     {getFieldDecorator(data.id+"-component-style-" + key, {
                       initialValue: data.component.style[key]
                     })(<Input />)}
