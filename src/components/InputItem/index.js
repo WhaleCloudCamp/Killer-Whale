@@ -1,3 +1,21 @@
-import {InputItem} from 'antd-mobile';
+import { InputItem } from 'antd-mobile';
 import 'antd-mobile/lib/input-item/style';
-export default InputItem;
+import React, { Component } from 'react'
+
+export default class InputItems extends React.Component {
+
+    render() {
+        return (
+            <InputItem
+                type={this.props.type}
+                clear={this.props.clear}
+                error={this.props.error}
+                value={this.props.value}
+                extra={this.props.extra}
+                placeholder={this.props.placeholder}
+            >
+                标签1
+             </InputItem>
+        )
+    }
+}
