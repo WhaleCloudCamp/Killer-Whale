@@ -332,12 +332,13 @@ const testSouData = [
     id: 534442,
     type: "Stepper",
     props: {
-      min: 0,
+      min: 1,
       max: 100,
       step: 1,
       value: 50,
       disabled: false,
-
+      showNumber:true,
+    
     },
     proTypes: {
       min: number,
@@ -345,16 +346,16 @@ const testSouData = [
       step: number,
       value: number,
       disabled: bool,
-
+      showNumber:bool,
 
     },
     defaultProps: {
-      min: 0,
+      min: 1,
       max: 100,
       step: 1,
       value: 50,
       disabled: false,
-
+      showNumber:true,
     },
     style: { width:'100%', height: 30 },
 
@@ -833,23 +834,101 @@ const testSouData = [
   },
   {
     id: 534459,
-    type: "Agreement",
+    type: "Icon",
     props: {
-      defaultChecked:true,
-      checked:true,
-      disabled:false
+      type:'cross-circle-o',
+      size:55,
+      color:'red',
     },
     proTypes: {
-      defaultChecked:bool,
-      checked:bool,
-      disabled:bool,
+      type:string,
+      size:number,
+      color:string,
     },
     defaultProps: {
-      defaultChecked:true,
-      checked:true,
-      disabled:false
+      type:'down',
+      size:55,
+      color:'red',
     },
-    style:{ backgroundColor: '#0C83FF' },
+    style:{ },
+  },
+  {
+    id: 534460,
+    type: "WhiteSpace",
+    props: {
+      size:'xs'
+    },
+    proTypes: {
+      size:string
+    },
+    defaultProps: {
+      size:'xs'
+    },
+    style:{ },
+  },
+  {
+    id: 534461,
+    type: "Result",
+    props: {
+      
+      img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
+      title:"验证成功",
+      message:"所提交内容已成功完成验证",
+      buttonText:"完成",
+      buttonType:"primary"
+    },
+    proTypes: {
+      imgUrl:array,
+      title:string,
+      message:string,
+      buttonText:string,
+      buttonType:string
+    },
+    defaultProps: {
+      img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
+      title:"验证成功",
+      message:"所提交内容已成功完成验证",
+      buttonText:"完成",
+      buttonType:"primary"
+    },
+    style:{ },
+  },
+  {
+    id: 534462,
+    type: "Popover",
+    props: {
+      data:[1,2,3]
+    },
+    proTypes: {
+   
+    },
+    defaultProps: {
+      data:[1,2,3]
+    },
+    style:{ },
+  },
+  {
+    id: 534463,
+    type: "SegmentedControl",
+    props: {
+      tintColor:'#2DB7F5',
+      disabled:false,
+      selectedIndex:0,
+      values:['Segment1', 'Segment2']
+    },
+    proTypes: {
+      tintColor:string,
+      disabled:bool,
+      selectedIndex:number,
+      values:array
+    },
+    defaultProps: {
+      tintColor:'#2DB7F5',
+      disabled:false,
+      selectedIndex:0,
+      values:['Segment1', 'Segment2']
+    },
+    style:{ },
   },
 ];
 

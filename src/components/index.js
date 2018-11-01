@@ -29,3 +29,8 @@ export {default as ImagePicker} from './ImagePicker/index';
 export {default as PickerView} from './PickerView/index';
 export {default as NavBar} from './NavBar/index';
 export {default as List} from './List/index';
+export {default as Icon} from './Icon/index';
+// export {default as WhiteSpace} from './WhiteSpace/index';
+export {default as Result} from './Result/index';
+export {default as Popover} from './Popover/index';
+export {default as SegmentedControl} from './SegmentedControl/index';
