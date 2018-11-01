@@ -32,7 +32,7 @@ const CenterContent = props => {
                 {Com && (
                   <Com
                     {...component.props}
-                    title="确定1232"
+               
                     style={component.style}
                     key={`centerPanel${component.type}${id}`}
                   />
