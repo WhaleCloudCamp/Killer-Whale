@@ -833,23 +833,69 @@ const testSouData = [
   },
   {
     id: 534459,
-    type: "Agreement",
+    type: "Icon",
     props: {
-      defaultChecked:true,
-      checked:true,
-      disabled:false
+      type:'cross-circle-o',
+      size:55,
+    
     },
     proTypes: {
-      defaultChecked:bool,
-      checked:bool,
-      disabled:bool,
+      type:string,
+      size:number,
+      color:string,
     },
     defaultProps: {
-      defaultChecked:true,
-      checked:true,
-      disabled:false
+      type:'down',
+      size:55,
+   
     },
-    style:{ backgroundColor: '#0C83FF' },
+    style:{ },
+  },
+  {
+    id: 534460,
+    type: "WhiteSpace",
+    props: {
+      size:'xs'
+    },
+    proTypes: {
+      size:string
+    },
+    defaultProps: {
+      size:'xs'
+    },
+    style:{ },
+  },
+  {
+    id: 534461,
+    type: "Result",
+    props: {
+      imgUrl:{
+        uri:
+          'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+      },
+      title:"验证成功",
+      message:"所提交内容已成功完成验证",
+      buttonText:"完成",
+      buttonType:"primary"
+    },
+    proTypes: {
+      imgUrl:array,
+      title:string,
+      message:string,
+      buttonText:string,
+      buttonType:string
+    },
+    defaultProps: {
+      imgUrl:{
+        uri:
+          'https://zos.alipayobjects.com/rmsportal/GcBguhrOdlYvGfnsXgrE.png',
+      },
+      title:"验证成功",
+      message:"所提交内容已成功完成验证",
+      buttonText:"完成",
+      buttonType:"primary"
+    },
+    style:{ },
   },
 ];
 
