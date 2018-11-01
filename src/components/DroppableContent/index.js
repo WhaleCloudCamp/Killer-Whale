@@ -18,7 +18,6 @@ const chessSquareTarget = {
   drop(props, monitor, component) {
     if(monitor.isOver({ shallow: true })){
       const item = monitor.getItem();
-      console.log(item);
       props.onDropAction&&props.onDropAction({ type: "global/addItem", payload: {item:item.data,index:'max'} });
     }
   }

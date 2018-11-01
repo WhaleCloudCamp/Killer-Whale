@@ -14,23 +14,24 @@ import DeleteDroppable from "../../components/DeleteDroppable";
 // import phone from "assets/phone.png";
 
 const App = ({ global, dispatch }) => {
-  const { cneterscale = 100, sourceData, components, showItemId } = global;
+  const { cneterscale = 100, sourceData, components, showItemData } = global;
   const handleChange = value =>
     dispatch({ type: "global/changeScale", payload: value });
 
   const onDropAction = action => dispatch(action);
-const moveCard=(dragIndex, hoverIndex)=>{
-  console.log("moveCard",dragIndex, hoverIndex);
-  
-  // dispatch({ type: "global/changeScale", payload: value });
-}
+  const clickDrag = item => {
+    dispatch({ type: "global/showItem", payload: item });
+  };
+  const onSubmit = data => {
+    dispatch({ type: "global/changeItem", payload: data });
+  };
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
         <Col span={6} className={styles.colclass}>
           <LeftTitle />
           <LeftContent sourceData={sourceData} />
-          <DeleteDroppable onDropAction={onDropAction}/>
+          <DeleteDroppable onDropAction={onDropAction} />
         </Col>
         <Col
           span={12}
@@ -44,12 +45,12 @@ const moveCard=(dragIndex, hoverIndex)=>{
             cneterscale={cneterscale}
             onDropAction={onDropAction}
             components={components}
-            moveCard={moveCard}
+            clickDrag={clickDrag}
           />
         </Col>
         <Col span={6} className={styles.colclass}>
           <RightTitle />
-          <RightContent />
+          <RightContent showItemData={showItemData} onSubmit={onSubmit}/>
         </Col>
       </Row>
     </div>

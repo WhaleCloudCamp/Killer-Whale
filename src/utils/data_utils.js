@@ -980,16 +980,20 @@ function getAddData(item) {
   const data = {
     id: new Date().getTime(),
     component: {
-      type: item.type,
-      props: item.props,
-      style: item.style
+      props:{
+        ...item.props
+      },
+      style:{
+        ...item.style
+      },
+      type:item.type
     },
     childrenCom: []
   };
   return data;
 }
 export function addComponent(leftData, centerData, item,index) {
-  const initData = getAddData(item);
+  const initData = Object.assign({},getAddData(item));
   centerData.splice(index, 0, initData);
   return { leftData, centerData };
 }

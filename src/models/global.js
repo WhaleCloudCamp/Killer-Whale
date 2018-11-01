@@ -14,7 +14,7 @@ export default {
     cneterscale: 100,
     sourceData: getTestSouData(),
     components: getTestComData(),
-    showItem: {}
+    showItemData: {}
   },
   reducers: {
     save(state, action) {
@@ -31,7 +31,6 @@ export default {
       });
     },
     *delItem({ payload }, { call, put, select }) {
-      console.log("delete", payload);
       const { sourceData, components } = yield select(state => state.global);
       const data = deleteComponent(components, payload.id);
       yield put({
@@ -42,7 +41,6 @@ export default {
       });
     },
     *addItem({ payload }, { call, put, select }) {
-      console.log("addItem", payload);
       const { sourceData, components } = yield select(state => state.global);
       if (payload.index === "max") payload.index = components.length;
       const data = addComponent(
@@ -51,8 +49,6 @@ export default {
         payload.item,
         payload.index
       );
-      console.log(data);
-      
       yield put({
         type: "save",
         payload: {
@@ -62,7 +58,6 @@ export default {
       });
     },
     *moveItem({ payload }, { call, put, select }) {
-      console.log("moveItem", payload);
       const { dragIndex, hoverIndex } = payload;
       const { components } = yield select(state => state.global);
       const data = moveComponent(components, dragIndex, hoverIndex);
@@ -74,10 +69,27 @@ export default {
       });
     },
     *showItem({ payload }, { call, put }) {
+      const data = Object.assign({},payload||{});
       yield put({
         type: "save",
         payload: {
-          showItemId: payload.id || null
+          showItemData: data
+        }
+      });
+    },
+    *changeItem({ payload }, { call, put,select }) {
+      if(!payload.id)return;
+      const { components } = yield select(state => state.global);
+      components.map(item=>{
+        if(item.id===payload.id){
+          item = Object.assign({},payload||{});
+        }
+      })
+      
+      yield put({
+        type: "save",
+        payload: {
+          components: components
         }
       });
     },

@@ -4,7 +4,7 @@ import styles from "./center.less";
 const DroppableContent = Whale.DroppableContent;
 const DraggableContent = Whale.DraggableContent;
 const CenterContent = props => {
-  const { cneterscale, onDropAction ,components,moveCard} = props;
+  const { cneterscale, onDropAction, components, moveCard, clickDrag } = props;
   return (
     <div
       className={styles.centerMain}
@@ -20,10 +20,9 @@ const CenterContent = props => {
             if (!component.props) {
               component.props = {};
             }
-
             return (
               <DraggableContent
-              itemData={item}
+                itemData={item}
                 key={"centerPanel" + id}
                 index={index}
                 onDropAction={onDropAction}
@@ -32,7 +31,7 @@ const CenterContent = props => {
                 {Com && (
                   <Com
                     {...component.props}
-               
+                    onClick={() => clickDrag(item)}
                     style={component.style}
                     key={`centerPanel${component.type}${id}`}
                   />

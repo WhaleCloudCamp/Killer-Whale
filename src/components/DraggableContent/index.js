@@ -9,7 +9,6 @@ const cardSource = {
     return monitor.getItem().id === props.itemData.id;
   },
   beginDrag(props, monitor, component) {
-    console.log("begin", monitor);
     const item = { data: props.itemData, index: props.index };
     return item;
   },

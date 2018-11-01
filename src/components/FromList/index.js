@@ -39,7 +39,6 @@ class RegistrationForm extends React.Component {
       if (!err) {
         console.log("Received values of form: ", values);
       }
-      console.log("Received values of form: ", values);
       const { data, onSubmit } = this.props;
       const immerData = immerObj(values, data);
       onSubmit && onSubmit(immerData);
@@ -49,7 +48,6 @@ class RegistrationForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { data } = this.props;
-    console.log(data);
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
