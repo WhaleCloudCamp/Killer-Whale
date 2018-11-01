@@ -50,7 +50,7 @@ const App = ({ global, dispatch }) => {
         </Col>
         <Col span={6} className={styles.colclass}>
           <RightTitle />
-          <RightContent showItemData={showItemData} onSubmit={onSubmit}/>
+          <RightContent showItemData={showItemData} onSubmit={onSubmit} />
         </Col>
       </Row>
     </div>

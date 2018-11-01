@@ -17,7 +17,7 @@ const chessSquareTarget = {
   hover(props, monitor, component) {},
   drop(props, monitor, component) {
     const item = monitor.getItem();
-    props.onDropAction&&props.onDropAction({ type: "global/delItem", payload: {id:item.id} });
+    props.onDropAction&&props.onDropAction({ type: "global/delItem", payload: {id:item.data.id} });
   }
 };
 function collect(connect, monitor) {
