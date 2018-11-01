@@ -22,7 +22,6 @@ const LeftContent = ({ sourceData = [] }) => {
             <DraggableContent
               draggableId={item.id}
               key={"leftPanel" + item.id}
-              index={index}
             >
               {Com && (
                 <Com

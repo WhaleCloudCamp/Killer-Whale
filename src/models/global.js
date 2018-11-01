@@ -1,21 +1,20 @@
-import { gPage } from 'services/api';
+import { gPage } from "services/api";
 
 import {
   getTestSouData,
   getTestComData,
-  dndAction,
-  getItemById
+  addComponent,
+  moveComponent,
+  deleteComponent
 } from "utils/data_utils";
 
 export default {
   namespace: "global",
   state: {
-    cneterscale:100,
-    text: "hello umi+dva",
-    login: false,
+    cneterscale: 100,
     sourceData: getTestSouData(),
     components: getTestComData(),
-    showItemId: null
+    showItem: {}
   },
   reducers: {
     save(state, action) {
@@ -23,7 +22,7 @@ export default {
     }
   },
   effects: {
-    *changeScale({payload},{call,put,select}){
+    *changeScale({ payload }, { call, put, select }) {
       yield put({
         type: "save",
         payload: {
@@ -31,17 +30,44 @@ export default {
         }
       });
     },
-    *delItem({payload},{call,put,select}){
-      console.log('delete',payload)
-    },
-    *dndAction({ payload }, { call, put, select }) {
+    *delItem({ payload }, { call, put, select }) {
+      console.log("delete", payload);
       const { sourceData, components } = yield select(state => state.global);
-      const data = dndAction(sourceData, components, payload);
+      const data = deleteComponent(components, payload.id);
+      yield put({
+        type: "save",
+        payload: {
+          components: data
+        }
+      });
+    },
+    *addItem({ payload }, { call, put, select }) {
+      console.log("addItem", payload);
+      const { sourceData, components } = yield select(state => state.global);
+      if (payload.index === "max") payload.index = components.length;
+      const data = addComponent(
+        sourceData,
+        components,
+        payload.id,
+        payload.index
+      );
       yield put({
         type: "save",
         payload: {
           sourceData: data.leftData,
           components: data.centerData
+        }
+      });
+    },
+    *moveItem({ payload }, { call, put, select }) {
+      console.log("moveItem", payload);
+      const { dragIndex, hoverIndex } = payload;
+      const { components } = yield select(state => state.global);
+      const data = moveComponent(components, dragIndex, hoverIndex);
+      yield put({
+        type: "save",
+        payload: {
+          components: data
         }
       });
     },
@@ -53,40 +79,16 @@ export default {
         }
       });
     },
-    *gPage({ payload }, { call, put ,select}) {
-      const {components} = yield select(state=>state.global)
-      console.log(components)
-      const response = yield call(gPage,{components});
+    *gPage({ payload }, { call, put, select }) {
+      const { components } = yield select(state => state.global);
+      console.log(components);
+      const response = yield call(gPage, { components });
       yield put({
         type: "save",
         payload: {
-          text: response||'no data'
+          text: response || "no data"
         }
       });
-    },
-    *changeItem({ payload }, { call, put ,select}) {
-      const { showItemId, components } = yield select(state => state.global);
-     console.log(components);
-     console.log('payload',payload);
-     
-      const data = components.map(item=>{
-        if(item.id === payload.id){
-          console.log('12331321',item);
-          
-          // return payload;
-        }else{
-          // return item;
-        }
-      })
-     console.log(components);
-     console.log(data);
-
-      // yield put({
-      //   type: "save",
-      //   payload: {
-      //     components: data
-      //   }
-      // });
     },
     *throwError() {
       throw new Error("hi error");

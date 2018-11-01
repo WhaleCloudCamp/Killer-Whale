@@ -8,21 +8,29 @@ import CenterContent from "./components/CenterContent";
 import CenterTitle from "./components/CenterTitle";
 import RightContent from "./components/RightContent";
 import RightTitle from "./components/RightTitle";
+import DeleteDroppable from "../../components/DeleteDroppable";
 // import classnames from "classnames";
 
 // import phone from "assets/phone.png";
 
 const App = ({ global, dispatch }) => {
   const { cneterscale = 100, sourceData, components, showItemId } = global;
-  const handleChange = value => {
+  const handleChange = value =>
     dispatch({ type: "global/changeScale", payload: value });
-  };
+
+  const onDropAction = action => dispatch(action);
+const moveCard=(dragIndex, hoverIndex)=>{
+  console.log("moveCard",dragIndex, hoverIndex);
+  
+  // dispatch({ type: "global/changeScale", payload: value });
+}
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
         <Col span={6} className={styles.colclass}>
           <LeftTitle />
           <LeftContent sourceData={sourceData} />
+          <DeleteDroppable onDropAction={onDropAction}/>
         </Col>
         <Col
           span={12}
@@ -32,7 +40,12 @@ const App = ({ global, dispatch }) => {
           }}
         >
           <CenterTitle handleChange={handleChange} />
-          <CenterContent cneterscale={cneterscale} />
+          <CenterContent
+            cneterscale={cneterscale}
+            onDropAction={onDropAction}
+            components={components}
+            moveCard={moveCard}
+          />
         </Col>
         <Col span={6} className={styles.colclass}>
           <RightTitle />

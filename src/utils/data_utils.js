@@ -867,7 +867,7 @@ export function getTestComData() {
  */
 export function getItemById(data, id) {
   const newData = data.filter(item => item.id === id);
-  return newData[0];
+  return Object.assign({},newData[0]||{});
 }
 
 function getAddData(item) {
@@ -882,21 +882,25 @@ function getAddData(item) {
   };
   return data;
 }
-function addComponent(leftData, centerData, action) {
-  const item = getItemById(leftData, action.draggableId);
-  if (!item) return { leftData, centerData };
+export function addComponent(leftData, centerData, id,index) {
+  const item = getItemById(leftData, id);
+  if (!item||!item.id) return { leftData, centerData };
   const initData = getAddData(item);
-  centerData.splice(action.destination.index, 0, initData);
+  centerData.splice(index, 0, initData);
   return { leftData, centerData };
 }
-function deleteComponent(leftData, centerData, action) {
+export function deleteComponent(centerData, id) {
   for (let key = centerData.length - 1; key >= 0; key--) {
-    if (centerData[key].id === action.draggableId) {
+    if (centerData[key].id === id) {
       centerData.splice(key, 1);
       break;
     }
   }
-  return { leftData, centerData };
+  return centerData;
+}
+export function moveComponent(centerData, dragIndex, hoverIndex){
+  centerData = reorder(centerData, dragIndex, hoverIndex);
+  return centerData ;
 }
 function changeComponent(leftData, centerData, action) {
   const { destination, source } = action;

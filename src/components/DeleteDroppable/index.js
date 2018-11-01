@@ -1,11 +1,14 @@
 import React from "react";
 import { DropTarget } from "react-dnd";
-
-const getListStyle = canDrop => ({
-  minHeight: "100vh",
-  overflow: "auto",
-  border: canDrop ? "1px dotted" : "",
-  margin: "10px"
+import styles from "./index.less";
+const grid = 8;
+const getListStyle = (canDrop, dropStyle) => ({
+  // background: "lightgrey",
+  //   padding: grid,
+  // height: "50px",
+  border:canDrop? "1px dotted red":"none",
+  display:canDrop? "block":"none",
+  ...dropStyle
 });
 const chessSquareTarget = {
   canDrop(props, monitor) {
@@ -14,7 +17,7 @@ const chessSquareTarget = {
   hover(props, monitor, component) {},
   drop(props, monitor, component) {
     const item = monitor.getItem();
-    props.dispatch({ type: "global/delItem", payload: item });
+    props.onDropAction({ type: "global/delItem", payload: {id:item.id} });
   }
 };
 function collect(connect, monitor) {
@@ -27,15 +30,11 @@ function collect(connect, monitor) {
 const Types = {
   CHESSPIECE: "card"
 };
-const DroppableContent = ({
-  droppableId,
-  children,
-  dropStyle = {},
-  connectDropTarget,
-  canDrop
-}) => {
+const DroppableContent = ({ children, dropStyle = {},connectDropTarget, canDrop }) => {
   return connectDropTarget(
-    <div style={getListStyle(canDrop, dropStyle)}>{children}</div>
+    <div style={getListStyle(canDrop, dropStyle)} className={styles.delItem}>
+      删除
+    </div>
   );
 };
 

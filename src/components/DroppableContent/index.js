@@ -2,13 +2,12 @@ import React from "react";
 import { DropTarget } from "react-dnd";
 
 const grid = 8;
-const getListStyle = (isDraggingOver, dropStyle) => ({
+const getListStyle = (canDrop, dropStyle) => ({
   // background: isDraggingOver ? "lightblue" : "lightgrey",
   //   padding: grid,
-  minHeight: "100vh",
+  minHeight: "100%",
   overflow: "auto",
-  border: "1px dotted",
-  margin: "10px",
+  border:canDrop? "1px dotted":"none",
   ...dropStyle
 });
 const chessSquareTarget = {
@@ -17,28 +16,11 @@ const chessSquareTarget = {
   },
   hover(props, monitor, component) {},
   drop(props, monitor, component) {
-    const item = monitor.getItem();
-    const action = {
-      destination: {
-        droppableId: monitor.sourceId
-      },
-      draggableId: "leftPanel1",
-      reason: "",
-      source: {
-
-        droppableId: item.sourceId
-      },
-      type: ""
-    };
-    console.log(item);
-    // props.dispatch({ type: "global/dndAction", payload: item });
-
-    // props.dispatch({
-    //   type: 'set/dropFirstPanel',
-    //   payload: {
-    //     id: item.id,
-    //   },
-    // });
+    if(monitor.isOver({ shallow: true })){
+      const item = monitor.getItem();
+      console.log(item);
+      props.onDropAction({ type: "global/addItem", payload: {id:item.id,index:'max'} });
+    }
   }
 };
 function collect(connect, monitor) {
@@ -51,24 +33,12 @@ function collect(connect, monitor) {
 const Types = {
   CHESSPIECE: "card"
 };
-const DroppableContent = ({ droppableId, children, dropStyle = {},connectDropTarget, canDrop }) => {
+const DroppableContent = ({ children, dropStyle = {},connectDropTarget, canDrop }) => {
   return connectDropTarget(
     <div style={getListStyle(canDrop, dropStyle)} >
       {children}
     </div>
   );
-  // return (
-  //   <Droppable droppableId={droppableId}>
-  //     {(dropProvided, snapshot) => (
-  //       <div
-  //         ref={dropProvided.innerRef}
-  //         style={getListStyle(snapshot.isDraggingOver, dropStyle)}
-  //       >
-  //         {children}
-  //       </div>
-  //     )}
-  //   </Droppable>
-  // );
 };
 
 export default DropTarget(Types.CHESSPIECE, chessSquareTarget, collect)(

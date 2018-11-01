@@ -16,7 +16,7 @@ const CenterTitle = ({ handleChange }) => {
             defaultValue={375}
             disabled
           />
-          X
+          x
           <InputNumber
             size="small"
             min={1}
