@@ -19,7 +19,7 @@ const chessSquareTarget = {
     if(monitor.isOver({ shallow: true })){
       const item = monitor.getItem();
       console.log(item);
-      props.onDropAction({ type: "global/addItem", payload: {id:item.id,index:'max'} });
+      props.onDropAction&&props.onDropAction({ type: "global/addItem", payload: {item:item.data,index:'max'} });
     }
   }
 };

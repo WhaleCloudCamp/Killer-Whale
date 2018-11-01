@@ -6,11 +6,11 @@ const cardSource = {
     return true;
   },
   isDragging(props, monitor) {
-    return monitor.getItem().id === props.draggableId;
+    return monitor.getItem().id === props.itemData.id;
   },
   beginDrag(props, monitor, component) {
     console.log("begin", monitor);
-    const item = { id: props.draggableId, index: props.index };
+    const item = { data: props.itemData, index: props.index };
     return item;
   },
   endDrag(props, monitor, component) {}
@@ -77,7 +77,7 @@ const chessSquareTarget = {
     // Time to actually perform the action
     // props.moveCard(dragIndex, hoverIndex);
 
-    props.onDropAction({
+    props.onDropAction&&props.onDropAction({
       type: "global/moveItem",
       payload: { dragIndex, hoverIndex}
     });
@@ -93,9 +93,9 @@ const chessSquareTarget = {
     if (!item.index&&item.index!==0&&monitor.isOver({ shallow: true })){
       console.log("item.index",item.index);
       
-      props.onDropAction({
+      props.onDropAction&&props.onDropAction({
         type: "global/addItem",
-        payload: { id: item.id, index: props.index + 1 || "max" }
+        payload: { item: item.data, index: props.index + 1 || "max" }
       });
     }
   }

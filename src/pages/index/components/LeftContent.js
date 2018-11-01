@@ -13,24 +13,30 @@ const LeftContent = ({ sourceData = [] }) => {
       }}
     >
       {sourceData.map((item, index) => {
-        const Com = Whale[item.type];
-        if (!item.props) {
-          item.props = {};
-        }
+     
         return (
           <Panel header={item.type} key={item.type}>
-            <DraggableContent
-              draggableId={item.id}
-              key={"leftPanel" + item.id}
-            >
-              {Com && (
-                <Com
-                  {...item.props}
-                  style={item.style}
-                  key={`leftPanel${item.type}${item.id}`}
-                />
-              )}
-            </DraggableContent>
+
+            {  item.data.map((items, index) => {
+              const Com = Whale[items.type];
+
+              if (!items.props) {
+                items.props = {};
+              }
+             return(  <DraggableContent
+              itemData={items}
+                key={"leftPanel" + items.id}
+              >
+                {Com && (
+                  <Com
+                    {...items.props}
+                    style={items.style}
+                    key={`leftPanel${items.type}${items.id}`}
+                  />
+                )}
+              </DraggableContent>)
+            })}
+
           </Panel>
         );
       })}

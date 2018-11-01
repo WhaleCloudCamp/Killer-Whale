@@ -23,7 +23,7 @@ const CenterContent = props => {
 
             return (
               <DraggableContent
-                draggableId={id}
+              itemData={item}
                 key={"centerPanel" + id}
                 index={index}
                 onDropAction={onDropAction}

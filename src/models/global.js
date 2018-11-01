@@ -48,9 +48,11 @@ export default {
       const data = addComponent(
         sourceData,
         components,
-        payload.id,
+        payload.item,
         payload.index
       );
+      console.log(data);
+      
       yield put({
         type: "save",
         payload: {
