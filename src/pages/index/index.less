@@ -1,0 +1,44 @@
+:global {
+  .ant-collapse {
+    background-color: white !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+}
+.panel {
+  background-color: white;
+  // height: 100vh;
+  border: 1px solid rgb(212, 220, 226);
+  //border: 1px solid #D4DCE2;
+  border-radius: 10px;
+  // margin: 15px;
+}
+
+
+.rowclass {
+  // height: 100%;
+  display: flex;
+  .colclass {
+    flex-shrink: 0;
+    //padding-top: 15px;
+    //overflow: auto;
+    .content {
+      // height: 100%;
+      display: flex;
+      flex-direction: column;
+      .comlist {
+        margin-right: -0.3125rem;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding: 0.625rem 0.625rem 0.625rem 0.9375rem;
+      }
+    }
+  }
+}
+.colclass:not(:last-child) {
+  border-right: 1px solid rgb(212, 220, 226);
+  //border-color: rgb(212, 220, 226);
+}
