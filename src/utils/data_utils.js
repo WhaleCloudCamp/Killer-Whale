@@ -494,7 +494,7 @@ const testSouData = [
         max: 100,
         step: 1,
         value: 50,
-        disabled: false,
+        disabled: true,
         maximumTrackTintColor: 'blue'
       },
       proTypes: {
@@ -514,7 +514,7 @@ const testSouData = [
         disabled: false,
         maximumTrackTintColor: 'blue'
       },
-      style: { width: '100%', height: 10,  },
+      style: { width: '100%', height: 10,margin:10  },
   
     },
   ]
@@ -566,7 +566,7 @@ const testSouData = [
         percent: 10,
         position: 'normal',
         unfilled: true,
-        barStyle: { backgroundColor: 'blue' }
+        barStyle: { backgroundColor: 'blue',margin:5,borderWidth:1,height:10 }
   
       },
       proTypes: {
@@ -578,11 +578,11 @@ const testSouData = [
       },
       defaultProps: {
         percent: 0,
-        position: 'fixed',
+        position: 'normal',
         unfilled: true,
-        barStyle: { backgroundColor: 'blue' }
+        barStyle: { backgroundColor: 'blue',margin:5 }
       },
-      style: { width: '100%', backgroundColor: 'white' },
+      style: { width: '100%',height:20, backgroundColor: 'white' },
   
     },
   ]
