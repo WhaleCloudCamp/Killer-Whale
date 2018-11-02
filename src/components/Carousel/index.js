@@ -8,7 +8,7 @@ export default class Carousels extends React.Component {
     render() {
         return (
 
-            <View style={this.props.style}>
+           
                 <Carousel
                     style={styles.wrapper}
                     selectedIndex={0}
@@ -17,7 +17,7 @@ export default class Carousels extends React.Component {
                     infinite = {this.props.infinite}
                     autoplayInterval = {this.props.autoplayInterval}
                     infinite = {this.props.infinite}
-
+                    dots= {this.props.dots}
                 >
                     <View style={[styles.containerHorizontal, { backgroundColor: 'red' }]}>
                         <Text>Carousel 1</Text>
@@ -29,7 +29,7 @@ export default class Carousels extends React.Component {
                 </Carousel>
 
 
-            </View>
+       
         )
     }
 
