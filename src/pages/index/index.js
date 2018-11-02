@@ -25,6 +25,10 @@ const App = ({ global, dispatch }) => {
   const onSubmit = data => {
     dispatch({ type: "global/changeItem", payload: data });
   };
+  const gPage = ()=>{
+    dispatch({ type: "global/gPage"});
+  }
+  
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
@@ -49,7 +53,7 @@ const App = ({ global, dispatch }) => {
           />
         </Col>
         <Col span={6} className={styles.colclass}>
-          <RightTitle />
+          <RightTitle gPage={gPage}/>
           <RightContent showItemData={showItemData} onSubmit={onSubmit} />
         </Col>
       </Row>
