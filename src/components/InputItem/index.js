@@ -12,9 +12,10 @@ export default class InputItems extends React.Component {
                 error={this.props.error}
                 value={this.props.value}
                 extra={this.props.extra}
+                editable={this.props.editable}
                 placeholder={this.props.placeholder}
             >
-                标签1
+                标签
              </InputItem>
         )
     }
