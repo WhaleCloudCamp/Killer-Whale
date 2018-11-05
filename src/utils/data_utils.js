@@ -346,7 +346,7 @@ const testSouData = [
           { title: 'Second Tab' },
           { title: 'Third Tab' },
         ],
-        tabBarPosition: 'bottom',
+       
         initialPage: 0,
         swipeable: true,
         animated: true,
@@ -393,46 +393,7 @@ const testSouData = [
   ]
 },
 
-// // {
-  // //   id: 534438,
-  // //   type: "TabBar",
-  // //   props: {
-  // //     barTintColor:'white',
-  // //     tintColor:'#108ee9',
-  // //     unselectedTintColor:'#888',
-  // //     badge:2,
-  // //     selected:false,
-  // //     icon:require('../assets/bell.png'),
-  // //     selectedIcon:require('../assets/more.png'),
-  // //     title:'App',
-  // //     onPress:""
-  // //    },
-  // //   proTypes:{
-  // //     barTintColor:string,
-  // //     tintColor:string,
-  // //     unselectedTintColor:string,
-  // //     badge:number,
-  // //     selected:bool,
-  // //     icon:string,
-  // //     selectedIcon:string,
-  // //     title:string,
-  // //     onPress:func
 
-  // //   },
-  // //   defaultProps: {
-  // //     barTintColor:'white',
-  // //     tintColor:'#108ee9',
-  // //     unselectedTintColor:'#888',
-  // //     badge:2,
-  // //     selected:false,
-  // //     icon:require('../assets/bell.png'),
-  // //     selectedIcon:require('../assets/more.png'),
-  // //     title:'App',
-  // //     onPress:""
-  // //   },
-  // //   style: {width:28,height:28},
-
-  // // },
 
 {
   type:'Flex',
@@ -472,7 +433,7 @@ const testSouData = [
     {
       id: 534440,
       type: "Checkbox",
-      state:2,
+      state:1,
       props: {
         defaultChecked: false,
         checked: true,
@@ -734,6 +695,22 @@ const testSouData = [
       style: {},
   
     },
+    {
+      id: 534445111,
+      type: "SearchBar",
+      state:1,
+      props: {  
+        placeholder: '请输入关键字',
+      },
+      proTypes: {
+        placeholder: string,
+      },
+      defaultProps: {
+        placeholder: '请输入关键字',
+      },
+      style: {},
+  
+    },
   ]
 },
 {
@@ -840,7 +817,7 @@ const testSouData = [
       hasLine: true,
       isCarousel: false,
       carouselMaxRow: 2,
-      itemStyle: { backgroundColor: 'red', }
+      itemStyle: { backgroundColor: 'white', }
     },
     proTypes: {
       data: array,
@@ -864,131 +841,7 @@ const testSouData = [
 
   ]
 },
-{
-  type:'InputItem',
-  data:[
-    {
-      id: 5344491,
-      type: "InputItem",
-      state:2,
-      props: {
-        type: 'text',
-        clear: true,
-        error: true,
-        value: '',
-        extra: '元',
-        placeholder: '有标签',
-      },
-      proTypes: {
-        type: string,
-        value: string,
-        placeholder: string,
-        clear: bool,
-        error: bool,
-        extra: string,
-      },
-      defaultProps: {
-        type: 'text',
-        clear: true,
-        error: true,
-        value: '',
-        extra: '元',
-        placeholder: '有标签'
-  
-      },
-      style: { width: '100%',},
-  
-    },
-    {
-      id: 5344492,
-      type: "InputItem",
-      state:2,
-      props: {
-        type: 'text',
-        editable:false,
-        value: '不可编辑',
-        extra: '元',
-        placeholder: '不可编辑',
-  
-      },
-      proTypes: {
-        type: string,
-        value: string,
-        placeholder: string,
-        editable:bool,
-        extra: string,
-      },
-      defaultProps: {
-        type: 'text',
-        value: '',
-        editable:false,
-        extra: '元',
-        placeholder: '有标签'
-  
-      },
-      style: { width: '100%',},
-  
-    },
-  ]
-},
-{
-  type:'Carousel',
-  data:[
-    {
-    id: 5344501,
-    type: "Carousel",
-    state:1,
-    props: {
-      autoplay: true,
-      infinite: true,
-      autoplayInterval: 3000,
-      dots: true,
-      vertical:false
-    },
-    proTypes: {
-      autoplay: bool,
-      infinite: bool,
-      autoplayInterval: number,
-      dots: bool,
-      vertical:bool
-    },
-    defaultProps: {
-      autoplay: true,
-      infinite: true,
-      autoplayInterval: 3000,
-      dots: true,
-      vertical:false
-    },
-    style: { width: '100%' },
-  }, {
-    id: 5344502,
-    state:1,
-    type: "Carousel",
-    props: {
-      autoplay: true,
-      infinite: true,
-      autoplayInterval: 3000,
-      dots: false,
-      vertical:true
-    },
-    proTypes: {
-      autoplay: bool,
-      infinite: bool,
-      autoplayInterval: number,
-      dots: bool,
-      vertical:bool
-    },
-    defaultProps: {
-      autoplay: true,
-      infinite: true,
-      autoplayInterval: 3000,
-      dots: false,
-      vertical:true
-    },
-    style: { width: '100%' },
-  }
-  ]
-},
+
 {
   type:'NoticeBar',
   data:[
@@ -998,7 +851,7 @@ const testSouData = [
       state:2,
       props: {
          mode:'closable',
-         titles:'这是一个通知栏.........',
+         titles:'这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........',
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
       proTypes: {
@@ -1177,10 +1030,10 @@ const testSouData = [
       state:1,
       props: {
         files:[{
-          url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
+          url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
           id: '2121',
         },{
-            url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
+            url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
             id: '2122',
           },],
         selectable:true
@@ -1354,26 +1207,7 @@ const testSouData = [
     },
   ]
 },
-{
-  type:'WhiteSpace',
-  data:[
-    {
-      id: 534460,
-      type: "WhiteSpace",
-      state:1,
-      props: {
-        size:'xs'
-      },
-      proTypes: {
-        size:string
-      },
-      defaultProps: {
-        size:'xs'
-      },
-      style:{ },
-    },
-  ]
-},
+
 {
   type:'Result',
   data:[
@@ -1487,10 +1321,30 @@ const combinationSouData = [
     ]
   },
   {
+    type:'TabBadge',
+    data:[
+      {
+        id: 634464,
+        type: "TabBadge",
+        state:2,
+        props: {
+        
+        },
+        proTypes: {
+         
+        },
+        defaultProps: {
+        
+        },
+        style: {   margin: 5 }
+      },
+    ]
+  },
+  {
     type:'NavBar',
     data:[
       {
-        id: 5344571,
+        id: 6344651,
         type: "NavBar",
         state:2,
         props: {
@@ -1527,7 +1381,7 @@ const combinationSouData = [
         style:{ backgroundColor: '#0C83FF' },
       },
       {
-        id: 5344572,
+        id: 6344652,
         type: "NavBar",
         state:2,
         props: {
@@ -1565,7 +1419,7 @@ const combinationSouData = [
       },
       ,
       {
-        id: 5344573,
+        id: 6344653,
         type: "NavBar",
         state:2,
         props: {
@@ -1601,6 +1455,307 @@ const combinationSouData = [
         },
         style:{ backgroundColor: 'pink' },
       },
+    ]
+  },
+  {
+    type:'CheckboxItem',
+    data:[
+      {
+        id: 634466,
+        type: "CheckboxItem",
+        state:2,
+        props: {
+          defaultChecked: false,
+          checked: true,
+          disabled: false,
+          title:'单项选择'
+        },
+        proTypes: {
+          defaultChecked: bool,
+          checked:bool,
+          disabled: bool,
+          title:string
+        },
+        defaultProps: {
+          defaultChecked: false,
+          checked: true,
+          disabled: false,
+          title:'单项选择'
+        },
+        style: {   margin: 5 }
+      },
+    ]
+  },
+  {
+    type:'RadioItem',
+    data:[
+      {
+        id: 6344661,
+        type: "RadioItem",
+        state:2,
+        props: {
+          checked: true,
+          disabled: false,
+          showImg:true,
+          title:'单项选择标签'
+        },
+        proTypes: {
+          checked: bool,
+          disabled: bool,
+          showImg:bool,
+          title:string
+        },
+        defaultProps: {
+          checked: true,
+          disabled: false,
+          showImg:true,
+          title:'单项选择标签'
+        },
+        style: {   margin: 5 }
+      },
+      {
+        id: 6344662,
+        type: "RadioItem",
+        state:2,
+        props: {
+          checked: true,
+          disabled: false,
+          showImg:false,
+          title:'单项选择标签'
+        },
+        proTypes: {
+          checked: bool,
+          disabled: bool,
+          showImg:bool,
+          title:string
+        },
+        defaultProps: {
+          checked: true,
+          disabled: false,
+          showImg:false,
+          title:'单项选择标签'
+        },
+        style: {   margin: 5 }
+      },
+    ]
+  },
+  {
+    type:'StepperItem',
+    data:[
+      {
+        id: 634467,
+        type: "StepperItem",
+        state:2,
+        props: {
+          min: 1,
+          max: 100,
+          step: 1,
+          value: 50,
+          disabled: false,
+          showNumber:true,
+          title:'计步器值'
+        },
+        proTypes: {
+          min: number,
+          max: number,
+          step: number,
+          value: number,
+          disabled: bool,
+          showNumber:bool,
+          title:string
+        },
+        defaultProps: {
+          min: 1,
+          max: 100,
+          step: 1,
+          value: 50,
+          disabled: false,
+          showNumber:true,
+          title:'计步器值'
+        },
+        style: { },
+      },
+    ]
+  },
+  {
+    type:'InputItem',
+    data:[
+      {
+        id: 6344681,
+        type: "InputItem",
+        state:2,
+        props: {
+          type: 'text',
+          clear: true,
+          error: true,
+          extra: '元',
+          placeholder: '有标签',
+          showType:false,
+          title:'标签',
+          labelNumber:2
+        },
+        proTypes: {
+          type: string,
+          value: string,
+          placeholder: string,
+          clear: bool,
+          error: bool,
+          extra: string,
+          showType:bool,
+          title:string,
+          labelNumber:number
+        },
+        defaultProps: {
+          clear: true,
+          error: false,
+          extra: '',
+          type: 'text',
+          placeholder: '',
+          showType:false,
+          title:'标签',
+          imgUrl:'',
+          labelNumber:2
+        },
+        style: { width: '100%',fontSize:15,color:'black'},
+    
+      },
+      {
+        id: 6344682,
+        type: "InputItem",
+        state:2,
+        props: {
+          type: 'text',
+          editable:false,
+          value: '不可编辑',
+          extra: '元',
+          placeholder: '不可编辑',
+          showType:true,
+          imgUrl:'https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png',
+          labelNumber:2
+        },
+        proTypes: {
+          type: string,
+          value: string,
+          placeholder: string,
+          editable:bool,
+          extra: string,
+          imgUrl:string,
+          showType:false,
+          labelNumber:number
+        },
+        defaultProps: {
+          clear: true,
+          error: false,
+          extra: '',
+          type: 'text',
+          placeholder: '',
+          showType:false,
+          title:'标签',
+          imgUrl:'',
+          labelNumber:2
+    
+        },
+        style: { width: '100%',fontSize:15},
+    
+      },
+      {
+        id: 6344683,
+        type: "InputItem",
+        state:2,
+        props: {
+          clear: true,
+          type: 'text',
+          placeholder: '可编辑',
+          showType:false,
+           title:'标签',
+           labelNumber:2
+        },
+        proTypes: {
+          type: string,
+          value: string,
+          placeholder: string,
+          editable:bool,
+          extra: string,
+          imgUrl:string,
+          title:string,
+          showType:false,
+          labelNumber:number
+        },
+        defaultProps: {
+
+          clear: true,
+          error: false,
+          extra: '',
+          type: 'text',
+          placeholder: '',
+          showType:false,
+          title:'标签',
+          imgUrl:'',
+          labelNumber:2
+    
+        },
+        style: { width: '100%',fontSize:15},
+    
+      },
+    ]
+  },
+
+  {
+    type:'Carousel',
+    data:[
+      {
+      id: 6344691,
+      type: "Carousel",
+      state:2,
+      props: {
+        autoplay: true,
+        infinite: true,
+        autoplayInterval: 3000,
+        dots: true,
+        vertical:false
+      },
+      proTypes: {
+        autoplay: bool,
+        infinite: bool,
+        autoplayInterval: number,
+        dots: bool,
+        vertical:bool
+      },
+      defaultProps: {
+        autoplay: true,
+        infinite: true,
+        autoplayInterval: 3000,
+        dots: true,
+        vertical:false
+      },
+      style: { width: '100%' },
+    }, {
+      id: 6344692,
+      state:2,
+      type: "Carousel",
+      props: {
+        autoplay: true, 
+        infinite: true,
+        autoplayInterval: 3000,
+        dots: false,
+        vertical:true
+      },
+      proTypes: {
+        autoplay: bool,
+        infinite: bool,
+        autoplayInterval: number,
+        dots: bool,
+        vertical:bool
+      },
+      defaultProps: {
+        autoplay: true,
+        infinite: true,
+        autoplayInterval: 3000,
+        dots: false,
+        vertical:true
+      },
+      style: { width: '100%' },
+    }
     ]
   },
 ]

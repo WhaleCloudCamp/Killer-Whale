@@ -1,7 +1,7 @@
 import { Carousel } from 'antd-mobile';
 import 'antd-mobile/lib/carousel/style';
 import React from 'react'
-import { View,StyleSheet,Text } from 'react-native';
+import { View,StyleSheet,Text,Image } from 'react-native';
 
 export default class Carousels extends React.Component {
 
@@ -19,12 +19,9 @@ export default class Carousels extends React.Component {
                     infinite = {this.props.infinite}
                     dots= {this.props.dots}
                 >
-                    <View style={[styles.containerHorizontal, { backgroundColor: 'red' }]}>
-                        <Text>Carousel 1</Text>
-                    </View>
-                    <View style={[styles.containerHorizontal, { backgroundColor: 'blue' }]}>
-                        <Text>Carousel 2</Text>
-                    </View>
+                   <Image source ={{uri:'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png'}} style={{width:'100%',height:150}}></Image>
+                   <Image source ={{uri:'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png'}} style={{width:'100%',height:150}}></Image>
+                   
 
                 </Carousel>
 
