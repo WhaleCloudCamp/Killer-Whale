@@ -61,6 +61,7 @@ const testSouData = [
       {
         id: 5344321,
         type: "Button",
+        state:1, //1:代表基础组件 2：代表组成组件
         props: { type: 'ghost', children: '确定' },
         proTypes: {
           type: string,
@@ -82,6 +83,7 @@ const testSouData = [
       {
         id: 5344332,
         type: "Button",
+        state:1,
         props: { type: 'warning', children: '确定' },
         proTypes: {
           type: string,
@@ -103,6 +105,7 @@ const testSouData = [
       {
         id: 5344333,
         type: "Button",
+        state:1,
         props: { type: 'primary', children: '确定' },
         proTypes: {
           type: string,
@@ -124,6 +127,7 @@ const testSouData = [
       {
         id: 5344334,
         type: "Button",
+        state:1,
         props: { type: 'primary', children: '确定',
         disabled:true },
         proTypes: {
@@ -145,6 +149,7 @@ const testSouData = [
       }, {
         id: 5344335,
         type: "Button",
+        state:1,
         props: { type: 'primary', children: '确定',
         loading:true },
         proTypes: {
@@ -171,6 +176,7 @@ const testSouData = [
     data:[{
       id: 5344341,
       type: "Switch",
+      state:2,
       props: {
         checked: true,
         disabled: false,
@@ -182,7 +188,6 @@ const testSouData = [
       },
       defaultProps: {
         checked: true,
-        checked: true,
         disabled: false,
   
       },
@@ -191,6 +196,7 @@ const testSouData = [
     {
       id: 5344342,
       type: "Switch",
+      state:2,
       props: {
         checked: true,
         disabled: true,
@@ -211,6 +217,7 @@ const testSouData = [
     {
       id: 5344343,
       type: "Switch",
+      state:2,
       props: {
         checked: false,
         disabled: false,
@@ -235,6 +242,7 @@ const testSouData = [
   {
     id: 534435,
     type: "Radio",
+    state:2,
     props: {
       title: '协议',
       defaultChecked: true,
@@ -265,6 +273,7 @@ const testSouData = [
     {
     id: 5344361,
     type: "Pagination",
+    state:1,
     props: {
       mode: 'pointer',
       current: 1,
@@ -294,6 +303,7 @@ const testSouData = [
   },  {
     id: 5344362,
     type: "Pagination",
+    state:1,
     props: {
       mode: 'number',
       current: 1,
@@ -329,6 +339,7 @@ const testSouData = [
     {
       id: 534437,
       type: "Tabs",
+      state:1,
       props: {
         tabs: [
           { title: 'First Tab' },
@@ -429,6 +440,7 @@ const testSouData = [
     {
       id: 534439,
       type: "Flex",
+      state:1,
       props: {
         direction: 'row',
         wrap: 'wrap',
@@ -460,25 +472,28 @@ const testSouData = [
     {
       id: 534440,
       type: "Checkbox",
+      state:2,
       props: {
         defaultChecked: false,
         checked: true,
         disabled: false,
+        title:'单项选择'
   
       },
       proTypes: {
-        defaultChecked: false,
-        checked: true,
-        disabled: false,
-  
-      },
-      defaultProps: {
         defaultChecked: bool,
         checked: bool,
         disabled: bool,
+        title:string
+      },
+      defaultProps: {
+        defaultChecked: false,
+        checked: true,
+        disabled: false,
+        title:'单项选择'
   
       },
-      style: { width: 28, height: 28 },
+      style: { width: 28, height: 28,margin:5 },
   
     },
   ]
@@ -489,6 +504,7 @@ const testSouData = [
     {
       id: 534441,
       type: "Slider",
+      state:1,
       props: {
         min: 0,
         max: 100,
@@ -525,6 +541,7 @@ const testSouData = [
     {
       id: 534442,
       type: "Stepper",
+      state:1,
       props: {
         min: 1,
         max: 100,
@@ -562,6 +579,7 @@ const testSouData = [
     {
       id: 534443,
       type: "Progress",
+      state:1,
       props: {
         percent: 10,
         position: 'normal',
@@ -593,6 +611,7 @@ const testSouData = [
     {
       id: 5344441,
       type: "Tag",
+      state:2,
       props: {
         small: false,
         disabled: false,
@@ -621,6 +640,7 @@ const testSouData = [
     {
       id: 5344442,
       type: "Tag",
+      state:2,
       props: {
         small: false,
         disabled: true,
@@ -647,6 +667,7 @@ const testSouData = [
   
     },{
       id: 5344443,
+      state:2,
       type: "Tag",
       props: {
         small: true,
@@ -681,6 +702,7 @@ const testSouData = [
     {
       id: 534445,
       type: "SearchBar",
+      state:1,
       props: {
   
         value: '张三',
@@ -720,6 +742,7 @@ const testSouData = [
     {
       id: 5344461,
       type: "Badge",
+      state:1,
       props: {
         size: 'large',
         text: '20',
@@ -747,6 +770,7 @@ const testSouData = [
     {
       id: 5344462,
       type: "Badge",
+      state:1,
       props: {
         size: 'small',
         text: 'new',
@@ -775,6 +799,7 @@ const testSouData = [
     {
       id: 534447,
       type: "ActivityIndicator",
+      state:2,
       props: {
         animating: true,
         size: 'small',
@@ -808,6 +833,7 @@ const testSouData = [
   {
     id: 534448,
     type: "Grid",
+    state:2,
     props: {
       data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name1' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name2' }],
       columnNum: 2,
@@ -844,6 +870,7 @@ const testSouData = [
     {
       id: 5344491,
       type: "InputItem",
+      state:2,
       props: {
         type: 'text',
         clear: true,
@@ -875,6 +902,7 @@ const testSouData = [
     {
       id: 5344492,
       type: "InputItem",
+      state:2,
       props: {
         type: 'text',
         editable:false,
@@ -909,6 +937,7 @@ const testSouData = [
     {
     id: 5344501,
     type: "Carousel",
+    state:1,
     props: {
       autoplay: true,
       infinite: true,
@@ -933,6 +962,7 @@ const testSouData = [
     style: { width: '100%' },
   }, {
     id: 5344502,
+    state:1,
     type: "Carousel",
     props: {
       autoplay: true,
@@ -965,6 +995,7 @@ const testSouData = [
     {
       id: 5344511,
       type: "NoticeBar",
+      state:2,
       props: {
          mode:'closable',
          titles:'这是一个通知栏.........',
@@ -987,6 +1018,7 @@ const testSouData = [
     {
       id: 5344512,
       type: "NoticeBar",
+      state:2,
       props: {
          mode:'link',
          titles:'这是一个通知栏.........',
@@ -1014,6 +1046,7 @@ const testSouData = [
     {
       id: 534452,
       type: "TextareaItem",
+      state:1,
       props: {
         rows:4,
         placeholder:'固定行数、多行带计数、高度自适应',
@@ -1050,6 +1083,7 @@ const testSouData = [
     {
       id: 534453,
       type: "DatePicker",
+      state:1,
       props: {
         mode:'date',
         minDate:new Date(2015, 7, 6),
@@ -1079,6 +1113,7 @@ const testSouData = [
     {
       id: 5344541,
       type: "DatePickerView",
+      state:1,
       props: {
         mode:'date',
         minDate:new Date(2015, 7, 6),
@@ -1106,6 +1141,7 @@ const testSouData = [
     {
       id: 5344542,
       type: "DatePickerView",
+      state:1,
       props: {
         mode:'datetime',
         minDate:new Date(2015, 7, 6),
@@ -1138,6 +1174,7 @@ const testSouData = [
     {
       id: 534455,
       type: "ImagePicker",
+      state:1,
       props: {
         files:[{
           url: 'https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png',
@@ -1172,6 +1209,7 @@ const testSouData = [
     {
       id: 534456,
       type: "PickerView",
+      state:1,
       props: {
         data:[ [
           {
@@ -1227,53 +1265,14 @@ const testSouData = [
     },
   ]
 },
-{
-  type:'NavBar',
-  data:[
-    {
-      id: 534457,
-      type: "NavBar",
-      props: {
-        title:"标题",
-        styleRightText:{ color: 'white' }, //右文本样式
-        styleTitle:{ color: 'white' }, //标题样式
-        isShowBk:true, //是否显示返回键
-        isShowDel:true, //是否显示左边第二个图标
-        isShowFirstRightIcon:true, //是否显示右边第一个图标
-        isShowLastRightIcon:true, //是否显示右边第二个图标
-        isShowRightText:true
-      
-      },
-      proTypes: {
-        title:string,
-        styleRightText:string,
-        styleTitle:string,
-        isShowBk:bool, 
-        isShowDel:bool, 
-        isShowFirstRightIcon:bool,
-        isShowLastRightIcon:bool,
-        isShowRightText:bool
-      },
-      defaultProps: {
-        title:"标题",
-        styleRightText:{ color: 'white' }, //右文本样式
-        styleTitle:{ color: 'white' }, //标题样式
-        isShowBk:true, //是否显示返回键
-        isShowDel:true, //是否显示左边第二个图标
-        isShowFirstRightIcon:true, //是否显示右边第一个图标
-        isShowLastRightIcon:true, //是否显示右边第二个图标
-        isShowRightText:true
-      },
-      style:{ backgroundColor: '#0C83FF' },
-    },
-  ]
-},
+
 {
   type:'List',
   data:[
     {
       id: 534458,
       type: "List",
+      state:2,
       props: {
        
       },
@@ -1294,6 +1293,7 @@ const testSouData = [
     {
       id: 5344591,
       type: "Icon",
+      state:1,
       props: {
         type:'cross-circle-o',
         size:55,
@@ -1313,6 +1313,7 @@ const testSouData = [
     },{
       id: 5344592,
       type: "Icon",
+      state:1,
       props: {
         type:'ellipsis',
         size:55,
@@ -1333,6 +1334,7 @@ const testSouData = [
     {
       id: 5344593,
       type: "Icon",
+      state:1,
       props: {
         type:'cross',
         size:55,
@@ -1358,6 +1360,7 @@ const testSouData = [
     {
       id: 534460,
       type: "WhiteSpace",
+      state:1,
       props: {
         size:'xs'
       },
@@ -1377,6 +1380,7 @@ const testSouData = [
     {
       id: 534461,
       type: "Result",
+      state:1,
       props: {
         
         img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
@@ -1409,6 +1413,7 @@ const testSouData = [
     {
       id: 534462,
       type: "Popover",
+      state:1,
       props: {
         data:[1,2,3]
       },
@@ -1429,6 +1434,7 @@ const testSouData = [
     {
       id: 534463,
       type: "SegmentedControl",
+      state:1,
       props: {
         tintColor:'#2DB7F5',
         disabled:false,
@@ -1453,6 +1459,155 @@ const testSouData = [
 },
 ];
 
+const combinationSouData = [
+  {
+    type:'SwitchItem',
+    data:[
+      {
+        id: 634463,
+        type: "SwitchItem",
+        state:2,
+        props: {
+          checked: true,
+          disabled: false,
+          title:'标签'
+        },
+        proTypes: {
+          checked: bool,
+          disabled: bool,
+          title:string
+        },
+        defaultProps: {
+          checked: true,
+          disabled: false,
+          title:'标签'
+        },
+        style: {   margin: 5 }
+      },
+    ]
+  },
+  {
+    type:'NavBar',
+    data:[
+      {
+        id: 5344571,
+        type: "NavBar",
+        state:2,
+        props: {
+          title:"标题",
+          styleRightText:{ color: 'white' }, //右文本样式
+          styleTitle:{ color: 'white' }, //标题样式
+          isShowBk:true, //是否显示返回键
+          isShowDel:false, //是否显示左边第二个图标
+          isShowFirstRightIcon:false, //是否显示右边第一个图标
+          isShowLastRightIcon:false, //是否显示右边第二个图标
+          isShowRightText:false
+        
+        },
+        proTypes: {
+          title:string,
+          styleRightText:string,
+          styleTitle:string,
+          isShowBk:bool, 
+          isShowDel:bool, 
+          isShowFirstRightIcon:bool,
+          isShowLastRightIcon:bool,
+          isShowRightText:bool
+        },
+        defaultProps: {
+          title:"标题",
+          styleRightText:{ color: 'white' }, //右文本样式
+          styleTitle:{ color: 'white' }, //标题样式
+          isShowBk:false, //是否显示返回键
+          isShowDel:false, //是否显示左边第二个图标
+          isShowFirstRightIcon:false, //是否显示右边第一个图标
+          isShowLastRightIcon:false, //是否显示右边第二个图标
+          isShowRightText:false
+        },
+        style:{ backgroundColor: '#0C83FF' },
+      },
+      {
+        id: 5344572,
+        type: "NavBar",
+        state:2,
+        props: {
+          title:"标题",
+          styleRightText:{ color: 'white' }, //右文本样式
+          styleTitle:{ color: 'white' }, //标题样式
+          isShowBk:true, //是否显示返回键
+          isShowDel:true, //是否显示左边第二个图标
+          isShowFirstRightIcon:true, //是否显示右边第一个图标
+          isShowLastRightIcon:true, //是否显示右边第二个图标
+          isShowRightText:false
+        
+        },
+        proTypes: {
+          title:string,
+          styleRightText:string,
+          styleTitle:string,
+          isShowBk:bool, 
+          isShowDel:bool, 
+          isShowFirstRightIcon:bool,
+          isShowLastRightIcon:bool,
+          isShowRightText:bool
+        },
+        defaultProps: {
+          title:"标题",
+          styleRightText:{ color: 'white' }, //右文本样式
+          styleTitle:{ color: 'white' }, //标题样式
+          isShowBk:true, //是否显示返回键
+          isShowDel:true, //是否显示左边第二个图标
+          isShowFirstRightIcon:true, //是否显示右边第一个图标
+          isShowLastRightIcon:true, //是否显示右边第二个图标
+          isShowRightText:false
+        },
+        style:{ backgroundColor: 'green' },
+      },
+      ,
+      {
+        id: 5344573,
+        type: "NavBar",
+        state:2,
+        props: {
+          title:"标题",
+          styleRightText:{ color: 'white' }, //右文本样式
+          styleTitle:{ color: 'white' }, //标题样式
+          isShowBk:true, //是否显示返回键
+          isShowDel:false, //是否显示左边第二个图标
+          isShowFirstRightIcon:false, //是否显示右边第一个图标
+          isShowLastRightIcon:false, //是否显示右边第二个图标
+          isShowRightText:true
+        
+        },
+        proTypes: {
+          title:string,
+          styleRightText:string,
+          styleTitle:string,
+          isShowBk:bool, 
+          isShowDel:bool, 
+          isShowFirstRightIcon:bool,
+          isShowLastRightIcon:bool,
+          isShowRightText:bool
+        },
+        defaultProps: {
+          title:"标题",
+          styleRightText:{ color: 'white' }, //右文本样式
+          styleTitle:{ color: 'white' }, //标题样式
+          isShowBk:true, //是否显示返回键
+          isShowDel:false, //是否显示左边第二个图标
+          isShowFirstRightIcon:false, //是否显示右边第一个图标
+          isShowLastRightIcon:false, //是否显示右边第二个图标
+          isShowRightText:true
+        },
+        style:{ backgroundColor: 'pink' },
+      },
+    ]
+  },
+]
+
+export function getCombinationSouData(){
+  return combinationSouData;
+}
 export function getTestSouData() {
 
   return testSouData;

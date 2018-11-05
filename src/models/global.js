@@ -4,16 +4,19 @@ import { notification } from 'antd';
 import {
   getTestSouData,
   getTestComData,
+  getCombinationSouData,
   addComponent,
   moveComponent,
   deleteComponent
 } from "utils/data_utils";
+
 
 export default {
   namespace: "global",
   state: {
     cneterscale: 100,
     sourceData: getTestSouData(),
+    combinationSouData:getCombinationSouData(),
     components: getTestComData(),
     showItemData: {}
   },
