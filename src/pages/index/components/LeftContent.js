@@ -9,7 +9,8 @@ const LeftContent = ({ sourceData = [] }) => {
       accordion
       style={{
         maxHeight: "600px",
-        overflow: "auto"
+        overflow: "auto",
+        flex:1
       }}
     >
       {sourceData.map((item, index) => {

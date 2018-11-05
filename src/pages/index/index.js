@@ -1,5 +1,6 @@
 import { Row, Col } from "antd";
 import { connect } from "dva";
+import { Tabs } from 'antd-mobile'
 import styles from "./index.less";
 import * as Whale from "components";
 import LeftContent from "./components/LeftContent";
@@ -14,7 +15,7 @@ import DeleteDroppable from "../../components/DeleteDroppable";
 // import phone from "assets/phone.png";
 
 const App = ({ global, dispatch }) => {
-  const { cneterscale = 100, sourceData, components, showItemData } = global;
+  const { cneterscale = 100, sourceData,combinationSouData, components, showItemData } = global;
   const handleChange = value =>
     dispatch({ type: "global/changeScale", payload: value });
 
@@ -25,13 +26,38 @@ const App = ({ global, dispatch }) => {
   const onSubmit = data => {
     dispatch({ type: "global/changeItem", payload: data });
   };
+
+  const tabs = [
+    { title: '基础组件', sub: '1' },
+    { title: '组成组件', sub: '2' },
+    { title: '页面', sub: '3' },
+  ];
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
         <Col span={6} className={styles.colclass}>
-          <LeftTitle />
-          <LeftContent sourceData={sourceData} />
-          <DeleteDroppable onDropAction={onDropAction} />
+          <div >
+            <Tabs tabs={tabs}
+              initialPage={0}
+              onChange={(tab, index) => { console.log('onChange', index, tab); }}
+              onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+            >
+              <div style={{ display: 'flex', backgroundColor: '#fff' }}>
+
+                <LeftContent sourceData={sourceData} />
+
+              </div>
+              <div style={{ display: 'flex', backgroundColor: '#fff' }}>
+                <LeftContent sourceData={combinationSouData} />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                {'页面'}
+              </div>
+
+            </Tabs>
+            <DeleteDroppable onDropAction={onDropAction} />
+          </div>
+
         </Col>
         <Col
           span={12}

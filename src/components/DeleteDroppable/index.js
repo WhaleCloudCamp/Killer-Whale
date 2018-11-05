@@ -8,6 +8,7 @@ const getListStyle = (canDrop, dropStyle) => ({
   // height: "50px",
   border:canDrop? "1px dotted red":"none",
   display:canDrop? "block":"none",
+
   ...dropStyle
 });
 const chessSquareTarget = {
