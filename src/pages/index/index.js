@@ -32,6 +32,12 @@ const App = ({ global, dispatch }) => {
     { title: '组成组件', sub: '2' },
     { title: '页面', sub: '3' },
   ];
+
+  const gPage = ()=>{
+    dispatch({ type: "global/gPage"});
+  }
+  
+
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
@@ -75,7 +81,7 @@ const App = ({ global, dispatch }) => {
           />
         </Col>
         <Col span={6} className={styles.colclass}>
-          <RightTitle />
+          <RightTitle gPage={gPage}/>
           <RightContent showItemData={showItemData} onSubmit={onSubmit} />
         </Col>
       </Row>

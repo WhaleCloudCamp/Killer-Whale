@@ -1,4 +1,5 @@
 import { gPage } from "services/api";
+import { notification } from 'antd';
 
 import {
   getTestSouData,
@@ -100,6 +101,14 @@ export default {
       const { components } = yield select(state => state.global);
       console.log(components);
       const response = yield call(gPage, { components });
+      console.log(response);
+      if(response&&response.filePath){
+        notification.success({
+          message: "将在新页面中下载，请关闭弹窗拦截",
+          description: "如果没有正确下载，请联系开发人员",
+        });
+        window.open(`http://localhost:3000/download/?filePath=${response.filePath}`); 
+      }
       yield put({
         type: "save",
         payload: {
