@@ -29,7 +29,7 @@ const App = ({ global, dispatch }) => {
 
   const tabs = [
     { title: '基础组件', sub: '1' },
-    { title: '组成组件', sub: '2' },
+    { title: '组合组件', sub: '2' },
     { title: '页面', sub: '3' },
   ];
 

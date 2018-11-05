@@ -4,6 +4,20 @@ import React, { Component } from 'react'
 import { StyleSheet,Platform,Text } from 'react-native';
 
 export default class Propovers extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state={
+            visible:true
+        }
+    }
+
+    onSelect=()=>{
+        this.setState({
+            visible:false
+        })
+    }
+
     render() {
         let overlay = [1, 2, 3].map((i, index) => (
             <Popover.Item key={index} value={`option ${i}`}>
@@ -14,6 +28,8 @@ export default class Propovers extends React.Component {
 
             <Popover
                 name="m"
+                mask
+               visible={this.state.visible}
                 style={{ backgroundColor: '#eee' }}
                 overlay={overlay}
                 contextStyle={styles.contextStyle}
@@ -28,6 +44,7 @@ export default class Propovers extends React.Component {
                     overflow: { adjustY: 0, adjustX: 0 },
                     offset: [100, 0],
                   }}
+                  onSelect={this.onSelect}
             >
              <Text>菜单</Text>
             </Popover>

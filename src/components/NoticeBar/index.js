@@ -1,4 +1,5 @@
 import { NoticeBar } from 'antd-mobile';
+import 'antd-mobile/lib/notice-bar/style';
 import React, { Component } from 'react';
 
 export default class NoticeBars extends React.Component {
@@ -6,8 +7,7 @@ export default class NoticeBars extends React.Component {
     render() {
         return (
             <NoticeBar
-                mode={this.props.mode}
-                marqueeProps={this.props.marqueeProps}
+              {...this.props}
             >
               {this.props.titles}
           </NoticeBar>
