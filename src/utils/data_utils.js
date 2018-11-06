@@ -86,7 +86,7 @@ const testSouData = [
         state:1,
         props: { type: 'warning', children: '确定' },
         propTypes: {
-          type: string,
+          type: [''],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -108,7 +108,7 @@ const testSouData = [
         state:1,
         props: { type: 'primary', children: '确定' },
         propTypes: {
-          type: string,
+          type: [''],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -131,7 +131,7 @@ const testSouData = [
         props: { type: 'primary', children: '确定',
         disabled:true },
         propTypes: {
-          type: string,
+          type: [''],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -153,7 +153,7 @@ const testSouData = [
         props: { type: 'primary', children: '确定',
         loading:true },
         propTypes: {
-          type: string,
+          type: [''],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -283,7 +283,7 @@ const testSouData = [
 
     },
     propTypes: {
-      mode: string,
+      mode: [''],
       current: number,
       total: string,
       simple: string,
@@ -313,7 +313,7 @@ const testSouData = [
 
     },
     propTypes: {
-      mode: string,
+      mode: [''],
       current: number,
       total: string,
       simple: string,
@@ -550,7 +550,7 @@ const testSouData = [
       },
       propTypes: {
         percent: number,
-        position: string,
+        position: [''],
         unfilled: bool,
         barStyle: string
   
@@ -728,7 +728,7 @@ const testSouData = [
         overflowCount: 99
       },
       propTypes: {
-        size: string,
+        size: [''],
         text: string,
         corner: bool,
         dot: bool,
@@ -755,7 +755,7 @@ const testSouData = [
         dot: true,
       },
       propTypes: {
-        size: string,
+        size: [''],
         text: string,
         corner: bool,
       },
@@ -786,7 +786,7 @@ const testSouData = [
       },
       propTypes: {
         animating: bool,
-        size: string,
+        size: [''],
         toast: bool,
         text: string,
         color: string
@@ -855,7 +855,7 @@ const testSouData = [
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
       propTypes: {
-        mode:string,
+        mode:[''],
         marqueeProps:string,
         titles:string
   
@@ -878,7 +878,7 @@ const testSouData = [
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
       propTypes: {
-        mode:string,
+        mode:[''],
         marqueeProps:string,
         titles:string
   
@@ -981,7 +981,7 @@ const testSouData = [
         format:"YYYY-MM-DD"
       },
       propTypes: {
-        mode:string,
+        mode:[''],
         minDate:string,
         maxDate:string,
         format:string
@@ -1013,7 +1013,7 @@ const testSouData = [
   
       },
       propTypes: {
-        mode:string,
+        mode:[''],
         minDate:string,
         maxDate:string,
         format:string,
@@ -1041,7 +1041,7 @@ const testSouData = [
   
       },
       propTypes: {
-        mode:string,
+        mode:[''],
         minDate:string,
         maxDate:string,
         format:string,
@@ -1089,7 +1089,7 @@ const testSouData = [
           },],
         selectable:true
       },
-      style: { width: '100%',height:50 },
+      style: { width: '100%',height:60 },
     },
   ]
 },
@@ -1265,7 +1265,7 @@ const testSouData = [
         title:string,
         message:string,
         buttonText:string,
-        buttonType:string
+        buttonType:['']
       },
       defaultProps: {
         img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
@@ -1627,8 +1627,8 @@ const combinationSouData = [
           error: true,
           extra: '元',
           placeholder: '有标签',
-          showType:false,
           title:'标签',
+          showtype:1,
           labelNumber:2
         },
         propTypes: {
@@ -1638,8 +1638,8 @@ const combinationSouData = [
           clear: bool,
           error: bool,
           extra: string,
-          showType:bool,
           title:string,
+          showtype:number,
           labelNumber:number
         },
         defaultProps: {
@@ -1648,9 +1648,7 @@ const combinationSouData = [
           extra: '',
           type: 'text',
           placeholder: '',
-          showType:false,
           title:'标签',
-          imgUrl:'',
           labelNumber:2
         },
         style: { width: '100%',fontSize:15,color:'black'},
@@ -1666,8 +1664,8 @@ const combinationSouData = [
           value: '不可编辑',
           extra: '元',
           placeholder: '不可编辑',
-          showType:true,
-          imgUrl:'https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png',
+          showtype:2,
+          imgurl:'https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png',
           labelNumber:2
         },
         propTypes: {
@@ -1676,8 +1674,8 @@ const combinationSouData = [
           placeholder: string,
           editable:bool,
           extra: string,
-          imgUrl:string,
-          showType:false,
+          imgurl:string,
+          showtype:number,
           labelNumber:number
         },
         defaultProps: {
@@ -1685,10 +1683,8 @@ const combinationSouData = [
           error: false,
           extra: '',
           type: 'text',
-          placeholder: '',
-          showType:false,
+          placeholder: '',   
           title:'标签',
-          imgUrl:'',
           labelNumber:2
     
         },
@@ -1703,7 +1699,7 @@ const combinationSouData = [
           clear: true,
           type: 'text',
           placeholder: '可编辑',
-          showType:false,
+          showtype:1,
            title:'标签',
            labelNumber:2
         },
@@ -1713,9 +1709,9 @@ const combinationSouData = [
           placeholder: string,
           editable:bool,
           extra: string,
-          imgUrl:string,
+          showtype:number,
+
           title:string,
-          showType:false,
           labelNumber:number
         },
         defaultProps: {
@@ -1725,9 +1721,7 @@ const combinationSouData = [
           extra: '',
           type: 'text',
           placeholder: '',
-          showType:false,
           title:'标签',
-          imgUrl:'',
           labelNumber:2
     
         },
