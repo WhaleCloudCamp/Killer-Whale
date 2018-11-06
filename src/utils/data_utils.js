@@ -64,7 +64,7 @@ const testSouData = [
         state:1, //1:代表基础组件 2：代表组成组件
         props: { type: 'ghost', children: '确定' },
         propTypes: {
-          type: [''],
+          type: ['primary','ghost','warning'],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -86,7 +86,7 @@ const testSouData = [
         state:1,
         props: { type: 'warning', children: '确定' },
         propTypes: {
-          type: [''],
+          type: ['primary','ghost','warning'],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -108,7 +108,7 @@ const testSouData = [
         state:1,
         props: { type: 'primary', children: '确定' },
         propTypes: {
-          type: [''],
+          type: ['primary','ghost','warning'],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -131,7 +131,7 @@ const testSouData = [
         props: { type: 'primary', children: '确定',
         disabled:true },
         propTypes: {
-          type: [''],
+          type: ['primary','ghost','warning'],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -153,7 +153,7 @@ const testSouData = [
         props: { type: 'primary', children: '确定',
         loading:true },
         propTypes: {
-          type: [''],
+          type: ['primary','ghost','warning'],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -283,7 +283,7 @@ const testSouData = [
 
     },
     propTypes: {
-      mode: [''],
+      mode: ['button','number','pointer'],
       current: number,
       total: string,
       simple: string,
@@ -313,7 +313,7 @@ const testSouData = [
 
     },
     propTypes: {
-      mode: [''],
+      mode: ['button','number','pointer'],
       current: number,
       total: string,
       simple: string,
@@ -550,7 +550,7 @@ const testSouData = [
       },
       propTypes: {
         percent: number,
-        position: [''],
+        position: ['fixed','normal'],
         unfilled: bool,
         barStyle: string
   
@@ -728,7 +728,7 @@ const testSouData = [
         overflowCount: 99
       },
       propTypes: {
-        size: [''],
+        size: ['large','small'],
         text: string,
         corner: bool,
         dot: bool,
@@ -755,7 +755,7 @@ const testSouData = [
         dot: true,
       },
       propTypes: {
-        size: [''],
+        size: ['large','small'],
         text: string,
         corner: bool,
       },
@@ -786,7 +786,7 @@ const testSouData = [
       },
       propTypes: {
         animating: bool,
-        size: [''],
+        size: ['small','large'],
         toast: bool,
         text: string,
         color: string
@@ -855,7 +855,7 @@ const testSouData = [
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
       propTypes: {
-        mode:[''],
+        mode:['closable','link'],
         marqueeProps:string,
         titles:string
   
@@ -878,7 +878,7 @@ const testSouData = [
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
       propTypes: {
-        mode:[''],
+        mode:['closable','link'],
         marqueeProps:string,
         titles:string
   
@@ -981,7 +981,7 @@ const testSouData = [
         format:"YYYY-MM-DD"
       },
       propTypes: {
-        mode:[''],
+        mode:['date','time','datetime','year','month'],
         minDate:string,
         maxDate:string,
         format:string
@@ -1013,7 +1013,7 @@ const testSouData = [
   
       },
       propTypes: {
-        mode:[''],
+        mode:['date','time','datetime','year','month'],
         minDate:string,
         maxDate:string,
         format:string,
@@ -1041,7 +1041,7 @@ const testSouData = [
   
       },
       propTypes: {
-        mode:[''],
+        mode:['date','time','datetime','year','month'],
         minDate:string,
         maxDate:string,
         format:string,
@@ -1265,7 +1265,7 @@ const testSouData = [
         title:string,
         message:string,
         buttonText:string,
-        buttonType:['']
+        buttonType:['primary','ghost','warning'],
       },
       defaultProps: {
         img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
