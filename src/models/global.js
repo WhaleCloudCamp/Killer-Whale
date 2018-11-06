@@ -89,7 +89,27 @@ export default {
           item = Object.assign({},payload||{});
         }
       })
-      
+      yield put({
+        type: "save",
+        payload: {
+          components: components
+        }
+      });
+    },
+    *changeItemProp({ payload }, { call, put,select }) {
+      // payload={
+      //   id:12,
+      //   key:'sdsa',
+      //   value:'121'
+      // }
+      if(!payload.id)return;
+
+      const { components } = yield select(state => state.global);
+      components.map(item=>{
+        if(item.id===payload.id){
+          item[payload.key] = payload.value;
+        }
+      })
       yield put({
         type: "save",
         payload: {

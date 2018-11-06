@@ -82,7 +82,7 @@ const App = ({ global, dispatch }) => {
         </Col>
         <Col span={6} className={styles.colclass}>
           <RightTitle gPage={gPage}/>
-          <RightContent showItemData={showItemData} onSubmit={onSubmit} />
+          {showItemData&&showItemData.id&&<RightContent showItemData={showItemData} onSubmit={onSubmit} />}
         </Col>
       </Row>
     </div>
