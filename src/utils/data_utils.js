@@ -63,8 +63,8 @@ const testSouData = [
         type: "Button",
         state:1, //1:代表基础组件 2：代表组成组件
         props: { type: 'ghost', children: '确定' },
-        proTypes: {
-          type: string,
+        propTypes: {
+          type: [''],
           pressIn: bool,
           disabled: bool,
           activeStyle: "",
@@ -85,7 +85,7 @@ const testSouData = [
         type: "Button",
         state:1,
         props: { type: 'warning', children: '确定' },
-        proTypes: {
+        propTypes: {
           type: string,
           pressIn: bool,
           disabled: bool,
@@ -107,7 +107,7 @@ const testSouData = [
         type: "Button",
         state:1,
         props: { type: 'primary', children: '确定' },
-        proTypes: {
+        propTypes: {
           type: string,
           pressIn: bool,
           disabled: bool,
@@ -130,7 +130,7 @@ const testSouData = [
         state:1,
         props: { type: 'primary', children: '确定',
         disabled:true },
-        proTypes: {
+        propTypes: {
           type: string,
           pressIn: bool,
           disabled: bool,
@@ -152,7 +152,7 @@ const testSouData = [
         state:1,
         props: { type: 'primary', children: '确定',
         loading:true },
-        proTypes: {
+        propTypes: {
           type: string,
           pressIn: bool,
           disabled: bool,
@@ -182,7 +182,7 @@ const testSouData = [
         disabled: false,
   
       },
-      proTypes: {
+      propTypes: {
         checked: bool,
         disabled: bool,
       },
@@ -202,7 +202,7 @@ const testSouData = [
         disabled: true,
       
       },
-      proTypes: {
+      propTypes: {
         checked: bool,
         disabled: bool,
       },
@@ -223,7 +223,7 @@ const testSouData = [
         disabled: false,
       
       },
-      proTypes: {
+      propTypes: {
         checked: bool,
         disabled: bool,
       },
@@ -250,7 +250,7 @@ const testSouData = [
       disabled: false,
 
     },
-    proTypes: {
+    propTypes: {
       title: string,
       defaultChecked: bool,
       checked: bool,
@@ -282,7 +282,7 @@ const testSouData = [
       disabled: false,
 
     },
-    proTypes: {
+    propTypes: {
       mode: string,
       current: number,
       total: string,
@@ -312,7 +312,7 @@ const testSouData = [
       disabled: false,
 
     },
-    proTypes: {
+    propTypes: {
       mode: string,
       current: number,
       total: string,
@@ -357,7 +357,7 @@ const testSouData = [
         tabBarTextStyle: { fontSize: 16 },
   
       },
-      proTypes: {
+      propTypes: {
         tabs: array,
         tabBarPosition: string,
         initialPage: number,
@@ -409,7 +409,7 @@ const testSouData = [
         align: 'center'
   
       },
-      proTypes: {
+      propTypes: {
         direction: string,
         wrap: string,
         justify: string,
@@ -441,7 +441,7 @@ const testSouData = [
         title:'单项选择'
   
       },
-      proTypes: {
+      propTypes: {
         defaultChecked: bool,
         checked: bool,
         disabled: bool,
@@ -474,7 +474,7 @@ const testSouData = [
         disabled: true,
         maximumTrackTintColor: 'blue'
       },
-      proTypes: {
+      propTypes: {
         min: number,
         max: number,
         step: number,
@@ -512,7 +512,7 @@ const testSouData = [
         showNumber:true,
       
       },
-      proTypes: {
+      propTypes: {
         min: number,
         max: number,
         step: number,
@@ -548,7 +548,7 @@ const testSouData = [
         barStyle: { backgroundColor: 'blue',margin:5,borderWidth:1,height:10 }
   
       },
-      proTypes: {
+      propTypes: {
         percent: number,
         position: string,
         unfilled: bool,
@@ -580,7 +580,7 @@ const testSouData = [
         selected: true,
         content:'美女'
       },
-      proTypes: {
+      propTypes: {
         small: bool,
         disabled: bool,
         closable: bool,
@@ -609,7 +609,7 @@ const testSouData = [
         selected: true,
         content:'帅哥'
       },
-      proTypes: {
+      propTypes: {
         small: bool,
         disabled: bool,
         closable: bool,
@@ -637,7 +637,7 @@ const testSouData = [
         selected: true,
         content:'美女'
       },
-      proTypes: {
+      propTypes: {
         small: bool,
         disabled: bool,
         closable: bool,
@@ -673,7 +673,7 @@ const testSouData = [
         disabled: false,
   
       },
-      proTypes: {
+      propTypes: {
   
         value: string,
         placeholder: string,
@@ -702,7 +702,7 @@ const testSouData = [
       props: {  
         placeholder: '请输入关键字',
       },
-      proTypes: {
+      propTypes: {
         placeholder: string,
       },
       defaultProps: {
@@ -727,7 +727,7 @@ const testSouData = [
         dot: false,
         overflowCount: 99
       },
-      proTypes: {
+      propTypes: {
         size: string,
         text: string,
         corner: bool,
@@ -754,7 +754,7 @@ const testSouData = [
         corner: false,
         dot: true,
       },
-      proTypes: {
+      propTypes: {
         size: string,
         text: string,
         corner: bool,
@@ -784,7 +784,7 @@ const testSouData = [
         text: '加载中',
         color: 'gray'
       },
-      proTypes: {
+      propTypes: {
         animating: bool,
         size: string,
         toast: bool,
@@ -819,7 +819,7 @@ const testSouData = [
       carouselMaxRow: 2,
       itemStyle: { backgroundColor: 'white', }
     },
-    proTypes: {
+    propTypes: {
       data: array,
       columnNum: number,
       hasLine: bool,
@@ -854,7 +854,7 @@ const testSouData = [
          titles:'这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........',
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
-      proTypes: {
+      propTypes: {
         mode:string,
         marqueeProps:string,
         titles:string
@@ -877,7 +877,7 @@ const testSouData = [
          titles:'这是一个通知栏.........',
          marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
       },
-      proTypes: {
+      propTypes: {
         mode:string,
         marqueeProps:string,
         titles:string
@@ -910,7 +910,7 @@ const testSouData = [
         editable:true,
         clear:false
       },
-      proTypes: {
+      propTypes: {
         rows:number,
         placeholder:string,
         count:number,
@@ -945,7 +945,7 @@ const testSouData = [
         editable:true,
         clear:false
       },
-      proTypes: {
+      propTypes: {
         rows:number,
         placeholder:string,
         count:number,
@@ -980,7 +980,7 @@ const testSouData = [
         maxDate:new Date(2026, 11, 3),
         format:"YYYY-MM-DD"
       },
-      proTypes: {
+      propTypes: {
         mode:string,
         minDate:string,
         maxDate:string,
@@ -1012,7 +1012,7 @@ const testSouData = [
         minuteStep:1,
   
       },
-      proTypes: {
+      propTypes: {
         mode:string,
         minDate:string,
         maxDate:string,
@@ -1040,7 +1040,7 @@ const testSouData = [
         minuteStep:1,
   
       },
-      proTypes: {
+      propTypes: {
         mode:string,
         minDate:string,
         maxDate:string,
@@ -1075,7 +1075,7 @@ const testSouData = [
           },],
         selectable:true
       },
-      proTypes: {
+      propTypes: {
         files:array,
         selectable:bool
       },
@@ -1124,7 +1124,7 @@ const testSouData = [
         cascade:false,
       
       },
-      proTypes: {
+      propTypes: {
         data:array,
         cascade:bool
       },
@@ -1166,7 +1166,7 @@ const testSouData = [
       props: {
        
       },
-      proTypes: {
+      propTypes: {
         
       },
       defaultProps: {
@@ -1189,7 +1189,7 @@ const testSouData = [
         size:55,
         color:'red',
       },
-      proTypes: {
+      propTypes: {
         type:string,
         size:number,
         color:string,
@@ -1209,7 +1209,7 @@ const testSouData = [
         size:55,
         color:'blue',
       },
-      proTypes: {
+      propTypes: {
         type:string,
         size:number,
         color:string,
@@ -1230,7 +1230,7 @@ const testSouData = [
         size:55,
         color:'blue',
       },
-      proTypes: {
+      propTypes: {
         type:string,
         size:number,
         color:string,
@@ -1260,7 +1260,7 @@ const testSouData = [
         buttonText:"完成",
         buttonType:"primary"
       },
-      proTypes: {
+      propTypes: {
         imgUrl:array,
         title:string,
         message:string,
@@ -1288,7 +1288,7 @@ const testSouData = [
       props: {
         data:[1,2,3]
       },
-      proTypes: {
+      propTypes: {
      
       },
       defaultProps: {
@@ -1312,7 +1312,7 @@ const testSouData = [
         selectedIndex:0,
         values:['附近', '发现']
       },
-      proTypes: {
+      propTypes: {
         tintColor:string,
         disabled:bool,
         selectedIndex:number,
@@ -1343,7 +1343,7 @@ const combinationSouData = [
           disabled: false,
           title:'标签'
         },
-        proTypes: {
+        propTypes: {
           checked: bool,
           disabled: bool,
           title:string
@@ -1367,7 +1367,7 @@ const combinationSouData = [
         props: {
         
         },
-        proTypes: {
+        propTypes: {
          
         },
         defaultProps: {
@@ -1395,7 +1395,7 @@ const combinationSouData = [
           isShowRightText:false
         
         },
-        proTypes: {
+        propTypes: {
           title:string,
           styleRightText:string,
           styleTitle:string,
@@ -1432,7 +1432,7 @@ const combinationSouData = [
           isShowRightText:false
         
         },
-        proTypes: {
+        propTypes: {
           title:string,
           styleRightText:string,
           styleTitle:string,
@@ -1470,7 +1470,7 @@ const combinationSouData = [
           isShowRightText:true
         
         },
-        proTypes: {
+        propTypes: {
           title:string,
           styleRightText:string,
           styleTitle:string,
@@ -1507,7 +1507,7 @@ const combinationSouData = [
           disabled: false,
           title:'单项选择'
         },
-        proTypes: {
+        propTypes: {
           defaultChecked: bool,
           checked:bool,
           disabled: bool,
@@ -1536,7 +1536,7 @@ const combinationSouData = [
           showImg:true,
           title:'单项选择标签'
         },
-        proTypes: {
+        propTypes: {
           checked: bool,
           disabled: bool,
           showImg:bool,
@@ -1560,7 +1560,7 @@ const combinationSouData = [
           showImg:false,
           title:'单项选择标签'
         },
-        proTypes: {
+        propTypes: {
           checked: bool,
           disabled: bool,
           showImg:bool,
@@ -1592,7 +1592,7 @@ const combinationSouData = [
           showNumber:true,
           title:'计步器值'
         },
-        proTypes: {
+        propTypes: {
           min: number,
           max: number,
           step: number,
@@ -1631,7 +1631,7 @@ const combinationSouData = [
           title:'标签',
           labelNumber:2
         },
-        proTypes: {
+        propTypes: {
           type: string,
           value: string,
           placeholder: string,
@@ -1670,7 +1670,7 @@ const combinationSouData = [
           imgUrl:'https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png',
           labelNumber:2
         },
-        proTypes: {
+        propTypes: {
           type: string,
           value: string,
           placeholder: string,
@@ -1707,7 +1707,7 @@ const combinationSouData = [
            title:'标签',
            labelNumber:2
         },
-        proTypes: {
+        propTypes: {
           type: string,
           value: string,
           placeholder: string,
@@ -1751,7 +1751,7 @@ const combinationSouData = [
         dots: true,
         vertical:false
       },
-      proTypes: {
+      propTypes: {
         autoplay: bool,
         infinite: bool,
         autoplayInterval: number,
@@ -1777,7 +1777,7 @@ const combinationSouData = [
         dots: false,
         vertical:true
       },
-      proTypes: {
+      propTypes: {
         autoplay: bool,
         infinite: bool,
         autoplayInterval: number,
