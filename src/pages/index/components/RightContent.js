@@ -5,7 +5,7 @@ import styles from "./right.less";
 const RightContent = ({ showItemData, onSubmit }) => {
   const {id,component} = showItemData;
   const {type,props,style} = component;
-  const as+1237126387236
+  const as+12371263872362343342
   return (
     <div>
       <div className={styles.dlEdpT}>
