@@ -6,16 +6,7 @@ import PropTypes from 'prop-types';
 
 export default class InputItems extends React.Component {
 
-    static propTypes ={
-        showtype: PropTypes.number,
-        imgurl:PropTypes.string
-    }
-
-    static defaultProps = {
-        showtype:1,
-        imgurl:''
-    }
-
+  
     render() {
         return (
             <InputItem
@@ -23,7 +14,7 @@ export default class InputItems extends React.Component {
                
             >
                 {
-                    this.props.showtype ==2? (<Image source={{ uri: this.props.imgurl }} style={{ width: 25, height: 25 }}></Image>) : (
+                    this.props.showtype ===2? (<Image source={{ uri: this.props.imgurl }} style={{ width: 25, height: 25 }}></Image>) : (
                         <Text>{this.props.title}</Text>
                     )
                 }
