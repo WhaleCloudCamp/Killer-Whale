@@ -1,5 +1,5 @@
 import { Switch } from 'antd-mobile'
-import 'antd-mobile/lib/Switch/style';
+import 'antd-mobile/lib/switch/style';
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
