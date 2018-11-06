@@ -27,11 +27,12 @@ const CenterContent = props => {
                 index={index}
                 onDropAction={onDropAction}
                 moveCard={moveCard}
+                onClick={() => clickDrag(item)}
               >
                 {Com && (
                   <Com
                     {...component.props}
-                    onClick={() => clickDrag(item)}
+                  
                     style={component.style}
                     key={`centerPanel${component.type}${id}`}
                   />

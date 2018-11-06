@@ -342,9 +342,9 @@ const testSouData = [
       state:1,
       props: {
         tabs: [
-          { title: 'First Tab' },
-          { title: 'Second Tab' },
-          { title: 'Third Tab' },
+          { title: '首页' },
+          { title: '发现' },
+          { title: '我的' },
         ],
        
         initialPage: 0,
@@ -812,7 +812,7 @@ const testSouData = [
     type: "Grid",
     state:2,
     props: {
-      data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name1' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name2' }],
+      data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: '网格标题' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: '网格标题' }],
       columnNum: 2,
       hasLine: true,
       isCarousel: false,
@@ -897,7 +897,44 @@ const testSouData = [
   type:'TextareaItem',
   data:[
     {
-      id: 534452,
+      id: 5344521,
+      type: "TextareaItem",
+      state:1,
+      props: {
+        title:'标题',
+        labelNumber:3,
+        rows:4,
+        placeholder:'固定行数、多行带计数、高度自适应',
+        count:100,
+        autoHeight:true,
+        editable:true,
+        clear:false
+      },
+      proTypes: {
+        rows:number,
+        placeholder:string,
+        count:number,
+        autoHeight:bool,
+        editable:bool,
+        clear:bool,
+        title:string,
+        labelNumber:number,
+      },
+      defaultProps: {
+        rows:4,
+        placeholder:'固定行数、多行带计数、高度自适应',
+        count:100,
+        autoHeight:true,
+        editable:true,
+        clear:false,
+        title:'标题',
+        labelNumber:3,
+      },
+      style: { width: '100%', paddingVertical: 5,borderColor: 'gray',borderWidth: 0.5,  },
+  
+    },
+    {
+      id: 5344522,
       type: "TextareaItem",
       state:1,
       props: {
@@ -1273,7 +1310,7 @@ const testSouData = [
         tintColor:'#2DB7F5',
         disabled:false,
         selectedIndex:0,
-        values:['Segment1', 'Segment2']
+        values:['附近', '发现']
       },
       proTypes: {
         tintColor:string,

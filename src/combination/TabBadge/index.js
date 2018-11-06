@@ -5,9 +5,9 @@ import React from 'react';
 import { View,Text } from 'react-native';
 
 const tabs = [
-    { title: <Badge text={'3'}>First Tab</Badge> },
-    { title: <Badge text={'今日(20)'}>Second Tab</Badge> },
-    { title: <Badge dot>Third Tab</Badge> },
+    { title: <Badge text={'3'}>首页</Badge> },
+    { title: <Badge text={'今日(20)'}>热点</Badge> },
+    { title: <Badge dot>发现</Badge> },
 ];
 export default class TabBadge extends React.Component {
 
@@ -20,16 +20,16 @@ export default class TabBadge extends React.Component {
                 onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
             >
                 <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-                   <Text>Content of first tab</Text>
+                   <Text>页面一</Text>
                </View>
 
                 <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
                   
-                <Text>Content of second tab</Text>
+                <Text>页面二</Text>
               
                 </View>
                 <View style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-                <Text> Content of third tab</Text>
+                <Text> 页面三</Text>
               
                
                 </View>

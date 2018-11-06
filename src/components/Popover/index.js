@@ -21,7 +21,7 @@ export default class Propovers extends React.Component {
     render() {
         let overlay = [1, 2, 3].map((i, index) => (
             <Popover.Item key={index} value={`option ${i}`}>
-              <Text>option {i}</Text>
+              <Text>选项 {i}</Text>
             </Popover.Item>
           ));
         return (
