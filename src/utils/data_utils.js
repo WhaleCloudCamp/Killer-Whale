@@ -1,5 +1,4 @@
 import comjson from '../assets/components-description.json';
-import { string, bool, number, array } from 'prop-types';
 const testAction = {
   destination: {
     droppableId: "centerPanel",
@@ -318,7 +317,7 @@ const testSouData = [
   
       },
       propTypes: {
-        tabs: array,
+        tabs: 'array',
         tabBarPosition: 'string',
         initialPage: 'number',
         swipeable: 'bool',
@@ -439,10 +438,10 @@ const testSouData = [
   
       },
       propTypes: {
-        percent: number,
+        percent: 'number',
         position: ['fixed','normal'],
-        unfilled: bool,
-        barStyle: string
+        unfilled: 'bool',
+        barStyle: 'string'
   
       },
       defaultProps: {
@@ -725,7 +724,7 @@ const testSouData = [
         selectable:true
       },
       propTypes: {
-        files:array,
+        files:'array',
         selectable:'bool'
       },
       defaultProps: {
@@ -774,7 +773,7 @@ const testSouData = [
       
       },
       propTypes: {
-        data:array,
+        data:'array',
         cascade:'bool'
       },
       defaultProps: {
@@ -891,7 +890,7 @@ const testSouData = [
         tintColor:'string',
         disabled:'bool',
         selectedIndex:'number',
-        values:array
+        values:'array'
       },
       defaultProps: {
         tintColor:'#2DB7F5',
@@ -1174,7 +1173,7 @@ const combinationSouData = [
           value: 'number',
           disabled: 'bool',
           showNumber:'bool',
-          title:string
+          title:'string'
         },
         defaultProps: {
           min: 1,
@@ -1603,7 +1602,7 @@ const combinationSouData = [
         data:[1,2,3]
       },
       propTypes: {
-       data:array
+       data:'array'
       },
       defaultProps: {
         data:[1,2,3]
@@ -1629,7 +1628,7 @@ const combinationSouData = [
         buttonType:"primary"
       },
       propTypes: {
-        imgUrl:array,
+        imgUrl:'array',
         title:'string',
         message:'string',
         buttonText:'string',
@@ -1708,9 +1707,7 @@ export function getItemById(data, id) {
 function getAddData(item) {
   const data = {
     id: new Date().getTime(),
-    component: {
-     ...item
-    },
+    component: {...item},
     childrenCom: []
   };
   return data;
