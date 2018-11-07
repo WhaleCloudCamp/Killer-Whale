@@ -1543,21 +1543,129 @@ const combinationSouData = [
   type:'List',
   data:[
     {
-      id: 634474,
+      id: 6344741,
       type: "List",
       state:2,
       props: {
-       
+        title:'这是不换行item,这是不换行item,这是不换行item'
       },
       propTypes: {
-        
+        title:'string'
       },
       defaultProps: {
-     
+        title:''
       },
-      style:{ backgroundColor: '#0C83FF' },
+      style:{ },
     },
+    {
+      id: 6344742,
+      type: "List",
+      state:2,
+      props: {
+        wrap:true,
+        title:'这是自动换行item,这是自动换行item,这是自动换行item'
+      },
+      propTypes: {
+        wrap:'bool',
+        title:'string'
+      },
+      defaultProps: {
+        wrap:true,
+        title:''
+      },
+      style:{ },
+    },
+    {
+      id: 6344743,
+      type: "List",
+      state:2,
+      props: {
       
+        disabled:true,
+        extra:'箭头向右',
+        arrow:'horizontal',
+        title:'标题'
+      },
+      propTypes: {
+        disabled:'bool',
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        disabled:true,
+        extra:'箭头向右',
+        arrow:'horizontal',
+        title:'标题'
+      },
+      style:{ },
+    },
+    {
+      id: 6344744,
+      type: "List",
+      state:2,
+      props: {
+      
+        extra:'箭头向下',
+        arrow:'down',
+        title:'标题'
+      },
+      propTypes: {
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        extra:'箭头向下',
+        arrow:'down',
+        title:'标题'
+      },
+      style:{ },
+    },
+    {
+      id: 6344745,
+      type: "List",
+      state:2,
+      props: {
+      
+        extra:'箭头向上',
+        arrow:'up',
+        title:'标题'
+      },
+      propTypes: {
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        extra:'箭头向上',
+        arrow:'up',
+        title:'标题'
+      },
+      style:{ },
+    },
+    {
+      id: 6344746,
+      type: "List",
+      state:2,
+      props: {
+      
+        extra:'没有箭头',
+        arrow:'empty',
+        title:'标题'
+      },
+      propTypes: {
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        extra:'没有箭头',
+        arrow:'empty',
+        title:'标题'
+      },
+      style:{ },
+    },
   ]
 },
 {
