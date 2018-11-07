@@ -1,4 +1,5 @@
 import * as Whale from "components";
+import * as Whales from "combinations";
 import { Collapse } from "antd";
 
 const Panel = Collapse.Panel;
@@ -17,7 +18,12 @@ const LeftContent = ({ sourceData = [] }) => {
         return (
           <Panel header={item.type} key={item.type}>
             {item.data.map((items, index) => {
-              const Com = Whale[items.type];
+              let Com =null
+              if(items.state === 1){
+                Com = Whale[items.type];
+              }else{
+                Com = Whales[items.type];
+              }
 
               if (!items.props) {
                 items.props = {};

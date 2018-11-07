@@ -1,6 +1,7 @@
 import {Tag} from 'antd-mobile';
 import 'antd-mobile/lib/tag/style';
 import React, { Component } from 'react';
+import { Text } from 'react-native';
 import PropTypes from 'prop-types'
 
 
@@ -18,7 +19,7 @@ export default class Tags extends React.Component{
                 closable={this.props.closable}
                 selected={this.props.selected}
                 >
-                  {this.props.content}
+                 <Text>{this.props.content}</Text> 
                 </Tag>
             
         )

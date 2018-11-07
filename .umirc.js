@@ -37,6 +37,7 @@ export default {
     "react-native$": "react-native-web",
     "use-components-library": "antd-mobile",
     components: path.resolve(__dirname, "src/components/index"),
+    combinations:path.resolve(__dirname,"src/combination/index.js"),
     utils: path.resolve(__dirname, "src/utils"),
     services: path.resolve(__dirname, "src/services"),
     assets: path.resolve(__dirname, "src/assets"),

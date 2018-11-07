@@ -1,4 +1,5 @@
 import * as Whale from "components";
+import * as Whales from "combinations";
 import styles from "./center.less";
 
 const DroppableContent = Whale.DroppableContent;
@@ -16,7 +17,13 @@ const CenterContent = props => {
         <DroppableContent onDropAction={onDropAction}>
           {components.map((item, index) => {
             const { component, id } = item;
-            const Com = Whale[component.type];
+            let Com =null
+            if(component.state === 1){
+              Com = Whale[component.type];
+            }else{
+              Com = Whales[component.type];
+            }
+        
             if (!component.props) {
               component.props = {};
             }

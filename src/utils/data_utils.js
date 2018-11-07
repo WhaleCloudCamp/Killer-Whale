@@ -65,17 +65,15 @@ const testSouData = [
         props: { type: 'ghost', children: '确定' },
         propTypes: {
           type: ['primary','ghost','warning'],
-          pressIn: bool,
-          disabled: bool,
-          activeStyle: "",
-          loading: bool,
+          pressIn: 'bool',
+          disabled: 'bool',
+          loading: 'bool',
         },
         defaultProps: {
           type: 'ghost',
           children: '确定',
           pressIn: false,
           disabled: false,
-          activeStyle: {},
           loading: false,
         },
         style: {  }
@@ -87,17 +85,15 @@ const testSouData = [
         props: { type: 'warning', children: '确定' },
         propTypes: {
           type: ['primary','ghost','warning'],
-          pressIn: bool,
-          disabled: bool,
-          activeStyle: "",
-          loading: bool,
+          pressIn: 'bool',
+          disabled: 'bool',
+          loading: 'bool',
         },
         defaultProps: {
           type: 'ghost',
           children: '确定',
           pressIn: false,
           disabled: false,
-          activeStyle: {},
           loading: false,
         },
         style: {  }
@@ -109,17 +105,15 @@ const testSouData = [
         props: { type: 'primary', children: '确定' },
         propTypes: {
           type: ['primary','ghost','warning'],
-          pressIn: bool,
-          disabled: bool,
-          activeStyle: "",
-          loading: bool,
+          pressIn: 'bool',
+          disabled: 'bool',
+          loading: 'bool',
         },
         defaultProps: {
           type: 'primary',
           children: '确定',
           pressIn: false,
           disabled: false,
-          activeStyle: {},
           loading: false,
         },
         style: {  }
@@ -132,17 +126,15 @@ const testSouData = [
         disabled:true },
         propTypes: {
           type: ['primary','ghost','warning'],
-          pressIn: bool,
-          disabled: bool,
-          activeStyle: "",
-          loading: bool,
+          pressIn: 'bool',
+          disabled: 'bool',
+          loading: 'bool',
         },
         defaultProps: {
           type: 'primary',
           children: '确定',
           pressIn: false,
           disabled: false,
-          activeStyle: {},
           loading: false,
         },
         style: {  }
@@ -154,17 +146,15 @@ const testSouData = [
         loading:true },
         propTypes: {
           type: ['primary','ghost','warning'],
-          pressIn: bool,
-          disabled: bool,
-          activeStyle: "",
-          loading: bool,
+          pressIn: 'bool',
+          disabled: 'bool',
+          loading: 'bool',
         },
         defaultProps: {
           type: 'primary',
           children: '确定',
           pressIn: false,
           disabled: false,
-          activeStyle: {},
           loading: false,
         },
         style: {  }
@@ -176,15 +166,15 @@ const testSouData = [
     data:[{
       id: 5344341,
       type: "Switch",
-      state:2,
+      state:1,
       props: {
         checked: true,
         disabled: false,
   
       },
       propTypes: {
-        checked: bool,
-        disabled: bool,
+        checked: 'bool',
+        disabled: 'bool',
       },
       defaultProps: {
         checked: true,
@@ -196,15 +186,15 @@ const testSouData = [
     {
       id: 5344342,
       type: "Switch",
-      state:2,
+      state:1,
       props: {
         checked: true,
         disabled: true,
       
       },
       propTypes: {
-        checked: bool,
-        disabled: bool,
+        checked: 'bool',
+        disabled: 'bool',
       },
       defaultProps: {
         checked: true,
@@ -217,15 +207,15 @@ const testSouData = [
     {
       id: 5344343,
       type: "Switch",
-      state:2,
+      state:1,
       props: {
         checked: false,
         disabled: false,
       
       },
       propTypes: {
-        checked: bool,
-        disabled: bool,
+        checked: 'bool',
+        disabled: 'bool',
       },
       defaultProps: {
         checked: false,
@@ -236,37 +226,7 @@ const testSouData = [
     },
   ]
   },
-  {
-    type:'Radio',
-    data:[
-  {
-    id: 534435,
-    type: "Radio",
-    state:2,
-    props: {
-      title: '协议',
-      defaultChecked: true,
-      checked: true,
-      disabled: false,
-
-    },
-    propTypes: {
-      title: string,
-      defaultChecked: bool,
-      checked: bool,
-      disabled: bool,
-    },
-    defaultProps: {
-      title: '协议',
-      defaultChecked: true,
-      checked: true,
-      disabled: false,
-    },
-    style: { width: 25, height: 20, margin: 5, }
-
-  },
-    ]
-  },
+ 
 {
   type:'Pagination',
   data:[
@@ -284,10 +244,10 @@ const testSouData = [
     },
     propTypes: {
       mode: ['button','number','pointer'],
-      current: number,
-      total: string,
-      simple: string,
-      disabled: bool,
+      current: 'number',
+      total: 'string',
+      simple: 'string',
+      disabled: 'bool',
 
     },
     defaultProps: {
@@ -314,10 +274,10 @@ const testSouData = [
     },
     propTypes: {
       mode: ['button','number','pointer'],
-      current: number,
-      total: string,
-      simple: string,
-      disabled: bool,
+      current: 'number',
+      total: 'string',
+      simple: 'string',
+      disabled: 'bool',
 
     },
     defaultProps: {
@@ -359,15 +319,15 @@ const testSouData = [
       },
       propTypes: {
         tabs: array,
-        tabBarPosition: string,
-        initialPage: number,
-        swipeable: bool,
-        animated: bool,
-        prerenderingSiblingsNumber: number,
-        tabBarBackgroundColor: string,
-        tabBarActiveTextColor: string,
-        tabBarInactiveTextColor: string,
-        tabBarTextStyle: string,
+        tabBarPosition: 'string',
+        initialPage: 'number',
+        swipeable: 'bool',
+        animated: 'borderColor: #FFFFFF',
+        prerenderingSiblingsNumber: 'number',
+        tabBarBackgroundColor: 'string',
+        tabBarActiveTextColor: 'string',
+        tabBarInactiveTextColor: 'string',
+        tabBarTextStyle: 'string',
   
       },
       defaultProps: {
@@ -393,40 +353,6 @@ const testSouData = [
   ]
 },
 
-
-
-{
-  type:'Flex',
-  data:[
-    {
-      id: 534439,
-      type: "Flex",
-      state:1,
-      props: {
-        direction: 'row',
-        wrap: 'wrap',
-        justify: 'center',
-        align: 'center'
-  
-      },
-      propTypes: {
-        direction: string,
-        wrap: string,
-        justify: string,
-        align: string
-  
-      },
-      defaultProps: {
-        direction: 'row',
-        wrap: 'wrap',
-        justify: 'center',
-        align: 'center'
-      },
-      style: { backgroundColor: 'black', width: '100%', height: 50 },
-  
-    },
-  ]
-},
 {
   type:'Checkbox',
   data:[
@@ -442,10 +368,10 @@ const testSouData = [
   
       },
       propTypes: {
-        defaultChecked: bool,
-        checked: bool,
-        disabled: bool,
-        title:string
+        defaultChecked: 'bool',
+        checked: 'bool',
+        disabled: 'bool',
+        title:'string'
       },
       defaultProps: {
         defaultChecked: false,
@@ -459,43 +385,7 @@ const testSouData = [
     },
   ]
 },
-{
-  type:'Slider',
-  data:[
-    {
-      id: 534441,
-      type: "Slider",
-      state:1,
-      props: {
-        min: 0,
-        max: 100,
-        step: 1,
-        value: 50,
-        disabled: true,
-        maximumTrackTintColor: 'blue'
-      },
-      propTypes: {
-        min: number,
-        max: number,
-        step: number,
-        value: number,
-        disabled: bool,
-        maximumTrackTintColor: string
-  
-      },
-      defaultProps: {
-        min: 0,
-        max: 100,
-        step: 1,
-        value: 30,
-        disabled: false,
-        maximumTrackTintColor: 'blue'
-      },
-      style: { width: '100%', height: 10,margin:10  },
-  
-    },
-  ]
-},
+
 {
   type:'Stepper',
   data:[
@@ -513,12 +403,12 @@ const testSouData = [
       
       },
       propTypes: {
-        min: number,
-        max: number,
-        step: number,
-        value: number,
-        disabled: bool,
-        showNumber:bool,
+        min: 'number',
+        max: 'number',
+        step: 'number',
+        value: 'number',
+        disabled: 'bool',
+        showNumber:'bool',
   
       },
       defaultProps: {
@@ -566,97 +456,7 @@ const testSouData = [
     },
   ]
 },
-{
-  type:'Tag',
-  data:[
-    {
-      id: 5344441,
-      type: "Tag",
-      state:2,
-      props: {
-        small: false,
-        disabled: false,
-        closable: true,
-        selected: true,
-        content:'美女'
-      },
-      propTypes: {
-        small: bool,
-        disabled: bool,
-        closable: bool,
-        selected: bool,
-        content:string,
-  
-      },
-      defaultProps: {
-        small: false,
-        disabled: false,
-        closable: true,
-        selected: true,
-        content:'美女'  
-      },
-      style: {width:30,height:25,margin:5},
-  
-    },
-    {
-      id: 5344442,
-      type: "Tag",
-      state:2,
-      props: {
-        small: false,
-        disabled: true,
-        closable: false,
-        selected: true,
-        content:'帅哥'
-      },
-      propTypes: {
-        small: bool,
-        disabled: bool,
-        closable: bool,
-        selected: bool,
-        content:string,
-  
-      },
-      defaultProps: {
-        small: false,
-        disabled: true,
-        closable: false,
-        selected: true,
-        content:'帅哥'  
-      },
-      style: {width:30,height:25,margin:5},
-  
-    },{
-      id: 5344443,
-      state:2,
-      type: "Tag",
-      props: {
-        small: true,
-        disabled: false,
-        closable: false,
-        selected: true,
-        content:'美女'
-      },
-      propTypes: {
-        small: bool,
-        disabled: bool,
-        closable: bool,
-        selected: bool,
-        content:string,
-  
-      },
-      defaultProps: {
-        small: false,
-        disabled: false,
-        closable: false,
-        selected: true,
-        content:'美女'  
-      },
-      style: {width:30,height:25,margin:5},
-  
-    },
-  ]
-},
+
 {
   type:'SearchBar',
   data:[
@@ -675,11 +475,11 @@ const testSouData = [
       },
       propTypes: {
   
-        value: string,
-        placeholder: string,
-        showCancelButton: bool,
-        cancelText: string,
-        disabled: bool,
+        value: 'string',
+        placeholder: 'string',
+        showCancelButton: 'bool',
+        cancelText: 'string',
+        disabled: 'bool',
   
   
       },
@@ -703,7 +503,7 @@ const testSouData = [
         placeholder: '请输入关键字',
       },
       propTypes: {
-        placeholder: string,
+        placeholder: 'string',
       },
       defaultProps: {
         placeholder: '请输入关键字',
@@ -729,10 +529,10 @@ const testSouData = [
       },
       propTypes: {
         size: ['large','small'],
-        text: string,
-        corner: bool,
-        dot: bool,
-        overflowCount: number
+        text: 'string',
+        corner: 'bool',
+        dot: 'bool',
+        overflowCount: 'number'
       },
       defaultProps: {
         size: 'large',
@@ -756,8 +556,8 @@ const testSouData = [
       },
       propTypes: {
         size: ['large','small'],
-        text: string,
-        corner: bool,
+        text: 'string',
+        corner: 'bool',
       },
       defaultProps: {
         size: 'small',
@@ -770,129 +570,7 @@ const testSouData = [
     },
   ]
 },
-{
-  type:'ActivityIndicator',
-  data:[
-    {
-      id: 534447,
-      type: "ActivityIndicator",
-      state:2,
-      props: {
-        animating: true,
-        size: 'small',
-        toast: false,
-        text: '加载中',
-        color: 'gray'
-      },
-      propTypes: {
-        animating: bool,
-        size: ['small','large'],
-        toast: bool,
-        text: string,
-        color: string
-      },
-      defaultProps: {
-        animating: true,
-        size: 'small',
-        toast: false,
-        text: '加载中',
-        color: 'gray'
-      },
-      style: { backgroundColor: 'gray', height: 50, width: 50 },
-  
-    },
-  ]
-},
-{
-  type:'Grid',
-  data:[
-    
-  {
-    id: 534448,
-    type: "Grid",
-    state:2,
-    props: {
-      data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: '网格标题' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: '网格标题' }],
-      columnNum: 2,
-      hasLine: true,
-      isCarousel: false,
-      carouselMaxRow: 2,
-      itemStyle: { backgroundColor: 'white', }
-    },
-    propTypes: {
-      data: array,
-      columnNum: number,
-      hasLine: bool,
-      isCarousel: bool,
-      carouselMaxRow: number,
-      itemStyle: string
-    },
-    defaultProps: {
-      data: [{ icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name1' }, { icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', text: 'Name2' }],
-      columnNum: 2,
-      hasLine: true,
-      isCarousel: false,
-      carouselMaxRow: 2,
-      itemStyle: { backgroundColor: 'red' }
-    },
-    style: {width:'100%'},
 
-  },
-
-  ]
-},
-
-{
-  type:'NoticeBar',
-  data:[
-    {
-      id: 5344511,
-      type: "NoticeBar",
-      state:2,
-      props: {
-         mode:'closable',
-         titles:'这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........',
-         marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
-      },
-      propTypes: {
-        mode:['closable','link'],
-        marqueeProps:string,
-        titles:string
-  
-      },
-      defaultProps: {
-        mode:'closable',
-        marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
-        title:'这是一个通知栏.........',
-      },
-      style: { width: '100%' },
-  
-    },
-    {
-      id: 5344512,
-      type: "NoticeBar",
-      state:2,
-      props: {
-         mode:'link',
-         titles:'这是一个通知栏.........',
-         marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
-      },
-      propTypes: {
-        mode:['closable','link'],
-        marqueeProps:string,
-        titles:string
-  
-      },
-      defaultProps: {
-        mode:'closable',
-        marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
-        title:'这是一个通知栏.........',
-      },
-      style: { width: '100%' },
-  
-    },
-  ]
-},
 {
   type:'TextareaItem',
   data:[
@@ -911,14 +589,14 @@ const testSouData = [
         clear:false
       },
       propTypes: {
-        rows:number,
-        placeholder:string,
-        count:number,
-        autoHeight:bool,
-        editable:bool,
-        clear:bool,
-        title:string,
-        labelNumber:number,
+        rows:'number',
+        placeholder:'string',
+        count:'number',
+        autoHeight:'bool',
+        editable:'bool',
+        clear:'bool',
+        title:'string',
+        labelNumber:'number',
       },
       defaultProps: {
         rows:4,
@@ -946,12 +624,12 @@ const testSouData = [
         clear:false
       },
       propTypes: {
-        rows:number,
-        placeholder:string,
-        count:number,
-        autoHeight:bool,
-        editable:bool,
-        clear:bool
+        rows:'number',
+        placeholder:'string',
+        count:'number',
+        autoHeight:'bool',
+        editable:'bool',
+        clear:'bool'
   
       },
       defaultProps: {
@@ -967,36 +645,7 @@ const testSouData = [
     },
   ]
 },
-{
-  type:'DatePicker',
-  data:[
-    {
-      id: 534453,
-      type: "DatePicker",
-      state:1,
-      props: {
-        mode:'date',
-        minDate:new Date(2015, 7, 6),
-        maxDate:new Date(2026, 11, 3),
-        format:"YYYY-MM-DD"
-      },
-      propTypes: {
-        mode:['date','time','datetime','year','month'],
-        minDate:string,
-        maxDate:string,
-        format:string
-      },
-      defaultProps: {
-        mode:'date',
-        minDate:new Date(2015, 7, 6),
-        maxDate:new Date(2026, 11, 3),
-        format:"YYYY-MM-DD"
-      },
-      style: { width: '100%', paddingVertical: 5  },
-  
-    },
-  ]
-},
+
 {
   type:'DatePickerView',
   data:[
@@ -1014,10 +663,10 @@ const testSouData = [
       },
       propTypes: {
         mode:['date','time','datetime','year','month'],
-        minDate:string,
-        maxDate:string,
-        format:string,
-        minuteStep:number,
+        minDate:'string',
+        maxDate:'string',
+        format:'string',
+        minuteStep:'number',
       },
       defaultProps: {
         mode:'date',
@@ -1042,10 +691,10 @@ const testSouData = [
       },
       propTypes: {
         mode:['date','time','datetime','year','month'],
-        minDate:string,
-        maxDate:string,
-        format:string,
-        minuteStep:number,
+        minDate:'string',
+        maxDate:'string',
+        format:'string',
+        minuteStep:'number',
       },
       defaultProps: {
         mode:'date',
@@ -1077,7 +726,7 @@ const testSouData = [
       },
       propTypes: {
         files:array,
-        selectable:bool
+        selectable:'bool'
       },
       defaultProps: {
         files:[{
@@ -1126,7 +775,7 @@ const testSouData = [
       },
       propTypes: {
         data:array,
-        cascade:bool
+        cascade:'bool'
       },
       defaultProps: {
       data:[  [
@@ -1156,27 +805,7 @@ const testSouData = [
   ]
 },
 
-{
-  type:'List',
-  data:[
-    {
-      id: 534458,
-      type: "List",
-      state:2,
-      props: {
-       
-      },
-      propTypes: {
-        
-      },
-      defaultProps: {
-     
-      },
-      style:{ backgroundColor: '#0C83FF' },
-    },
-      
-  ]
-},
+
 {
   type:'Icon',
   data:[
@@ -1190,9 +819,9 @@ const testSouData = [
         color:'red',
       },
       propTypes: {
-        type:string,
-        size:number,
-        color:string,
+        type:'string',
+        size:'number',
+        color:'string',
       },
       defaultProps: {
         type:'down',
@@ -1210,9 +839,9 @@ const testSouData = [
         color:'blue',
       },
       propTypes: {
-        type:string,
-        size:number,
-        color:string,
+        type:'string',
+        size:'number',
+        color:'string',
       },
       defaultProps: {
         type:'down',
@@ -1231,9 +860,9 @@ const testSouData = [
         color:'blue',
       },
       propTypes: {
-        type:string,
-        size:number,
-        color:string,
+        type:'string',
+        size:'number',
+        color:'string',
       },
       defaultProps: {
         type:'cross-circle',
@@ -1245,60 +874,6 @@ const testSouData = [
   ]
 },
 
-{
-  type:'Result',
-  data:[
-    {
-      id: 534461,
-      type: "Result",
-      state:1,
-      props: {
-        
-        img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
-        title:"验证成功",
-        message:"所提交内容已成功完成验证",
-        buttonText:"完成",
-        buttonType:"primary"
-      },
-      propTypes: {
-        imgUrl:array,
-        title:string,
-        message:string,
-        buttonText:string,
-        buttonType:['primary','ghost','warning'],
-      },
-      defaultProps: {
-        img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
-        title:"验证成功",
-        message:"所提交内容已成功完成验证",
-        buttonText:"完成",
-        buttonType:"primary"
-      },
-      style:{ },
-    },
-  ]
-},
-{
-  type:'Popover',
-  data:[
-    {
-      id: 534462,
-      type: "Popover",
-      state:1,
-      props: {
-        data:[1,2,3]
-      },
-      propTypes: {
-     
-      },
-      defaultProps: {
-        data:[1,2,3]
-      },
-      style:{ },
-    },
-  
-  ]
-},
 {
   type:'SegmentedControl',
   data:[
@@ -1313,9 +888,9 @@ const testSouData = [
         values:['附近', '发现']
       },
       propTypes: {
-        tintColor:string,
-        disabled:bool,
-        selectedIndex:number,
+        tintColor:'string',
+        disabled:'bool',
+        selectedIndex:'number',
         values:array
       },
       defaultProps: {
@@ -1344,9 +919,9 @@ const combinationSouData = [
           title:'标签'
         },
         propTypes: {
-          checked: bool,
-          disabled: bool,
-          title:string
+          checked: 'bool',
+          disabled: 'bool',
+          title:'string'
         },
         defaultProps: {
           checked: true,
@@ -1396,14 +971,14 @@ const combinationSouData = [
         
         },
         propTypes: {
-          title:string,
-          styleRightText:string,
-          styleTitle:string,
-          isShowBk:bool, 
-          isShowDel:bool, 
-          isShowFirstRightIcon:bool,
-          isShowLastRightIcon:bool,
-          isShowRightText:bool
+          title:'string',
+          styleRightText:'string',
+          styleTitle:'string',
+          isShowBk:'bool', 
+          isShowDel:'borderColor: #FFFFFF', 
+          isShowFirstRightIcon:'bool',
+          isShowLastRightIcon:'bool',
+          isShowRightText:'bool'
         },
         defaultProps: {
           title:"标题",
@@ -1433,14 +1008,14 @@ const combinationSouData = [
         
         },
         propTypes: {
-          title:string,
-          styleRightText:string,
-          styleTitle:string,
-          isShowBk:bool, 
-          isShowDel:bool, 
-          isShowFirstRightIcon:bool,
-          isShowLastRightIcon:bool,
-          isShowRightText:bool
+          title:'string',
+          styleRightText:'string',
+          styleTitle:'string',
+          isShowBk:'bool', 
+          isShowDel:'bool', 
+          isShowFirstRightIcon:'bool',
+          isShowLastRightIcon:'bool',
+          isShowRightText:'bool'
         },
         defaultProps: {
           title:"标题",
@@ -1471,14 +1046,14 @@ const combinationSouData = [
         
         },
         propTypes: {
-          title:string,
-          styleRightText:string,
-          styleTitle:string,
-          isShowBk:bool, 
-          isShowDel:bool, 
-          isShowFirstRightIcon:bool,
-          isShowLastRightIcon:bool,
-          isShowRightText:bool
+          title:'string',
+          styleRightText:'string',
+          styleTitle:'string',
+          isShowBk:'bool', 
+          isShowDel:'bool', 
+          isShowFirstRightIcon:'bool',
+          isShowLastRightIcon:'bool',
+          isShowRightText:'bool'
         },
         defaultProps: {
           title:"标题",
@@ -1508,10 +1083,10 @@ const combinationSouData = [
           title:'单项选择'
         },
         propTypes: {
-          defaultChecked: bool,
-          checked:bool,
-          disabled: bool,
-          title:string
+          defaultChecked: 'bool',
+          checked:'bool',
+          disabled: 'bool',
+          title:'string'
         },
         defaultProps: {
           defaultChecked: false,
@@ -1537,10 +1112,10 @@ const combinationSouData = [
           title:'单项选择标签'
         },
         propTypes: {
-          checked: bool,
-          disabled: bool,
-          showImg:bool,
-          title:string
+          checked: 'bool',
+          disabled: 'bool',
+          showImg:'bool',
+          title:'string'
         },
         defaultProps: {
           checked: true,
@@ -1561,10 +1136,10 @@ const combinationSouData = [
           title:'单项选择标签'
         },
         propTypes: {
-          checked: bool,
-          disabled: bool,
-          showImg:bool,
-          title:string
+          checked: 'bool',
+          disabled: 'bool',
+          showImg:'bool',
+          title:'string'
         },
         defaultProps: {
           checked: true,
@@ -1593,12 +1168,12 @@ const combinationSouData = [
           title:'计步器值'
         },
         propTypes: {
-          min: number,
-          max: number,
-          step: number,
-          value: number,
-          disabled: bool,
-          showNumber:bool,
+          min: 'number',
+          max: 'number',
+          step: 'number',
+          value: 'number',
+          disabled: 'bool',
+          showNumber:'bool',
           title:string
         },
         defaultProps: {
@@ -1632,15 +1207,15 @@ const combinationSouData = [
           labelNumber:2
         },
         propTypes: {
-          type: string,
-          value: string,
-          placeholder: string,
-          clear: bool,
-          error: bool,
-          extra: string,
-          title:string,
-          showtype:number,
-          labelNumber:number
+          type: 'string',
+          value: 'string',
+          placeholder: 'string',
+          clear: 'bool',
+          error: 'bool',
+          extra: 'string',
+          title:'string',
+          showtype:'number',
+          labelNumber:'number'
         },
         defaultProps: {
           clear: true,
@@ -1669,14 +1244,14 @@ const combinationSouData = [
           labelNumber:2
         },
         propTypes: {
-          type: string,
-          value: string,
-          placeholder: string,
-          editable:bool,
-          extra: string,
-          imgurl:string,
-          showtype:number,
-          labelNumber:number
+          type: 'string',
+          value: 'string',
+          placeholder: 'string',
+          editable:'bool',
+          extra: 'string',
+          imgurl:'string',
+          showtype:'number',
+          labelNumber:'number'
         },
         defaultProps: {
           clear: true,
@@ -1704,15 +1279,15 @@ const combinationSouData = [
            labelNumber:2
         },
         propTypes: {
-          type: string,
-          value: string,
-          placeholder: string,
-          editable:bool,
-          extra: string,
-          showtype:number,
+          type: 'string',
+          value: 'string',
+          placeholder: 'string',
+          editable:'bool',
+          extra: 'string',
+          showtype:'number',
 
-          title:string,
-          labelNumber:number
+          title:'string',
+          labelNumber:'number'
         },
         defaultProps: {
 
@@ -1746,11 +1321,11 @@ const combinationSouData = [
         vertical:false
       },
       propTypes: {
-        autoplay: bool,
-        infinite: bool,
-        autoplayInterval: number,
-        dots: bool,
-        vertical:bool
+        autoplay: 'bool',
+        infinite: 'bool',
+        autoplayInterval: 'number',
+        dots: 'bool',
+        vertical:'bool'
       },
       defaultProps: {
         autoplay: true,
@@ -1772,11 +1347,11 @@ const combinationSouData = [
         vertical:true
       },
       propTypes: {
-        autoplay: bool,
-        infinite: bool,
-        autoplayInterval: number,
-        dots: bool,
-        vertical:bool
+        autoplay: 'bool',
+        infinite: 'bool',
+        autoplayInterval: 'number',
+        dots: 'bool',
+        vertical:'bool'
       },
       defaultProps: {
         autoplay: true,
@@ -1789,6 +1364,325 @@ const combinationSouData = [
     }
     ]
   },
+  {
+    type:'Tag',
+    data:[
+      {
+        id: 6344701,
+        type: "Tag",
+        state:2,
+        props: {
+          small: false,
+          disabled: false,
+          closable: true,
+          selected: true,
+          content:'美女'
+        },
+        propTypes: {
+          small: 'bool',
+          disabled: 'bool',
+          closable: 'bool',
+          selected: 'bool',
+          content:'string',
+    
+        },
+        defaultProps: {
+          small: false,
+          disabled: false,
+          closable: true,
+          selected: true,
+          content:'美女'  
+        },
+        style: {width:30,height:25,margin:5},
+    
+      },
+      {
+        id: 6344702,
+        type: "Tag",
+        state:2,
+        props: {
+          small: false,
+          disabled: true,
+          closable: false,
+          selected: true,
+          content:'帅哥'
+        },
+        propTypes: {
+          small: 'bool',
+          disabled: 'bool',
+          closable: 'bool',
+          selected: 'bool',
+          content:'string',
+    
+        },
+        defaultProps: {
+          small: false,
+          disabled: true,
+          closable: false,
+          selected: true,
+          content:'帅哥'  
+        },
+        style: {width:30,height:25,margin:5},
+    
+      },{
+        id: 6344703,
+        state:2,
+        type: "Tag",
+        props: {
+          small: true,
+          disabled: false,
+          closable: false,
+          selected: true,
+          content:'美女'
+        },
+        propTypes: {
+          small: 'bool',
+          disabled: 'bool',
+          closable: 'bool',
+          selected: 'bool',
+          content:'string',
+    
+        },
+        defaultProps: {
+          small: false,
+          disabled: false,
+          closable: false,
+          selected: true,
+          content:'美女'  
+        },
+        style: {width:30,height:25,margin:5},
+    
+      },
+    ]
+  },
+  {
+    type:'ActivityIndicator',
+    data:[
+      {
+        id: 634471,
+        type: "ActivityIndicator",
+        state:2,
+        props: {
+          animating: true,
+          size: 'small',
+          toast: false,
+          text: '加载中',
+          color: 'gray'
+        },
+        propTypes: {
+          animating: 'bool',
+          size: ['small','large'],
+          toast: 'bool',
+          text: 'string',
+          color: 'string'
+        },
+        defaultProps: {
+          animating: true,
+          size: 'small',
+          toast: false,
+          text: '加载中',
+          color: 'gray'
+        },
+        style: { backgroundColor: 'gray', height: 50, width: 50 },
+    
+      },
+    ]
+  },
+  
+{
+  type:'NoticeBar',
+  data:[
+    {
+      id: 634472,
+      type: "NoticeBar",
+      state:2,
+      props: {
+         mode:'closable',
+         titles:'这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........',
+         marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+      },
+      propTypes: {
+        mode:['closable','link'],
+        marqueeProps:'string',
+        titles:'string'
+  
+      },
+      defaultProps: {
+        mode:'closable',
+        marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+        title:'这是一个通知栏.........',
+      },
+      style: { width: '100%' },
+  
+    },
+    {
+      id: 634473,
+      type: "NoticeBar",
+      state:2,
+      props: {
+         mode:'link',
+         titles:'这是一个通知栏.........',
+         marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+      },
+      propTypes: {
+        mode:['closable','link'],
+        marqueeProps:'string',
+        titles:'string'
+  
+      },
+      defaultProps: {
+        mode:'closable',
+        marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+        title:'这是一个通知栏.........',
+      },
+      style: { width: '100%' },
+  
+    },
+  ]
+},
+{
+  type:'List',
+  data:[
+    {
+      id: 634474,
+      type: "List",
+      state:2,
+      props: {
+       
+      },
+      propTypes: {
+        
+      },
+      defaultProps: {
+     
+      },
+      style:{ backgroundColor: '#0C83FF' },
+    },
+      
+  ]
+},
+{
+  type:'DatePicker',
+  data:[
+    {
+      id: 634475,
+      type: "DatePicker",
+      state:2,
+      props: {
+        mode:'date',
+        minDate:new Date(2015, 7, 6),
+        maxDate:new Date(2026, 11, 3),
+        format:"YYYY-MM-DD"
+      },
+      propTypes: {
+        mode:['date','time','datetime','year','month'],
+        minDate:'string',
+        maxDate:'string',
+        format:'string'
+      },
+      defaultProps: {
+        mode:'date',
+        minDate:new Date(2015, 7, 6),
+        maxDate:new Date(2026, 11, 3),
+        format:"YYYY-MM-DD"
+      },
+      style: { width: '100%', paddingVertical: 5  },
+  
+    },
+  ]
+},
+
+{
+  type:'Popover',
+  data:[
+    {
+      id: 634476,
+      type: "Popover",
+      state:2,
+      props: {
+        data:[1,2,3]
+      },
+      propTypes: {
+       data:array
+      },
+      defaultProps: {
+        data:[1,2,3]
+      },
+      style:{ },
+    },
+  
+  ]
+},
+{
+  type:'Result',
+  data:[
+    {
+      id: 634477,
+      type: "Result",
+      state:2,
+      props: {
+        
+        img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
+        title:"验证成功",
+        message:"所提交内容已成功完成验证",
+        buttonText:"完成",
+        buttonType:"primary"
+      },
+      propTypes: {
+        imgUrl:array,
+        title:'string',
+        message:'string',
+        buttonText:'string',
+        buttonType:['primary','ghost','warning'],
+      },
+      defaultProps: {
+        img:'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
+        title:"验证成功",
+        message:"所提交内容已成功完成验证",
+        buttonText:"完成",
+        buttonType:"primary"
+      },
+      style:{ },
+    },
+  ]
+},
+{
+  type:'Slider',
+  data:[
+    {
+      id: 634478,
+      type: "Slider",
+      state:2,
+      props: {
+        min: 0,
+        max: 100,
+        step: 1,
+        value: 50,
+        disabled: true,
+        maximumTrackTintColor: 'blue'
+      },
+      propTypes: {
+        min: 'number',
+        max: 'number',
+        step: 'number',
+        value: 'number',
+        disabled: 'bool',
+        maximumTrackTintColor: 'string'
+  
+      },
+      defaultProps: {
+        min: 0,
+        max: 100,
+        step: 1,
+        value: 30,
+        disabled: false,
+        maximumTrackTintColor: 'blue'
+      },
+      style: { width: '100%', height: 10,margin:10  },
+  
+    },
+  ]
+},
 ]
 
 export function getCombinationSouData(){
@@ -1815,13 +1709,7 @@ function getAddData(item) {
   const data = {
     id: new Date().getTime(),
     component: {
-      props:{
-        ...item.props
-      },
-      style:{
-        ...item.style
-      },
-      type:item.type
+     ...item
     },
     childrenCom: []
   };
