@@ -12,10 +12,11 @@ export default class StepperItem extends React.Component {
                 <Text style={styles.text}>
                     {this.props.title}
                 </Text>
+                <View>
                 <Stepper
                     {...this.props}
                 ></Stepper>
-
+                </View>
             </View>
         )
     }
