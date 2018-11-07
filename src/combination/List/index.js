@@ -5,10 +5,11 @@ export default class Lists extends React.Component {
 
     render() {
         return (
-
-            <List.Item {...this.props}>
-                {this.props.title}
-            </List.Item>
+            <List renderHeader={() => '行标题'}>
+                <List.Item {...this.props}>
+                    {this.props.title}
+                </List.Item>
+            </List>
         )
     }
 }
