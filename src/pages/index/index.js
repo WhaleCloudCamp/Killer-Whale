@@ -1,6 +1,6 @@
 import { Row, Col } from "antd";
 import { connect } from "dva";
-import { Tabs } from 'antd-mobile'
+import { Tabs } from "antd-mobile";
 import styles from "./index.less";
 import * as Whale from "components";
 import LeftContent from "./components/LeftContent";
@@ -15,55 +15,70 @@ import DeleteDroppable from "../../components/DeleteDroppable";
 // import phone from "assets/phone.png";
 
 const App = ({ global, dispatch }) => {
-  const { cneterscale = 100, sourceData,combinationSouData, components, showItemData } = global;
+  const {
+    cneterscale = 100,
+    sourceData,
+    combinationSouData,
+    views,
+    showPage,
+    showItemData
+  } = global;
+  console.log(views);
+
+  const { components = [], name = "" } = views[showPage];
   const handleChange = value =>
     dispatch({ type: "global/changeScale", payload: value });
 
-  const onDropAction = action => dispatch(action);
+  const onAction = action => dispatch(action);
+
   const clickDrag = item => {
     dispatch({ type: "global/showItem", payload: item });
   };
+
   const onSubmit = data => {
     dispatch({ type: "global/changeItem", payload: data });
   };
 
-  const tabs = [
-    { title: '基础组件', sub: '1' },
-    { title: '组合组件', sub: '2' },
-    { title: '页面', sub: '3' },
-  ];
+  const gPage = page => {
+    dispatch({ type: "global/gPage", payload: page });
+  };
 
-  const gPage = ()=>{
-    dispatch({ type: "global/gPage"});
-  }
-  
+  const dPage = page => {
+    dispatch({ type: "global/dPage", payload: page });
+  };
+  const changeShowPage = page => {
+    dispatch({ type: "global/changeShowPage", payload: page });
+  };
+
+  const tabs = [
+    { title: "基础组件", sub: "1" },
+    { title: "组合组件", sub: "2" },
+    { title: "页面", sub: "3" }
+  ];
 
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
         <Col span={6} className={styles.colclass}>
-          <div >
-            <Tabs tabs={tabs}
-              initialPage={0}
-              onChange={(tab, index) => { console.log('onChange', index, tab); }}
-              onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
-            >
-              <div style={{ display: 'flex', backgroundColor: '#fff' }}>
-
+          <div>
+            <Tabs tabs={tabs} initialPage={0}>
+              <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent sourceData={sourceData} />
-
               </div>
-              <div style={{ display: 'flex', backgroundColor: '#fff' }}>
+              <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent sourceData={combinationSouData} />
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-                {'页面'}
+              <div style={{ display: "flex", backgroundColor: "#fff" }}>
+                <LeftContent
+                  viewsData={views}
+                  gPage={gPage}
+                  dPage={dPage}
+                  changeShowPage={changeShowPage}
+                />
               </div>
-
             </Tabs>
-            <DeleteDroppable onDropAction={onDropAction} />
+            <DeleteDroppable onDropAction={onAction} />
           </div>
-
         </Col>
         <Col
           span={12}
@@ -72,17 +87,20 @@ const App = ({ global, dispatch }) => {
             minWidth: "435px"
           }}
         >
-          <CenterTitle handleChange={handleChange} />
+          <CenterTitle handleChange={handleChange} pageName={name} />
           <CenterContent
             cneterscale={cneterscale}
-            onDropAction={onDropAction}
+            onDropAction={onAction}
             components={components}
             clickDrag={clickDrag}
           />
         </Col>
         <Col span={6} className={styles.colclass}>
-          <RightTitle gPage={gPage}/>
-          {showItemData&&showItemData.id&&<RightContent showItemData={showItemData} onSubmit={onSubmit} />}
+          <RightTitle onAction={onAction} />
+          {showItemData &&
+            showItemData.id && (
+              <RightContent showItemData={showItemData} onSubmit={onSubmit} />
+            )}
         </Col>
       </Row>
     </div>
