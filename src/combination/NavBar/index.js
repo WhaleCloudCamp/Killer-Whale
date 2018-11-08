@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import {
   Image,
   View,
   Text,
   TouchableHighlight,
-  StyleSheet,
-} from 'react-native';
-import PropTypes from 'prop-types';
-import imgBackIcon from '../../assets/dark_back.png';
-import imgDelIcon from '../../assets/dark_close.png';
+  StyleSheet
+} from "react-native";
+import PropTypes from "prop-types";
+import imgBackIcon from "../../assets/dark_back.png";
+import imgDelIcon from "../../assets/dark_close.png";
 
 export default class NavBar extends React.Component {
   static propTypes = {
@@ -24,18 +24,18 @@ export default class NavBar extends React.Component {
     isShowFirstRightIcon: PropTypes.bool,
     isShowLastRightIcon: PropTypes.bool,
     isShowRightText: PropTypes.bool,
-    isUnderlayColor: PropTypes.string,
+    isUnderlayColor: PropTypes.string
   };
 
   static defaultProps = {
-    title: '标题', //当前标题
-    rightText: '提交', //右边文本
+    title: "标题", //当前标题
+    rightText: "提交", //右边文本
     isShowBk: false, // //返回键按钮是否展示
     isShowDel: false, // //左边删除按钮是否展示
     isShowFirstRightIcon: false, // //右边第一个视图是否展示
     isShowLastRightIcon: false, // //右边第二个视图是否展示
     isShowRightText: false, // //右边文本是否展示
-    isUnderlayColor: 'transparent',
+    isUnderlayColor: "transparent"
   };
 
   onSelected() {
@@ -57,7 +57,9 @@ export default class NavBar extends React.Component {
               style={stytles.touch}
               activeOpacity={0.5}
               underlayColor="transparent"
-              onPress={() => this.props.onLeftItemPress&&this.props.onLeftItemPress(this)}
+              onPress={() =>
+                this.props.onLeftItemPress && this.props.onLeftItemPress(this)
+              }
               ref="imgBackIcon"
             >
               <Image
@@ -72,7 +74,9 @@ export default class NavBar extends React.Component {
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
               style={stytles.touch}
-              onPress={() => this.props.onDelPress&&this.props.onDelPress(this)}
+              onPress={() =>
+                this.props.onDelPress && this.props.onDelPress(this)
+              }
             >
               <Image
                 source={this.props.imgDelIcon || imgDelIcon}
@@ -88,7 +92,10 @@ export default class NavBar extends React.Component {
               style={stytles.touch}
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
-              onPress={() => this.props.onRightFirstItemPress&&this.props.onRightFirstItemPress(this)}
+              onPress={() =>
+                this.props.onRightFirstItemPress &&
+                this.props.onRightFirstItemPress(this)
+              }
               ref="firstRightIcon"
             >
               <Image
@@ -103,7 +110,10 @@ export default class NavBar extends React.Component {
               style={stytles.touch}
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
-              onPress={() => this.props.onRightLastItemPress&&this.props.onRightLastItemPress(this)}
+              onPress={() =>
+                this.props.onRightLastItemPress &&
+                this.props.onRightLastItemPress(this)
+              }
               ref="lastRightIcon"
             >
               <Image
@@ -116,7 +126,9 @@ export default class NavBar extends React.Component {
             <TouchableHighlight
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
-              onPress={this.props.onRightTextPress&&this.props.onRightTextPress()}
+              onPress={
+                this.props.onRightTextPress && this.props.onRightTextPress()
+              }
             >
               <Text style={[stytles.rightText, this.props.styleRightText]}>
                 {this.props.rightText}
@@ -132,49 +144,49 @@ export default class NavBar extends React.Component {
 const stytles = StyleSheet.create({
   imgLeftIcom: {
     width: 15,
-    height: 25,
+    height: 25
   },
   imgRightIcom: {
     width: 20,
-    height: 20,
+    height: 20
   },
   main: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     height: 44,
-    backgroundColor: '#0C83FF',
+    backgroundColor: "#0C83FF"
   },
   touch: {
-    height: '100%',
+    height: "100%",
     marginLeft: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   title: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
 
     fontSize: 18,
-    textAlign: 'center',
-    width: '100%',
-    position: 'absolute',
+    textAlign: "center",
+    width: "100%",
+    position: "absolute"
   },
   leftView: {
-    flexDirection: 'row',
-    position: 'absolute',
-    height: '100%',
-    alignItems: 'center',
+    flexDirection: "row",
+    position: "absolute",
+    height: "100%",
+    alignItems: "center"
   },
   rightView: {
-    flexDirection: 'row',
-    position: 'absolute',
+    flexDirection: "row",
+    position: "absolute",
     right: 10,
-    height: '100%',
-    alignItems: 'center',
+    height: "100%",
+    alignItems: "center"
   },
   rightText: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 13,
     marginLeft: 10
-  },
+  }
 });
