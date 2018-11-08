@@ -1,5 +1,5 @@
 import { gPage } from "services/api";
-import { notification } from 'antd';
+import { notification, message } from "antd";
 
 import {
   getTestSouData,
@@ -10,15 +10,25 @@ import {
   deleteComponent
 } from "utils/data_utils";
 
-
 export default {
   namespace: "global",
   state: {
+    views: [],
+    showPage: 0,
     cneterscale: 100,
     sourceData: getTestSouData(),
-    combinationSouData:getCombinationSouData(),
-    components: getTestComData(),
+    combinationSouData: getCombinationSouData(),
+    components: [],
     showItemData: {}
+  },
+  subscriptions: {
+    setup({ dispatch, history }) {
+      return history.listen(({ pathname, query }) => {
+        dispatch({
+          type: "initComponents"
+        });
+      });
+    }
   },
   reducers: {
     save(state, action) {
@@ -26,6 +36,29 @@ export default {
     }
   },
   effects: {
+    *initComponents({ payload }, { call, put, select }) {
+      const { views, showPage } = yield select(state => state.global);
+      let pageIndex = showPage;
+      if (
+        !views ||
+        views.length === 0 ||
+        views.length < showPage ||
+        !views[showPage].components
+      ) {
+        views.push({
+          name: "home",
+          components: []
+        });
+        pageIndex = 0;
+      }
+      yield put({
+        type: "save",
+        payload: {
+          views: views,
+          showPage: pageIndex
+        }
+      });
+    },
     *changeScale({ payload }, { call, put, select }) {
       yield put({
         type: "save",
@@ -35,7 +68,10 @@ export default {
       });
     },
     *delItem({ payload }, { call, put, select }) {
-      const { sourceData, components } = yield select(state => state.global);
+      const { sourceData, views, showPage } = yield select(
+        state => state.global
+      );
+      const { components } = views[showPage];
       const data = deleteComponent(components, payload.id);
       yield put({
         type: "save",
@@ -45,7 +81,10 @@ export default {
       });
     },
     *addItem({ payload }, { call, put, select }) {
-      const { sourceData, components } = yield select(state => state.global);
+      const { sourceData, views, showPage } = yield select(
+        state => state.global
+      );
+      const { components } = views[showPage];
       if (payload.index === "max") payload.index = components.length;
       const data = addComponent(
         sourceData,
@@ -53,27 +92,30 @@ export default {
         payload.item,
         payload.index
       );
+      views[showPage].components = data.centerData;
       yield put({
         type: "save",
         payload: {
-          sourceData: data.leftData,
-          components: data.centerData
+          // sourceData: data.leftData,
+          views: views
         }
       });
     },
     *moveItem({ payload }, { call, put, select }) {
       const { dragIndex, hoverIndex } = payload;
-      const { components } = yield select(state => state.global);
+      const { views, showPage } = yield select(state => state.global);
+      const { components } = views[showPage];
       const data = moveComponent(components, dragIndex, hoverIndex);
+      views[showPage].components = data;
       yield put({
         type: "save",
         payload: {
-          components: data
+          views: views
         }
       });
     },
     *showItem({ payload }, { call, put }) {
-      const data = Object.assign({},payload||{});
+      const data = Object.assign({}, payload || {});
       yield put({
         type: "save",
         payload: {
@@ -81,14 +123,14 @@ export default {
         }
       });
     },
-    *changeItem({ payload }, { call, put,select }) {
-      if(!payload.id)return;
+    *changeItem({ payload }, { call, put, select }) {
+      if (!payload.id) return;
       const { components } = yield select(state => state.global);
-      components.map(item=>{
-        if(item.id===payload.id){
-          item = Object.assign({},payload||{});
+      components.map(item => {
+        if (item.id === payload.id) {
+          item = Object.assign({}, payload || {});
         }
-      })
+      });
       yield put({
         type: "save",
         payload: {
@@ -96,20 +138,22 @@ export default {
         }
       });
     },
-    *changeItemProp({ payload }, { call, put,select }) {
+    *changeItemProp({ payload }, { call, put, select }) {
       // payload={
       //   id:12,
       //   key:'sdsa',
       //   value:'121'
       // }
-      if(!payload.id)return;
-
-      const { components } = yield select(state => state.global);
-      components.map(item=>{
-        if(item.id===payload.id){
+      if (!payload.id) return;
+      const { sourceData, views, showPage } = yield select(
+        state => state.global
+      );
+      const { components } = views[showPage];
+      components.map(item => {
+        if (item.id === payload.id) {
           item[payload.key] = payload.value;
         }
-      })
+      });
       yield put({
         type: "save",
         payload: {
@@ -118,16 +162,58 @@ export default {
       });
     },
     *gPage({ payload }, { call, put, select }) {
-      const { components } = yield select(state => state.global);
-      console.log(components);
-      const response = yield call(gPage, { components });
+      const { views } = yield select(state => state.global);
+      views.push(payload);
+      yield put({
+        type: "save",
+        payload: {
+          views: views
+        }
+      });
+    },
+    *dPage({ payload }, { call, put, select }) {
+      const { views } = yield select(state => state.global);
+      if (views.length === 1) return message.error("至少要保留一个页面");
+      views.map((item, index) => {
+        if (item.name === payload.name) {
+          views.splice(index, 1);
+        }
+      });
+      yield put({
+        type: "save",
+        payload: {
+          views: views
+        }
+      });
+    },
+    *changeShowPage({ payload }, { call, put, select }) {
+      const { views, showPage } = yield select(state => state.global);
+      let showPageNew = showPage;
+      views.map((item, index) => {
+        if (item.name === payload.name) {
+          showPageNew = index;
+        }
+      });
+      yield put({
+        type: "save",
+        payload: {
+          showPage: showPageNew
+        }
+      });
+    },
+    *downloadCode({ payload }, { call, put, select }) {
+      const { views } = yield select(state => state.global);
+      console.log(views);
+      const response = yield call(gPage, { views });
       console.log(response);
-      if(response&&response.filePath){
+      if (response && response.filePath) {
         notification.success({
           message: "将在新页面中下载，请关闭弹窗拦截",
-          description: "如果没有正确下载，请联系开发人员",
+          description: "如果没有正确下载，请联系开发人员"
         });
-        window.open(`http://localhost:3000/download/?filePath=${response.filePath}`); 
+        window.open(
+          `http://localhost:3000/download/?filePath=${response.filePath}`
+        );
       }
       yield put({
         type: "save",

@@ -2,10 +2,10 @@ import * as Whale from "components";
 import styles from "./right.less";
 import share from "assets/share.png";
 
-const RightTitle = ({ gPage }) => {
+const RightTitle = ({ onAction }) => {
   return (
     <div className={styles.tipRight}>
-      <img src={share} className={styles.bell} alt="" onClick={gPage}/>
+      <img src={share} className={styles.bell} alt="" onClick={()=>onAction({ type: "global/downloadCode" })}/>
     </div>
   );
 };
