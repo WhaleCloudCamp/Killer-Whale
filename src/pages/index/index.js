@@ -25,7 +25,7 @@ const App = ({ global, dispatch }) => {
   } = global;
   console.log(views);
 
-  const { components = [],name="" } = views[showPage];
+  const { components = [], name = "" } = views[showPage];
   const handleChange = value =>
     dispatch({ type: "global/changeScale", payload: value });
 
@@ -45,11 +45,10 @@ const App = ({ global, dispatch }) => {
 
   const dPage = page => {
     dispatch({ type: "global/dPage", payload: page });
-
   };
-const changeShowPage = page=>{
-  dispatch({ type: "global/changeShowPage", payload: page });
-}
+  const changeShowPage = page => {
+    dispatch({ type: "global/changeShowPage", payload: page });
+  };
 
   const tabs = [
     { title: "基础组件", sub: "1" },
@@ -62,10 +61,7 @@ const changeShowPage = page=>{
       <Row className={styles.rowclass}>
         <Col span={6} className={styles.colclass}>
           <div>
-            <Tabs
-              tabs={tabs}
-              initialPage={0}
-            >
+            <Tabs tabs={tabs} initialPage={0}>
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent
                   sourceData={sourceData}
@@ -81,7 +77,12 @@ const changeShowPage = page=>{
                 />
               </div>
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
-                <LeftContent viewsData={views} gPage={gPage} dPage={dPage} changeShowPage={changeShowPage}/>
+                <LeftContent
+                  viewsData={views}
+                  gPage={gPage}
+                  dPage={dPage}
+                  changeShowPage={changeShowPage}
+                />
               </div>
             </Tabs>
             <DeleteDroppable onDropAction={onAction} />
@@ -94,7 +95,7 @@ const changeShowPage = page=>{
             minWidth: "435px"
           }}
         >
-          <CenterTitle handleChange={handleChange} pageName={name}/>
+          <CenterTitle handleChange={handleChange} pageName={name} />
           <CenterContent
             cneterscale={cneterscale}
             onDropAction={onAction}
