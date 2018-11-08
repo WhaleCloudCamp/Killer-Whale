@@ -971,10 +971,10 @@ const combinationSouData = [
         },
         propTypes: {
           title:'string',
-          styleRightText:'string',
-          styleTitle:'string',
+          styleRightText:'style',
+          styleTitle:'style',
           isShowBk:'bool', 
-          isShowDel:'borderColor: #FFFFFF', 
+          isShowDel:'bool', 
           isShowFirstRightIcon:'bool',
           isShowLastRightIcon:'bool',
           isShowRightText:'bool'
@@ -1008,8 +1008,8 @@ const combinationSouData = [
         },
         propTypes: {
           title:'string',
-          styleRightText:'string',
-          styleTitle:'string',
+          styleRightText:'style',
+          styleTitle:'style',
           isShowBk:'bool', 
           isShowDel:'bool', 
           isShowFirstRightIcon:'bool',
@@ -1046,8 +1046,8 @@ const combinationSouData = [
         },
         propTypes: {
           title:'string',
-          styleRightText:'string',
-          styleTitle:'string',
+          styleRightText:'style',
+          styleTitle:'style',
           isShowBk:'bool', 
           isShowDel:'bool', 
           isShowFirstRightIcon:'bool',
