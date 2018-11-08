@@ -63,18 +63,10 @@ const App = ({ global, dispatch }) => {
           <div>
             <Tabs tabs={tabs} initialPage={0}>
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
-                <LeftContent
-                  sourceData={sourceData}
-                  gPage={gPage}
-                  dPage={dPage}
-                />
+                <LeftContent sourceData={sourceData} />
               </div>
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
-                <LeftContent
-                  sourceData={combinationSouData}
-                  gPage={gPage}
-                  dPage={dPage}
-                />
+                <LeftContent sourceData={combinationSouData} />
               </div>
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent

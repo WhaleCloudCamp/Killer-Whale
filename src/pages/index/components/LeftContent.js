@@ -4,16 +4,23 @@ import { Collapse, Button, Row, Col, Popconfirm } from "antd";
 
 const Panel = Collapse.Panel;
 const DraggableContent = Whale.DraggableContent;
-const LeftContent = ({ sourceData = [], viewsData = [], gPage, dPage ,changeShowPage}) => {
+const LeftContent = ({
+  sourceData = [],
+  viewsData = [],
+  gPage,
+  dPage,
+  changeShowPage
+}) => {
   const confirm = item => {
     console.log("delete");
-    dPage(item);
+    dPage && dPage(item);
   };
-  const createPage = (item=[]) => {
-   const name =  prompt("请输入新页面英文名")
+  const createPage = (item = []) => {
+    const name = prompt("请输入新页面英文名");
     console.log("create page");
-    if(name)
-    gPage({name:name,components:JSON.parse(JSON.stringify(item))});
+    if (name)
+      gPage &&
+        gPage({ name: name, components: JSON.parse(JSON.stringify(item)) });
   };
 
   return (
@@ -64,10 +71,14 @@ const LeftContent = ({ sourceData = [], viewsData = [], gPage, dPage ,changeShow
             <Panel header={item.name} key={item.name}>
               <Row type="flex" justify="space-around">
                 <Col>
-                  <Button type="primary" onClick={()=>changeShowPage(item)}>切换</Button>
+                  <Button type="primary" onClick={() => changeShowPage(item)}>
+                    切换
+                  </Button>
                 </Col>
                 <Col>
-                  <Button onClick={() => createPage(item.components)}>复制</Button>
+                  <Button onClick={() => createPage(item.components)}>
+                    复制
+                  </Button>
                 </Col>
                 <Col>
                   <Popconfirm
