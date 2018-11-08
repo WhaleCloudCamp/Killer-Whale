@@ -5,12 +5,9 @@ export default class DatePickers extends React.Component {
   render() {
     return (
       <DatePicker
-        mode={this.props.mode}
-        minDate={this.props.minDate}
-        maxDate={this.props.maxDate}
-        format={this.props.format}
+        {...this.props}
       >
-        <List.Item arrow="horizontal">时间选择</List.Item>
+        <List.Item arrow="horizontal">{this.props.timeValue}</List.Item>
       </DatePicker>
     );
   }

@@ -931,26 +931,7 @@ const combinationSouData = [
       },
     ]
   },
-  {
-    type:'TabBadge',
-    data:[
-      {
-        id: 634464,
-        type: "TabBadge",
-        state:2,
-        props: {
-        
-        },
-        propTypes: {
-         
-        },
-        defaultProps: {
-        
-        },
-        style: {   margin: 5 }
-      },
-    ]
-  },
+
   {
     type:'NavBar',
     data:[
@@ -1239,7 +1220,7 @@ const combinationSouData = [
           extra: '元',
           placeholder: '不可编辑',
           showtype:2,
-          imgurl:'https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png',
+ 
           labelNumber:2
         },
         propTypes: {
@@ -1679,19 +1660,22 @@ const combinationSouData = [
         mode:'date',
         minDate:new Date(2015, 7, 6),
         maxDate:new Date(2026, 11, 3),
-        format:"YYYY-MM-DD"
+        format:"YYYY-MM-DD",
+        timeValue:'时间选择'
       },
       propTypes: {
         mode:['date','time','datetime','year','month'],
         minDate:'string',
         maxDate:'string',
-        format:'string'
+        format:'string',
+        timeValue:'string',
       },
       defaultProps: {
         mode:'date',
         minDate:new Date(2015, 7, 6),
         maxDate:new Date(2026, 11, 3),
-        format:"YYYY-MM-DD"
+        format:"YYYY-MM-DD",
+        timeValue:'时间选择'
       },
       style: { width: '100%', paddingVertical: 5  },
   

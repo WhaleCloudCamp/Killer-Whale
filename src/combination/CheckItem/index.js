@@ -16,7 +16,7 @@ export default class CheckboxItem extends React.Component {
 }
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
+    margin:5,
     flexDirection: "row",
     alignItems: "center"
   }
