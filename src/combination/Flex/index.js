@@ -15,10 +15,10 @@ const getListStyle = (canDrop, dropStyle) => ({
   //   padding: grid,
   minHeight: "100%",
   overflow: "auto",
-  borderWidth:canDrop? "1px":"none",
-  borderStyle:canDrop?"dotted":"dashed",
-  padding:canDrop?"30px":null,
-  background:'red',
+  borderWidth: canDrop ? "1px" : "none",
+  borderStyle: canDrop ? "dotted" : "dashed",
+  padding: canDrop ? "30px" : null,
+  background: "red",
   ...dropStyle
 });
 const chessSquareTarget = {
@@ -27,11 +27,15 @@ const chessSquareTarget = {
   },
   hover(props, monitor, component) {},
   drop(props, monitor, component) {
-    if(monitor.isOver({ shallow: true })){
+    if (monitor.isOver({ shallow: true })) {
       const parentId = props.parentId;
       const item = monitor.getItem();
       console.log(props.onDropAction);
-      props.onDropAction&&props.onDropAction({ type: "global/addchildrenCom", payload: {item:item.data,parentId:parentId,index:'max'} });
+      props.onDropAction &&
+        props.onDropAction({
+          type: "global/addchildrenCom",
+          payload: { item: item.data, parentId: parentId, index: "max" }
+        });
     }
   }
 };
@@ -73,17 +77,27 @@ export default class Flex extends React.Component {
   };
 
   render() {
-    const { direction, wrap, alignItems, align, children ,connectDropTarget, canDrop } = this.props;
+    const {
+      direction,
+      wrap,
+      alignItems,
+      align,
+      children,
+      connectDropTarget,
+      canDrop
+    } = this.props;
     const styles = {
       flex: 1,
       flexDirection: direction,
       flexWrap: wrap,
       alignItems: alias[alignItems] || alignItems,
       justifyContent: alias[align] || align,
-      padding:children?null:30,
+      padding: children ? null : 30
     };
-console.log(children);
+    console.log(children);
 
-    return connectDropTarget(<div style={getListStyle(canDrop, styles)}>{children}</div>);
+    return connectDropTarget(
+      <div style={getListStyle(canDrop, styles)}>{children}</div>
+    );
   }
 }
