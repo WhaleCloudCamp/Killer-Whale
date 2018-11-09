@@ -2,9 +2,9 @@ import FlexBox from "./FlexBox";
 import Dimensions from "./Dimensions";
 import styles from "./right.less";
 
-const RightContent = ({ showItemData, onSubmit }) => {
+const RightContent = ({ showItemData, changeItemProp }) => {
   const {id,component} = showItemData;
-  const {type,props,style} = component;
+  const {type,props,style,propTypes} = component;
 
   return (
     <div>
@@ -18,7 +18,7 @@ const RightContent = ({ showItemData, onSubmit }) => {
           </div>
         </div>
       </div>
-      <Dimensions data={props}/>
+      <Dimensions data={props} types={propTypes} parentId={id} changeItemProp={changeItemProp}/>
       {type==='Flex'&&<FlexBox />}
     </div>
   )

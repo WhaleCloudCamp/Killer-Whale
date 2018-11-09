@@ -38,6 +38,9 @@ const App = ({ global, dispatch }) => {
   const onSubmit = data => {
     dispatch({ type: "global/changeItem", payload: data });
   };
+  const changeItemProp = data => {
+    dispatch({ type: "global/changeItemProp", payload: data });
+  };
 
   const gPage = page => {
     dispatch({ type: "global/gPage", payload: page });
@@ -97,10 +100,12 @@ const App = ({ global, dispatch }) => {
         </Col>
         <Col span={6} className={styles.colclass}>
           <RightTitle onAction={onAction} />
-          {showItemData &&
-            showItemData.id && (
-              <RightContent showItemData={showItemData} onSubmit={onSubmit} />
-            )}
+          {showItemData && showItemData.id && (
+            <RightContent
+              showItemData={showItemData}
+              changeItemProp={changeItemProp}
+            />
+          )}
         </Col>
       </Row>
     </div>

@@ -1,7 +1,7 @@
 import styles from "./rightItem.less";
 import InputItem from "./InputItem";
 import SelectItem from "./SelectItem";
-const Dimensions = ({ data }) => {
+const Dimensions = ({ data, types ,parentId,changeItemProp}) => {
   return (
     <div className={styles.kpJPge}>
       <div className={styles.iAIceQ}>
@@ -10,9 +10,42 @@ const Dimensions = ({ data }) => {
       <div className={styles.gCSQPN}>
         <div>
           {Object.keys(data).map(item => {
-            return <InputItem type={item} value={data[item]} key={item} />;
+            if (typeof types[item] === "string" || !types[item]) {
+              if (types[item] === "bool") {
+                return (
+                  <SelectItem
+                    type={item}
+                    value={data[item]}
+                    parentId={parentId}
+                    changeItemProp={changeItemProp}
+                    optionsValue={['true', 'false']}
+                    key={item}
+                  />
+                );
+              }
+              return (
+                <InputItem
+                  type={item}
+                  value={types[item] === "array"?JSON.stringify(data[item]):data[item]}
+                  key={item}
+                  parentId={parentId}
+                  changeItemProp={changeItemProp}
+                  isNumber={types[item] === "number"}
+                />
+              );
+            } else {
+              return (
+                <SelectItem
+                  type={item}
+                  value={data[item]}
+                  parentId={parentId}
+                  changeItemProp={changeItemProp}
+                  optionsValue={types[item]}
+                  key={item}
+                />
+              );
+            }
           })}
-          <SelectItem type='type' value='1'/>
         </div>
       </div>
     </div>
