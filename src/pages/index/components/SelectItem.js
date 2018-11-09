@@ -9,7 +9,11 @@ class SelectItem extends React.Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
-    this.props.changeItemProp({id:this.props.parentId,key:this.props.type,value:event.target.value})
+    this.props.changeItemProp({
+      id: this.props.parentId,
+      key: this.props.type,
+      value: event.target.value
+    });
   }
 
   render() {
@@ -32,9 +36,11 @@ class SelectItem extends React.Component {
             >
               {optionsValue &&
                 optionsValue.map((item, index) => {
-                  return (<option value={item} key={index}>
-                    {item}
-                  </option>);
+                  return (
+                    <option value={item} key={index}>
+                      {item}
+                    </option>
+                  );
                 })}
             </select>
             <div className={styles.hWrpYy}>

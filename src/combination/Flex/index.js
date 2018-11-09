@@ -10,16 +10,6 @@ const alias = {
   start: "flex-start",
   center: "center"
 };
-class None extends React.Component {
-  render() {
-    const styles = {
-    height:50,
-    width:'100%'
-    };
-
-    return <View style={styles}><Text>None</Text></View>;
-  }
-}
 const getListStyle = (canDrop, dropStyle) => ({
   // background: isDraggingOver ? "lightblue" : "lightgrey",
   //   padding: grid,
