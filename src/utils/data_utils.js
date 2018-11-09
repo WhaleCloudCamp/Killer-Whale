@@ -928,20 +928,6 @@ const combinationSouData = [
     ]
   },
   {
-    type: "TabBadge",
-    data: [
-      {
-        id: 634464,
-        type: "TabBadge",
-        state: 2,
-        props: {},
-        propTypes: {},
-        defaultProps: {},
-        style: { margin: 5 }
-      }
-    ]
-  },
-  {
     type: "NavBar",
     data: [
       {
@@ -1219,15 +1205,14 @@ const combinationSouData = [
         type: "InputItem",
         state: 2,
         props: {
-          type: "text",
-          editable: false,
-          value: "不可编辑",
-          extra: "元",
-          placeholder: "不可编辑",
-          showtype: 2,
-          imgurl:
-            "https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png",
-          labelNumber: 2
+          type: 'text',
+          editable:false,
+          value: '不可编辑',
+          extra: '元',
+          placeholder: '不可编辑',
+          showtype:2,
+ 
+          labelNumber:2
         },
         propTypes: {
           type: "string",
@@ -1464,6 +1449,220 @@ const combinationSouData = [
       }
     ]
   },
+  
+{
+  type:'NoticeBar',
+  data:[
+    {
+      id: 634472,
+      type: "NoticeBar",
+      state:2,
+      props: {
+         mode:'closable',
+         titles:'这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........',
+         marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+      },
+      propTypes: {
+        mode:['closable','link'],
+        marqueeProps:'string',
+        titles:'string'
+  
+      },
+      defaultProps: {
+        mode:'closable',
+        marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+        title:'这是一个通知栏.........',
+      },
+      style: { width: '100%' },
+  
+    },
+    {
+      id: 634473,
+      type: "NoticeBar",
+      state:2,
+      props: {
+         mode:'link',
+         titles:'这是一个通知栏.........',
+         marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+      },
+      propTypes: {
+        mode:['closable','link'],
+        marqueeProps:'string',
+        titles:'string'
+  
+      },
+      defaultProps: {
+        mode:'closable',
+        marqueeProps:{ loop: true, style: { fontSize: 12, color: 'red' } },
+        title:'这是一个通知栏.........',
+      },
+      style: { width: '100%' },
+  
+    },
+  ]
+},
+{
+  type:'List',
+  data:[
+    {
+      id: 6344741,
+      type: "List",
+      state:2,
+      props: {
+        title:'这是不换行item,这是不换行item,这是不换行item'
+      },
+      propTypes: {
+        title:'string'
+      },
+      defaultProps: {
+        title:''
+      },
+      style:{ },
+    },
+    {
+      id: 6344742,
+      type: "List",
+      state:2,
+      props: {
+        wrap:true,
+        title:'这是自动换行item,这是自动换行item,这是自动换行item'
+      },
+      propTypes: {
+        wrap:'bool',
+        title:'string'
+      },
+      defaultProps: {
+        wrap:true,
+        title:''
+      },
+      style:{ },
+    },
+    {
+      id: 6344743,
+      type: "List",
+      state:2,
+      props: {
+      
+        disabled:true,
+        extra:'箭头向右',
+        arrow:'horizontal',
+        title:'标题'
+      },
+      propTypes: {
+        disabled:'bool',
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        disabled:true,
+        extra:'箭头向右',
+        arrow:'horizontal',
+        title:'标题'
+      },
+      style:{ },
+    },
+    {
+      id: 6344744,
+      type: "List",
+      state:2,
+      props: {
+      
+        extra:'箭头向下',
+        arrow:'down',
+        title:'标题'
+      },
+      propTypes: {
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        extra:'箭头向下',
+        arrow:'down',
+        title:'标题'
+      },
+      style:{ },
+    },
+    {
+      id: 6344745,
+      type: "List",
+      state:2,
+      props: {
+      
+        extra:'箭头向上',
+        arrow:'up',
+        title:'标题'
+      },
+      propTypes: {
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        extra:'箭头向上',
+        arrow:'up',
+        title:'标题'
+      },
+      style:{ },
+    },
+    {
+      id: 6344746,
+      type: "List",
+      state:2,
+      props: {
+      
+        extra:'没有箭头',
+        arrow:'empty',
+        title:'标题'
+      },
+      propTypes: {
+        extra:'string',
+        arrow:['horizontal','up','down','empty'],
+        title:'string'
+      },
+      defaultProps: {
+        extra:'没有箭头',
+        arrow:'empty',
+        title:'标题'
+      },
+      style:{ },
+    },
+  ]
+},
+{
+  type:'DatePicker',
+  data:[
+    {
+      id: 634475,
+      type: "DatePicker",
+      state:2,
+      props: {
+        mode:'date',
+        minDate:new Date(2015, 7, 6),
+        maxDate:new Date(2026, 11, 3),
+        format:"YYYY-MM-DD",
+        timeValue:'时间选择'
+      },
+      propTypes: {
+        mode:['date','time','datetime','year','month'],
+        minDate:'string',
+        maxDate:'string',
+        format:'string',
+        timeValue:'string',
+      },
+      defaultProps: {
+        mode:'date',
+        minDate:new Date(2015, 7, 6),
+        maxDate:new Date(2026, 11, 3),
+        format:"YYYY-MM-DD",
+        timeValue:'时间选择'
+      },
+      style: { width: '100%', paddingVertical: 5  },
+  
+    },
+  ]
+},
 
   {
     type: "NoticeBar",

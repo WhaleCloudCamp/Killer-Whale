@@ -26,7 +26,7 @@ const getItemStyle = (isDragging, canDrop) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
   background: isDragging ? "lightgreen" : "",
-  border: canDrop ? "1px dotted" : "none"
+  outline: canDrop ? "1px dotted" : "none"
   // styles we need to apply on draggables
 });
 
@@ -41,7 +41,7 @@ const chessSquareTarget = {
     }
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
-    
+
     // Don't replace items with themselves
     if (dragIndex === hoverIndex || !dragIndex&&dragIndex!==0 || !hoverIndex&&hoverIndex!==0) {
       return;
@@ -90,7 +90,7 @@ const chessSquareTarget = {
     const item = monitor.getItem();
     if (!item.index&&item.index!==0&&monitor.isOver({ shallow: true })){
       console.log("item.index",item.index);
-      
+
       props.onDropAction&&props.onDropAction({
         type: "global/addItem",
         payload: { item: item.data, index: props.index + 1 || "max" }
