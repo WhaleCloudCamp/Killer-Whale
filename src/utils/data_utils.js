@@ -194,7 +194,6 @@ const testSouData = [
         },
         defaultProps: {
           checked: true,
-          checked: true,
           disabled: true
         },
         style: { margin: 5 }
