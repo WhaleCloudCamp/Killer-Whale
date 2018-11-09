@@ -13,3 +13,6 @@ export { default as NoticeBar } from "../combination/NoticeBar/index";
 export { default as DatePicker } from "../combination/DatePicker/index";
 export { default as Popover } from "../combination/Popover/index";
 export { default as Result } from "../combination/Result/index";
+export { default as QuickEntry} from "../combination/QuickEntry/index";
+export { default as HomeBar} from "../combination/HomeBar/index";
+export { default as ItemTypeOne} from '../combination/ItemTypeOne/index';
