@@ -80,6 +80,35 @@ export default {
         }
       });
     },
+    *addchildrenCom({ payload }, { call, put, select }) {
+      console.log("addchildrenCom");
+
+      const { sourceData, views, showPage } = yield select(
+        state => state.global
+      );
+      const { components } = views[showPage];
+      const { index, parentId, item } = payload;
+      console.log(views);
+
+      components.map(com => {
+        if (com.id === parentId) {
+          const childrenCom = com.childrenCom;
+          let itemIndex = index === "max" ? childrenCom.length : index;
+          const data = addComponent(sourceData, childrenCom, item, itemIndex);
+          com.childrenCom = data.centerData;
+        }
+        return com;
+      });
+      console.log(views);
+
+      yield put({
+        type: "save",
+        payload: {
+          // sourceData: data.leftData,
+          views: views
+        }
+      });
+    },
     *addItem({ payload }, { call, put, select }) {
       const { sourceData, views, showPage } = yield select(
         state => state.global
@@ -145,13 +174,24 @@ export default {
       //   value:'121'
       // }
       if (!payload.id) return;
-      const { sourceData, views, showPage } = yield select(
-        state => state.global
-      );
+      const { views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
       components.map(item => {
         if (item.id === payload.id) {
-          item[payload.key] = payload.value;
+          switch (item.component.propTypes[payload.key]) {
+            case "bool":
+              payload.value = payload.value === "true";
+              break;
+            case "number":
+              payload.value = parseInt(payload.value);
+              break;
+            case "array":
+              payload.value = JSON.parse(payload.value);
+              break;
+            default:
+              break;
+          }
+          item.component.props[payload.key] = payload.value;
         }
       });
       yield put({

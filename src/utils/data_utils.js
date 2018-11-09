@@ -1,4 +1,4 @@
-import comjson from '../assets/components-description.json';
+import comjson from "../assets/components-description.json";
 const testAction = {
   destination: {
     droppableId: "centerPanel",
@@ -55,7 +55,9 @@ const initSouData = {
 };
 const testSouData = [
   {
-    type: 'Button',
+
+    type: "Button",
+
     data: [
       {
         id: 5344321,
@@ -69,11 +71,11 @@ const testSouData = [
           loading: 'bool',
         },
         defaultProps: {
-          type: 'ghost',
-          children: '确定',
+          type: "ghost",
+          children: "确定",
           pressIn: false,
           disabled: false,
-          loading: false,
+          loading: false
         },
         style: {}
       },
@@ -81,6 +83,7 @@ const testSouData = [
         id: 5344332,
         type: "Button",
         state: 1,
+
         props: { type: 'warning', children: '确定' },
         propTypes: {
           type: ['primary', 'ghost', 'warning'],
@@ -89,11 +92,11 @@ const testSouData = [
           loading: 'bool',
         },
         defaultProps: {
-          type: 'ghost',
-          children: '确定',
+          type: "ghost",
+          children: "确定",
           pressIn: false,
           disabled: false,
-          loading: false,
+          loading: false
         },
         style: {}
       },
@@ -101,19 +104,21 @@ const testSouData = [
         id: 5344333,
         type: "Button",
         state: 1,
+
         props: { type: 'primary', children: '确定' },
         propTypes: {
           type: ['primary', 'ghost', 'warning'],
           pressIn: 'bool',
           disabled: 'bool',
           loading: 'bool',
+
         },
         defaultProps: {
-          type: 'primary',
-          children: '确定',
+          type: "primary",
+          children: "确定",
           pressIn: false,
           disabled: false,
-          loading: false,
+          loading: false
         },
         style: {}
       },
@@ -121,6 +126,7 @@ const testSouData = [
         id: 5344334,
         type: "Button",
         state: 1,
+
         props: {
           type: 'primary', children: '确定',
           disabled: true
@@ -132,13 +138,14 @@ const testSouData = [
           loading: 'bool',
         },
         defaultProps: {
-          type: 'primary',
-          children: '确定',
+          type: "primary",
+          children: "确定",
           pressIn: false,
           disabled: false,
-          loading: false,
+          loading: false
         },
         style: {}
+
       }, {
         id: 5344335,
         type: "Button",
@@ -152,15 +159,18 @@ const testSouData = [
           pressIn: 'bool',
           disabled: 'bool',
           loading: 'bool',
+
+   
         },
         defaultProps: {
-          type: 'primary',
-          children: '确定',
+          type: "primary",
+          children: "确定",
           pressIn: false,
           disabled: false,
-          loading: false,
+          loading: false
         },
         style: {}
+
       },
     ]
   },
@@ -230,13 +240,16 @@ const testSouData = [
     ]
   },
 
+
   {
+
     type: 'Pagination',
     data: [
       {
         id: 5344361,
         type: "Pagination",
         state: 1,
+
         props: {
           mode: 'pointer',
           current: 1,
@@ -259,6 +272,7 @@ const testSouData = [
           total: 4,
           simple: false,
           disabled: false,
+
 
         },
         style: { width: '100%' }
@@ -293,6 +307,7 @@ const testSouData = [
         },
         style: { width: '100%' }
 
+
       },
     ]
   },
@@ -300,6 +315,7 @@ const testSouData = [
     type: 'Tabs',
     data: [
       {
+
         id: 534437,
         type: "Tabs",
         state: 1,
@@ -353,20 +369,24 @@ const testSouData = [
         style: { width: '100%', height: 30 }
 
       },
+
     ]
   },
 
   {
+
     type: 'Checkbox',
     data: [
       {
         id: 534440,
         type: "Checkbox",
         state: 1,
+
         props: {
           defaultChecked: false,
           checked: true,
           disabled: false,
+
           title: '单项选择'
 
         },
@@ -375,6 +395,7 @@ const testSouData = [
           checked: 'bool',
           disabled: 'bool',
           title: 'string'
+
         },
         defaultProps: {
           defaultChecked: false,
@@ -386,16 +407,19 @@ const testSouData = [
         style: { width: 28, height: 28, margin: 5 },
 
       },
+
     ]
   },
 
   {
+
     type: 'Stepper',
     data: [
       {
         id: 534442,
         type: "Stepper",
         state: 1,
+
         props: {
           min: 1,
           max: 100,
@@ -1100,12 +1124,15 @@ const combinationSouData = [
           disabled: 'bool',
           showImg: 'bool',
           title: 'string'
+
         },
         defaultProps: {
           checked: true,
           disabled: false,
           showImg: true,
+
           title: '单项选择标签'
+
         },
         style: { margin: 5 }
       },
@@ -1117,6 +1144,7 @@ const combinationSouData = [
           checked: true,
           disabled: false,
           showImg: false,
+
           title: '单项选择标签'
         },
         propTypes: {
@@ -1124,11 +1152,13 @@ const combinationSouData = [
           disabled: 'bool',
           showImg: 'bool',
           title: 'string'
+
         },
         defaultProps: {
           checked: true,
           disabled: false,
           showImg: false,
+
           title: '单项选择标签'
         },
         style: { margin: 5 }
@@ -1137,6 +1167,7 @@ const combinationSouData = [
   },
   {
     type: 'StepperItem',
+
     data: [
       {
         id: 634467,
@@ -1149,6 +1180,7 @@ const combinationSouData = [
           value: 50,
           disabled: false,
           showNumber: true,
+
           title: '计步器值'
         },
         propTypes: {
@@ -1159,6 +1191,7 @@ const combinationSouData = [
           disabled: 'bool',
           showNumber: 'bool',
           title: 'string'
+
         },
         defaultProps: {
           min: 1,
@@ -1167,6 +1200,7 @@ const combinationSouData = [
           value: 50,
           disabled: false,
           showNumber: true,
+
           title: '计步器值'
         },
         style: {},
@@ -1175,22 +1209,26 @@ const combinationSouData = [
   },
   {
     type: 'InputItem',
+
     data: [
       {
         id: 6344681,
         type: "InputItem",
         state: 2,
         props: {
-          type: 'text',
+          type: "text",
           clear: true,
           error: true,
+
           extra: '元',
           placeholder: '有标签',
           title: '标签',
+
           showtype: 1,
           labelNumber: 2
         },
         propTypes: {
+
           type: 'string',
           value: 'string',
           placeholder: 'string',
@@ -1632,6 +1670,7 @@ const combinationSouData = [
       {
         id: 6344746,
         type: "List",
+
         state: 2,
         props: {
 
@@ -1640,6 +1679,7 @@ const combinationSouData = [
           title: '标题'
         },
         propTypes: {
+
           extra: 'string',
           arrow: ['horizontal', 'up', 'down', 'empty'],
           title: 'string'
@@ -1650,6 +1690,7 @@ const combinationSouData = [
           title: '标题'
         },
         style: {},
+
       },
     ]
   },
@@ -1657,6 +1698,7 @@ const combinationSouData = [
     type: 'DatePicker',
     data: [
       {
+
         id: 634475,
         type: "DatePicker",
         state: 2,
@@ -1684,10 +1726,12 @@ const combinationSouData = [
         style: { width: '100%', paddingVertical: 5 },
 
       },
+
     ]
   },
 
   {
+
     type: 'Popover',
     data: [
       {
@@ -1738,6 +1782,7 @@ const combinationSouData = [
           buttonType: "primary"
         },
         style: {},
+
       },
     ]
   },
@@ -1745,8 +1790,10 @@ const combinationSouData = [
     type: 'Slider',
     data: [
       {
+
         id: 634478,
         type: "Slider",
+
         state: 2,
         props: {
           min: 0,
@@ -1754,6 +1801,7 @@ const combinationSouData = [
           step: 1,
           value: 50,
           disabled: true,
+
           maximumTrackTintColor: 'blue'
         },
         propTypes: {
@@ -1845,6 +1893,7 @@ const combinationSouData = [
         style: {},
 
       },
+
     ]
   },
   {
@@ -1868,16 +1917,17 @@ const combinationSouData = [
         },
         style: {},
 
+
       },
     ]
   },
 ]
 
+
 export function getCombinationSouData() {
   return combinationSouData;
 }
 export function getTestSouData() {
-
   return testSouData;
 }
 export function getTestComData() {
@@ -1896,7 +1946,9 @@ export function getItemById(data, id) {
 function getAddData(item) {
   const data = {
     id: new Date().getTime(),
-    component: { ...item },
+
+    component: JSON.parse(JSON.stringify(item)),
+
     childrenCom: []
   };
   return data;

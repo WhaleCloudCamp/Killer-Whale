@@ -12,12 +12,10 @@ const LeftContent = ({
   changeShowPage
 }) => {
   const confirm = item => {
-    console.log("delete");
     dPage && dPage(item);
   };
   const createPage = (item = []) => {
     const name = prompt("请输入新页面英文名");
-    console.log("create page");
     if (name)
       gPage &&
         gPage({ name: name, components: JSON.parse(JSON.stringify(item)) });
