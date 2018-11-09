@@ -74,7 +74,6 @@ const chessSquareTarget = {
     }
 
     // Time to actually perform the action
-    // props.moveCard(dragIndex, hoverIndex);
 
     props.onDropAction&&props.onDropAction({
       type: "global/moveItem",

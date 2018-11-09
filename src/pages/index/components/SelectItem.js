@@ -5,20 +5,16 @@ class SelectItem extends React.Component {
     super(props);
     this.state = { value: props.value };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
+    this.props.changeItemProp({id:this.props.parentId,key:this.props.type,value:event.target.value})
   }
 
   render() {
     const { value } = this.state;
-    const { handleBlur ,type} = this.props;
+    const { type, optionsValue } = this.props;
     return (
       <div className={styles.fqvwjT}>
         <div className={styles.dcJAHC}>
@@ -28,17 +24,18 @@ class SelectItem extends React.Component {
         </div>
         <div className={styles.ffgvpT}>
           <div className={styles.ggjvuQ}>
-            <select tabIndex="-1" className={styles.iqAZmK} value={value} onChange={this.handleChange}>
-            <option value="gg">Google</option>
-              <option value="1">10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option>35</option>
-              <option>45</option>
-              <option>65</option>
-              <option>80</option>
-              <option>Auto</option>
+            <select
+              tabIndex="-1"
+              className={styles.iqAZmK}
+              value={value}
+              onChange={this.handleChange}
+            >
+              {optionsValue &&
+                optionsValue.map((item, index) => {
+                  return (<option value={item} key={index}>
+                    {item}
+                  </option>);
+                })}
             </select>
             <div className={styles.hWrpYy}>
               <svg
