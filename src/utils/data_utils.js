@@ -155,10 +155,12 @@ const testSouData = [
           loading: true
         },
         propTypes: {
-          type: ["primary", "ghost", "warning"],
-          pressIn: "bool",
-          disabled: "bool",
-          loading: "bool"
+          type: ['primary', 'ghost', 'warning'],
+          pressIn: 'bool',
+          disabled: 'bool',
+          loading: 'bool',
+
+
         },
         defaultProps: {
           type: "primary",
@@ -312,16 +314,17 @@ const testSouData = [
           tabBarTextStyle: { fontSize: 16 }
         },
         propTypes: {
-          tabs: "array",
-          tabBarPosition: "string",
-          initialPage: "number",
-          swipeable: "bool",
-          animated: "borderColor: #FFFFFF",
-          prerenderingSiblingsNumber: "number",
-          tabBarBackgroundColor: "string",
-          tabBarActiveTextColor: "string",
-          tabBarInactiveTextColor: "string",
-          tabBarTextStyle: "string"
+          tabs: 'array',
+          tabBarPosition: 'string',
+          initialPage: 'number',
+          swipeable: 'bool',
+          animated: 'borderColor: #FFFFFF',
+          prerenderingSiblingsNumber: 'number',
+          tabBarBackgroundColor: 'string',
+          tabBarActiveTextColor: 'string',
+          tabBarInactiveTextColor: 'string',
+          tabBarTextStyle: 'style',
+
         },
         defaultProps: {
           tabs: [
@@ -431,10 +434,11 @@ const testSouData = [
           }
         },
         propTypes: {
-          percent: "number",
-          position: ["fixed", "normal"],
-          unfilled: "bool",
-          barStyle: "string"
+          percent: 'number',
+          position: ['fixed', 'normal'],
+          unfilled: 'bool',
+          barStyle: 'style'
+
         },
         defaultProps: {
           percent: 0,
@@ -673,8 +677,13 @@ const testSouData = [
           ],
           selectable: true
         },
+<<<<<<< HEAD
         style: {}
       }
+=======
+        style: {},
+      },
+>>>>>>> 1e1980f30c371f49f464ae36c008354c5491a445
     ]
   },
   {
@@ -1256,6 +1265,8 @@ const combinationSouData = [
         type: "Carousel",
         state: 2,
         props: {
+          dataItem: [{ url:'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png'}, { url:'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png' }],
+
           autoplay: true,
           infinite: true,
           autoplayInterval: 3000,
@@ -1263,13 +1274,15 @@ const combinationSouData = [
           vertical: false
         },
         propTypes: {
-          autoplay: "bool",
-          infinite: "bool",
-          autoplayInterval: "number",
-          dots: "bool",
-          vertical: "bool"
+          dataItem: 'array',
+          autoplay: 'bool',
+          infinite: 'bool',
+          autoplayInterval: 'number',
+          dots: 'bool',
+          vertical: 'bool'
         },
         defaultProps: {
+
           autoplay: true,
           infinite: true,
           autoplayInterval: 3000,
@@ -1283,6 +1296,7 @@ const combinationSouData = [
         state: 2,
         type: "Carousel",
         props: {
+          dataItem: [{ url:'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png' }, { url:'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png' },],
           autoplay: true,
           infinite: true,
           autoplayInterval: 3000,
@@ -1290,11 +1304,12 @@ const combinationSouData = [
           vertical: true
         },
         propTypes: {
-          autoplay: "bool",
-          infinite: "bool",
-          autoplayInterval: "number",
-          dots: "bool",
-          vertical: "bool"
+          dataItem: 'array',
+          autoplay: 'bool',
+          infinite: 'bool',
+          autoplayInterval: 'number',
+          dots: 'bool',
+          vertical: 'bool'
         },
         defaultProps: {
           autoplay: true,
@@ -1605,9 +1620,10 @@ const combinationSouData = [
 
         state: 2,
         props: {
+
           thumb: "https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png",
           arrow: "horizontal",
-          title: "标题"
+          title: '标题'
         },
         propTypes: {
           thumb: "string",
@@ -1638,11 +1654,11 @@ const combinationSouData = [
           timeValue: "时间选择"
         },
         propTypes: {
-          mode: ["date", "time", "datetime", "year", "month"],
-          minDate: "string",
-          maxDate: "string",
-          format: "string",
-          timeValue: "string"
+          mode: ['date', 'time', 'datetime', 'year', 'month'],
+          minDate: 'object',
+          maxDate: 'object',
+          format: 'string',
+          timeValue: 'string',
         },
         defaultProps: {
           mode: "date",
@@ -1684,23 +1700,22 @@ const combinationSouData = [
         type: "Result",
         state: 2,
         props: {
-          img:
-            "https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg",
+
+          AlipayImg: require('../assets/bell.png'),
           title: "验证成功",
           message: "所提交内容已成功完成验证",
           buttonText: "完成",
           buttonType: "primary"
         },
         propTypes: {
-          imgUrl: "array",
-          title: "string",
-          message: "string",
-          buttonText: "string",
-          buttonType: ["primary", "ghost", "warning"]
+          imgUrl: 'string',
+          title: 'string',
+          message: 'string',
+          buttonText: 'string',
+          buttonType: ['primary', 'ghost', 'warning'],
         },
         defaultProps: {
-          img:
-            "https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg",
+
           title: "验证成功",
           message: "所提交内容已成功完成验证",
           buttonText: "完成",
@@ -1780,14 +1795,17 @@ const combinationSouData = [
           ],
           columnNum: 4,
           hasLine: false,
-          showType: 1
+          columnNum: 4,
+          showType: 1,
+
         },
         propTypes: {
-          title: "string",
-          data: "array",
-          columnNum: "bool",
-          hasLine: "bool",
-          showType: "number"
+          title: 'string',
+          data: 'array',
+          columnNum: 'bool',
+          hasLine: 'bool',
+          showType: 'number',
+          columnNum: 'number'
         },
         defaultProps: {
           title: "快速入口"
@@ -1804,9 +1822,11 @@ const combinationSouData = [
         type: "HomeBar",
         state: 2,
         props: {
-          textOne: "身份扫描",
-          textTwo: "更多",
-          textCenter: "定位客户"
+          textOne: '身份扫描',
+          textTwo: '更多',
+          textCenter: '定位客户',
+
+
         },
         propTypes: {
           textOne: "string",
@@ -1826,19 +1846,16 @@ const combinationSouData = [
         type: "ItemTypeOne",
         state: 2,
         props: {
-          title: "2018-08-城市固定本地畅打18元套餐",
-          tagTitle: "查看详情",
-          rightText: "立即处理",
-          dataItem: [
-            { title: "3张手机卡" },
-            { title: "200M宽带免费" },
-            { title: "20K高清ITV" }
-          ]
+          title: '2018-08-城市固定本地畅打18元套餐',
+          tagTitle: '查看详情',
+          rightText: '立即处理',
+          dataItem: [{ title: '3张手机卡' }, { title: '200M宽带免费' }, { title: '20K高清ITV' }]
+
         },
         propTypes: {
-          title: "string",
-          tagTitle: "string",
-          dataItem: "array"
+          title: 'string',
+          tagTitle: 'string',
+          dataItem: 'array',
         },
         defaultProps: {},
         style: {}
@@ -1853,17 +1870,23 @@ const combinationSouData = [
         type: "Line",
         state: 2,
         props: {
-          showType: "lg"
+          showType: 'lg'
+
         },
         propTypes: {
-          showType: ["sm", "lg"]
+          showType: ['sm', 'lg']
+        },
+        defaultProps: {
+
         },
         defaultProps: {},
         style: {}
       }
     ]
-  }
-];
+  },
+
+]
+
 
 export function getCombinationSouData() {
   return combinationSouData;

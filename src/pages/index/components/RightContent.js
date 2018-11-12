@@ -5,7 +5,6 @@ import styles from "./right.less";
 const RightContent = ({ showItemData, changeItemProp }) => {
   const { id, component } = showItemData;
   const { type, props, style, propTypes } = component;
-  console.log(component);
 
   return (
     <div>
@@ -24,6 +23,7 @@ const RightContent = ({ showItemData, changeItemProp }) => {
           parentId={id}
           changeItemProp={changeItemProp}
         />
+        
       )}
       {type === "Flex" && (
         <FlexBox data={props} parentId={id} changeItemProp={changeItemProp} />
