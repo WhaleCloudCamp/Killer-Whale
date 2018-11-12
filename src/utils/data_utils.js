@@ -677,13 +677,8 @@ const testSouData = [
           ],
           selectable: true
         },
-<<<<<<< HEAD
-        style: {}
-      }
-=======
         style: {},
       },
->>>>>>> 1e1980f30c371f49f464ae36c008354c5491a445
     ]
   },
   {
