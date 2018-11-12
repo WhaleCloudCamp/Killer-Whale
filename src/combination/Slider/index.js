@@ -12,12 +12,7 @@ export default class Sliders extends React.Component {
         }}
       >
         <Slider
-          min={this.props.min}
-          max={this.props.max}
-          step={this.props.step}
-          value={this.props.value}
-          disabled={this.props.disabled}
-          maximumTrackTintColor={this.props.maximumTrackTintColor}
+         {...this.props}
         />
       </View>
     );

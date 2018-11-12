@@ -10,10 +10,11 @@ export default class Tags extends React.Component {
   render() {
     return (
       <Tag
-        small={this.props.samll}
+         small={this.props.small}
         disabled={this.props.disabled}
         closable={this.props.closable}
         selected={this.props.selected}
+
       >
         <Text>{this.props.content}</Text>
       </Tag>
