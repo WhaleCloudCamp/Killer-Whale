@@ -160,7 +160,7 @@ const testSouData = [
           disabled: 'bool',
           loading: 'bool',
 
-   
+
         },
         defaultProps: {
           type: "primary",
@@ -346,7 +346,7 @@ const testSouData = [
           tabBarBackgroundColor: 'string',
           tabBarActiveTextColor: 'string',
           tabBarInactiveTextColor: 'string',
-          tabBarTextStyle: 'string',
+          tabBarTextStyle: 'style',
 
         },
         defaultProps: {
@@ -469,7 +469,7 @@ const testSouData = [
           percent: 'number',
           position: ['fixed', 'normal'],
           unfilled: 'bool',
-          barStyle: 'string'
+          barStyle: 'style'
 
         },
         defaultProps: {
@@ -673,7 +673,7 @@ const testSouData = [
     ]
   },
 
- 
+
   {
     type: 'ImagePicker',
     data: [
@@ -705,7 +705,7 @@ const testSouData = [
           },],
           selectable: true
         },
-        style: {  },
+        style: {},
       },
     ]
   },
@@ -1276,6 +1276,8 @@ const combinationSouData = [
         type: "Carousel",
         state: 2,
         props: {
+          dataItem: [{ url:'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png'}, { url:'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png' }],
+
           autoplay: true,
           infinite: true,
           autoplayInterval: 3000,
@@ -1283,6 +1285,7 @@ const combinationSouData = [
           vertical: false
         },
         propTypes: {
+          dataItem: 'array',
           autoplay: 'bool',
           infinite: 'bool',
           autoplayInterval: 'number',
@@ -1290,6 +1293,7 @@ const combinationSouData = [
           vertical: 'bool'
         },
         defaultProps: {
+
           autoplay: true,
           infinite: true,
           autoplayInterval: 3000,
@@ -1302,6 +1306,7 @@ const combinationSouData = [
         state: 2,
         type: "Carousel",
         props: {
+          dataItem: [{ url:'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png' }, { url:'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png' },],
           autoplay: true,
           infinite: true,
           autoplayInterval: 3000,
@@ -1309,6 +1314,7 @@ const combinationSouData = [
           vertical: true
         },
         propTypes: {
+          dataItem: 'array',
           autoplay: 'bool',
           infinite: 'bool',
           autoplayInterval: 'number',
@@ -1632,7 +1638,7 @@ const combinationSouData = [
         style: {},
 
       },
-      
+
       {
         id: 6344747,
         type: "List",
@@ -1640,8 +1646,8 @@ const combinationSouData = [
         state: 2,
         props: {
 
-          thumb:"https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png",
-          arrow:"horizontal",
+          thumb: "https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png",
+          arrow: "horizontal",
           title: '标题'
         },
         propTypes: {
@@ -1658,7 +1664,7 @@ const combinationSouData = [
         style: {},
 
       }
-    
+
     ]
   },
   {
@@ -1678,8 +1684,8 @@ const combinationSouData = [
         },
         propTypes: {
           mode: ['date', 'time', 'datetime', 'year', 'month'],
-          minDate: 'string',
-          maxDate: 'string',
+          minDate: 'object',
+          maxDate: 'object',
           format: 'string',
           timeValue: 'string',
         },
@@ -1728,21 +1734,21 @@ const combinationSouData = [
         state: 2,
         props: {
 
-          img: 'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
+          AlipayImg: require('../assets/bell.png'),
           title: "验证成功",
           message: "所提交内容已成功完成验证",
           buttonText: "完成",
           buttonType: "primary"
         },
         propTypes: {
-          imgUrl: 'array',
+          imgUrl: 'string',
           title: 'string',
           message: 'string',
           buttonText: 'string',
           buttonType: ['primary', 'ghost', 'warning'],
         },
         defaultProps: {
-          img: 'https://gw.alipayobjects.com/zos/rmsportal/pdFARIqkrKEGVVEwotFe.svg',
+
           title: "验证成功",
           message: "所提交内容已成功完成验证",
           buttonText: "完成",
@@ -1817,6 +1823,7 @@ const combinationSouData = [
           }],
           columnNum: 4,
           hasLine: false,
+          columnNum: 4,
           showType: 1,
 
         },
@@ -1825,7 +1832,8 @@ const combinationSouData = [
           data: 'array',
           columnNum: 'bool',
           hasLine: 'bool',
-          showType: 'number'
+          showType: 'number',
+          columnNum: 'number'
         },
         defaultProps: {
           title: '快速入口'
@@ -1846,7 +1854,7 @@ const combinationSouData = [
           textOne: '身份扫描',
           textTwo: '更多',
           textCenter: '定位客户',
-         
+
 
         },
         propTypes: {
@@ -1872,15 +1880,15 @@ const combinationSouData = [
         state: 2,
         props: {
           title: '2018-08-城市固定本地畅打18元套餐',
-          tagTitle:'查看详情',
-          rightText:'立即处理',
-          dataItem:[{title:'3张手机卡'},{title:'200M宽带免费'},{title:'20K高清ITV'}]
+          tagTitle: '查看详情',
+          rightText: '立即处理',
+          dataItem: [{ title: '3张手机卡' }, { title: '200M宽带免费' }, { title: '20K高清ITV' }]
 
         },
         propTypes: {
           title: 'string',
-          tagTitle:'string',
-          dataItem:'array',
+          tagTitle: 'string',
+          dataItem: 'array',
         },
         defaultProps: {
 
@@ -1899,11 +1907,11 @@ const combinationSouData = [
         type: "Line",
         state: 2,
         props: {
-          showType:'lg'
+          showType: 'lg'
 
         },
         propTypes: {
-          showType:['sm','lg']
+          showType: ['sm', 'lg']
         },
         defaultProps: {
 
@@ -1914,7 +1922,7 @@ const combinationSouData = [
       },
     ]
   },
-  
+
 ]
 
 
