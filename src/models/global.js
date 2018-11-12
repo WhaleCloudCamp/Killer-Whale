@@ -173,6 +173,7 @@ export default {
       //   key:'sdsa',
       //   value:'121'
       // }
+      
       if (!payload.id) return;
       const { views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];

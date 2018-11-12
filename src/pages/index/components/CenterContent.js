@@ -5,72 +5,65 @@ import styles from "./center.less";
 const DroppableContent = Whale.DroppableContent;
 const DraggableContent = Whale.DraggableContent;
 const RederComponents = (components, clickDrag, onDropAction) => {
-  return (
-    <div>
-      {components.map((item, index) => {
-        const { component, id, childrenCom } = item;
-        let Com = null;
-        if (component.state === 1) {
-          Com = Whale[component.type];
-        } else {
-          Com = Whales[component.type];
-        }
+  return components.map((item, index) => {
+    const { component, id, childrenCom } = item;
+    let Com = null;
+    if (component.state === 1) {
+      Com = Whale[component.type];
+    } else {
+      Com = Whales[component.type];
+    }
 
-        if (!component.props) {
-          component.props = {};
-        }
-        if (component.type === "Flex") {
-          component.props.parentId = id;
-          component.props.onDropAction = onDropAction;
-        }
-
-        if (childrenCom && childrenCom.length > 0) {
-          const childDom = RederComponents(
-            childrenCom,
-            clickDrag,
-            onDropAction
-          );
-          return (
-            <DraggableContent
-              itemData={item}
-              key={"centerPanel" + id}
-              index={index}
-              onDropAction={onDropAction}
-              onClick={() => clickDrag(item)}
+    if (!component.props) {
+      component.props = {};
+    }
+    let otherProps = {};
+    if (component.type === "Flex") {
+      otherProps.parentId = id;
+      otherProps.onDropAction = onDropAction;
+    }
+    const comProps = Object.assign({}, component.props, otherProps);
+    if (childrenCom && childrenCom.length > 0) {
+      const childDom = RederComponents(childrenCom, clickDrag, onDropAction);
+      return (
+        <DraggableContent
+          itemData={item}
+          key={"centerPanel" + id}
+          index={index}
+          onDropAction={onDropAction}
+          onClick={() => clickDrag(item)}
+        >
+          {Com && (
+            <Com
+              {...comProps}
+              style={component.style}
+              key={`centerPanel${component.type}${id}`}
             >
-              {Com && (
-                <Com
-                  {...component.props}
-                  style={component.style}
-                  key={`centerPanel${component.type}${id}`}
-                >
-                  {childDom}
-                </Com>
-              )}
-            </DraggableContent>
-          );
-        } else {
-          return (
-            <DraggableContent
-              itemData={item}
-              key={"centerPanel" + id}
-              index={index}
-              onDropAction={onDropAction}
-              onClick={() => clickDrag(item)}
-            >
-              {Com && (
-                <Com
-                  {...component.props}
-                  style={component.style}
-                  key={`centerPanel${component.type}${id}`}
-                />
-              )}
-            </DraggableContent>
-          );
-        }
-      })}
-    </div>
-  );
+              {childDom}
+            </Com>
+          )}
+        </DraggableContent>
+      );
+    } else {
+      return (
+        <DraggableContent
+          itemData={item}
+          key={"centerPanel" + id}
+          index={index}
+          onDropAction={onDropAction}
+          onClick={() => clickDrag(item)}
+        >
+          {Com && (
+            <Com
+              {...comProps}
+              style={component.style}
+              key={`centerPanel${component.type}${id}`}
+            />
+          )}
+        </DraggableContent>
+      );
+    }
+  });
 };
 const CenterContent = props => {
   const { cneterscale, onDropAction, components, clickDrag } = props;

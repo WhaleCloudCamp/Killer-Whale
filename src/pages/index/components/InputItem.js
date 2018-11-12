@@ -4,9 +4,15 @@ import styles from "./rightItem.less";
 class InputItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: props.value };
+    this.state = { value: props.value,id:props.parentId };
     this.handleChange = this.handleChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+  }
+  
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      value:nextProps.value
+    })
   }
 
   handleChange(event) {
@@ -22,8 +28,8 @@ class InputItem extends React.Component {
   }
 
   render() {
-    const { value } = this.state;
-    const { handleBlur, type, isNumber } = this.props;
+    let { value,id } = this.state;
+    const { handleBlur, type, isNumber,parentId } = this.props;
     return (
       <div className={styles.fqvwjT}>
         <div className={styles.dcJAHC}>

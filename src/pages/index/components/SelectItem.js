@@ -7,6 +7,12 @@ class SelectItem extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      value:nextProps.value
+    })
+  }
+  
   handleChange(event) {
     this.setState({ value: event.target.value });
     this.props.changeItemProp({

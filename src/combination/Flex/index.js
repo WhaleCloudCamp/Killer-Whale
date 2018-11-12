@@ -15,10 +15,10 @@ const getListStyle = (canDrop, dropStyle) => ({
   //   padding: grid,
   minHeight: "100%",
   overflow: "auto",
-  borderWidth: canDrop ? "1px" : "none",
+  borderWidth: canDrop ? "10px" : "none",
   borderStyle: canDrop ? "dotted" : "dashed",
   padding: canDrop ? "30px" : null,
-  background: "red",
+  // background: canDrop ?"red":"blued",
   ...dropStyle
 });
 const chessSquareTarget = {
@@ -87,17 +87,45 @@ export default class Flex extends React.Component {
       canDrop
     } = this.props;
     const styles = {
-      flex: 1,
+      // flex: 1,rn使用这个参数
+      display:'flex',
       flexDirection: direction,
       flexWrap: wrap,
       alignItems: alias[alignItems] || alignItems,
       justifyContent: alias[align] || align,
       padding: children ? null : 30
     };
-    console.log(children);
 
     return connectDropTarget(
-      <div style={getListStyle(canDrop, styles)}>{children}</div>
+      <div style={getListStyle(canDrop, styles)}>
+      {children}
+      <div style={{fontSize:"20px",background:"red"}}>2</div>
+      <div style={{fontSize:"25px",background:"red"}}>2</div>
+      <div style={{fontSize:"30px",background:"red"}}>2</div>
+      <div style={{fontSize:"35px",background:"red"}}>2</div>
+      <div style={{fontSize:"40px",background:"red"}}>2</div>
+      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+      <div style={{fontSize:"25px",background:"red"}}>2</div>
+      <div style={{fontSize:"30px",background:"red"}}>2</div>
+      <div style={{fontSize:"35px",background:"red"}}>2</div>
+      <div style={{fontSize:"40px",background:"red"}}>2</div>
+      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+      <div style={{fontSize:"25px",background:"red"}}>2</div>
+      <div style={{fontSize:"30px",background:"red"}}>2</div>
+      <div style={{fontSize:"35px",background:"red"}}>2</div>
+      <div style={{fontSize:"40px",background:"red"}}>2</div>
+      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+      <div style={{fontSize:"25px",background:"red"}}>2</div>
+      <div style={{fontSize:"30px",background:"red"}}>2</div>
+      <div style={{fontSize:"35px",background:"red"}}>2</div>
+      <div style={{fontSize:"40px",background:"red"}}>2</div>
+      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+      <div style={{fontSize:"25px",background:"red"}}>2</div>
+      <div style={{fontSize:"30px",background:"red"}}>2</div>
+      <div style={{fontSize:"35px",background:"red"}}>2</div>
+      <div style={{fontSize:"40px",background:"red"}}>2</div>
+      <div style={{fontSize:"45px",background:"red"}}>2</div>
+      </div>
     );
   }
 }

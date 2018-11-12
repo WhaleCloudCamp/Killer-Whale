@@ -1,18 +1,51 @@
 import styles from "./rightItem.less";
 
-const FlexBox = ({ showItemData, onSubmit }) => {
+const FlexBox = ({ data ,parentId,changeItemProp}) => {
+  const { direction, wrap, alignItems, align } = data;
+  //   direction: "row",
+  // wrap: "nowrap",
+  // alignItems: "center",
+  // align: "around"
+  const changeDirection = e => {
+    changeItemProp&&changeItemProp({
+      id: parentId,
+      key: "direction",
+      value: e.target.value
+    });
+  };
+  const changeWrap = e => {
+    changeItemProp&&changeItemProp({
+      id: parentId,
+      key: "wrap",
+      value: e.target.value
+    });
+  };
+  const changeAlignItems = e => {
+    changeItemProp&&changeItemProp({
+      id: parentId,
+      key: "alignItems",
+      value: e.target.value
+    });
+  };
+  const changeAlign = e => {
+    changeItemProp&&changeItemProp({
+      id: parentId,
+      key: "align",
+      value: e.target.value
+    });
+  };
   return (
     <div className={styles.gYgSTP}>
       <h3 className={styles.ezwJzw}>弹性布局</h3>
-
-      <div className={styles.jGrEJN}>
+      <div className={styles.jGrEJN} onChange={changeDirection}>
         <label tabIndex="-1" className={styles.cOMjSK}>
           <input
             type="radio"
-            name="flex-direction"
+            name={direction}
             tabIndex="-1"
             className={styles.kxMiOH}
-            // checked=""
+            defaultChecked={direction === "row"}
+            value="row"
           />
 
           <div tabIndex="-1" className={styles.dnRfIM}>
@@ -23,9 +56,11 @@ const FlexBox = ({ showItemData, onSubmit }) => {
         <label tabIndex="-1" className={styles.kQVkKw}>
           <input
             type="radio"
-            name="flex-direction"
+            name={direction}
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={direction === "column"}
+            value="column"
           />
 
           <div tabIndex="-1" className={styles.exTzhA}>
@@ -34,13 +69,15 @@ const FlexBox = ({ showItemData, onSubmit }) => {
         </label>
       </div>
 
-      <div className={styles.hSWRFI}>
+      <div className={styles.hSWRFI} onChange={changeAlignItems}>
         <label tabIndex="-1" className={styles.cOMjSK}>
           <input
             type="radio"
             name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={alignItems === "start"}
+            value="start"
           />
 
           <div tabIndex="-1" className={styles.dnRfIM}>
@@ -67,7 +104,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
-            // checked=""
+            defaultChecked={alignItems === "center"}
+            value="center"
           />
 
           <div tabIndex="-1" className={styles.cDdTdm}>
@@ -92,6 +130,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={alignItems === "end"}
+            value="end"
           />
 
           <div tabIndex="-1" className={styles.cDdTdm}>
@@ -115,6 +155,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={alignItems === "stretch"}
+            value="stretch"
           />
           <div tabIndex="-1" className={styles.cDdTdm}>
             <svg
@@ -138,6 +180,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={alignItems === "baseline"}
+            value="baseline"
           />
 
           <div tabIndex="-1" className={styles.exTzhA}>
@@ -167,13 +211,15 @@ const FlexBox = ({ showItemData, onSubmit }) => {
         </label>
       </div>
 
-      <div className={styles.hSWRFI}>
+      <div className={styles.hSWRFI} onChange={changeAlign}>
         <label tabIndex="-1" className={styles.cOMjSK}>
           <input
             type="radio"
             name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={align === "start"}
+            value="start"
           />
 
           <div tabIndex="-1" className={styles.dnRfIM}>
@@ -198,7 +244,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
-            // checked=""
+            defaultChecked={align === "center"}
+            value="center"
           />
 
           <div tabIndex="-1" className={styles.cDdTdm}>
@@ -223,6 +270,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={align === "end"}
+            value="end"
           />
 
           <div tabIndex="-1" className={styles.cDdTdm}>
@@ -248,6 +297,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={align === "around"}
+            value="around"
           />
 
           <div tabIndex="-1" className={styles.cDdTdm}>
@@ -271,6 +322,8 @@ const FlexBox = ({ showItemData, onSubmit }) => {
             name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
+            defaultChecked={align === "between"}
+            value="between"
           />
           <div tabIndex="-1" className={styles.exTzhA}>
             <svg
@@ -290,22 +343,24 @@ const FlexBox = ({ showItemData, onSubmit }) => {
         </label>
       </div>
 
-      <div className={styles.gAtluJ}>
+      <div className={styles.gAtluJ} >
         <div className={styles.jKDcpJ}>
-          <span className={styles.ikRkvd}>Wrapping</span>
+          <span className={styles.ikRkvd}>Wrap</span>
         </div>
 
-        <div className={styles.jAAByG}>
+        <div className={styles.jAAByG} onChange={changeWrap}>
           <label tabIndex="-1" className={styles.cOMjSK}>
             <input
               type="radio"
               name="flex-wrap"
               tabIndex="-1"
               className={styles.kxMiOH}
+              defaultChecked={wrap === "wrap"}
+            value="wrap"
             />
 
             <div tabIndex="-1" className={styles.dnRfIM}>
-              Allow
+              Warp
             </div>
           </label>
           <label tabIndex="-1" className={styles.kQVkKw}>
@@ -314,10 +369,11 @@ const FlexBox = ({ showItemData, onSubmit }) => {
               name="flex-wrap"
               tabIndex="-1"
               className={styles.kxMiOH}
-            //   checked=""
+              defaultChecked={wrap === "nowrap"}
+            value="nowrap"
             />
             <div tabIndex="-1" className={styles.exTzhA}>
-              Prevent
+              NoWarp
             </div>
           </label>
         </div>
