@@ -6,7 +6,7 @@ const Panel = Collapse.Panel;
 const DraggableContent = Whale.DraggableContent;
 const LeftContent = ({
   sourceData = [],
-  viewsData = [],
+  viewsData,
   gPage,
   dPage,
   changeShowPage
@@ -63,7 +63,7 @@ const LeftContent = ({
             </Panel>
           );
         })}
-      {viewsData.length > 0 &&
+      {viewsData&&viewsData.length > 0 &&
         viewsData.map((item, index) => {
           return (
             <Panel header={item.name} key={item.name}>
