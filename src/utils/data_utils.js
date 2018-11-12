@@ -673,67 +673,7 @@ const testSouData = [
     ]
   },
 
-  {
-    type: 'DatePickerView',
-    data: [
-      {
-        id: 5344541,
-        type: "DatePickerView",
-        state: 1,
-        props: {
-          mode: 'date',
-          minDate: new Date(2015, 7, 6),
-          maxDate: new Date(2026, 11, 3),
-          format: "YYYY-MM-DD",
-          minuteStep: 1,
-
-        },
-        propTypes: {
-          mode: ['date', 'time', 'datetime', 'year', 'month'],
-          minDate: 'string',
-          maxDate: 'string',
-          format: 'string',
-          minuteStep: 'number',
-        },
-        defaultProps: {
-          mode: 'date',
-          minDate: new Date(2015, 7, 6),
-          maxDate: new Date(2026, 11, 3),
-          format: "YYYY-MM-DD",
-          minuteStep: 1,
-        },
-        style: { width: '100%' },
-      },
-      {
-        id: 5344542,
-        type: "DatePickerView",
-        state: 1,
-        props: {
-          mode: 'datetime',
-          minDate: new Date(2015, 7, 6),
-          maxDate: new Date(2026, 11, 3),
-          format: "YYYY-MM-DD",
-          minuteStep: 1,
-
-        },
-        propTypes: {
-          mode: ['date', 'time', 'datetime', 'year', 'month'],
-          minDate: 'string',
-          maxDate: 'string',
-          format: 'string',
-          minuteStep: 'number',
-        },
-        defaultProps: {
-          mode: 'date',
-          minDate: new Date(2015, 7, 6),
-          maxDate: new Date(2026, 11, 3),
-          format: "YYYY-MM-DD",
-          minuteStep: 1,
-        },
-        style: { width: '100%' },
-      },
-    ]
-  },
+ 
   {
     type: 'ImagePicker',
     data: [
@@ -765,7 +705,7 @@ const testSouData = [
           },],
           selectable: true
         },
-        style: { width: '100%', height: 60 },
+        style: {  },
       },
     ]
   },
@@ -1692,6 +1632,33 @@ const combinationSouData = [
         style: {},
 
       },
+      
+      {
+        id: 6344747,
+        type: "List",
+
+        state: 2,
+        props: {
+
+          thumb:"https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png",
+          arrow:"horizontal",
+          title: '标题'
+        },
+        propTypes: {
+
+          thumb: 'string',
+          arrow: ['horizontal', 'up', 'down', 'empty'],
+          title: 'string'
+        },
+        defaultProps: {
+          thumb: '',
+          arrow: 'horizontal',
+          title: '标题'
+        },
+        style: {},
+
+      }
+    
     ]
   },
   {
@@ -1879,7 +1846,7 @@ const combinationSouData = [
           textOne: '身份扫描',
           textTwo: '更多',
           textCenter: '定位客户',
-          moreImg: require('../assets/phone.png')
+         
 
         },
         propTypes: {
@@ -1906,11 +1873,14 @@ const combinationSouData = [
         props: {
           title: '2018-08-城市固定本地畅打18元套餐',
           tagTitle:'查看详情',
+          rightText:'立即处理',
           dataItem:[{title:'3张手机卡'},{title:'200M宽带免费'},{title:'20K高清ITV'}]
 
         },
         propTypes: {
-          title: 'string'
+          title: 'string',
+          tagTitle:'string',
+          dataItem:'array',
         },
         defaultProps: {
 
@@ -1921,6 +1891,30 @@ const combinationSouData = [
       },
     ]
   },
+  {
+    type: 'Line',
+    data: [
+      {
+        id: 634482,
+        type: "Line",
+        state: 2,
+        props: {
+          showType:'lg'
+
+        },
+        propTypes: {
+          showType:['sm','lg']
+        },
+        defaultProps: {
+
+        },
+        style: {},
+
+
+      },
+    ]
+  },
+  
 ]
 
 
