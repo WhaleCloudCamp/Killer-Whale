@@ -17,4 +17,4 @@ export { default as QuickEntry} from "../combination/QuickEntry/index";
 export { default as HomeBar} from "../combination/HomeBar/index";
 export { default as ItemTypeOne} from '../combination/ItemTypeOne/index';
 export { default as Line} from '../combination/Line/index';
-export { default as DialogOne} from '../combination/DialogOne/index';
+
