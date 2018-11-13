@@ -23,7 +23,7 @@ const LeftContent = ({
 
   return (
     <Collapse
-      accordion
+      // accordion
       style={{
         maxHeight: "600px",
         overflow: "auto",

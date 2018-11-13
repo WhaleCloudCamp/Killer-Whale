@@ -10,27 +10,33 @@ const alias = {
   start: "flex-start",
   center: "center"
 };
-const getListStyle = (canDrop, dropStyle) => ({
+const getListStyle = (canDrop, dropStyle, children) => ({
   // background: isDraggingOver ? "lightblue" : "lightgrey",
   //   padding: grid,
   minHeight: "100%",
   overflow: "auto",
-  borderWidth: canDrop ? "10px" : "none",
+  // borderWidth: canDrop ? "1px" : "0",
+  borderWidth: canDrop ? "0":"1px",
+
   borderStyle: canDrop ? "dotted" : "dashed",
-  padding: canDrop ? "30px" : null,
-  // background: canDrop ?"red":"blued",
+  padding: canDrop || !children ? "30px" : "0",
+
+  // background: canDrop ?"green":"none",
   ...dropStyle
 });
 const chessSquareTarget = {
   canDrop(props, monitor) {
-    return true;
+    try {
+      return monitor.getItem().data.id !== props.parentId;
+    } catch (error) {
+      return true;
+    }
   },
   hover(props, monitor, component) {},
   drop(props, monitor, component) {
-    if (monitor.isOver({ shallow: true })) {
+    const item = monitor.getItem();
+    if (!item.index && item.index !== 0 && monitor.isOver({ shallow: true })) {
       const parentId = props.parentId;
-      const item = monitor.getItem();
-      console.log(props.onDropAction);
       props.onDropAction &&
         props.onDropAction({
           type: "global/addchildrenCom",
@@ -88,43 +94,57 @@ export default class Flex extends React.Component {
     } = this.props;
     const styles = {
       // flex: 1,rn使用这个参数
-      display:'flex',
+      display: "flex",
+      position: "relative",
       flexDirection: direction,
       flexWrap: wrap,
       alignItems: alias[alignItems] || alignItems,
-      justifyContent: alias[align] || align,
-      padding: children ? null : 30
+      justifyContent: alias[align] || align
     };
 
     return connectDropTarget(
-      <div style={getListStyle(canDrop, styles)}>
-      {children}
-      <div style={{fontSize:"20px",background:"red"}}>2</div>
-      <div style={{fontSize:"25px",background:"red"}}>2</div>
-      <div style={{fontSize:"30px",background:"red"}}>2</div>
-      <div style={{fontSize:"35px",background:"red"}}>2</div>
-      <div style={{fontSize:"40px",background:"red"}}>2</div>
-      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
-      <div style={{fontSize:"25px",background:"red"}}>2</div>
-      <div style={{fontSize:"30px",background:"red"}}>2</div>
-      <div style={{fontSize:"35px",background:"red"}}>2</div>
-      <div style={{fontSize:"40px",background:"red"}}>2</div>
-      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
-      <div style={{fontSize:"25px",background:"red"}}>2</div>
-      <div style={{fontSize:"30px",background:"red"}}>2</div>
-      <div style={{fontSize:"35px",background:"red"}}>2</div>
-      <div style={{fontSize:"40px",background:"red"}}>2</div>
-      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
-      <div style={{fontSize:"25px",background:"red"}}>2</div>
-      <div style={{fontSize:"30px",background:"red"}}>2</div>
-      <div style={{fontSize:"35px",background:"red"}}>2</div>
-      <div style={{fontSize:"40px",background:"red"}}>2</div>
-      <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
-      <div style={{fontSize:"25px",background:"red"}}>2</div>
-      <div style={{fontSize:"30px",background:"red"}}>2</div>
-      <div style={{fontSize:"35px",background:"red"}}>2</div>
-      <div style={{fontSize:"40px",background:"red"}}>2</div>
-      <div style={{fontSize:"45px",background:"red"}}>2</div>
+      <div style={getListStyle(canDrop, styles, children)}>
+        <div
+          style={{
+            fontSize: "16px",
+            background: "red",
+            top: "0",
+            position: "absolute",
+            color: "white",
+            right: "0",
+            zIndex: "99"
+          }}
+        >
+          Flex
+        </div>
+        {children}
+        {
+          // <div style={{fontSize:"25px",background:"red"}}>2</div>
+          // <div style={{fontSize:"30px",background:"red"}}>2</div>
+          // <div style={{fontSize:"35px",background:"red"}}>2</div>
+          // <div style={{fontSize:"40px",background:"red"}}>2</div>
+          // <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+          // <div style={{fontSize:"25px",background:"red"}}>2</div>
+          // <div style={{fontSize:"30px",background:"red"}}>2</div>
+          // <div style={{fontSize:"35px",background:"red"}}>2</div>
+          // <div style={{fontSize:"40px",background:"red"}}>2</div>
+          // <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+          // <div style={{fontSize:"25px",background:"red"}}>2</div>
+          // <div style={{fontSize:"30px",background:"red"}}>2</div>
+          // <div style={{fontSize:"35px",background:"red"}}>2</div>
+          // <div style={{fontSize:"40px",background:"red"}}>2</div>
+          // <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+          // <div style={{fontSize:"25px",background:"red"}}>2</div>
+          // <div style={{fontSize:"30px",background:"red"}}>2</div>
+          // <div style={{fontSize:"35px",background:"red"}}>2</div>
+          // <div style={{fontSize:"40px",background:"red"}}>2</div>
+          // <div style={{fontSize:"45px",background:"red"}}>2</div> <div style={{fontSize:"20px",background:"red"}}>2</div>
+          // <div style={{fontSize:"25px",background:"red"}}>2</div>
+          // <div style={{fontSize:"30px",background:"red"}}>2</div>
+          // <div style={{fontSize:"35px",background:"red"}}>2</div>
+          // <div style={{fontSize:"40px",background:"red"}}>2</div>
+          // <div style={{fontSize:"45px",background:"red"}}>2</div>
+        }
       </div>
     );
   }

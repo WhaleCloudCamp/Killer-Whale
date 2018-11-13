@@ -23,7 +23,7 @@ const App = ({ global, dispatch }) => {
     showPage,
     showItemData
   } = global;
-  console.log(views);
+  // console.log(views);
 
   const { components = [], name = "" } = views[showPage];
   const handleChange = value =>

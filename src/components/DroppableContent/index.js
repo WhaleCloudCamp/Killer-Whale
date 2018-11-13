@@ -16,8 +16,8 @@ const chessSquareTarget = {
   },
   hover(props, monitor, component) {},
   drop(props, monitor, component) {
-    if(monitor.isOver({ shallow: true })){
-      const item = monitor.getItem();
+    const item = monitor.getItem();
+    if(!item.index && item.index !== 0 && monitor.isOver({ shallow: true })){
       props.onDropAction&&props.onDropAction({ type: "global/addItem", payload: {item:item.data,index:'max'} });
     }
   }

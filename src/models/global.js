@@ -68,6 +68,8 @@ export default {
       });
     },
     *delItem({ payload }, { call, put, select }) {
+      console.log("delItem");
+
       const { sourceData, views, showPage } = yield select(
         state => state.global
       );
@@ -86,19 +88,35 @@ export default {
       const { sourceData, views, showPage } = yield select(
         state => state.global
       );
-      const { components } = views[showPage];
+      let { components } = views[showPage];
       const { index, parentId, item } = payload;
       console.log(views);
 
-      components.map(com => {
-        if (com.id === parentId) {
-          const childrenCom = com.childrenCom;
-          let itemIndex = index === "max" ? childrenCom.length : index;
-          const data = addComponent(sourceData, childrenCom, item, itemIndex);
-          com.childrenCom = data.centerData;
-        }
-        return com;
-      });
+      function findComAndAddComponent(arrs, parentId,item) {
+        arrs.map(arr => {
+          const childrenCom = arr.childrenCom;
+          if (arr.id === parentId) {
+            let itemIndex = index === "max" ? childrenCom.length : index;
+            const data = addComponent(sourceData, childrenCom, item, itemIndex);
+            arr.childrenCom = data.centerData;
+          } else if (childrenCom && childrenCom.length > 0) {
+            arr.childrenCom = findComAndAddComponent(childrenCom, parentId,item);
+          }
+          return arr;
+        });
+        return arrs;
+      }
+      components = findComAndAddComponent(components, parentId,item);
+      // components.map(com => {
+      //   if (com.id === parentId) {
+      //     const childrenCom = com.childrenCom;
+      //     let itemIndex = index === "max" ? childrenCom.length : index;
+      //     const data = addComponent(sourceData, childrenCom, item, itemIndex);
+      //     com.childrenCom = data.centerData;
+      //   }
+      //   return com;
+      // });
+      views[showPage].components = components;
       console.log(views);
 
       yield put({
@@ -110,6 +128,8 @@ export default {
       });
     },
     *addItem({ payload }, { call, put, select }) {
+      console.log("addItem");
+
       const { sourceData, views, showPage } = yield select(
         state => state.global
       );
@@ -131,11 +151,26 @@ export default {
       });
     },
     *moveItem({ payload }, { call, put, select }) {
-      const { dragIndex, hoverIndex } = payload;
+      const { dragIndex, hoverIndex, parentId } = payload;
       const { views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
-      const data = moveComponent(components, dragIndex, hoverIndex);
-      views[showPage].components = data;
+      console.log("moveItem");
+
+      if (parentId !== "whalemainroot") {
+        components.map(item => {
+          if (item.id === parentId) {
+            const data = moveComponent(item.childrenCom, dragIndex, hoverIndex);
+            item.childrenCom = data;
+          }
+        });
+      } else {
+        console.log(213);
+
+        const data = moveComponent(components, dragIndex, hoverIndex);
+        views[showPage].components = data;
+      }
+      console.log(views);
+
       yield put({
         type: "save",
         payload: {
@@ -144,6 +179,8 @@ export default {
       });
     },
     *showItem({ payload }, { call, put }) {
+      console.log("showItem");
+
       const data = Object.assign({}, payload || {});
       yield put({
         type: "save",
@@ -153,6 +190,8 @@ export default {
       });
     },
     *changeItem({ payload }, { call, put, select }) {
+      console.log("changeItem");
+
       if (!payload.id) return;
       const { components } = yield select(state => state.global);
       components.map(item => {
@@ -173,7 +212,8 @@ export default {
       //   key:'sdsa',
       //   value:'121'
       // }
-      
+      console.log("changeItemProp");
+
       if (!payload.id) return;
       const { views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
@@ -203,6 +243,8 @@ export default {
       });
     },
     *gPage({ payload }, { call, put, select }) {
+      console.log("gPage");
+
       const { views } = yield select(state => state.global);
       views.push(payload);
       yield put({
@@ -213,6 +255,8 @@ export default {
       });
     },
     *dPage({ payload }, { call, put, select }) {
+      console.log("dPage");
+
       const { views } = yield select(state => state.global);
       if (views.length === 1) return message.error("至少要保留一个页面");
       views.map((item, index) => {
@@ -228,6 +272,8 @@ export default {
       });
     },
     *changeShowPage({ payload }, { call, put, select }) {
+      console.log("changeShowPage");
+
       const { views, showPage } = yield select(state => state.global);
       let showPageNew = showPage;
       views.map((item, index) => {
@@ -243,6 +289,8 @@ export default {
       });
     },
     *downloadCode({ payload }, { call, put, select }) {
+      console.log("downloadCode");
+
       const { views } = yield select(state => state.global);
       console.log(views);
       const response = yield call(gPage, { views });
