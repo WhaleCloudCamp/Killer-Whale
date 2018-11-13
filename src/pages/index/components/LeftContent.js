@@ -52,8 +52,8 @@ const LeftContent = ({
                   >
                     {Com && (
                       <Com
-                        {...items.props}
                         style={items.style}
+                        {...items.props}
                         key={`leftPanel${items.type}${items.id}`}
                       />
                     )}

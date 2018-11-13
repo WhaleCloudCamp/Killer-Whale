@@ -104,7 +104,7 @@ export const DataCombination =[
             isShowFirstRightIcon: true, //是否显示右边第一个图标
             isShowLastRightIcon: true, //是否显示右边第二个图标
             isShowRightText: false,
-            mainStyle:{backgroundColor:"green"}
+            style:{backgroundColor:"green"}
           },
           propTypes: {
             title: "string",
@@ -115,7 +115,7 @@ export const DataCombination =[
             isShowFirstRightIcon: "bool",
             isShowLastRightIcon: "bool",
             isShowRightText: "bool",
-            mainStyle:"style"
+            style:"style"
           },
           defaultProps: {
             title: "标题",
@@ -144,7 +144,7 @@ export const DataCombination =[
             isShowFirstRightIcon: false, //是否显示右边第一个图标
             isShowLastRightIcon: false, //是否显示右边第二个图标
             isShowRightText: true,
-            mainStyle:{backgroundColor:"pink"}
+            style:{backgroundColor:"pink"}
   
           },
           propTypes: {
@@ -156,7 +156,7 @@ export const DataCombination =[
             isShowFirstRightIcon: "bool",
             isShowLastRightIcon: "bool",
             isShowRightText: "bool",
-            mainStyle:'style'
+            style:'style'
           },
           defaultProps: {
             title: "标题",
@@ -168,7 +168,7 @@ export const DataCombination =[
             isShowLastRightIcon: false, //是否显示右边第二个图标
             isShowRightText: true
           },
-          style: { backgroundColor: "pink" }
+          style: {  }
         }
       ]
     },
@@ -1004,7 +1004,6 @@ export const DataCombination =[
             price: '200',
             secondaryStyle:{
                 flexDirection: 'row',
-                margin: 10,
                 alignItems: 'center',
                 margin: 5
             },
@@ -1099,7 +1098,6 @@ export const DataCombination =[
           defaultProps: {
   
           },
-          defaultProps: {},
           style: {}
         }
       ]

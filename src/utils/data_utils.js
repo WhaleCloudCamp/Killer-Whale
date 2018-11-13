@@ -55,9 +55,9 @@ const initSouData = {
   props: {},
   style: {}
 };
-const testSouData = [...DataComponet]
+const testSouData = DataComponet
 
-const combinationSouData = [...DataCombination]
+const combinationSouData = DataCombination
 
 
 export function getCombinationSouData() {
