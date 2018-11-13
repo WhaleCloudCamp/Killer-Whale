@@ -31,12 +31,12 @@ export default class ItemTypeOne extends React.Component {
                 <View style={styles.secondaryStyle}>
                     <Image
                         source={this.props.icon || icon}
-                        style={styles.img}
+                        style={[styles.imgStyle,this.props.imgStyle]}
                     ></Image>
 
                     <Text >{this.props.title}</Text>
                     <View
-                        style={[styles.tag, this.props.tag]}
+                        style={[styles.tag, this.props.tagStyle]}
                     >
                         <Text style={[styles.tagTitleStyle, this.props.tagTitleStyle]} onPress={this.props.onDeatils && this.props.onDeatils()}>{this.props.tagTitle}</Text>
                     </View>
@@ -48,7 +48,7 @@ export default class ItemTypeOne extends React.Component {
 
 
                 <View style={styles.end}>
-                    <Text style={[styles.name, this.props.name]}>{this.props.name || '预存款'}</Text>
+                    <Text style={[styles.priceNameStyle, this.props.priceNameStyle]}>{this.props.priceName || '预存款'}</Text>
                     <Text style={[styles.priceStyle, this.props.priceStyle]}>{this.props.price || '$0'}</Text>
 
                      <View style={[styles.rightStyle,this.props.rightStyle]}>
@@ -63,16 +63,14 @@ export default class ItemTypeOne extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    main: {
-
-    },
+ 
     secondaryStyle: {
         flexDirection: 'row',
         margin: 10,
         alignItems: 'center',
         margin: 5
     },
-    img: {
+    imgStyle: {
         width: 20,
         height: 20,
         margin: 5
@@ -111,7 +109,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
-    name:{
+    priceNameStyle:{
         fontSize:10,
         marginLeft:10
     },

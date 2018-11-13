@@ -1,15 +1,17 @@
 import styles from "./rightItem.less";
 import InputItem from "./InputItem";
 import SelectItem from "./SelectItem";
-const Dimensions = ({ data, types ,parentId,changeItemProp}) => {
+import RightStyle from "./RightStyle"
+const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
   return (
     <div className={styles.kpJPge}>
       <div className={styles.iAIceQ}>
-        <h3 className={styles.bbDADm}>属性</h3>
+        <h3 className={styles.bbDADm}>{title}</h3>
       </div>
       <div className={styles.gCSQPN}>
         <div>
           {Object.keys(data).map(item => {
+           console.warn('总数据：'+JSON.stringify(data))
             if (typeof types[item] === "string" || !types[item]) {
               if (types[item] === "bool") {
                 return (
@@ -22,11 +24,23 @@ const Dimensions = ({ data, types ,parentId,changeItemProp}) => {
                     key={item}
                   />
                 );
+              } else if (types[item] === "style") {
+
+                return (
+                  <RightStyle
+                    type={item}
+                    key={item}
+                    value={data[item]}
+                    parentId={parentId}
+                    changeItemProp={changeItemProp}
+                  ></RightStyle>
+                )
+
               }
               return (
                 <InputItem
                   type={item}
-                  value={types[item] === "array"?JSON.stringify(data[item]):data[item]}
+                  value={types[item] === "array" ? JSON.stringify(data[item]) : data[item]}
                   key={item}
                   parentId={parentId}
                   changeItemProp={changeItemProp}
