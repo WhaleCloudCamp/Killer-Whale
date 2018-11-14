@@ -20,9 +20,8 @@ const RederComponents = (components, clickDrag, onDropAction,parentId) => {
     let otherProps = {};
     console.log(component.type);
     
-    if (component.type === "Flex") {
+    if (component.isLayout) {
       otherProps.parentId = id;
-      otherProps.onDropAction = onDropAction;
     }
     const comProps = Object.assign({}, component.props, otherProps);
     if (childrenCom && childrenCom.length > 0) {

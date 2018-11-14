@@ -26,14 +26,17 @@ function collect(connect, monitor) {
   };
 }
 const grid = 20;
-const getItemStyle = (isDragging, canDrop) => ({
+const getItemStyle = (isDragging, canDrop, isFlex) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
   background: isDragging ? "lightgreen" : "",
   // outline: canDrop ? "1px dotted" : "1px"
-  borderWidth: canDrop ? "1px" : "0",
+  borderWidth: canDrop ? "1px" : isFlex ? "1px" : "0",
   // borderWidth: "1px",
   borderStyle: canDrop ? "dotted" : "dashed",
+  padding: canDrop && isFlex ? "30px" : "0",
+  position: isFlex ?"relative":""
+
   // styles we need to apply on draggables
 });
 
@@ -42,6 +45,9 @@ const chessSquareTarget = {
     return true;
   },
   hover(props, monitor, component) {
+    console.log("move");
+    console.log(component);
+
     if (!component) {
       return null;
     }
@@ -104,16 +110,28 @@ const chessSquareTarget = {
     const item = monitor.getItem();
     if (!item.index && item.index !== 0 && monitor.isOver({ shallow: true })) {
       console.log("item.index", item.index);
-
-      props.onDropAction &&
-        props.onDropAction({
-          type: "global/addItem",
-          payload: {
-            item: item.data,
-            index: props.index + 1 || "max",
-            parentId: props.parentId
-          }
-        });
+      console.log("props.itemData", props.itemData);
+      if (
+        props.itemData.component &&
+        props.itemData.component.type === "Flex"
+      ) {
+        const parentId = props.itemData.id;
+        props.onDropAction &&
+          props.onDropAction({
+            type: "global/addchildrenCom",
+            payload: { item: item.data, parentId: parentId, index: "max" }
+          });
+      } else {
+        props.onDropAction &&
+          props.onDropAction({
+            type: "global/addItem",
+            payload: {
+              item: item.data,
+              index: props.index + 1 || "max",
+              parentId: props.parentId
+            }
+          });
+      }
     }
   }
 };
@@ -135,14 +153,36 @@ const DraggableContent = ({
   canDrop,
   connectDragSource,
   connectDropTarget,
-  isDragging
+  isDragging,
+  itemData
 }) => {
+  const isFlex = itemData.component && itemData.component.isLayout;
   return (
     connectDropTarget &&
     connectDragSource &&
     connectDropTarget(
       connectDragSource(
-        <div  style={getItemStyle(isDragging, canDrop)} onClick={onClick}>{children}</div>
+        <div
+          style={getItemStyle(isDragging, canDrop, isFlex)}
+          onClick={onClick}
+        >
+        {isFlex&& <div
+          style={{
+            fontSize: "16px",
+            background: "red",
+            top: "0",
+            position: "absolute",
+            color: "white",
+            right: "0",
+            zIndex: "99"
+          }}
+        >
+          {
+            itemData.component.type
+          }
+        </div>}
+          {children}
+        </div>
       )
     )
   );

@@ -1,11 +1,11 @@
 import styles from "./rightItem.less";
 
 const FlexBox = ({ data ,parentId,changeItemProp}) => {
-  const { direction, wrap, alignItems, align } = data;
+  const { direction, wrap, align, justify } = data;
   //   direction: "row",
   // wrap: "nowrap",
-  // alignItems: "center",
-  // align: "around"
+  // align: "center",
+  // justify: "around"
   const changeDirection = e => {
     changeItemProp&&changeItemProp({
       id: parentId,
@@ -20,17 +20,17 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
       value: e.target.value
     });
   };
-  const changeAlignItems = e => {
+  const changejustify1 = e => {
     changeItemProp&&changeItemProp({
       id: parentId,
-      key: "alignItems",
+      key: "align",
       value: e.target.value
     });
   };
   const changeAlign = e => {
     changeItemProp&&changeItemProp({
       id: parentId,
-      key: "align",
+      key: "justify",
       value: e.target.value
     });
   };
@@ -69,14 +69,14 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
         </label>
       </div>
 
-      <div className={styles.hSWRFI} onChange={changeAlignItems}>
+      <div className={styles.hSWRFI} onChange={changejustify1}>
         <label tabIndex="-1" className={styles.cOMjSK}>
           <input
             type="radio"
-            name="flex-align"
+            name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
-            defaultChecked={alignItems === "start"}
+            defaultChecked={align === "start"}
             value="start"
           />
 
@@ -101,146 +101,6 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
         <label tabIndex="-1" className={styles.hiCKBi}>
           <input
             type="radio"
-            name="flex-align"
-            tabIndex="-1"
-            className={styles.kxMiOH}
-            defaultChecked={alignItems === "center"}
-            value="center"
-          />
-
-          <div tabIndex="-1" className={styles.cDdTdm}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M20.5 12.5H4.5" strokeLinecap="round" />
-              <rect x="8.5" y="8.5" width="8" height="4" />
-              <rect x="8.5" y="12.5" width="8" height="4" />
-            </svg>
-          </div>
-        </label>
-
-        <label tabIndex="-1" className={styles.hiCKBi}>
-          <input
-            type="radio"
-            name="flex-align"
-            tabIndex="-1"
-            className={styles.kxMiOH}
-            defaultChecked={alignItems === "end"}
-            value="end"
-          />
-
-          <div tabIndex="-1" className={styles.cDdTdm}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M20.5 20.5H4.5" strokeLinecap="round" />
-              <rect x="8.5" y="12.5" width="8" height="4" />
-              <rect x="8.5" y="16.5" width="8" height="4" />
-            </svg>
-          </div>
-        </label>
-        <label tabIndex="-1" className={styles.hiCKBi}>
-          <input
-            type="radio"
-            name="flex-align"
-            tabIndex="-1"
-            className={styles.kxMiOH}
-            defaultChecked={alignItems === "stretch"}
-            value="stretch"
-          />
-          <div tabIndex="-1" className={styles.cDdTdm}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M20.5 4.5H4.5" strokeLinecap="round" />
-              <path d="M20.5 20.5H4.5" strokeLinecap="round" />
-              <rect x="10.5" y="4.5" width="4" height="16" />
-            </svg>
-          </div>
-        </label>
-
-        <label tabIndex="-1" className={styles.kQVkKw}>
-          <input
-            type="radio"
-            name="flex-align"
-            tabIndex="-1"
-            className={styles.kxMiOH}
-            defaultChecked={alignItems === "baseline"}
-            value="baseline"
-          />
-
-          <div tabIndex="-1" className={styles.exTzhA}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M20.5 20.5H4.5" strokeLinecap="round" />
-              <path
-                d="M20.5 13.5L17.5 17.5L14.5 13.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path d="M17.5 7.5V17.5" strokeLinecap="round" />
-              <path d="M5.5 14.5H10.5" />
-              <path
-                d="M4.5 17.5L8 7.5L11.5 17.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-        </label>
-      </div>
-
-      <div className={styles.hSWRFI} onChange={changeAlign}>
-        <label tabIndex="-1" className={styles.cOMjSK}>
-          <input
-            type="radio"
-            name="flex-justify"
-            tabIndex="-1"
-            className={styles.kxMiOH}
-            defaultChecked={align === "start"}
-            value="start"
-          />
-
-          <div tabIndex="-1" className={styles.dnRfIM}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M4.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="4.5" y="8.5" width="4" height="8" />
-              <rect x="8.5" y="8.5" width="4" height="8" />
-            </svg>
-          </div>
-        </label>
-
-        <label tabIndex="-1" className={styles.hiCKBi}>
-          <input
-            type="radio"
             name="flex-justify"
             tabIndex="-1"
             className={styles.kxMiOH}
@@ -257,9 +117,9 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
               stroke="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M12.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="8.5" y="8.5" width="4" height="8" />
-              <rect x="12.5" y="8.5" width="4" height="8" />
+              <path d="M20.5 12.5H4.5" strokeLinecap="round" />
+              <rect x="8.5" y="8.5" width="8" height="4" />
+              <rect x="8.5" y="12.5" width="8" height="4" />
             </svg>
           </div>
         </label>
@@ -283,6 +143,112 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
               stroke="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <path d="M20.5 20.5H4.5" strokeLinecap="round" />
+              <rect x="8.5" y="12.5" width="8" height="4" />
+              <rect x="8.5" y="16.5" width="8" height="4" />
+            </svg>
+          </div>
+        </label>
+        <label tabIndex="-1" className={styles.kQVkKw}>
+          <input
+            type="radio"
+            name="flex-justify"
+            tabIndex="-1"
+            className={styles.kxMiOH}
+            defaultChecked={align === "stretch"}
+            value="stretch"
+          />
+          <div tabIndex="-1" className={styles.exTzhA}>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20.5 4.5H4.5" strokeLinecap="round" />
+              <path d="M20.5 20.5H4.5" strokeLinecap="round" />
+              <rect x="10.5" y="4.5" width="4" height="16" />
+            </svg>
+          </div>
+        </label>
+
+       
+      </div>
+
+      <div className={styles.hSWRFI} onChange={changeAlign}>
+        <label tabIndex="-1" className={styles.cOMjSK}>
+          <input
+            type="radio"
+            name="flex-align"
+            tabIndex="-1"
+            className={styles.kxMiOH}
+            defaultChecked={justify === "start"}
+            value="start"
+          />
+
+          <div tabIndex="-1" className={styles.dnRfIM}>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M4.5 4.5V20.5" strokeLinecap="round" />
+              <rect x="4.5" y="8.5" width="4" height="8" />
+              <rect x="8.5" y="8.5" width="4" height="8" />
+            </svg>
+          </div>
+        </label>
+
+        <label tabIndex="-1" className={styles.hiCKBi}>
+          <input
+            type="radio"
+            name="flex-align"
+            tabIndex="-1"
+            className={styles.kxMiOH}
+            defaultChecked={justify === "center"}
+            value="center"
+          />
+
+          <div tabIndex="-1" className={styles.cDdTdm}>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12.5 4.5V20.5" strokeLinecap="round" />
+              <rect x="8.5" y="8.5" width="4" height="8" />
+              <rect x="12.5" y="8.5" width="4" height="8" />
+            </svg>
+          </div>
+        </label>
+
+        <label tabIndex="-1" className={styles.hiCKBi}>
+          <input
+            type="radio"
+            name="flex-align"
+            tabIndex="-1"
+            className={styles.kxMiOH}
+            defaultChecked={justify === "end"}
+            value="end"
+          />
+
+          <div tabIndex="-1" className={styles.cDdTdm}>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M20.5 4.5V20.5" strokeLinecap="round" />
               <rect x="12.5" y="8.5" width="4" height="8" />
 
@@ -294,10 +260,10 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
         <label tabIndex="-1" className={styles.hiCKBi}>
           <input
             type="radio"
-            name="flex-justify"
+            name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
-            defaultChecked={align === "around"}
+            defaultChecked={justify === "around"}
             value="around"
           />
 
@@ -319,10 +285,10 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
         <label tabIndex="-1" className={styles.kQVkKw}>
           <input
             type="radio"
-            name="flex-justify"
+            name="flex-align"
             tabIndex="-1"
             className={styles.kxMiOH}
-            defaultChecked={align === "between"}
+            defaultChecked={justify === "between"}
             value="between"
           />
           <div tabIndex="-1" className={styles.exTzhA}>

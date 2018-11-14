@@ -90,7 +90,7 @@ export default {
       );
       let { components } = views[showPage];
       const { index, parentId, item } = payload;
-      console.log(views);
+      console.log(payload);
 
       function findComAndAddComponent(arrs, parentId,item) {
         arrs.map(arr => {
