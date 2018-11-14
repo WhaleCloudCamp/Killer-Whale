@@ -18,8 +18,8 @@ const RightContent = ({ showItemData, changeItemProp }) => {
           </div>
         </div>
       </div>
-      <Dimensions title='属性' data={props} types={propTypes} parentId={id} changeItemProp={changeItemProp}/>
-      {type==='Flex'&&<FlexBox />}
+      {type!=='Flex'&&<Dimensions title='属性' data={props} types={propTypes} parentId={id} changeItemProp={changeItemProp}/>}
+      {type==='Flex'&&<FlexBox data={props} types={propTypes} parentId={id} changeItemProp={changeItemProp}/>}
     </div>
   )
 };
