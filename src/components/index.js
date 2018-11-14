@@ -20,5 +20,6 @@ export {default as PickerView} from './PickerView/index';
 export {default as Icon} from './Icon/index';
 export {default as SegmentedControl} from './SegmentedControl/index';
 export {default as Flex} from './Flex/index';
+export { default as ActivityIndicator} from './ActivityIndicator/index';
 
 

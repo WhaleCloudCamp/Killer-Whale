@@ -31,7 +31,7 @@ export default class HomeBar extends React.Component {
                         source={searchImg}
                         style={{ width: 15, height: 15, margin: 3 }}
                     ></Image>
-                    <Text style={styles.textCenterStyle}>{this.props.textCenter}</Text>
+                    <Text style={[styles.textCenterStyle,this.props.textCenterStyle]}>{this.props.textCenter}</Text>
                 </View>
                 <TouchableHighlight
                     onPress={this.props.onClick && this.props.onClick()}

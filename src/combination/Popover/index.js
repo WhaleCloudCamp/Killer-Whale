@@ -1,69 +1,72 @@
 import { Popover } from "antd-mobile";
 import React, { Component } from "react";
-import { StyleSheet, Platform, Text } from "react-native";
+import { StyleSheet, Platform, Text,View } from "react-native";
 
 export default class Propovers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true
+      visible: false
     };
   }
 
-  onSelect = () => {
+  onSelect = (value) => {
+    console.warn(value)
     this.setState({
       visible: false
     });
+    this.props.onSelect&&this.props.onSelect(value)
   };
 
   render() {
-    let overlay = [1, 2, 3].map((i, index) => (
+    let overlay = this.props.data.map((i, index) => (
       <Popover.Item key={index} value={`option ${i}`}>
-        <Text>选项 {i}</Text>
+        <Text>{i}</Text>
       </Popover.Item>
     ));
     return (
       <Popover
+        {...this.props}
         name="m"
-        mask
+        mask={this.props.mask}
         visible={this.state.visible}
-        style={{ backgroundColor: "#eee" }}
         overlay={overlay}
-        contextStyle={styles.contextStyle}
-        // tslint:disable-next-line:jsx-no-multiline-js
         overlayStyle={[
-          styles.overlayStyle,
+        
           Platform.OS === "android" && styles.androidOverlayStyle
         ]}
-        triggerStyle={styles.triggerStyle}
         align={{
           overflow: { adjustY: 0, adjustX: 0 },
-          offset: [100, 0]
+      
         }}
         onSelect={this.onSelect}
+     
       >
-        <Text>菜单</Text>
+      <View style={[styles.text,this.props.textStyle]}>
+        <Text 
+          >{this.props.title}</Text>
+          </View>
       </Popover>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  contextStyle: {
-    margin: 50,
-    flex: 1
-  },
-  overlayStyle: {
-    left: 90,
-    marginTop: 20,
-    color: "currentColor"
-  },
+
   triggerStyle: {
     flexDirection: "row",
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+   
   },
   androidOverlayStyle: {
     borderWidth: 1,
     borderColor: "#ccc"
+  },
+  text:{
+    width:30,
+    height:30,
+    alignItems:'center',
+    justifyContent:'center',
+    textAlignVertical:'center',
   }
 });
