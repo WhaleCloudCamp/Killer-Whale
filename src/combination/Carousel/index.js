@@ -15,7 +15,7 @@ export default class Carousels extends React.Component {
         source={{
           uri: item.url
         }}
-        style={{ width: "100%", height: 150 }}
+        style={[{ width: "100%", height: 150 },this.props.imgStyle]}
       />
     
     ));
@@ -23,17 +23,9 @@ export default class Carousels extends React.Component {
 
   render() {
     return (
-      <Carousel
-        style={styles.wrapper}
-        selectedIndex={0}
-        vertical={this.props.vertical}
-        autoplay={this.props.autoplay}
-        infinite={this.props.infinite}
-        autoplayInterval={this.props.autoplayInterval}
-        infinite={this.props.infinite}
-        dots={this.props.dots}
+      <Carousel   
+        {...this.props}
       >
-        
           {this.renderItem(this.props.dataItem)}
     
       </Carousel>
@@ -43,12 +35,7 @@ export default class Carousels extends React.Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: "#fff"
+    backgroundColor: "white",
   },
-  containerHorizontal: {
-    flexGrow: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 150
-  }
+
 });

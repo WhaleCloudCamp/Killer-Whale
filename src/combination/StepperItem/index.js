@@ -6,7 +6,7 @@ export default class StepperItem extends React.Component {
   render() {
     return (
       <View style={styles.main}>
-        <Text style={styles.text}>{this.props.title}</Text>
+        <Text style={[styles.text,this.props.textStyle]}>{this.props.title}</Text>
         <View>
           <Stepper {...this.props} />
         </View>

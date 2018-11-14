@@ -1,14 +1,14 @@
 import { Radio } from "antd-mobile";
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import showImg  from '../../assets/bell.png'
 
 export default class RadioItem extends React.Component {
   render() {
     return (
       <View style={styles.main}>
-        {this.props.showImg ? <Image style={styles.img} /> : null}
-
-        <Text style={styles.text}>{this.props.title}</Text>
+        {this.props.showType ? <Image source ={this.props.showImg || showImg} style={styles.img} /> : null}
+        <Text style={[styles.text,this.props.textStyle]}>{this.props.title}</Text>
         <Radio {...this.props} />
       </View>
     );
@@ -21,13 +21,12 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   img: {
-    width: 20,
-    height: 20,
-    backgroundColor: "pink",
+    width:40,
+    height: 40,
     marginLeft: 10
   },
   text: {
-    flex: 1,
+    width:'100%',
     marginLeft: 10,
     fontSize: 15
   }

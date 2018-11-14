@@ -21,5 +21,7 @@ export {default as Icon} from './Icon/index';
 export {default as SegmentedControl} from './SegmentedControl/index';
 export {default as Flex} from './Flex/index';
 export { default as ActivityIndicator} from './ActivityIndicator/index';
+export {default as BaseText} from './BaseText/index';
+export {default as BaseImg} from './BaseImg/index';
 
 
