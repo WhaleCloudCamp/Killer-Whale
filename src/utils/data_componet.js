@@ -20,6 +20,54 @@ export const DataComponet = [
     ]
   },
   {
+    type: "BaseText",
+    data: [
+      {
+        id: 534429,
+        type: "BaseText",
+        state: 1, 
+        props: {
+          title:'文本',
+          titleStyle:{
+            fontSize:15,
+            color: 'black',
+          }  
+        },
+        propTypes: {
+            title:'string',
+            titleStyle:'style'
+        },
+        defaultProps: {},
+        style: {}
+      }
+    ]
+  },
+  {
+    type: "BaseImg",
+    data: [
+      {
+        id: 534430,
+        type: "BaseImg",
+        state: 1, 
+        props: {
+          url:'https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png',
+          imgStyle:{
+            width:50,
+            height: 50,
+            margin:10
+          }
+        
+        },
+        propTypes: {
+            url:'string',
+            imgStyle:'style'
+        },
+        defaultProps: {},
+        style: {}
+      }
+    ]
+  },
+  {
     type: "ActivityIndicator",
     data: [
       {
