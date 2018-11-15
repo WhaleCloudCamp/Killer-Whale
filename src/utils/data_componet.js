@@ -39,46 +39,7 @@ export const DataComponet = [
  {
    type:"导航",
    data:[
- {
-        id: 6344651,
-        type: "NavBar",
-        state: 2,
-        props: {
-          title: "标题",
-          rightText: '提交',
-          isShowBk: true, //是否显示返回键
-          isShowDel: false, //是否显示左边第二个图标
-          isShowFirstRightIcon: false, //是否显示右边第一个图标
-          isShowLastRightIcon: false, //是否显示右边第二个图标
-          isShowRightText: false,
-          styleRightText: { color: "white", fontSize: 13 }, //右文本样式
-          styleTitle: { color: "white", fontSize: 20 }, //标题样式
-          style: { backgroundColor: "#0C83FF" }
-        },
-        propTypes: {
-          title: "string",
-          rightText: "string",
-          isShowBk: "bool",
-          isShowDel: "bool",
-          isShowFirstRightIcon: "bool",
-          isShowLastRightIcon: "bool",
-          isShowRightText: "bool",
-          styleRightText: "style",
-          styleTitle: "style",
-          style: 'style'
-        },
-        defaultProps: {
-          title: "标题",
-          styleRightText: { color: "white" }, //右文本样式
-          styleTitle: { color: "white" }, //标题样式
-          isShowBk: false, //是否显示返回键
-          isShowDel: false, //是否显示左边第二个图标
-          isShowFirstRightIcon: false, //是否显示右边第一个图标
-          isShowLastRightIcon: false, //是否显示右边第二个图标
-          isShowRightText: false,
-        },
-        style: {}
-      },
+ 
     {
       id: 5344361,
       type: "Pagination",
@@ -707,38 +668,7 @@ export const DataComponet = [
      },
      style: { width: "100%" }
    },
-   {
-     id: 634478,
-     type: "Slider",
-
-     state: 2,
-     props: {
-       min: 0,
-       max: 100,
-       step: 1,
-       value: 50,
-       disabled: true,
-
-       maximumTrackTintColor: "blue"
-     },
-     propTypes: {
-       min: "number",
-       max: "number",
-       step: "number",
-       value: "number",
-       disabled: "bool",
-       maximumTrackTintColor: "string"
-     },
-     defaultProps: {
-       min: 0,
-       max: 100,
-       step: 1,
-       value: 30,
-       disabled: false,
-       maximumTrackTintColor: "blue"
-     },
-     style: { width: "100%", height: 10, margin: 10 }
-   }
+   
   ]},
 
 {

@@ -3,7 +3,6 @@ export { default as CheckboxItem } from "../combination/CheckItem/index";
 export { default as RadioItem } from "../combination/RadioItem/index";
 export { default as StepperItem } from "../combination/StepperItem/index";
 export { default as InputItem } from "../combination/InputItem/index";
-export { default as NavBar } from "../combination/NavBar/index";
 export { default as Slider } from "../combination/Slider/index";
 export { default as Carousel } from "../combination/Carousel/index";
 export { default as Tag } from "../combination/Tag/index";
