@@ -108,122 +108,25 @@ export const DataComponet = [
         type: "Button",
         state: 1, //1:代表基础组件 2：代表组成组件
         props: {
-          type: "ghost",
+          type: "primary",
           children: "确定",
-          size: "large"
+          size: "large",
+          loading: true,
+          disabled: false,
         },
         propTypes: {
           type: ["primary", "ghost", "warning"],
-          pressIn: "bool",
+          children: "string",
           disabled: "bool",
           loading: "bool",
           size: ["large", "small"]
         },
         defaultProps: {
-          type: "ghost",
-          children: "确定",
-          pressIn: false,
-          disabled: false,
-          loading: false
+        
         },
         style: {}
       },
-      {
-        id: 5344332,
-        type: "Button",
-        state: 1,
 
-        props: {
-          type: "warning",
-          children: "确定",
-          size: "large"
-        },
-        propTypes: {
-          type: ["primary", "ghost", "warning"],
-          pressIn: "bool",
-          disabled: "bool",
-          loading: "bool",
-          size: ["large", "small"]
-        },
-        defaultProps: {
-          type: "ghost",
-          children: "确定",
-          pressIn: false,
-          disabled: false,
-          loading: false
-        },
-        style: {}
-      },
-      {
-        id: 5344333,
-        type: "Button",
-        state: 1,
-
-        props: { type: "primary", children: "确定" },
-        propTypes: {
-          type: ["primary", "ghost", "warning"],
-          pressIn: "bool",
-          disabled: "bool",
-          loading: "bool"
-        },
-        defaultProps: {
-          type: "primary",
-          children: "确定",
-          pressIn: false,
-          disabled: false,
-          loading: false
-        },
-        style: {}
-      },
-      {
-        id: 5344334,
-        type: "Button",
-        state: 1,
-
-        props: {
-          type: "primary",
-          children: "确定",
-          disabled: true
-        },
-        propTypes: {
-          type: ["primary", "ghost", "warning"],
-          pressIn: "bool",
-          disabled: "bool",
-          loading: "bool"
-        },
-        defaultProps: {
-          type: "primary",
-          children: "确定",
-          pressIn: false,
-          disabled: false,
-          loading: false
-        },
-        style: {}
-      },
-      {
-        id: 5344335,
-        type: "Button",
-        state: 1,
-        props: {
-          type: "primary",
-          children: "确定",
-          loading: true
-        },
-        propTypes: {
-          type: ["primary", "ghost", "warning"],
-          pressIn: "bool",
-          disabled: "bool",
-          loading: "bool"
-        },
-        defaultProps: {
-          type: "primary",
-          children: "确定",
-          pressIn: false,
-          disabled: false,
-          loading: false
-        },
-        style: {}
-      }
     ]
   },
   {
@@ -234,7 +137,7 @@ export const DataComponet = [
         type: "Switch",
         state: 1,
         props: {
-          checked: true,
+          checked: false,
           disabled: false
         },
         propTypes: {
@@ -247,43 +150,7 @@ export const DataComponet = [
         },
         style: { margin: 5 }
       },
-      {
-        id: 5344342,
-        type: "Switch",
-        state: 1,
-        props: {
-          checked: true,
-          disabled: true
-        },
-        propTypes: {
-          checked: "bool",
-          disabled: "bool"
-        },
-        defaultProps: {
-          checked: true,
-          checked: true,
-          disabled: true
-        },
-        style: { margin: 5 }
-      },
-      {
-        id: 5344343,
-        type: "Switch",
-        state: 1,
-        props: {
-          checked: false,
-          disabled: false
-        },
-        propTypes: {
-          checked: "bool",
-          disabled: "bool"
-        },
-        defaultProps: {
-          checked: false,
-          disabled: false
-        },
-        style: { margin: 5 }
-      }
+    
     ]
   },
 
@@ -318,33 +185,7 @@ export const DataComponet = [
         },
         style: { width: "100%" }
       },
-      {
-        id: 5344362,
-        type: "Pagination",
-        state: 1,
-        props: {
-          mode: "number",
-          current: 1,
-          total: 4,
-          simple: false,
-          disabled: false
-        },
-        propTypes: {
-          mode: ["button", "number", "pointer"],
-          current: "number",
-          total: "string",
-          simple: "bool",
-          disabled: "bool"
-        },
-        defaultProps: {
-          mode: "pointer",
-          current: 1,
-          total: 4,
-          simple: false,
-          disabled: false
-        },
-        style: { width: "100%" }
-      }
+    
     ]
   },
   {
@@ -510,7 +351,7 @@ export const DataComponet = [
         type: "SearchBar",
         state: 1,
         props: {
-          value: "张三",
+         
           placeholder: "请输入关键字",
           showCancelButton: false,
           cancelText: "取消",
@@ -532,21 +373,7 @@ export const DataComponet = [
         },
         style: {}
       },
-      {
-        id: 534445111,
-        type: "SearchBar",
-        state: 1,
-        props: {
-          placeholder: "请输入关键字"
-        },
-        propTypes: {
-          placeholder: "string"
-        },
-        defaultProps: {
-          placeholder: "请输入关键字"
-        },
-        style: {}
-      }
+     
     ]
   },
   {
@@ -562,6 +389,7 @@ export const DataComponet = [
           corner: false,
           dot: false,
           overflowCount: 99
+
         },
         propTypes: {
           size: ["large", "small"],
@@ -579,29 +407,7 @@ export const DataComponet = [
         },
         style: {}
       },
-      {
-        id: 5344462,
-        type: "Badge",
-        state: 1,
-        props: {
-          size: "small",
-          text: "new",
-          corner: false,
-          dot: true
-        },
-        propTypes: {
-          size: ["large", "small"],
-          text: "string",
-          corner: "bool"
-        },
-        defaultProps: {
-          size: "small",
-          text: "15",
-          corner: false,
-          dot: true
-        },
-        style: {}
-      }
+     
     ]
   },
 
@@ -641,6 +447,8 @@ export const DataComponet = [
           clear: false,
           title: "标题",
           labelNumber: 3
+
+       
         },
         style: {
           width: "100%",
@@ -649,41 +457,7 @@ export const DataComponet = [
           borderWidth: 0.5
         }
       },
-      {
-        id: 5344522,
-        type: "TextareaItem",
-        state: 1,
-        props: {
-          rows: 4,
-          placeholder: "固定行数、多行带计数、高度自适应",
-          count: 100,
-          autoHeight: true,
-          editable: true,
-          clear: false
-        },
-        propTypes: {
-          rows: "number",
-          placeholder: "string",
-          count: "number",
-          autoHeight: "bool",
-          editable: "bool",
-          clear: "bool"
-        },
-        defaultProps: {
-          rows: 4,
-          placeholder: "固定行数、多行带计数、高度自适应",
-          count: 100,
-          autoHeight: true,
-          editable: true,
-          clear: false
-        },
-        style: {
-          width: "100%",
-          paddingVertical: 5,
-          borderColor: "gray",
-          borderWidth: 0.5
-        }
-      }
+     
     ]
   },
 
@@ -807,63 +581,33 @@ export const DataComponet = [
         state: 1,
         props: {
           type: "cross-circle-o",
-          size: 55,
+          size: 'md',
           color: "red"
         },
         propTypes: {
-          type: "string",
-          size: "number",
+          type: [
+            'check-circle',
+            'check',
+            'check-circle-o',
+            'cross-circle',
+            'cross',
+            'cross-circle-o',
+            'up',
+            'down',
+            'left',
+            'right',
+            'ellipsis',
+            'question-circle'
+          ],
+          size: ['xxs','xs','sm','md','lg'],
           color: "string"
         },
         defaultProps: {
-          type: "down",
-          size: 55,
-          color: "red"
+         
         },
         style: {}
       },
-      {
-        id: 5344592,
-        type: "Icon",
-        state: 1,
-        props: {
-          type: "ellipsis",
-          size: 55,
-          color: "blue"
-        },
-        propTypes: {
-          type: "string",
-          size: "number",
-          color: "string"
-        },
-        defaultProps: {
-          type: "down",
-          size: 55,
-          color: "blue"
-        },
-        style: {}
-      },
-      {
-        id: 5344593,
-        type: "Icon",
-        state: 1,
-        props: {
-          type: "cross",
-          size: 55,
-          color: "blue"
-        },
-        propTypes: {
-          type: "string",
-          size: "number",
-          color: "string"
-        },
-        defaultProps: {
-          type: "cross-circle",
-          size: 55,
-          color: "blue"
-        },
-        style: {}
-      }
+     
     ]
   },
 

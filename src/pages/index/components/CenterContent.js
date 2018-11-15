@@ -42,8 +42,8 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
         >
           {Com && (
             <Com
-              {...comProps}
               style={component.style}
+              {...comProps}
               key={`centerPanel${component.type}${id}`}
               onClick={(e) => clickDrag(item,e)}
             >
