@@ -1,7 +1,7 @@
 import * as Whale from "components";
 import * as Whales from "combinations";
 import { Collapse, Button, Row, Col, Popconfirm } from "antd";
-
+import styless from "./left.less";
 const Panel = Collapse.Panel;
 const DraggableContent = Whale.DraggableContent;
 const LeftContent = ({
@@ -46,10 +46,13 @@ const LeftContent = ({
                   items.props = {};
                 }
                 return (
+             
                   <DraggableContent
                     itemData={items}
                     key={"leftPanel" + items.id}
                   >
+                  <div className ={styless.com}>
+                  <div>{items.type}</div>
                     {Com && (
                       <Com
                         style={items.style}
@@ -57,7 +60,9 @@ const LeftContent = ({
                         key={`leftPanel${items.type}${items.id}`}
                       />
                     )}
+                    </div>
                   </DraggableContent>
+                  
                 );
               })}
             </Panel>

@@ -1,9 +1,5 @@
-import { DataComponet } from "./data_componet.js";
-import { DataCombination } from "./data_combination.js";
+import { DataComponet } from "./data_componet.js";  
 
-export function getCombinationSouData() {
-  return DataCombination;
-}
 
 export function getTestSouData() {
   return DataComponet;
