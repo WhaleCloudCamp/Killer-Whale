@@ -4,7 +4,6 @@ import { notification, message } from "antd";
 import {
   getTestSouData,
   getTestComData,
- 
   addComponent,
   moveComponent,
   deleteComponent
@@ -181,10 +180,16 @@ export default {
           });
           return arrs;
         } else {
-          return moveComponent(arrs, dragIndex, hoverIndex);
+          const data = moveComponent(arrs, dragIndex, hoverIndex);
+          return data;
         }
       }
-      components = findComMobeItem(components, parentId, dragIndex, hoverIndex);
+      views[showPage].components = findComMobeItem(
+        components,
+        parentId,
+        dragIndex,
+        hoverIndex
+      );
       yield put({
         type: "save",
         payload: {
