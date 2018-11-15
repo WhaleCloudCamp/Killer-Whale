@@ -4,7 +4,7 @@ import styles from "./center.less";
 
 const DroppableContent = Whale.DroppableContent;
 const DraggableContent = Whale.DraggableContent;
-const RederComponents = (components, clickDrag, onDropAction,parentId) => {
+const RederComponents = (components, clickDrag, onDropAction, parentId) => {
   return components.map((item, index) => {
     const { component, id, childrenCom } = item;
     let Com = null;
@@ -19,13 +19,18 @@ const RederComponents = (components, clickDrag, onDropAction,parentId) => {
     }
     let otherProps = {};
     console.log(component.type);
-    
+
     if (component.isLayout) {
       otherProps.parentId = id;
     }
     const comProps = Object.assign({}, component.props, otherProps);
     if (childrenCom && childrenCom.length > 0) {
-      const childDom = RederComponents(childrenCom, clickDrag, onDropAction,id);
+      const childDom = RederComponents(
+        childrenCom,
+        clickDrag,
+        onDropAction,
+        id
+      );
       return (
         <DraggableContent
           itemData={item}
@@ -33,13 +38,14 @@ const RederComponents = (components, clickDrag, onDropAction,parentId) => {
           index={index}
           onDropAction={onDropAction}
           parentId={parentId}
-          onClick={() => clickDrag(item)}
+          onClick={(e) => clickDrag(item,e)}
         >
           {Com && (
             <Com
               {...comProps}
               style={component.style}
               key={`centerPanel${component.type}${id}`}
+              onClick={(e) => clickDrag(item,e)}
             >
               {childDom}
             </Com>
@@ -54,15 +60,14 @@ const RederComponents = (components, clickDrag, onDropAction,parentId) => {
           index={index}
           onDropAction={onDropAction}
           parentId={parentId}
-          onClick={() => clickDrag(item)}
+          onClick={(e) => clickDrag(item,e)}
         >
           {Com && (
             <Com
-            style={component.style}
+              style={component.style}
               {...comProps}
-            
+              onClick={(e) => clickDrag(item,e)}
               key={`centerPanel${component.type}${id}`}
-              
             />
           )}
         </DraggableContent>
@@ -81,7 +86,12 @@ const CenterContent = props => {
     >
       <div className={styles.centerDiv}>
         <DroppableContent onDropAction={onDropAction}>
-          {RederComponents(components, clickDrag, onDropAction,'whalemainroot')}
+          {RederComponents(
+            components,
+            clickDrag,
+            onDropAction,
+            "whalemainroot"
+          )}
         </DroppableContent>
       </div>
     </div>

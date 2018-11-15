@@ -92,7 +92,7 @@ export default {
       const { index, parentId, item } = payload;
       console.log(payload);
 
-      function findComAndAddComponent(arrs, parentId,item) {
+      function findComAndAddComponent(arrs, parentId, item) {
         arrs.map(arr => {
           const childrenCom = arr.childrenCom;
           if (arr.id === parentId) {
@@ -100,13 +100,17 @@ export default {
             const data = addComponent(sourceData, childrenCom, item, itemIndex);
             arr.childrenCom = data.centerData;
           } else if (childrenCom && childrenCom.length > 0) {
-            arr.childrenCom = findComAndAddComponent(childrenCom, parentId,item);
+            arr.childrenCom = findComAndAddComponent(
+              childrenCom,
+              parentId,
+              item
+            );
           }
           return arr;
         });
         return arrs;
       }
-      components = findComAndAddComponent(components, parentId,item);
+      components = findComAndAddComponent(components, parentId, item);
       // components.map(com => {
       //   if (com.id === parentId) {
       //     const childrenCom = com.childrenCom;
@@ -153,24 +157,34 @@ export default {
     *moveItem({ payload }, { call, put, select }) {
       const { dragIndex, hoverIndex, parentId } = payload;
       const { views, showPage } = yield select(state => state.global);
-      const { components } = views[showPage];
-      console.log("moveItem");
-
-      if (parentId !== "whalemainroot") {
-        components.map(item => {
-          if (item.id === parentId) {
-            const data = moveComponent(item.childrenCom, dragIndex, hoverIndex);
-            item.childrenCom = data;
-          }
-        });
-      } else {
-        console.log(213);
-
-        const data = moveComponent(components, dragIndex, hoverIndex);
-        views[showPage].components = data;
+      let { components } = views[showPage];
+      function findComMobeItem(arrs, parentId, dragIndex, hoverIndex) {
+        if (parentId !== "whalemainroot") {
+          arrs.map(item => {
+            const childrenCom = item.childrenCom;
+            if (item.id === parentId) {
+              const data = moveComponent(
+                item.childrenCom,
+                dragIndex,
+                hoverIndex
+              );
+              item.childrenCom = data;
+            } else if (childrenCom && childrenCom.length > 0) {
+              item.childrenCom = findComMobeItem(
+                childrenCom,
+                parentId,
+                dragIndex,
+                hoverIndex
+              );
+            }
+            return item;
+          });
+          return arrs;
+        } else {
+          return moveComponent(arrs, dragIndex, hoverIndex);
+        }
       }
-      console.log(views);
-
+      components = findComMobeItem(components, parentId, dragIndex, hoverIndex);
       yield put({
         type: "save",
         payload: {
@@ -180,29 +194,11 @@ export default {
     },
     *showItem({ payload }, { call, put }) {
       console.log("showItem");
-
       const data = Object.assign({}, payload || {});
       yield put({
         type: "save",
         payload: {
           showItemData: data
-        }
-      });
-    },
-    *changeItem({ payload }, { call, put, select }) {
-      console.log("changeItem");
-
-      if (!payload.id) return;
-      const { components } = yield select(state => state.global);
-      components.map(item => {
-        if (item.id === payload.id) {
-          item = Object.assign({}, payload || {});
-        }
-      });
-      yield put({
-        type: "save",
-        payload: {
-          components: components
         }
       });
     },
@@ -213,28 +209,41 @@ export default {
       //   value:'121'
       // }
       console.log("changeItemProp");
-
-      if (!payload.id) return;
+      const { id, key, value } = payload;
+      if (!id) return;
       const { views, showPage } = yield select(state => state.global);
-      const { components } = views[showPage];
-      components.map(item => {
-        if (item.id === payload.id) {
-          switch (item.component.propTypes[payload.key]) {
-            case "bool":
-              payload.value = payload.value === "true";
-              break;
-            case "number":
-              payload.value = parseInt(payload.value);
-              break;
-            case "array":
-              payload.value = JSON.parse(payload.value);
-              break;
-            default:
-              break;
+      let { components } = views[showPage];
+      function findComAndChangeProp(arrs, id, key, value) {
+        arrs.map(item => {
+          const childrenCom = item.childrenCom;
+          if (item.id === payload.id) {
+            switch (item.component.propTypes[payload.key]) {
+              case "bool":
+                payload.value = payload.value === "true";
+                break;
+              case "number":
+                payload.value = parseInt(payload.value);
+                break;
+              case "array":
+                payload.value = JSON.parse(payload.value);
+                break;
+              default:
+                break;
+            }
+            item.component.props[payload.key] = payload.value;
+          } else if (childrenCom && childrenCom.length > 0) {
+            item.childrenCom = findComAndChangeProp(
+              childrenCom,
+              id,
+              key,
+              value
+            );
           }
-          item.component.props[payload.key] = payload.value;
-        }
-      });
+          return item;
+        });
+        return arrs;
+      }
+      components = findComAndChangeProp(components, id, key, value);
       yield put({
         type: "save",
         payload: {

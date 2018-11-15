@@ -34,7 +34,8 @@ const getItemStyle = (isDragging, canDrop, isFlex) => ({
   borderWidth: canDrop ? "1px" : isFlex ? "1px" : "0",
   // borderWidth: "1px",
   borderStyle: canDrop ? "dotted" : "dashed",
-  padding: canDrop && isFlex ? "30px" : "0",
+  paddingLeft: canDrop ? "10px" : "0",
+  paddingRight: canDrop ? "10px" : "0",
   position: isFlex ?"relative":""
 
   // styles we need to apply on draggables
@@ -45,8 +46,8 @@ const chessSquareTarget = {
     return true;
   },
   hover(props, monitor, component) {
-    console.log("move");
-    console.log(component);
+    // console.log("move");
+    // console.log(component);
 
     if (!component) {
       return null;
@@ -93,6 +94,7 @@ const chessSquareTarget = {
     }
 
     // Time to actually perform the action
+    console.log(dragIndex,dragParentId,hoverIndex,hoverParentId);
 
     props.onDropAction &&
       props.onDropAction({
@@ -166,21 +168,23 @@ const DraggableContent = ({
           style={getItemStyle(isDragging, canDrop, isFlex)}
           onClick={onClick}
         >
-        {isFlex&& <div
-          style={{
-            fontSize: "16px",
-            background: "red",
-            top: "0",
-            position: "absolute",
-            color: "white",
-            right: "0",
-            zIndex: "99"
-          }}
-        >
-          {
-            itemData.component.type
-          }
-        </div>}
+        {
+        //   isFlex&& <div
+        //   style={{
+        //     fontSize: "16px",
+        //     background: "red",
+        //     top: "0",
+        //     position: "absolute",
+        //     color: "white",
+        //     right: "0",
+        //     zIndex: "99"
+        //   }}
+        // >
+        //   {
+        //     itemData.component.type
+        //   }
+        // </div>
+      }
           {children}
         </div>
       )
