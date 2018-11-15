@@ -25,30 +25,7 @@ export const DataCombination = [
       }
     ]
   },
-  {
-    type: "Flex",
-    data: [
-      {
-        id: 1232111112321,
-        type: "Flex",
-        state: 2,
-        props: {
-          direction: "row",
-          wrap: "nowrap",
-          alignItems: "center",
-          align: "around"
-        },
-        propTypes: {
-          direction: ["row", "column", "row-reverse", "column-reverse"],
-          wrap: ["nowrap", "wrap", "wrap-reverse"],
-          alignItems: ["start", "end", "center", "stretch", "baseline"],
-          align: ["start", "end", "center", "between", "around"]
-        },
-        defaultProps: {},
-        style: {}
-      }
-    ]
-  },
+
   {
     type: "NavBar",
     data: [
@@ -58,25 +35,26 @@ export const DataCombination = [
         state: 2,
         props: {
           title: "标题",
-          styleRightText: { color: "white" }, //右文本样式
-          styleTitle: { color: "white" }, //标题样式
+          rightText: '提交',
           isShowBk: true, //是否显示返回键
           isShowDel: false, //是否显示左边第二个图标
           isShowFirstRightIcon: false, //是否显示右边第一个图标
           isShowLastRightIcon: false, //是否显示右边第二个图标
           isShowRightText: false,
+          styleRightText: { color: "white", fontSize: 13 }, //右文本样式
+          styleTitle: { color: "white", fontSize: 20 }, //标题样式
           style: { backgroundColor: "#0C83FF" }
-
         },
         propTypes: {
           title: "string",
-          styleRightText: "style",
-          styleTitle: "style",
+          rightText: "string",
           isShowBk: "bool",
           isShowDel: "bool",
           isShowFirstRightIcon: "bool",
           isShowLastRightIcon: "bool",
           isShowRightText: "bool",
+          styleRightText: "style",
+          styleTitle: "style",
           style: 'style'
         },
         defaultProps: {
@@ -91,85 +69,7 @@ export const DataCombination = [
         },
         style: {}
       },
-      {
-        id: 6344652,
-        type: "NavBar",
-        state: 2,
-        props: {
-          title: "标题",
-          styleRightText: { color: "white", width: 20 }, //右文本样式
-          styleTitle: { color: "white" }, //标题样式
-          isShowBk: true, //是否显示返回键
-          isShowDel: true, //是否显示左边第二个图标
-          isShowFirstRightIcon: true, //是否显示右边第一个图标
-          isShowLastRightIcon: true, //是否显示右边第二个图标
-          isShowRightText: false,
-          style: { backgroundColor: "green" }
-        },
-        propTypes: {
-          title: "string",
-          styleRightText: "style",
-          styleTitle: "style",
-          isShowBk: "bool",
-          isShowDel: "bool",
-          isShowFirstRightIcon: "bool",
-          isShowLastRightIcon: "bool",
-          isShowRightText: "bool",
-          style: "style"
-        },
-        defaultProps: {
-          title: "标题",
-          styleRightText: { color: "white" }, //右文本样式
-          styleTitle: { color: "white" }, //标题样式
-          isShowBk: true, //是否显示返回键
-          isShowDel: true, //是否显示左边第二个图标
-          isShowFirstRightIcon: true, //是否显示右边第一个图标
-          isShowLastRightIcon: true, //是否显示右边第二个图标
-          isShowRightText: false
-        },
-        style: {}
 
-      },
-      ,
-      {
-        id: 6344653,
-        type: "NavBar",
-        state: 2,
-        props: {
-          title: "标题",
-          styleRightText: { color: "white" }, //右文本样式
-          styleTitle: { color: "white" }, //标题样式
-          isShowBk: true, //是否显示返回键
-          isShowDel: false, //是否显示左边第二个图标
-          isShowFirstRightIcon: false, //是否显示右边第一个图标
-          isShowLastRightIcon: false, //是否显示右边第二个图标
-          isShowRightText: true,
-          style: { backgroundColor: "pink" }
-
-        },
-        propTypes: {
-          title: "string",
-          styleRightText: "style",
-          styleTitle: "style",
-          isShowBk: "bool",
-          isShowDel: "bool",
-          isShowFirstRightIcon: "bool",
-          isShowLastRightIcon: "bool",
-          isShowRightText: "bool",
-          style: 'style'
-        },
-        defaultProps: {
-          title: "标题",
-          styleRightText: { color: "white" }, //右文本样式
-          styleTitle: { color: "white" }, //标题样式
-          isShowBk: true, //是否显示返回键
-          isShowDel: false, //是否显示左边第二个图标
-          isShowFirstRightIcon: false, //是否显示右边第一个图标
-          isShowLastRightIcon: false, //是否显示右边第二个图标
-          isShowRightText: true
-        },
-        style: {}
-      }
     ]
   },
   {
@@ -235,36 +135,7 @@ export const DataCombination = [
         },
         style: { margin: 5 }
       },
-      {
-        id: 6344662,
-        type: "RadioItem",
-        state: 2,
-        props: {
-          checked: true,
-          disabled: false,
-          showType: false,
-          title: "单项选择标签",
-          textStyle: {
-            marginLeft: 10,
-            fontSize: 15,
-            color: 'black'
-          }
-        },
-        propTypes: {
-          checked: "bool",
-          disabled: "bool",
-          showType: "bool",
-          title: "string",
-          textStyle: "style"
-        },
-        defaultProps: {
-          checked: true,
-          disabled: false,
-          showType: false,
-          title: "单项选择标签"
-        },
-        style: { margin: 5 }
-      }
+
     ]
   },
   {
@@ -475,35 +346,7 @@ export const DataCombination = [
         },
         style: { width: "100%" }
       },
-      {
-        id: 6344692,
-        state: 2,
-        type: "Carousel",
-        props: {
-          dataItem: [{ url: 'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png' }, { url: 'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png' },],
-          autoplay: true,
-          infinite: true,
-          autoplayInterval: 3000,
-          dots: false,
-          vertical: true
-        },
-        propTypes: {
-          dataItem: 'array',
-          autoplay: 'bool',
-          infinite: 'bool',
-          autoplayInterval: 'number',
-          dots: 'bool',
-          vertical: 'bool'
-        },
-        defaultProps: {
-          autoplay: true,
-          infinite: true,
-          autoplayInterval: 3000,
-          dots: false,
-          vertical: true
-        },
-        style: { width: "100%" }
-      }
+
     ]
   },
   {
@@ -519,6 +362,7 @@ export const DataCombination = [
           closable: true,
           selected: true,
           content: "美女"
+
         },
         propTypes: {
           small: "bool",
@@ -536,60 +380,8 @@ export const DataCombination = [
         },
         style: { width: 30, height: 25, margin: 5 }
       },
-      {
-        id: 6344702,
-        type: "Tag",
-        state: 2,
-        props: {
-          small: false,
-          disabled: true,
-          closable: false,
-          selected: true,
-          content: "帅哥"
-        },
-        propTypes: {
-          small: "bool",
-          disabled: "bool",
-          closable: "bool",
-          selected: "bool",
-          content: "string"
-        },
-        defaultProps: {
-          small: false,
-          disabled: true,
-          closable: false,
-          selected: true,
-          content: "帅哥"
-        },
-        style: { width: 30, height: 25, margin: 5 }
-      },
-      {
-        id: 6344703,
-        state: 2,
-        type: "Tag",
-        props: {
-          small: true,
-          disabled: false,
-          closable: false,
-          selected: true,
-          content: "美女"
-        },
-        propTypes: {
-          small: "bool",
-          disabled: "bool",
-          closable: "bool",
-          selected: "bool",
-          content: "string"
-        },
-        defaultProps: {
-          small: false,
-          disabled: false,
-          closable: false,
-          selected: true,
-          content: "美女"
-        },
-        style: { width: 30, height: 25, margin: 5 }
-      }
+
+
     ]
   },
 
@@ -606,6 +398,7 @@ export const DataCombination = [
           titles:
             "这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........",
           marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } }
+
         },
         propTypes: {
           mode: ["closable", "link"],
@@ -619,27 +412,7 @@ export const DataCombination = [
         },
         style: { width: "100%" }
       },
-      {
-        id: 634473,
-        type: "NoticeBar",
-        state: 2,
-        props: {
-          mode: "link",
-          titles: "这是一个通知栏.........",
-          marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } }
-        },
-        propTypes: {
-          mode: ["closable", "link"],
-          marqueeProps: "array",
-          titles: "string"
-        },
-        defaultProps: {
-          mode: "closable",
-          marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } },
-          title: "这是一个通知栏........."
-        },
-        style: { width: "100%" }
-      }
+
     ]
   },
   {
@@ -866,7 +639,6 @@ export const DataCombination = [
         state: 2,
         props: {
 
-          AlipayImg: require('../assets/bell.png'),
           title: "验证成功",
           message: "所提交内容已成功完成验证",
           buttonText: "完成",
@@ -1146,8 +918,8 @@ export const DataCombination = [
         props: {
           title: '重置密码错误',
           btnSureText: '确定',
-          btnCancelText:'取消',
-          showCancel:true,
+          btnCancelText: '取消',
+          showCancel: true,
           mainStyle: {
             justifyContent: 'center',
             alignItems: 'center',
@@ -1173,7 +945,7 @@ export const DataCombination = [
             borderRadius: 10,
             width: 80,
             height: 30,
-            margin:5
+            margin: 5
           },
           btnCancelTextStyle: {
             color: 'white',
@@ -1186,7 +958,7 @@ export const DataCombination = [
             borderRadius: 10,
             width: 80,
             height: 30,
-            margin:5
+            margin: 5
           },
           btnSureTextStyle: {
             color: 'white',
@@ -1197,7 +969,7 @@ export const DataCombination = [
         propTypes: {
           title: 'string',
           btnText: 'string',
-          showCancel:'bool',
+          showCancel: 'bool',
           mainStyle: 'style',
           imgStyle: 'style',
           contentStyle: 'style',
@@ -1221,53 +993,53 @@ export const DataCombination = [
         type: "DialogTwo",
         state: 2,
         props: {
-          title:'天翼乐享套餐128元-聊天版',
-          contentText:'1.月使用费用1.月使用费用1.月使用费用1.月使用费用,1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用',
-  
-          mainStyle:{
-    
+          title: '天翼乐享套餐128元-聊天版',
+          contentText: '1.月使用费用1.月使用费用1.月使用费用1.月使用费用,1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用',
+
+          mainStyle: {
+
             borderRadius: 8,
             backgroundColor: '#00BFFF',
             width: 300,
             height: 200,
-            margin:10
+            margin: 10
           },
-          secondStyle:{
-            alignItems:'center',
-            backgroundColor:'#02C558',
-            borderTopLeftRadius:8,
+          secondStyle: {
+            alignItems: 'center',
+            backgroundColor: '#02C558',
+            borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
           },
-          titleStyle:{
-               color:'white',
-               fontSize:15,
-               flex:1,
-              textAlign: 'center'
+          titleStyle: {
+            color: 'white',
+            fontSize: 15,
+            flex: 1,
+            textAlign: 'center'
           },
-          imgStyle:{
-            width:20,
-            height:20,
-            margin:10
+          imgStyle: {
+            width: 20,
+            height: 20,
+            margin: 10
           },
-          contentStyle:{
-            color:'black',
-            padding:10,
-            fontSize:15,
-            height:'100%'
-          
+          contentStyle: {
+            color: 'black',
+            padding: 10,
+            fontSize: 15,
+            height: '100%'
+
           }
 
         },
         propTypes: {
-          title:'string',
-          contentText:'string',
-          mainStyle:'style',
-          secondStyle:'style',
-          titleStyle:'style',
-          imgStyle:'style',
-contentStyle:'style'
+          title: 'string',
+          contentText: 'string',
+          mainStyle: 'style',
+          secondStyle: 'style',
+          titleStyle: 'style',
+          imgStyle: 'style',
+          contentStyle: 'style'
 
-       
+
         },
         defaultProps: {
 

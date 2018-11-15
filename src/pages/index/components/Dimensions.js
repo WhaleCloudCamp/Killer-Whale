@@ -36,6 +36,8 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
                   ></RightStyle>
                 )
 
+              }else if(types[item] === "array"){
+                    return(null)
               }
               return (
                 <InputItem
