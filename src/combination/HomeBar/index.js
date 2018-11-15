@@ -12,7 +12,7 @@ export default class HomeBar extends React.Component {
             <View style={[styles.mainStyle, this.props.mainStyle]}>
 
                 <TouchableHighlight
-                    onPress={this.props.onClick && this.props.onClick()}
+                    onPress={this.props.onLeftClick && this.props.onLeftClick()}
                     activeOpacity={0.5}
                     underlayColor={'white'}
                 >
@@ -34,7 +34,7 @@ export default class HomeBar extends React.Component {
                     <Text style={[styles.textCenterStyle,this.props.textCenterStyle]}>{this.props.textCenter}</Text>
                 </View>
                 <TouchableHighlight
-                    onPress={this.props.onClick && this.props.onClick()}
+                    onPress={this.props.onRightClcik && this.props.onRightClcik()}
                     activeOpacity={0.5}
                     underlayColor={'white'}
                 >

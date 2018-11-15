@@ -18,7 +18,7 @@ const App = ({ global, dispatch }) => {
   const {
     cneterscale = 100,
     sourceData,
-    combinationSouData,
+ 
     views,
     showPage,
     showItemData
@@ -56,9 +56,8 @@ const App = ({ global, dispatch }) => {
   };
 
   const tabs = [
-    { title: "基础组件", sub: "1" },
-    { title: "组合组件", sub: "2" },
-    { title: "页面", sub: "3" }
+    { title: "组件", sub: "1" },
+    { title: "页面", sub: "2" }
   ];
 
   return (
@@ -70,9 +69,7 @@ const App = ({ global, dispatch }) => {
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent sourceData={sourceData} />
               </div>
-              <div style={{ display: "flex", backgroundColor: "#fff" }}>
-                <LeftContent sourceData={combinationSouData} />
-              </div>
+             
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent
                   viewsData={views}

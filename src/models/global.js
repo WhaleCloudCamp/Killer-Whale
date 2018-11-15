@@ -4,7 +4,7 @@ import { notification, message } from "antd";
 import {
   getTestSouData,
   getTestComData,
-  getCombinationSouData,
+ 
   addComponent,
   moveComponent,
   deleteComponent
@@ -17,7 +17,7 @@ export default {
     showPage: 0,
     cneterscale: 100,
     sourceData: getTestSouData(),
-    combinationSouData: getCombinationSouData(),
+
     components: [],
     showItemData: {}
   },
