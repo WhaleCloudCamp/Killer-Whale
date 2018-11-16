@@ -89,7 +89,6 @@ export default {
       );
       let { components } = views[showPage];
       const { index, parentId, item } = payload;
-      console.log(payload);
 
       function findComAndAddComponent(arrs, parentId, item) {
         arrs.map(arr => {
@@ -148,7 +147,6 @@ export default {
       yield put({
         type: "save",
         payload: {
-          // sourceData: data.leftData,
           views: views
         }
       });

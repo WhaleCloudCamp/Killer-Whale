@@ -1,5 +1,4 @@
-import { DataComponet } from "./data_componet.js";  
-
+import { DataComponet } from "./data_componet.js";
 
 export function getTestSouData() {
   return DataComponet;
@@ -35,6 +34,14 @@ export function deleteComponent(centerData, id) {
     if (centerData[key].id === id) {
       centerData.splice(key, 1);
       break;
+    } else if (
+      centerData[key].childrenCom &&
+      centerData[key].childrenCom.length > 0
+    ) {
+      centerData[key].childrenCom = deleteComponent(
+        centerData[key].childrenCom,
+        id
+      );
     }
   }
   return centerData;
