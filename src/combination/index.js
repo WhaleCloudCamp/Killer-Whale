@@ -8,7 +8,6 @@ export { default as Carousel } from "../combination/Carousel/index";
 export { default as Tag } from "../combination/Tag/index";
 export { default as List } from "../combination/List/index";
 export { default as NoticeBar } from "../combination/NoticeBar/index";
-export { default as Popover } from "../combination/Popover/index";
 export { default as Result } from "../combination/Result/index";
 export { default as QuickEntry} from "../combination/QuickEntry/index";
 export { default as HomeBar} from "../combination/HomeBar/index";

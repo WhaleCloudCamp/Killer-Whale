@@ -138,33 +138,7 @@ export const DataComponet = [
       },
       style: { width: "100%", height: 30 }
     },
-    {
-      id: 634476,
-      type: "Popover",
-      state: 2,
-      props: {
-        data: [1, 2, 3],
-        title: '菜单',
-        mask: true,
-        textStyle: {
-          width: 30,
-          height: 30,
-          alignItems: 'center',
-          justifyContent: 'center',
-    
-        }
-      },
-      propTypes: {
-        data: "array",
-        title: 'string',
-        mask: 'bool',
-        textStyle: 'style'
-      },
-      defaultProps: {
-        data: [1, 2, 3]
-      },
-      style: {}
-    }
+  
    ]
  },
 {
