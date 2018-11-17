@@ -8,7 +8,8 @@ export default class Sliders extends React.Component {
       <View
         style={{
           borderWidth: 15,
-          borderColor: "white"
+          borderColor: 'white',
+          backgroundColor:'white'
         }}
       >
         <Slider
