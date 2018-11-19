@@ -55,7 +55,10 @@ const LeftContent = ({
                   <div>{items.type}</div>
                     {Com && (
                       <Com
-                        style={items.style}
+                        style={{
+                          borderStyle: items.type==="Flex"? "dashed" : "none",
+                          borderWidth:items.type==="Flex"? "1px" : "0",
+                          ...items.style}}
                         {...items.props}
                         key={`leftPanel${items.type}${items.id}`}
                       />
