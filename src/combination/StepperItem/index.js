@@ -8,7 +8,7 @@ export default class StepperItem extends React.Component {
       <View style={styles.main}>
         <Text style={[styles.text,this.props.textStyle]}>{this.props.title}</Text>
         <View>
-          <Stepper {...this.props} />
+          <Stepper {...this.props} style ={[styles.stepStyle,this.props.stepStyle]} />
         </View>
       </View>
     );
@@ -17,14 +17,19 @@ export default class StepperItem extends React.Component {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
+    marginTop:10,
+    marginBottom:10
   },
   text: {
     flex: 1,
     fontSize: 15
+  },
+  stepStyle:{
+    width:60
   }
+
 });
