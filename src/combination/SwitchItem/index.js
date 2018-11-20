@@ -16,7 +16,6 @@ export default class SwitchItem extends React.Component {
 }
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center"
   }

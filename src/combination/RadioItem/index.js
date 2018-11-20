@@ -16,7 +16,7 @@ export default class RadioItem extends React.Component {
 }
 const styles = StyleSheet.create({
   main: {
- 
+    margin:5,
     flexDirection: "row",
     alignItems: "center"
   },
