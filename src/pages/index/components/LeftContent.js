@@ -32,8 +32,11 @@ const LeftContent = ({
     >
       {sourceData.length > 0 &&
         sourceData.map((item, index) => {
+          let sum = 0;
+          sum = item.data.length;
+          console.log(item.data.length);
           return (
-            <Panel header={item.type} key={item.type}>
+            <Panel header={item.type +'（' + sum +'）'} key={item.type}>
               {item.data.map((items, index) => {
                 let Com = null;
                 if (items.state === 1) {
@@ -46,7 +49,7 @@ const LeftContent = ({
                   items.props = {};
                 }
                 return (
-             
+
                   <DraggableContent
                     itemData={items}
                     key={"leftPanel" + items.id}
@@ -65,7 +68,7 @@ const LeftContent = ({
                     )}
                     </div>
                   </DraggableContent>
-                  
+
                 );
               })}
             </Panel>

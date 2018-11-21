@@ -18,7 +18,7 @@ const App = ({ global, dispatch }) => {
   const {
     cneterscale = 100,
     sourceData,
- 
+
     views,
     showPage,
     showItemData
@@ -56,8 +56,8 @@ const App = ({ global, dispatch }) => {
   };
 
   const tabs = [
-    { title: "组件", sub: "1" },
-    { title: "页面", sub: "2" }
+    { title: "组件库", sub: "1" },
+    { title: "页面库", sub: "2" }
   ];
 
   return (
@@ -65,11 +65,12 @@ const App = ({ global, dispatch }) => {
       <Row className={styles.rowclass}>
         <Col span={6} className={styles.colclass}>
           <div>
+            <LeftTitle />
             <Tabs tabs={tabs} initialPage={0}>
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent sourceData={sourceData} />
               </div>
-             
+
               <div style={{ display: "flex", backgroundColor: "#fff" }}>
                 <LeftContent
                   viewsData={views}

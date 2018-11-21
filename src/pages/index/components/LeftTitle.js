@@ -1,11 +1,11 @@
 import * as Whale from "components";
 import styles from "./left.less";
-import classify from "assets/classify.png";
+import logo from "assets/logo.png";
 
 const LeftTitle = ({ sourceData = [] }) => {
   return (
     <div className={styles.tip}>
-      <img src={classify} className={styles.classify} alt="" />
+      <img src={logo} className={styles.classify} alt="" />
     </div>
   );
 };
