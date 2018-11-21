@@ -33,10 +33,10 @@ class SelectItem extends React.Component {
           </span>
         </div>
         <div className={styles.ffgvpT}>
-          <div className={styles.ggjvuQ}>
+          <div className={styles.ggjvuQs}>
             <select
               tabIndex="-1"
-              className={styles.iqAZmK}
+              className={styles.iqAZmKs}
               value={value}
               onChange={this.handleChange}
             >

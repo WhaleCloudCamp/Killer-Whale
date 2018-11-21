@@ -11,7 +11,7 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
       <div className={styles.gCSQPN}>
         <div>
           {Object.keys(data).map(item => {
-           console.warn('总数据：'+JSON.stringify(data))
+           
             if (typeof types[item] === "string" || !types[item]) {
               if (types[item] === "bool") {
                 return (

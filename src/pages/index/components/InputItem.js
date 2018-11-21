@@ -31,12 +31,13 @@ class InputItem extends React.Component {
     let { value,id } = this.state;
     const { handleBlur, type, isNumber,parentId } = this.props;
     return (
+      <div className ={styles.inputmain}>
+        
       <div className={styles.fqvwjT}>
-        <div className={styles.dcJAHC}>
-          <span style={{ fontsize: "11px" }} className={styles.ikRkvd}>
+          <span style={{ fontsize: "11px" }} className={styles.ikRssvd}>
             {type}
           </span>
-        </div>
+       
         <div className={styles.ffgvpT}>
           <div className={styles.ggjvuQ}>
             <input
@@ -49,6 +50,12 @@ class InputItem extends React.Component {
             />
           </div>
         </div>
+  
+        </div>
+        <div className ={styles.line}>
+         
+        </div>
+
       </div>
     );
   }
