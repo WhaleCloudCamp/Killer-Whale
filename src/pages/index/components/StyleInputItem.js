@@ -32,24 +32,31 @@ class StyleInputItem extends React.Component {
     let { value,id } = this.state;
     const { type, isNumber } = this.props;
     return (
-      <div className={styles.fqvwjT}>
-        <div className={styles.dcJAHC}>
-          <span style={{ fontsize: "11px" }} className={styles.ikRssvd}>
+      <div >
+      <div className={styles.fqvwjTs}>
+        
+          <span  className={styles.ikRssvd}>
             {type}
           </span>
-        </div>
+      
         <div className={styles.ffgvpT}>
           <div className={styles.ggjvuQ}>
             <input
+    
               type={isNumber ? "number" : "text"}
               tabIndex="-1"
               className={styles.iqAZmK}
               value={value}
               onChange={this.handleChange}
               onBlur={this.handleBlur}
+            
             />
           </div>
         </div>
+      </div>
+
+      <div className={styles.line}></div>
+
       </div>
     );
   }

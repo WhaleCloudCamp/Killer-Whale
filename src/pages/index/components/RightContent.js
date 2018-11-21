@@ -14,15 +14,16 @@ const RightContent = ({ showItemData, changeItemProp }) => {
     }}>
       <div className={styles.dlEdpT}>
         <div className={styles.hNfACA}>
-          <h3 className={styles.gxBwYJ}>类型</h3>
+          <h3 className={styles.gxBwYJ}>类型:</h3>
           <div className={styles.fzwgll}>
             <div className={styles.ggjvuQ}>
             {type}
             </div>
           </div>
         </div>
+        <div className={styles.line}></div>
       </div>
-     
+    
       {type!=='Flex'&&<Dimensions title='属性' data={props} types={propTypes} parentId={id} changeItemProp={changeItemProp}/>}
       
      
