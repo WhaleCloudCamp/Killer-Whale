@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./rightItem.less";
+import choose from "../../../assets/web/choose.png";
 class SelectItem extends React.Component {
   constructor(props) {
     super(props);
@@ -7,12 +8,12 @@ class SelectItem extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     this.setState({
-      value:nextProps.value
+      value: nextProps.value
     })
   }
-  
+
   handleChange(event) {
     this.setState({ value: event.target.value });
     this.props.changeItemProp({
@@ -26,53 +27,45 @@ class SelectItem extends React.Component {
     const { value } = this.state;
     const { type, optionsValue } = this.props;
     return (
-      <div className={styles.fqvwjT}>
-        <div className={styles.dcJAHC}>
+      <div className={styles.inputmain}>
+
+        <div className={styles.fqvwjT}>
+
           <span style={{ fontSize: "11px" }} className={styles.ikRkvd}>
             {type}
           </span>
-        </div>
-        <div className={styles.ffgvpT}>
-          <div className={styles.ggjvuQs}>
-            <select
-              tabIndex="-1"
-              className={styles.iqAZmKs}
-              value={value}
-              onChange={this.handleChange}
-            >
-              {optionsValue &&
-                optionsValue.map((item, index) => {
-                  return (
-                    <option value={item} key={index}>
-                      {item}
-                    </option>
-                  );
-                })}
-            </select>
-            <div className={styles.hWrpYy}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                stroke="currentColor"
-                style={{ display: "block" }}
+
+          <div className={styles.ffgvpT}>
+            <div className={styles.ggjvuQs}>
+              <div className={styles.gsl}></div>
+              <select
+                tabIndex="-1"
+                className={styles.iqAZmKs}
+                value={value}
+                onChange={this.handleChange}
               >
-                <path
-                  d="M14.5 5.5L12.5 3.5L10.5 5.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14.5 9.5L12.5 11.5L10.5 9.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+                {optionsValue &&
+                  optionsValue.map((item, index) => {
+                    return (
+                      <option value={item} key={index}>
+                        {item}
+                      </option>
+                    );
+                  })}
+              </select>
             </div>
+
+            
+
+
           </div>
+          <img src={choose} className={styles.bell} alt=""  onClick={()=>{}} />
+
         </div>
+        <div className={styles.line}>
+
+        </div>
+
       </div>
     );
   }

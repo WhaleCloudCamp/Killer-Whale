@@ -1,6 +1,6 @@
 import * as Whale from "components";
 import styles from "./right.less";
-import share from "assets/share.png";
+import share from "../../../assets/web/download.png";
 
 const RightTitle = ({ onAction }) => {
   return (
