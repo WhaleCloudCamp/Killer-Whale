@@ -8,6 +8,7 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
       <div className={styles.iAIceQ}>
         <h3 className={styles.bbDADm}>{title}</h3>
       </div>
+      <div className={styles.line}></div>
       <div className={styles.gCSQPN}>
         <div>
           {Object.keys(data).map(item => {

@@ -35,12 +35,12 @@ class StyleInputItem extends React.Component {
       <div >
       <div className={styles.fqvwjTs}>
         
-          <span  className={styles.ikRssvd}>
+          <span  className={styles.ikRssvds}>
             {type}
           </span>
       
         <div className={styles.ffgvpT}>
-          <div className={styles.ggjvuQ}>
+          <div className={styles.ggjvuQss}>
             <input
     
               type={isNumber ? "number" : "text"}
