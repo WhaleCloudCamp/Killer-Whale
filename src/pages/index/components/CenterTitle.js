@@ -5,7 +5,7 @@ const Option = Select.Option;
 const CenterTitle = ({ handleChange ,pageName}) => {
   return (
     <div className={styles.centerTip}>
-    <div style={{marginRight:'5px'}}>{pageName}</div>
+    <div style={{marginRight:'5px', fontWeight: 'bold',fontFamily: 'Arial-BoldMT',color:'#333333',fontSize:'18px'}}>{pageName}</div>
         <Select defaultValue="iphone6" size="small" disabled>
           <Option value="6">Iphone6</Option>
         </Select>
@@ -17,7 +17,7 @@ const CenterTitle = ({ handleChange ,pageName}) => {
             defaultValue={375}
             disabled
           />
-          x
+          ×
           <InputNumber
             size="small"
             min={1}
@@ -26,7 +26,7 @@ const CenterTitle = ({ handleChange ,pageName}) => {
             disabled
           />
         </div>
-        <Select defaultValue="100" size="small" onChange={handleChange}>
+        <Select className={styles.selectStyle} defaultValue="100" size="small" onChange={handleChange}>
           <Option value="50">50%</Option>
           <Option value="75">75%</Option>
           <Option value="90">90%</Option>

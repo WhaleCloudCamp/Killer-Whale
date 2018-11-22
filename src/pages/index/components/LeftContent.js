@@ -49,25 +49,27 @@ const LeftContent = ({
                   items.props = {};
                 }
                 return (
+                  <div style={{height:'80px', width: '80px'}}>
+                    <DraggableContent
+                      itemData={items}
+                      key={"leftPanel" + items.id}
+                    >
+                    <div className ={styless.com}>
+                    <div>{items.type}</div>
+                      {Com && (
+                        <Com
+                          style={{
+                            borderStyle: items.type==="Flex"? "dashed" : "none",
+                            borderWidth:items.type==="Flex"? "1px" : "0",
+                            ...items.style}}
+                          {...items.props}
+                          key={`leftPanel${items.type}${items.id}`}
+                        />
+                      )}
+                      </div>
+                    </DraggableContent>
+                  </div>
 
-                  <DraggableContent
-                    itemData={items}
-                    key={"leftPanel" + items.id}
-                  >
-                  <div className ={styless.com}>
-                  <div>{items.type}</div>
-                    {Com && (
-                      <Com
-                        style={{
-                          borderStyle: items.type==="Flex"? "dashed" : "none",
-                          borderWidth:items.type==="Flex"? "1px" : "0",
-                          ...items.style}}
-                        {...items.props}
-                        key={`leftPanel${items.type}${items.id}`}
-                      />
-                    )}
-                    </div>
-                  </DraggableContent>
 
                 );
               })}
