@@ -22,7 +22,7 @@ class StyleInputItem extends React.Component {
   handleBlur(event) {
   
     this.props.changeStyleItemProp({
-      typeId: this.props.typeId,
+      id: this.props.typeId,
       key: this.props.type,
       value: this.props.isNumber?  parseInt(event.target.value) :event.target.value
     });
