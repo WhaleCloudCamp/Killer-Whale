@@ -18,7 +18,7 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
           {Object.keys(data).map(item => {
             if (typeof types[item] === "string" || !types[item]) {
               //增加判断，属性名包含color且值为正确的颜色,几个常用的颜色单词和所有的#开头色值
-              if ((item.includes("Color") || item.includes("color"))&&(['white','red','blue'].includes(data[item])||data[item].includes("rgb")||/^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(data[item]))) {
+              if ((item.includes("Color") || item.includes("color"))&&(['white','red','blue','gray'].includes(data[item])||data[item].includes("rgb")||/^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(data[item]))) {
                 return (
                   <Fragment key={item}>
                     <Col xs={12}>{item}</Col>
