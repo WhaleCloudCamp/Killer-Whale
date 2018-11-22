@@ -25,12 +25,7 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
     }
     const comProps = Object.assign({}, component.props, otherProps);
     if (childrenCom && childrenCom.length > 0) {
-      const childDom = RederComponents(
-        childrenCom,
-        clickDrag,
-        onDropAction,
-        id
-      );
+      const childDom = RederComponents(childrenCom, clickDrag, onDropAction, id);
       return (
         <DraggableContent
           itemData={item}
@@ -38,14 +33,14 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
           index={index}
           onDropAction={onDropAction}
           parentId={parentId}
-          onClick={(e) => clickDrag(item,e)}
+          onClick={e => clickDrag(item, e)}
         >
           {Com && (
             <Com
               style={component.style}
               {...comProps}
               key={`centerPanel${component.type}${id}`}
-              onClick={(e) => clickDrag(item,e)}
+              onClick={e => clickDrag(item, e)}
             >
               {childDom}
             </Com>
@@ -60,13 +55,13 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
           index={index}
           onDropAction={onDropAction}
           parentId={parentId}
-          onClick={(e) => clickDrag(item,e)}
+          onClick={e => clickDrag(item, e)}
         >
           {Com && (
             <Com
               style={component.style}
               {...comProps}
-              onClick={(e) => clickDrag(item,e)}
+              onClick={e => clickDrag(item, e)}
               key={`centerPanel${component.type}${id}`}
             />
           )}
@@ -79,7 +74,7 @@ const CenterContent = props => {
   const { cneterscale, onDropAction, components, clickDrag } = props;
   return (
     <div>
-      <div className={styles.iphone} style={{transform: `scale(${cneterscale / 100})`}}>
+      <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
         <div
           className={styles.centerMain}
           // style={{
@@ -88,19 +83,12 @@ const CenterContent = props => {
         >
           <div className={styles.centerDiv}>
             <DroppableContent onDropAction={onDropAction}>
-              {RederComponents(
-                components,
-                clickDrag,
-                onDropAction,
-                "whalemainroot"
-              )}
+              {RederComponents(components, clickDrag, onDropAction, "whalemainroot")}
             </DroppableContent>
           </div>
         </div>
       </div>
     </div>
-
-
   );
 };
 export default CenterContent;

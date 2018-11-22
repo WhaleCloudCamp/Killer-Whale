@@ -6,7 +6,7 @@ export default class Flex extends React.Component {
     const { children, style, parentId, ...other } = this.props;
     const styles = {
       ...style,
-      padding: !children ? "30px" : "0"
+      padding: !children ? "30px" : "0",
     };
     return (
       <AntdFlex {...other} style={styles}>

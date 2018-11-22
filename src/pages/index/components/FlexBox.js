@@ -1,38 +1,42 @@
 import styles from "./rightItem.less";
 
-const FlexBox = ({ data ,parentId,changeItemProp}) => {
+const FlexBox = ({ data, parentId, changeItemProp }) => {
   const { direction, wrap, align, justify } = data;
   //   direction: "row",
   // wrap: "nowrap",
   // align: "center",
   // justify: "around"
   const changeDirection = e => {
-    changeItemProp&&changeItemProp({
-      id: parentId,
-      key: "direction",
-      value: e.target.value
-    });
+    changeItemProp &&
+      changeItemProp({
+        id: parentId,
+        key: "direction",
+        value: e.target.value,
+      });
   };
   const changeWrap = e => {
-    changeItemProp&&changeItemProp({
-      id: parentId,
-      key: "wrap",
-      value: e.target.value
-    });
+    changeItemProp &&
+      changeItemProp({
+        id: parentId,
+        key: "wrap",
+        value: e.target.value,
+      });
   };
   const changejustify1 = e => {
-    changeItemProp&&changeItemProp({
-      id: parentId,
-      key: "align",
-      value: e.target.value
-    });
+    changeItemProp &&
+      changeItemProp({
+        id: parentId,
+        key: "align",
+        value: e.target.value,
+      });
   };
   const changeAlign = e => {
-    changeItemProp&&changeItemProp({
-      id: parentId,
-      key: "justify",
-      value: e.target.value
-    });
+    changeItemProp &&
+      changeItemProp({
+        id: parentId,
+        key: "justify",
+        value: e.target.value,
+      });
   };
   return (
     <div className={styles.gYgSTP}>
@@ -173,8 +177,6 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
             </svg>
           </div>
         </label>
-
-       
       </div>
 
       <div className={styles.hSWRFI} onChange={changeAlign}>
@@ -309,7 +311,7 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
         </label>
       </div>
 
-      <div className={styles.gAtluJ} >
+      <div className={styles.gAtluJ}>
         <div className={styles.jKDcpJ}>
           <span className={styles.ikRkvd}>Wrap</span>
         </div>
@@ -322,7 +324,7 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
               tabIndex="-1"
               className={styles.kxMiOH}
               defaultChecked={wrap === "wrap"}
-            value="wrap"
+              value="wrap"
             />
 
             <div tabIndex="-1" className={styles.dnRfIM}>
@@ -336,7 +338,7 @@ const FlexBox = ({ data ,parentId,changeItemProp}) => {
               tabIndex="-1"
               className={styles.kxMiOH}
               defaultChecked={wrap === "nowrap"}
-            value="nowrap"
+              value="nowrap"
             />
             <div tabIndex="-1" className={styles.exTzhA}>
               NoWarp

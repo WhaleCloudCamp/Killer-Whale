@@ -10,8 +10,8 @@ class SelectItem extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      value: nextProps.value
-    })
+      value: nextProps.value,
+    });
   }
 
   handleChange(event) {
@@ -19,7 +19,7 @@ class SelectItem extends React.Component {
     this.props.changeItemProp({
       id: this.props.parentId,
       key: this.props.type,
-      value: event.target.value
+      value: event.target.value,
     });
   }
 
@@ -28,16 +28,14 @@ class SelectItem extends React.Component {
     const { type, optionsValue } = this.props;
     return (
       <div className={styles.inputmain}>
-
         <div className={styles.fqvwjT}>
-
           <span style={{ fontSize: "11px" }} className={styles.ikRkvd}>
             {type}
           </span>
 
           <div className={styles.ffgvpT}>
             <div className={styles.ggjvuQs}>
-              <div className={styles.gsl}></div>
+              <div className={styles.gsl} />
               <select
                 tabIndex="-1"
                 className={styles.iqAZmKs}
@@ -54,18 +52,10 @@ class SelectItem extends React.Component {
                   })}
               </select>
             </div>
-
-            
-
-
           </div>
-          <img src={choose} className={styles.bell} alt=""  onClick={()=>{}} />
-
+          <img src={choose} className={styles.bell} alt="" onClick={() => {}} />
         </div>
-        <div className={styles.line}>
-
-        </div>
-
+        <div className={styles.line} />
       </div>
     );
   }

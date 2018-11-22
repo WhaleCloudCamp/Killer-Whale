@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { ChromePicker, SketchPicker } from 'react-color';
+import React, { Component } from "react";
+import { ChromePicker, SketchPicker } from "react-color";
 
-const noop = () => { };
+const noop = () => {};
 
 const pickers = {
   chrome: ChromePicker,
@@ -12,8 +12,8 @@ export default class ColorPicker extends Component {
   static defaultProps = {
     onChange: noop,
     onChangeComplete: noop,
-    position: 'bottom',
-  }
+    position: "bottom",
+  };
 
   constructor(props) {
     super();
@@ -31,16 +31,16 @@ export default class ColorPicker extends Component {
   handleClose = () => {
     this.setState({ displayColorPicker: false });
   };
-  handleChange = (color) => {
+  handleChange = color => {
     this.setState({ color: color.hex });
     this.props.onChange(color.hex, color);
   };
-  handleChangeComplete = (color) => {
+  handleChangeComplete = color => {
     this.setState({ color: color.hex });
     this.props.changeItemProp({
       id: this.props.parentId,
       key: this.props.type,
-      value: color.hex
+      value: color.hex,
     });
     // this.props.onChangeComplete(color.hex);
   };
@@ -51,39 +51,39 @@ export default class ColorPicker extends Component {
 
     const styles = {
       color: {
-        width: small ? '16px' : '120px',
-        height: small ? '16px' : '24px',
-        borderRadius: '2px',
+        width: small ? "16px" : "120px",
+        height: small ? "16px" : "24px",
+        borderRadius: "2px",
         background: this.state.color,
       },
       swatch: {
-        padding: '4px',
-        background: '#fff',
-        borderRadius: '2px',
-        boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
-        display: 'inline-block',
-        cursor: 'pointer',
+        padding: "4px",
+        background: "#fff",
+        borderRadius: "2px",
+        boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
+        display: "inline-block",
+        cursor: "pointer",
       },
       popover: {
-        position: 'absolute',
-        zIndex: '2',
-        right:'220px',
+        position: "absolute",
+        zIndex: "2",
+        right: "220px",
       },
       cover: {
-        position: 'fixed',
-        top: '0px',
-        right: '0px',
-        bottom: '0px',
-        left: '0px',
+        position: "fixed",
+        top: "0px",
+        right: "0px",
+        bottom: "0px",
+        left: "0px",
       },
       wrapper: {
-        position: 'inherit',
-        zIndex: '100',
+        position: "inherit",
+        zIndex: "100",
       },
     };
 
-    if (position === 'top') {
-      styles.wrapper.transform = 'translateY(-100%)';
+    if (position === "top") {
+      styles.wrapper.transform = "translateY(-100%)";
       styles.wrapper.paddingBottom = 8;
     }
 
@@ -106,9 +106,19 @@ export default class ColorPicker extends Component {
       </div>
     ) : null;
 
-    if (position === 'top') {
-      return <div>{picker}{swatch}</div>;
+    if (position === "top") {
+      return (
+        <div>
+          {picker}
+          {swatch}
+        </div>
+      );
     }
-    return <div>{swatch}{picker}</div>;
+    return (
+      <div>
+        {swatch}
+        {picker}
+      </div>
+    );
   }
 }

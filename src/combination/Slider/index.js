@@ -8,13 +8,11 @@ export default class Sliders extends React.Component {
       <View
         style={{
           borderWidth: 15,
-          borderColor: 'white',
-          backgroundColor:'white'
+          borderColor: "white",
+          backgroundColor: "white",
         }}
       >
-        <Slider
-         {...this.props}
-        />
+        <Slider {...this.props} />
       </View>
     );
   }

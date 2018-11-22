@@ -18,7 +18,7 @@ function getAddData(item) {
   const data = {
     id: new Date().getTime(),
     component: JSON.parse(JSON.stringify(item)),
-    childrenCom: []
+    childrenCom: [],
   };
   return data;
 }
@@ -34,14 +34,8 @@ export function deleteComponent(centerData, id) {
     if (centerData[key].id === id) {
       centerData.splice(key, 1);
       break;
-    } else if (
-      centerData[key].childrenCom &&
-      centerData[key].childrenCom.length > 0
-    ) {
-      centerData[key].childrenCom = deleteComponent(
-        centerData[key].childrenCom,
-        id
-      );
+    } else if (centerData[key].childrenCom && centerData[key].childrenCom.length > 0) {
+      centerData[key].childrenCom = deleteComponent(centerData[key].childrenCom, id);
     }
   }
   return centerData;

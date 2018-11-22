@@ -1,5 +1,3 @@
-import { PickerView } from 'antd-mobile';
+import { PickerView } from "antd-mobile";
 
-export default  PickerView;
-
-
+export default PickerView;

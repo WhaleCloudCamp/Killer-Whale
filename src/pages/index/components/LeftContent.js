@@ -4,37 +4,26 @@ import { Collapse, Button, Row, Col, Popconfirm } from "antd";
 import styless from "./left.less";
 const Panel = Collapse.Panel;
 const DraggableContent = Whale.DraggableContentShow;
-const LeftContent = ({
-  sourceData = [],
-  viewsData,
-  gPage,
-  dPage,
-  changeShowPage
-}) => {
+const LeftContent = ({ sourceData = [], viewsData, gPage, dPage, changeShowPage }) => {
   const confirm = item => {
     dPage && dPage(item);
   };
   const createPage = (item = []) => {
     const name = prompt("请输入新页面英文名");
-    if (name)
-      gPage &&
-        gPage({ name: name, components: JSON.parse(JSON.stringify(item)) });
+    if (name) gPage && gPage({ name: name, components: JSON.parse(JSON.stringify(item)) });
   };
 
   return (
     <Collapse
       style={{
         overflow: "auto",
-        flex: 1
+        flex: 1,
       }}
     >
       {sourceData.length > 0 &&
         sourceData.map((item, index) => {
           return (
-            <Panel
-              header={item.type + "（" + item.data.length + "）"}
-              key={item.type}
-            >
+            <Panel header={item.type + "（" + item.data.length + "）"} key={item.type}>
               <Row>
                 {item.data.map((items, index) => {
                   let Com = null;
@@ -52,7 +41,7 @@ const LeftContent = ({
                       span={12}
                       style={{
                         textAlign: "center",
-                        position: "relative"
+                        position: "relative",
                       }}
                       key={"leftPanel" + items.id}
                     >
@@ -65,17 +54,15 @@ const LeftContent = ({
                             <div
                               style={{
                                 width: "375px",
-                                transform: "scale(0.35)"
+                                transform: "scale(0.35)",
                               }}
                             >
                               {Com && (
                                 <Com
                                   style={{
-                                    borderStyle:
-                                      items.type === "Flex" ? "dashed" : "none",
-                                    borderWidth:
-                                      items.type === "Flex" ? "1px" : "0",
-                                    ...items.style
+                                    borderStyle: items.type === "Flex" ? "dashed" : "none",
+                                    borderWidth: items.type === "Flex" ? "1px" : "0",
+                                    ...items.style,
                                   }}
                                   {...items.props}
                                 />
@@ -87,7 +74,7 @@ const LeftContent = ({
                         <div
                           style={{
                             color: "#7E869F",
-                            fontSize: "12px"
+                            fontSize: "12px",
                           }}
                         >
                           {items.type}
@@ -112,9 +99,7 @@ const LeftContent = ({
                   </Button>
                 </Col>
                 <Col>
-                  <Button onClick={() => createPage(item.components)}>
-                    复制
-                  </Button>
+                  <Button onClick={() => createPage(item.components)}>复制</Button>
                 </Col>
                 <Col>
                   <Popconfirm

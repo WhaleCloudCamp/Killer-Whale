@@ -5,7 +5,7 @@
 // import * as Whale from "components";
 // import styles from "./index.less";
 // import { getItemById } from "utils/data_utils";
-// // 
+// //
 // const { DroppableContent, DraggableContent, DraggableTitle, DroppableTitle,FromList } = Whale;
 // const App = ({ global, dispatch }) => {
 //   const { sourceData, components, showItemId } = global;

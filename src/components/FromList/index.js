@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Form,
   Input,
@@ -9,7 +10,7 @@ import {
   Col,
   Checkbox,
   Button,
-  AutoComplete
+  AutoComplete,
 } from "antd";
 
 const FormItem = Form.Item;
@@ -24,8 +25,7 @@ const immerObj = (data, newData) => {
           ? parseInt(data[key])
           : data[key];
     } else {
-      newData[key] =
-        typeof newData[key] === "number" ? parseInt(data[key]) : data[key];
+      newData[key] = typeof newData[key] === "number" ? parseInt(data[key]) : data[key];
     }
   });
   return newData;
@@ -51,24 +51,24 @@ class RegistrationForm extends React.Component {
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 }
+        sm: { span: 8 },
       },
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 16 }
-      }
+        sm: { span: 16 },
+      },
     };
     const tailFormItemLayout = {
       wrapperCol: {
         xs: {
           span: 24,
-          offset: 0
+          offset: 0,
         },
         sm: {
           span: 16,
-          offset: 8
-        }
-      }
+          offset: 8,
+        },
+      },
     };
 
     return (
@@ -85,8 +85,8 @@ class RegistrationForm extends React.Component {
         {Object.keys(data.component.props).map((key, index) => {
           return (
             <FormItem {...formItemLayout} label={key} key={index}>
-              {getFieldDecorator(data.id+"-component-props-" + key, {
-                initialValue: data.component.props[key] || ""
+              {getFieldDecorator(data.id + "-component-props-" + key, {
+                initialValue: data.component.props[key] || "",
               })(<Input />)}
             </FormItem>
           );
@@ -95,8 +95,8 @@ class RegistrationForm extends React.Component {
         {Object.keys(data.component.style).map((key, index) => {
           return (
             <FormItem {...formItemLayout} label={key} key={index}>
-              {getFieldDecorator(data.id+"-component-style-" + key, {
-                initialValue: data.component.style[key]
+              {getFieldDecorator(data.id + "-component-style-" + key, {
+                initialValue: data.component.style[key],
               })(<Input />)}
             </FormItem>
           );

@@ -11,17 +11,17 @@ const cardSource = {
     const item = {
       data: props.itemData,
       index: props.index,
-      parentId: props.parentId
+      parentId: props.parentId,
     };
     return item;
   },
-  endDrag(props, monitor, component) {}
+  endDrag(props, monitor, component) {},
 };
 function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
     connectDragPreview: connect.dragPreview(),
-    isDragging: monitor.isDragging()
+    isDragging: monitor.isDragging(),
   };
 }
 const grid = 20;
@@ -39,9 +39,8 @@ const getItemStyle = (isDragging, canDrop, isFlex) => ({
   // styles we need to apply on draggables
 });
 
-
 const Types = {
-  CARD: "card"
+  CARD: "card",
 };
 const DraggableContent = ({
   children,
@@ -51,19 +50,16 @@ const DraggableContent = ({
   canDrop,
   connectDragSource,
   isDragging,
-  itemData
+  itemData,
 }) => {
   const isFlex = itemData.component && itemData.component.isLayout;
   return (
     connectDragSource &&
-      connectDragSource(
-        <div
-          style={getItemStyle(isDragging, canDrop, isFlex)}
-          onClick={onClick}
-        >
-          {children}
-        </div>
-      )
+    connectDragSource(
+      <div style={getItemStyle(isDragging, canDrop, isFlex)} onClick={onClick}>
+        {children}
+      </div>
+    )
   );
 };
 export default DragSource(Types.CARD, cardSource, collect)(DraggableContent);

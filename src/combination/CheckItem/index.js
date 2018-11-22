@@ -7,17 +7,15 @@ export default class CheckboxItem extends React.Component {
     return (
       <View style={styles.main}>
         <Checkbox {...this.props} />
-        <Text style={{ flex: 1, marginLeft: 10, fontSize: 15 }}>
-          {this.props.title}
-        </Text>
+        <Text style={{ flex: 1, marginLeft: 10, fontSize: 15 }}>{this.props.title}</Text>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   main: {
-    margin:5,
+    margin: 5,
     flexDirection: "row",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });

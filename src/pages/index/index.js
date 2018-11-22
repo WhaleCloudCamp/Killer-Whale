@@ -2,7 +2,6 @@ import { Row, Col } from "antd";
 import { connect } from "dva";
 import { Tabs } from "antd-mobile";
 import styles from "./index.less";
-import * as Whale from "components";
 import LeftContent from "./components/LeftContent";
 import LeftTitle from "./components/LeftTitle";
 import CenterContent from "./components/CenterContent";
@@ -21,25 +20,20 @@ const App = ({ global, dispatch }) => {
 
     views,
     showPage,
-    showItemData
+    showItemData,
   } = global;
   // console.log(views);
 
   const { components = [], name = "" } = views[showPage];
-  const handleChange = value =>
-    dispatch({ type: "global/changeScale", payload: value });
+  const handleChange = value => dispatch({ type: "global/changeScale", payload: value });
 
   const onAction = action => dispatch(action);
 
-  const clickDrag = (item,e) => {
-
-    e.stopPropagation&&e.stopPropagation()
+  const clickDrag = (item, e) => {
+    e.stopPropagation && e.stopPropagation();
     dispatch({ type: "global/showItem", payload: item });
   };
 
-  const onSubmit = data => {
-    dispatch({ type: "global/changeItem", payload: data });
-  };
   const changeItemProp = data => {
     dispatch({ type: "global/changeItemProp", payload: data });
   };
@@ -55,10 +49,7 @@ const App = ({ global, dispatch }) => {
     dispatch({ type: "global/changeShowPage", payload: page });
   };
 
-  const tabs = [
-    { title: "组件库", sub: "1" },
-    { title: "页面库", sub: "2" }
-  ];
+  const tabs = [{ title: "组件库", sub: "1" }, { title: "页面库", sub: "2" }];
 
   return (
     <div className={styles.panel}>
@@ -87,7 +78,7 @@ const App = ({ global, dispatch }) => {
           span={12}
           className={styles.colclass}
           style={{
-            minWidth: "435px"
+            minWidth: "435px",
           }}
         >
           <CenterTitle handleChange={handleChange} pageName={name} />
@@ -102,10 +93,7 @@ const App = ({ global, dispatch }) => {
         <Col span={6} className={styles.colclass}>
           <RightTitle onAction={onAction} />
           {showItemData && showItemData.id && (
-            <RightContent
-              showItemData={showItemData}
-              changeItemProp={changeItemProp}
-            />
+            <RightContent showItemData={showItemData} changeItemProp={changeItemProp} />
           )}
         </Col>
       </Row>

@@ -6,7 +6,7 @@ import {
   getTestComData,
   addComponent,
   moveComponent,
-  deleteComponent
+  deleteComponent,
 } from "utils/data_utils";
 
 export default {
@@ -18,35 +18,30 @@ export default {
     sourceData: getTestSouData(),
 
     components: [],
-    showItemData: {}
+    showItemData: {},
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         dispatch({
-          type: "initComponents"
+          type: "initComponents",
         });
       });
-    }
+    },
   },
   reducers: {
     save(state, action) {
       return { ...state, ...action.payload };
-    }
+    },
   },
   effects: {
     *initComponents({ payload }, { call, put, select }) {
       const { views, showPage } = yield select(state => state.global);
       let pageIndex = showPage;
-      if (
-        !views ||
-        views.length === 0 ||
-        views.length < showPage ||
-        !views[showPage].components
-      ) {
+      if (!views || views.length === 0 || views.length < showPage || !views[showPage].components) {
         views.push({
           name: "home",
-          components: []
+          components: [],
         });
         pageIndex = 0;
       }
@@ -54,39 +49,35 @@ export default {
         type: "save",
         payload: {
           views: views,
-          showPage: pageIndex
-        }
+          showPage: pageIndex,
+        },
       });
     },
     *changeScale({ payload }, { call, put, select }) {
       yield put({
         type: "save",
         payload: {
-          cneterscale: payload
-        }
+          cneterscale: payload,
+        },
       });
     },
     *delItem({ payload }, { call, put, select }) {
       console.log("delItem");
 
-      const { sourceData, views, showPage } = yield select(
-        state => state.global
-      );
+      const { sourceData, views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
       const data = deleteComponent(components, payload.id);
       yield put({
         type: "save",
         payload: {
-          components: data
-        }
+          components: data,
+        },
       });
     },
     *addchildrenCom({ payload }, { call, put, select }) {
       console.log("addchildrenCom");
 
-      const { sourceData, views, showPage } = yield select(
-        state => state.global
-      );
+      const { sourceData, views, showPage } = yield select(state => state.global);
       let { components } = views[showPage];
       const { index, parentId, item } = payload;
 
@@ -98,11 +89,7 @@ export default {
             const data = addComponent(sourceData, childrenCom, item, itemIndex);
             arr.childrenCom = data.centerData;
           } else if (childrenCom && childrenCom.length > 0) {
-            arr.childrenCom = findComAndAddComponent(
-              childrenCom,
-              parentId,
-              item
-            );
+            arr.childrenCom = findComAndAddComponent(childrenCom, parentId, item);
           }
           return arr;
         });
@@ -125,30 +112,23 @@ export default {
         type: "save",
         payload: {
           // sourceData: data.leftData,
-          views: views
-        }
+          views: views,
+        },
       });
     },
     *addItem({ payload }, { call, put, select }) {
       console.log("addItem");
 
-      const { sourceData, views, showPage } = yield select(
-        state => state.global
-      );
+      const { sourceData, views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
       if (payload.index === "max") payload.index = components.length;
-      const data = addComponent(
-        sourceData,
-        components,
-        payload.item,
-        payload.index
-      );
+      const data = addComponent(sourceData, components, payload.item, payload.index);
       views[showPage].components = data.centerData;
       yield put({
         type: "save",
         payload: {
-          views: views
-        }
+          views: views,
+        },
       });
     },
     *moveItem({ payload }, { call, put, select }) {
@@ -160,19 +140,10 @@ export default {
           arrs.map(item => {
             const childrenCom = item.childrenCom;
             if (item.id === parentId) {
-              const data = moveComponent(
-                item.childrenCom,
-                dragIndex,
-                hoverIndex
-              );
+              const data = moveComponent(item.childrenCom, dragIndex, hoverIndex);
               item.childrenCom = data;
             } else if (childrenCom && childrenCom.length > 0) {
-              item.childrenCom = findComMobeItem(
-                childrenCom,
-                parentId,
-                dragIndex,
-                hoverIndex
-              );
+              item.childrenCom = findComMobeItem(childrenCom, parentId, dragIndex, hoverIndex);
             }
             return item;
           });
@@ -182,17 +153,12 @@ export default {
           return data;
         }
       }
-      views[showPage].components = findComMobeItem(
-        components,
-        parentId,
-        dragIndex,
-        hoverIndex
-      );
+      views[showPage].components = findComMobeItem(components, parentId, dragIndex, hoverIndex);
       yield put({
         type: "save",
         payload: {
-          views: views
-        }
+          views: views,
+        },
       });
     },
     *showItem({ payload }, { call, put }) {
@@ -201,8 +167,8 @@ export default {
       yield put({
         type: "save",
         payload: {
-          showItemData: data
-        }
+          showItemData: data,
+        },
       });
     },
     *changeItemProp({ payload }, { call, put, select }) {
@@ -235,12 +201,7 @@ export default {
             }
             item.component.props[payload.key] = payload.value;
           } else if (childrenCom && childrenCom.length > 0) {
-            item.childrenCom = findComAndChangeProp(
-              childrenCom,
-              id,
-              key,
-              value
-            );
+            item.childrenCom = findComAndChangeProp(childrenCom, id, key, value);
           }
           return item;
         });
@@ -250,8 +211,8 @@ export default {
       yield put({
         type: "save",
         payload: {
-          components: components
-        }
+          components: components,
+        },
       });
     },
     *gPage({ payload }, { call, put, select }) {
@@ -262,8 +223,8 @@ export default {
       yield put({
         type: "save",
         payload: {
-          views: views
-        }
+          views: views,
+        },
       });
     },
     *dPage({ payload }, { call, put, select }) {
@@ -279,8 +240,8 @@ export default {
       yield put({
         type: "save",
         payload: {
-          views: views
-        }
+          views: views,
+        },
       });
     },
     *changeShowPage({ payload }, { call, put, select }) {
@@ -296,8 +257,8 @@ export default {
       yield put({
         type: "save",
         payload: {
-          showPage: showPageNew
-        }
+          showPage: showPageNew,
+        },
       });
     },
     *downloadCode({ payload }, { call, put, select }) {
@@ -310,21 +271,19 @@ export default {
       if (response && response.filePath) {
         notification.success({
           message: "将在新页面中下载，请关闭弹窗拦截",
-          description: "如果没有正确下载，请联系开发人员"
+          description: "如果没有正确下载，请联系开发人员",
         });
-        window.open(
-          `http://localhost:3000/download/?filePath=${response.filePath}`
-        );
+        window.open(`http://localhost:3000/download/?filePath=${response.filePath}`);
       }
       yield put({
         type: "save",
         payload: {
-          text: response || "no data"
-        }
+          text: response || "no data",
+        },
       });
     },
     *throwError() {
       throw new Error("hi error");
-    }
-  }
+    },
+  },
 };

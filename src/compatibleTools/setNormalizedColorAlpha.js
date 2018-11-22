@@ -9,7 +9,7 @@
  */
 
 /* eslint no-bitwise: 0 */
-'use strict';
+"use strict";
 
 /**
  * number should be a color processed by `normalizeColor`

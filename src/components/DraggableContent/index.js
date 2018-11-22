@@ -12,17 +12,17 @@ const cardSource = {
     const item = {
       data: props.itemData,
       index: props.index,
-      parentId: props.parentId
+      parentId: props.parentId,
     };
     return item;
   },
-  endDrag(props, monitor, component) {}
+  endDrag(props, monitor, component) {},
 };
 function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
     connectDragPreview: connect.dragPreview(),
-    isDragging: monitor.isDragging()
+    isDragging: monitor.isDragging(),
   };
 }
 const grid = 20;
@@ -36,7 +36,7 @@ const getItemStyle = (isDragging, canDrop, isFlex) => ({
   borderStyle: canDrop ? "dotted" : "dashed",
   paddingLeft: canDrop ? "10px" : "0",
   paddingRight: canDrop ? "10px" : "0",
-  position: isFlex ?"relative":""
+  position: isFlex ? "relative" : "",
 
   // styles we need to apply on draggables
 });
@@ -94,12 +94,12 @@ const chessSquareTarget = {
     }
 
     // Time to actually perform the action
-    console.log(dragIndex,dragParentId,hoverIndex,hoverParentId);
+    console.log(dragIndex, dragParentId, hoverIndex, hoverParentId);
 
     props.onDropAction &&
       props.onDropAction({
         type: "global/moveItem",
-        payload: { dragIndex, hoverIndex, parentId: hoverParentId }
+        payload: { dragIndex, hoverIndex, parentId: hoverParentId },
       });
 
     // Note: we're mutating the monitor item here!
@@ -113,15 +113,12 @@ const chessSquareTarget = {
     if (!item.index && item.index !== 0 && monitor.isOver({ shallow: true })) {
       console.log("item.index", item.index);
       console.log("props.itemData", props.itemData);
-      if (
-        props.itemData.component &&
-        props.itemData.component.type === "Flex"
-      ) {
+      if (props.itemData.component && props.itemData.component.type === "Flex") {
         const parentId = props.itemData.id;
         props.onDropAction &&
           props.onDropAction({
             type: "global/addchildrenCom",
-            payload: { item: item.data, parentId: parentId, index: "max" }
+            payload: { item: item.data, parentId: parentId, index: "max" },
           });
       } else {
         props.onDropAction &&
@@ -130,22 +127,22 @@ const chessSquareTarget = {
             payload: {
               item: item.data,
               index: props.index + 1 || "max",
-              parentId: props.parentId
-            }
+              parentId: props.parentId,
+            },
           });
       }
     }
-  }
+  },
 };
 function collectDrop(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
-    canDrop: monitor.canDrop()
+    canDrop: monitor.canDrop(),
   };
 }
 const Types = {
-  CARD: "card"
+  CARD: "card",
 };
 const DraggableContent = ({
   children,
@@ -156,7 +153,7 @@ const DraggableContent = ({
   connectDragSource,
   connectDropTarget,
   isDragging,
-  itemData
+  itemData,
 }) => {
   const isFlex = itemData.component && itemData.component.isLayout;
   return (
@@ -164,27 +161,24 @@ const DraggableContent = ({
     connectDragSource &&
     connectDropTarget(
       connectDragSource(
-        <div
-          style={getItemStyle(isDragging, canDrop, isFlex)}
-          onClick={onClick}
-        >
-        {
-        //   isFlex&& <div
-        //   style={{
-        //     fontSize: "16px",
-        //     background: "red",
-        //     top: "0",
-        //     position: "absolute",
-        //     color: "white",
-        //     right: "0",
-        //     zIndex: "99"
-        //   }}
-        // >
-        //   {
-        //     itemData.component.type
-        //   }
-        // </div>
-      }
+        <div style={getItemStyle(isDragging, canDrop, isFlex)} onClick={onClick}>
+          {
+            //   isFlex&& <div
+            //   style={{
+            //     fontSize: "16px",
+            //     background: "red",
+            //     top: "0",
+            //     position: "absolute",
+            //     color: "white",
+            //     right: "0",
+            //     zIndex: "99"
+            //   }}
+            // >
+            //   {
+            //     itemData.component.type
+            //   }
+            // </div>
+          }
           {children}
         </div>
       )

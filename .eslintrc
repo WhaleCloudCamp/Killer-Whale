@@ -1,5 +1,6 @@
 {
-  "extends": "umi",
+  "parser": "babel-eslint",
+  "extends": ["umi", "prettier", "prettier/react"],
   "rules":{
     "require-yield":0,
     "no-extend-native":0,
