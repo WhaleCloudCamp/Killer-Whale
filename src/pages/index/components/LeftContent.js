@@ -49,7 +49,6 @@ const LeftContent = ({
                   items.props = {};
                 }
                 return (
-                  <div style={{height:'80px', width: '80px'}}>
                     <DraggableContent
                       itemData={items}
                       key={"leftPanel" + items.id}
@@ -68,7 +67,6 @@ const LeftContent = ({
                       )}
                       </div>
                     </DraggableContent>
-                  </div>
 
 
                 );
