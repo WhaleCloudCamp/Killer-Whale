@@ -63,7 +63,7 @@ const App = ({ global, dispatch }) => {
   return (
     <div className={styles.panel}>
       <Row className={styles.rowclass}>
-        <Col span={8} className={styles.colclass}>
+        <Col span={6} className={styles.colclass}>
           <div>
             <LeftTitle />
             <Tabs tabs={tabs} initialPage={0}>

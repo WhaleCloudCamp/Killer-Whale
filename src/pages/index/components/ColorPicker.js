@@ -67,7 +67,7 @@ export default class ColorPicker extends Component {
       popover: {
         position: 'absolute',
         zIndex: '2',
-        left:'-195px',
+        right:'220px',
       },
       cover: {
         position: 'fixed',
