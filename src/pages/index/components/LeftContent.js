@@ -3,7 +3,7 @@ import * as Whales from "combinations";
 import { Collapse, Button, Row, Col, Popconfirm } from "antd";
 import styless from "./left.less";
 const Panel = Collapse.Panel;
-const DraggableContent = Whale.DraggableContent;
+const DraggableContent = Whale.DraggableContentShow;
 const LeftContent = ({
   sourceData = [],
   viewsData,
@@ -23,58 +23,85 @@ const LeftContent = ({
 
   return (
     <Collapse
-      // accordion
       style={{
-        maxHeight: "600px",
         overflow: "auto",
         flex: 1
       }}
     >
       {sourceData.length > 0 &&
         sourceData.map((item, index) => {
-          let sum = 0;
-          sum = item.data.length;
-          console.log(item.data.length);
           return (
-            <Panel header={item.type +'（' + sum +'）'} key={item.type}>
-              {item.data.map((items, index) => {
-                let Com = null;
-                if (items.state === 1) {
-                  Com = Whale[items.type];
-                } else {
-                  Com = Whales[items.type];
-                }
+            <Panel
+              header={item.type + "（" + item.data.length + "）"}
+              key={item.type}
+            >
+              <Row>
+                {item.data.map((items, index) => {
+                  let Com = null;
+                  if (items.state === 1) {
+                    Com = Whale[items.type];
+                  } else {
+                    Com = Whales[items.type];
+                  }
 
-                if (!items.props) {
-                  items.props = {};
-                }
-                return (
-                    <DraggableContent
-                      itemData={items}
+                  if (!items.props) {
+                    items.props = {};
+                  }
+                  return (
+                    <Col
+                      span={12}
+                      style={{
+                        textAlign: "center",
+                        position: "relative"
+                      }}
                       key={"leftPanel" + items.id}
                     >
-                    <div className ={styless.com}>
-                    <div>{items.type}</div>
-                      {Com && (
-                        <Com
+                      <DraggableContent
+                        itemData={items}
+                        // key={"leftPanel" + items.id}
+                      >
+                        <div className={styless.com}>
+                          <div>
+                            <div
+                              style={{
+                                width: "375px",
+                                transform: "scale(0.35)"
+                              }}
+                            >
+                              {Com && (
+                                <Com
+                                  style={{
+                                    borderStyle:
+                                      items.type === "Flex" ? "dashed" : "none",
+                                    borderWidth:
+                                      items.type === "Flex" ? "1px" : "0",
+                                    ...items.style
+                                  }}
+                                  {...items.props}
+                                />
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
                           style={{
-                            borderStyle: items.type==="Flex"? "dashed" : "none",
-                            borderWidth:items.type==="Flex"? "1px" : "0",
-                            ...items.style}}
-                          {...items.props}
-                          key={`leftPanel${items.type}${items.id}`}
-                        />
-                      )}
-                      </div>
-                    </DraggableContent>
-
-
-                );
-              })}
+                            color: "#7E869F",
+                            fontSize: "12px"
+                          }}
+                        >
+                          {items.type}
+                        </div>
+                      </DraggableContent>
+                    </Col>
+                  );
+                })}
+              </Row>
             </Panel>
           );
         })}
-      {viewsData&&viewsData.length > 0 &&
+      {viewsData &&
+        viewsData.length > 0 &&
         viewsData.map((item, index) => {
           return (
             <Panel header={item.name} key={item.name}>
