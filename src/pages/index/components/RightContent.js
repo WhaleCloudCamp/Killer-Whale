@@ -7,11 +7,7 @@ const RightContent = ({ showItemData, changeItemProp }) => {
   const {type,props,style,propTypes} = component;
 
   return (
-    <div  style={{
-      maxHeight: "600px",
-      overflow: "auto",
-      flex: 1
-    }}>
+    <div >
       <div className={styles.dlEdpT}>
         <div className={styles.hNfACA}>
           <h3 className={styles.gxBwYJ}>类型:</h3>
