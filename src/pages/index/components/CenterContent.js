@@ -78,27 +78,28 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
 const CenterContent = props => {
   const { cneterscale, onDropAction, components, clickDrag } = props;
   return (
-    <div className={styles.iphone} style={{
-      transform: `scale(${cneterscale / 100})`
-    }}>
-      <div
-        className={styles.centerMain}
-        // style={{
-        //   transform: `scale(${cneterscale / 100})`
-        // }}
-      >
-        <div className={styles.centerDiv}>
-          <DroppableContent onDropAction={onDropAction}>
-            {RederComponents(
-              components,
-              clickDrag,
-              onDropAction,
-              "whalemainroot"
-            )}
-          </DroppableContent>
+    <div>
+      <div className={styles.iphone} style={{transform: `scale(${cneterscale / 100})`}}>
+        <div
+          className={styles.centerMain}
+          // style={{
+          //   transform: `scale(${cneterscale / 100})`
+          // }}
+        >
+          <div className={styles.centerDiv}>
+            <DroppableContent onDropAction={onDropAction}>
+              {RederComponents(
+                components,
+                clickDrag,
+                onDropAction,
+                "whalemainroot"
+              )}
+            </DroppableContent>
+          </div>
         </div>
       </div>
     </div>
+
 
   );
 };

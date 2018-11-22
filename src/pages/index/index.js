@@ -80,7 +80,7 @@ const App = ({ global, dispatch }) => {
                 />
               </div>
             </Tabs>
-            <DeleteDroppable onDropAction={onAction} />
+            {/* <DeleteDroppable onDropAction={onAction} /> */}
           </div>
         </Col>
         <Col
@@ -97,6 +97,7 @@ const App = ({ global, dispatch }) => {
             components={components}
             clickDrag={clickDrag}
           />
+          <DeleteDroppable onDropAction={onAction} />
         </Col>
         <Col span={6} className={styles.colclass}>
           <RightTitle onAction={onAction} />
