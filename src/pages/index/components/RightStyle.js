@@ -6,11 +6,13 @@ import { Accordion } from "antd-mobile";
 import ColorPicker from "./ColorPicker";
 
 class RightStyle extends React.Component {
+
   changeStyleItemProp = data => {
     for (var keys in this.props.value) {
-      if (keys === data.key && data.id == this.props.type) {
+      if (keys === data.key && data.id === this.props.type) {
         this.props.value[data.key] = data.value;
       }
+
     }
     this.props.changeItemProp({
       id: this.props.parentId,
@@ -29,7 +31,7 @@ class RightStyle extends React.Component {
             //增加判断，属性名包含color且值为正确的颜色,几个常用的颜色单词和所有的#开头色值
             if (
               (items.includes("Color") || items.includes("color")) &&
-              (["white", "red", "blue", "gray"].includes(value[items]) ||
+              (["white", "red", "blue", "gray","yellow","orange","red","pink","black","green"].includes(value[items]) ||
                 value[items].includes("rgb") ||
                 /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value[items]))
             ) {
@@ -39,7 +41,7 @@ class RightStyle extends React.Component {
                     <span className={styles.ikRssvds}>{items}</span>
 
                     <div className={styles.ffgvpT}>
-                      <div className={styles.ggjvuQss}>
+                      <div className={styles.ggjvuQsss}>
                         <div className={styles.iqAZmK}> {value[items]}</div>
                       </div>
                     </div>
