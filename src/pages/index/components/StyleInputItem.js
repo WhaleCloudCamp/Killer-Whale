@@ -33,9 +33,7 @@ class StyleInputItem extends React.Component {
     return (
       <div>
         <div className={styles.inputMain}>
-          <span
-            className={styles.inputText}
-          > {type}</span>
+          <span className={styles.inputText}> {type}</span>
           <input
             type={isNumber ? "number" : "text"}
             tabIndex="-1"
@@ -47,10 +45,8 @@ class StyleInputItem extends React.Component {
         </div>
         <div className={styles.line} />
       </div>
-
     );
   }
 }
 
 export default StyleInputItem;
-

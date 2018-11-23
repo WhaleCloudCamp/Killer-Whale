@@ -27,12 +27,9 @@ class SelectItem extends React.Component {
     const { value } = this.state;
     const { type, optionsValue } = this.props;
     return (
-
       <div key={type}>
         <div className={styles.selectMain}>
-          <span
-            className={styles.selectText}
-          > {type}</span>
+          <span className={styles.selectText}> {type}</span>
 
           <select
             tabIndex="-1"
@@ -49,7 +46,7 @@ class SelectItem extends React.Component {
                 );
               })}
           </select>
-          <img src={choose} className={styles.selectChoose} alt="" onClick={() => { }} />
+          <img src={choose} className={styles.selectChoose} alt="" onClick={() => {}} />
         </div>
         <div className={styles.line} />
       </div>

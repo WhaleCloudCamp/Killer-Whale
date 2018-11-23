@@ -33,9 +33,7 @@ class InputItem extends React.Component {
     return (
       <div>
         <div className={styles.inputMain}>
-          <span
-            className={styles.inputText}
-          > {type}</span>
+          <span className={styles.inputText}> {type}</span>
           <input
             type={isNumber ? "number" : "text"}
             tabIndex="-1"

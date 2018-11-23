@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write \"src/**/*.js\"",
     "lint": "eslint --ext .js src",
-    "format": "concurrently \"lint-staged\" \"npm run lint --fix\"",
+    "format": "concurrently \"prettier\" \"npm run lint --fix\"",
     "precommit": "npm run format"
   },
   "repository": {

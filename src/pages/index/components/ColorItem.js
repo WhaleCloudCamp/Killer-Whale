@@ -1,53 +1,46 @@
-import React from 'react';
+import React from "react";
 import styles from "./rightItem.less";
 import ColorPicker from "./ColorPicker";
 
 export default class ColorItem extends React.Component {
-
-
   render() {
-    let { key, type, parentId, color } = this.props
+    let { key, type, parentId, color } = this.props;
 
     return (
       <div key={key}>
-      <div className={styles.colorMain}>
-        <span
-          className={styles.colorText}
-        > {type}</span>
+        <div className={styles.colorMain}>
+          <span className={styles.colorText}> {type}</span>
 
-        <div className={styles.colorContant}>
-          {color}</div>
-        <div className={styles.colorChoose}>
-          <ColorPicker
-            key={key}
-            type={type}
-            parentId={parentId}
-            pickerType="sketch"
-            small
-            color={color}
-            position="bottom"
-            presetColors={[
-              "#F5222D",
-              "#FA541C",
-              "#FA8C16",
-              "#FAAD14",
-              "#FADB14",
-              "#A0D911",
-              "#52C41A",
-              "#13C2C2",
-              "#1890FF",
-              "#2F54EB",
-              "#722ED1",
-              "#EB2F96",
-            ]}
-            changeItemProp={this.props.changeItemProp}
-          />
+          <div className={styles.colorContant}>{color}</div>
+          <div className={styles.colorChoose}>
+            <ColorPicker
+              key={key}
+              type={type}
+              parentId={parentId}
+              pickerType="sketch"
+              small
+              color={color}
+              position="bottom"
+              presetColors={[
+                "#F5222D",
+                "#FA541C",
+                "#FA8C16",
+                "#FAAD14",
+                "#FADB14",
+                "#A0D911",
+                "#52C41A",
+                "#13C2C2",
+                "#1890FF",
+                "#2F54EB",
+                "#722ED1",
+                "#EB2F96",
+              ]}
+              changeItemProp={this.props.changeItemProp}
+            />
+          </div>
         </div>
-        </div>
-        <div className={styles.line}></div>
+        <div className={styles.line} />
       </div>
-
-    )
+    );
   }
-
 }

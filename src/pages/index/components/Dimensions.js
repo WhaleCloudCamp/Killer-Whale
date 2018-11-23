@@ -22,22 +22,30 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
 
               if (
                 (item.includes("Color") || item.includes("color")) &&
-                (["white", "red", "blue", "gray","yellow","orange","red","pink","black","green"].includes(data[item]) ||
+                ([
+                  "white",
+                  "red",
+                  "blue",
+                  "gray",
+                  "yellow",
+                  "orange",
+                  "red",
+                  "pink",
+                  "black",
+                  "green",
+                ].includes(data[item]) ||
                   data[item].includes("rgb") ||
                   /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(data[item]))
               ) {
                 return (
-                  <ColorItem 
-                  key={item}
-                  type={item}
-                  parentId={parentId}
-                  color={data[item]} 
-                   changeItemProp={changeItemProp}
-                  ></ColorItem>
-              
-                  )
-                  
-                
+                  <ColorItem
+                    key={item}
+                    type={item}
+                    parentId={parentId}
+                    color={data[item]}
+                    changeItemProp={changeItemProp}
+                  />
+                );
               } else if (types[item] === "bool") {
                 return (
                   <SelectItem

@@ -17,7 +17,6 @@ class RightStyle extends React.Component {
       value: this.props.value,
     });
   };
-  
 
   render() {
     const { value, type } = this.props;
@@ -28,22 +27,30 @@ class RightStyle extends React.Component {
           {Object.keys(value).map(items => {
             //增加判断，属性名包含color且值为正确的颜色,几个常用的颜色单词和所有的#开头色值
             if (
-              (items.includes("Color") || items.includes("color")) &&(["white", "red", "blue", "gray", "yellow", "orange", "red", "pink", "black", "green"].includes(value[items]) ||
-
+              (items.includes("Color") || items.includes("color")) &&
+              ([
+                "white",
+                "red",
+                "blue",
+                "gray",
+                "yellow",
+                "orange",
+                "red",
+                "pink",
+                "black",
+                "green",
+              ].includes(value[items]) ||
                 value[items].includes("rgb") ||
                 /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value[items]))
             ) {
               return (
-
                 <ColorItem
                   key={items}
                   type={items}
                   parentId={type}
                   color={value[items]}
                   changeItemProp={this.changeStyleItemProp}
-                ></ColorItem>
-
-
+                />
               );
             } else if (typeof value[items] == "string") {
               return (
