@@ -36,7 +36,7 @@ class RightStyle extends React.Component {
                 /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value[items]))
             ) {
               return (
-                <div>
+                <div key={type}>
                   <div className={styles.fqvwjTs}>
                     <span className={styles.ikRssvds}>{items}</span>
 
