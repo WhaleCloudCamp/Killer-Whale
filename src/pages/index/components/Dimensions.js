@@ -18,17 +18,25 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
           {Object.keys(data).map(item => {
             if (typeof types[item] === "string" || !types[item]) {
               //增加判断，属性名包含color且值为正确的颜色,几个常用的颜色单词和所有的#开头色值
+
               if (
                 (item.includes("Color") || item.includes("color")) &&
-                (["white", "red", "blue", "gray"].includes(data[item]) ||
+                (["white", "red", "blue", "gray","yellow","orange","red","pink","black","green"].includes(data[item]) ||
                   data[item].includes("rgb") ||
                   /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(data[item]))
               ) {
                 return (
-                  <Fragment key={item}>
-                    <Col xs={12}>{item}</Col>
-                    <Col xs={8}>{data[item]}</Col>
-                    <Col xs={4}>
+                  <div>
+                  <div className={styles.fqvwjTs}>
+                    <span className={styles.ikRssvdst}>
+                      {item}
+                    </span>
+                    <div className={styles.ffgvpT}>
+                      <div className={styles.ggjvuQss}>
+                        <div className={styles.iqAZmK}> {data[item]}</div>
+                      </div>
+                    </div>
+                    <div className={styles.col}>
                       <ColorPicker
                         key={item}
                         type={item}
@@ -53,8 +61,10 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
                         ]}
                         changeItemProp={changeItemProp}
                       />
-                    </Col>
-                  </Fragment>
+                    </div>
+                  </div>
+                  <div className={styles.line} />
+                  </div>
                 );
               } else if (types[item] === "bool") {
                 return (
