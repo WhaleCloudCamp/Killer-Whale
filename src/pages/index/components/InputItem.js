@@ -31,24 +31,19 @@ class InputItem extends React.Component {
     let { value, id } = this.state;
     const { handleBlur, type, isNumber, parentId } = this.props;
     return (
-      <div className={styles.inputmain}>
-        <div className={styles.fqvwjT}>
-          <span style={{ fontsize: "11px" }} className={styles.ikRssvd}>
-            {type}
-          </span>
-
-          <div className={styles.ffgvpT}>
-            <div className={styles.ggjvuQ}>
-              <input
-                type={isNumber ? "number" : "text"}
-                tabIndex="-1"
-                className={styles.iqAZmK}
-                value={value}
-                onChange={this.handleChange}
-                onBlur={this.handleBlur}
-              />
-            </div>
-          </div>
+      <div>
+        <div className={styles.inputMain}>
+          <span
+            className={styles.inputText}
+          > {type}</span>
+          <input
+            type={isNumber ? "number" : "text"}
+            tabIndex="-1"
+            className={styles.inputContant}
+            value={value}
+            onChange={this.handleChange}
+            onBlur={this.handleBlur}
+          />
         </div>
         <div className={styles.line} />
       </div>
