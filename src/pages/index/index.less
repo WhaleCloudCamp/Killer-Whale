@@ -7,22 +7,17 @@
 }
 .panel {
   background-color: white;
-  // height: 100vh;
   border: 1px solid rgb(212, 220, 226);
-  //border: 1px solid #D4DCE2;
-  // margin: 15px;
 }
 
-
 .rowclass {
-  // height: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   .colclass {
     flex-shrink: 0;
-    //padding-top: 15px;
-    //overflow: auto;
+    overflow: auto;
     .content {
-      // height: 100%;
       display: flex;
       flex-direction: column;
       .comlist {
@@ -39,5 +34,4 @@
 }
 .colclass:not(:last-child) {
   border-right: 1px solid rgb(212, 220, 226);
-  //border-color: rgb(212, 220, 226);
 }
