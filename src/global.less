@@ -1,3 +1,10 @@
+html,
+body,
+#root {
+  height: 100%;
+  background-color: white;
+}
+
 .ant-collapse {
   .ant-collapse-item {
     .ant-collapse-header {
@@ -13,7 +20,7 @@
   }
   .ant-collapse-item-active {
     .ant-collapse-header {
-      color: #0084FF;
+      color: #0084ff;
       i {
         width: 12px;
         height: 46px;
@@ -27,70 +34,46 @@
   border: none;
   .ant-select-selection__rendered {
     .ant-select-selection__rendered {
-      color: #9B9B9B;
+      color: #9b9b9b;
     }
   }
 }
 .ant-input-number-disabled {
   border: none;
-  background-color: #EDF0F5;
+  background-color: #edf0f5;
   .ant-input-number-input {
     text-align: center;
   }
 }
 
 .ant-select-disabled .ant-select-selection {
-  background-color: #EDF0F5;
+  background-color: #edf0f5;
 }
 
 .ant-select-enabled {
   .ant-select-arrow {
     .ant-select-arrow-icon {
       svg {
-        color: #0084FF;
+        color: #0084ff;
       }
     }
   }
   .ant-select-open {
     .ant-select-arrow-icon {
       svg {
-        color: #0084FF;
+        color: #0084ff;
       }
     }
   }
 }
-html,
-body,
-#root {
-  height: 100%;
-  background-color: white;
-}
-// .ant-collapse {
-//   .ant-collapse-item {
-//     .ant-collapse-content {
-//       .ant-collapse-content-box {
-//         display: flex;
-//         justify-content: space-around;
-//         flex-direction: row;
-//         > div {
-//           background: #FFFFFF;
-//           height: 100px;
-//           width: 40%;
-//           border: 1px dashed #D3D3D3 !important;
-//           display: flex;
-//         }
-//       }
-//     }
-//   }
-// }
+
 .am-accordion {
   .am-accordion-item {
     border-bottom-color: transparent;
-    .am-accordion-header{
-   
+    .am-accordion-header {
       i {
-        transform: rotate(-90deg);
-        background: url(./assets/web/an_two.png) no-repeat center center;
+        transform: rotate(0) !important;
+        background: url(./assets/web/pack_up_two.png) no-repeat center center;
         svg {
           display: none !important;
         }
@@ -98,12 +81,10 @@ body,
     }
   }
   .am-accordion-item-active {
- 
     .am-accordion-header {
-  
       i {
-        transform: rotate(-90deg);
-        background: url(./assets/web/pack_up_two.png) no-repeat center center;
+        transform: rotate(0) !important;
+        background: url(./assets/web/an_two.png) no-repeat center center;
       }
     }
   }
@@ -111,7 +92,7 @@ body,
 
 .am-accordion {
   .am-accordion-item {
-    .am-accordion-content{
+    .am-accordion-content {
       overflow: visible !important;
     }
   }
