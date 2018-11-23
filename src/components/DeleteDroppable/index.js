@@ -1,6 +1,7 @@
 import React from "react";
 import { DropTarget } from "react-dnd";
 import styles from "./index.less";
+import deleteIcon from "../../assets/web/delete.png";
 const grid = 8;
 const getListStyle = (canDrop, dropStyle) => ({
   // background: "lightgrey",
@@ -35,7 +36,7 @@ const Types = {
 const DroppableContent = ({ children, dropStyle = {}, connectDropTarget, canDrop }) => {
   return connectDropTarget(
     <div style={getListStyle(canDrop, dropStyle)} className={styles.delItem}>
-      删除
+      <img src={deleteIcon} className={styles.delete} alt="" />
     </div>
   );
 };
