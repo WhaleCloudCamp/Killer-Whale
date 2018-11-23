@@ -3,8 +3,7 @@ import { Row, Col } from "antd";
 import styles from "./rightItem.less";
 import StyleInputItem from "./StyleInputItem";
 import { Accordion } from "antd-mobile";
-import ColorPicker from "./ColorPicker";
-
+import ColorItem from "./ColorItem";
 class RightStyle extends React.Component {
   changeStyleItemProp = data => {
     for (var keys in this.props.value) {
@@ -18,6 +17,7 @@ class RightStyle extends React.Component {
       value: this.props.value,
     });
   };
+  
 
   render() {
     const { value, type } = this.props;
@@ -28,61 +28,22 @@ class RightStyle extends React.Component {
           {Object.keys(value).map(items => {
             //增加判断，属性名包含color且值为正确的颜色,几个常用的颜色单词和所有的#开头色值
             if (
-              (items.includes("Color") || items.includes("color")) &&
-              ([
-                "white",
-                "red",
-                "blue",
-                "gray",
-                "yellow",
-                "orange",
-                "red",
-                "pink",
-                "black",
-                "green",
-              ].includes(value[items]) ||
+              (items.includes("Color") || items.includes("color")) &&(["white", "red", "blue", "gray", "yellow", "orange", "red", "pink", "black", "green"].includes(value[items]) ||
+
                 value[items].includes("rgb") ||
                 /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value[items]))
             ) {
               return (
-                <div key={type}>
-                  <div className={styles.fqvwjTs}>
-                    <span className={styles.ikRssvds}>{items}</span>
 
-                    <div className={styles.ffgvpT}>
-                      <div className={styles.ggjvuQsss}>
-                        <div className={styles.iqAZmK}> {value[items]}</div>
-                      </div>
-                    </div>
-                    <div className={styles.col}>
-                      <ColorPicker
-                        key={items}
-                        type={items}
-                        parentId={type}
-                        pickerType="sketch"
-                        small
-                        color={value[items]}
-                        position="bottom"
-                        presetColors={[
-                          "#F5222D",
-                          "#FA541C",
-                          "#FA8C16",
-                          "#FAAD14",
-                          "#FADB14",
-                          "#A0D911",
-                          "#52C41A",
-                          "#13C2C2",
-                          "#1890FF",
-                          "#2F54EB",
-                          "#722ED1",
-                          "#EB2F96",
-                        ]}
-                        changeItemProp={this.changeStyleItemProp}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.line} />
-                </div>
+                <ColorItem
+                  key={items}
+                  type={items}
+                  parentId={type}
+                  color={value[items]}
+                  changeItemProp={this.changeStyleItemProp}
+                ></ColorItem>
+
+
               );
             } else if (typeof value[items] == "string") {
               return (

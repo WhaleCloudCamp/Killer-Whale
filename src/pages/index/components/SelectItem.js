@@ -27,33 +27,29 @@ class SelectItem extends React.Component {
     const { value } = this.state;
     const { type, optionsValue } = this.props;
     return (
-      <div className={styles.inputmain}>
-        <div className={styles.fqvwjT}>
-          <span style={{ fontSize: "11px" }} className={styles.ikRkvd}>
-            {type}
-          </span>
 
-          <div className={styles.ffgvpT}>
-            <div className={styles.ggjvuQs}>
-              <div className={styles.gsl} />
-              <select
-                tabIndex="-1"
-                className={styles.iqAZmKs}
-                value={value}
-                onChange={this.handleChange}
-              >
-                {optionsValue &&
-                  optionsValue.map((item, index) => {
-                    return (
-                      <option value={item} key={index}>
-                        {item}
-                      </option>
-                    );
-                  })}
-              </select>
-            </div>
-          </div>
-          <img src={choose} className={styles.bell} alt="" onClick={() => {}} />
+      <div key={type}>
+        <div className={styles.selectMain}>
+          <span
+            className={styles.selectText}
+          > {type}</span>
+
+          <select
+            tabIndex="-1"
+            className={styles.selectContant}
+            value={value}
+            onChange={this.handleChange}
+          >
+            {optionsValue &&
+              optionsValue.map((item, index) => {
+                return (
+                  <option value={item} key={index}>
+                    {item}
+                  </option>
+                );
+              })}
+          </select>
+          <img src={choose} className={styles.selectChoose} alt="" onClick={() => { }} />
         </div>
         <div className={styles.line} />
       </div>

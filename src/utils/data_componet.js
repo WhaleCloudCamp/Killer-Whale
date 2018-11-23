@@ -1156,8 +1156,7 @@ export const DataComponet = [
           rightStyle: {
             position: "absolute",
             right: 0,
-            borderTopLeftRadius: 15,
-            borderBottomLeftRadius: 15,
+           
             backgroundColor: "#02C558",
           },
           rightTextStyle: {

@@ -5,6 +5,7 @@ import InputItem from "./InputItem";
 import SelectItem from "./SelectItem";
 import RightStyle from "./RightStyle";
 import ColorPicker from "./ColorPicker";
+import ColorItem from "./ColorItem";
 
 const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
   return (
@@ -26,46 +27,17 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
                   /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(data[item]))
               ) {
                 return (
-                  <div>
-                  <div className={styles.fqvwjTs}>
-                    <span className={styles.ikRssvdst}>
-                      {item}
-                    </span>
-                    <div className={styles.ffgvpT}>
-                      <div className={styles.ggjvuQss}>
-                        <div className={styles.iqAZmK}> {data[item]}</div>
-                      </div>
-                    </div>
-                    <div className={styles.col}>
-                      <ColorPicker
-                        key={item}
-                        type={item}
-                        parentId={parentId}
-                        pickerType="sketch"
-                        small
-                        color={data[item]}
-                        position="bottom"
-                        presetColors={[
-                          "#F5222D",
-                          "#FA541C",
-                          "#FA8C16",
-                          "#FAAD14",
-                          "#FADB14",
-                          "#A0D911",
-                          "#52C41A",
-                          "#13C2C2",
-                          "#1890FF",
-                          "#2F54EB",
-                          "#722ED1",
-                          "#EB2F96",
-                        ]}
-                        changeItemProp={changeItemProp}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.line} />
-                  </div>
-                );
+                  <ColorItem 
+                  key={item}
+                  type={item}
+                  parentId={parentId}
+                  color={data[item]} 
+                   changeItemProp={changeItemProp}
+                  ></ColorItem>
+              
+                  )
+                  
+                
               } else if (types[item] === "bool") {
                 return (
                   <SelectItem
