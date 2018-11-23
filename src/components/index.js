@@ -24,3 +24,5 @@ export { default as Flex } from "./Flex/index";
 export { default as ActivityIndicator } from "./ActivityIndicator/index";
 export { default as BaseText } from "./BaseText/index";
 export { default as BaseImg } from "./BaseImg/index";
+export { default as WhiteSpace } from "./WhiteSpace/index";
+export { default as WingBlank } from "./WingBlank/index";

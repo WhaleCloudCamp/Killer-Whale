@@ -30,6 +30,32 @@ export const DataComponet = [
         defaultProps: {},
         style: {},
       },
+      {
+        id: 6344833,
+        type: "WhiteSpace",
+        state: 1,
+        props: {
+          size: "lg",
+        },
+        propTypes: {
+          size: ["xs", "sm", "md", "lg", "xl"],
+        },
+        defaultProps: {},
+        style: {},
+      },
+      {
+        id: 6344834,
+        type: "WingBlank",
+        state: 1,
+        props: {
+          size: "lg",
+        },
+        propTypes: {
+          size: ["sm", "md", "lg"],
+        },
+        defaultProps: {},
+        style: {},
+      },
     ],
   },
 
