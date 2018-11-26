@@ -62,106 +62,7 @@ export const DataComponet = [
   },
 
   {
-    type: "导航",
-    data: [
-      {
-        id: 5344361,
-        type: "Pagination",
-        state: 1,
-
-        props: {
-          mode: "pointer",
-          current: 1,
-          total: 4,
-          simple: false,
-          disabled: false,
-        },
-        propTypes: {
-          mode: ["button", "number", "pointer"],
-          current: "number",
-          total: "string",
-          simple: "bool",
-          disabled: "bool",
-        },
-        defaultProps: {
-          mode: "pointer",
-          current: 1,
-          total: 4,
-          simple: false,
-          disabled: false,
-        },
-        style: { width: "100%" },
-      },
-      {
-        id: 534463,
-        type: "SegmentedControl",
-        state: 1,
-        props: {
-          tintColor: "#2DB7F5",
-          disabled: false,
-          selectedIndex: 0,
-          values: ["附近", "发现"],
-        },
-        propTypes: {
-          tintColor: "string",
-          disabled: "bool",
-          selectedIndex: "number",
-          values: "array",
-        },
-        defaultProps: {
-          tintColor: "#2DB7F5",
-          disabled: false,
-          selectedIndex: 0,
-          values: ["Segment1", "Segment2"],
-        },
-        style: {},
-      },
-      {
-        id: 534437,
-        type: "Tabs",
-        state: 1,
-        props: {
-          tabs: [{ title: "首页" }, { title: "发现" }, { title: "我的" }],
-
-          initialPage: 0,
-          swipeable: true,
-          animated: true,
-          prerenderingSiblingsNumber: 1,
-          tabBarBackgroundColor: "white",
-          tabBarActiveTextColor: "green",
-          tabBarInactiveTextColor: "gray",
-          tabBarTextStyle: { fontSize: 16 },
-        },
-        propTypes: {
-          tabs: "array",
-          tabBarPosition: "string",
-          initialPage: "number",
-          swipeable: "bool",
-          animated: "bool",
-          prerenderingSiblingsNumber: "number",
-          tabBarBackgroundColor: "string",
-          tabBarActiveTextColor: "string",
-          tabBarInactiveTextColor: "string",
-          tabBarTextStyle: "style",
-        },
-        defaultProps: {
-          tabs: [{ title: "First Tab" }, { title: "Second Tab" }, { title: "Third Tab" }],
-          tabBarPosition: "bottom",
-          initialPage: 0,
-          swipeable: false,
-          animated: true,
-          prerenderingSiblingsNumber: 1,
-          tabBarBackgroundColor: "white",
-          tabBarActiveTextColor: "green",
-          tabBarInactiveTextColor: "gray",
-          tabBarTextStyle: { fontSize: 16 },
-        },
-        style: { width: "100%", height: 30 },
-      },
-    ],
-  },
-  {
-    type: "基本控件",
+    type: "基本组件",
     data: [
       {
         id: 534440,
@@ -387,6 +288,99 @@ export const DataComponet = [
         },
         style: {},
       },
+
+      {
+        id: 534445,
+        type: "SearchBar",
+        state: 1,
+        props: {
+          placeholder: "请输入关键字",
+          showCancelButton: false,
+          cancelText: "取消",
+          disabled: false,
+        },
+        propTypes: {
+          value: "string",
+          placeholder: "string",
+          showCancelButton: "bool",
+          cancelText: "string",
+          disabled: "bool",
+        },
+        defaultProps: {
+          value: "张三",
+          placeholder: "请输入关键字",
+          showCancelButton: false,
+          cancelText: "取消",
+          disabled: false,
+        },
+        style: {},
+      },
+    ],
+  },
+
+  {
+    type: "高级组件",
+    data: [
+      {
+        id: 6344691,
+        type: "Carousel",
+        state: 2,
+        props: {
+          dataItem: [
+            { url: "https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png" },
+            { url: "https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png" },
+          ],
+          selectedIndex: 0,
+          autoplay: true,
+          infinite: true,
+          autoplayInterval: 3000,
+          dots: true,
+          vertical: false,
+          imgStyle: {
+            height: 150,
+          },
+        },
+        propTypes: {
+          dataItem: "array",
+          selectedIndex: "number",
+          autoplay: "bool",
+          infinite: "bool",
+          autoplayInterval: "number",
+          dots: "bool",
+          vertical: "bool",
+          imgStyle: "style",
+        },
+        defaultProps: {
+          autoplay: true,
+          infinite: true,
+          autoplayInterval: 3000,
+          dots: true,
+          vertical: false,
+        },
+        style: { width: "100%" },
+      },
+      {
+        id: 634472,
+        type: "NoticeBar",
+        state: 2,
+        props: {
+          mode: "closable",
+          titles:
+            "这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........",
+          marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } },
+        },
+        propTypes: {
+          mode: ["closable", "link"],
+          marqueeProps: "array",
+          titles: "string",
+        },
+        defaultProps: {
+          mode: "closable",
+          marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } },
+          title: "这是一个通知栏.........",
+        },
+        style: { width: "100%" },
+      },
       {
         id: 534442,
         type: "Stepper",
@@ -420,30 +414,98 @@ export const DataComponet = [
       },
 
       {
-        id: 534445,
-        type: "SearchBar",
+        id: 5344361,
+        type: "Pagination",
         state: 1,
+
         props: {
-          placeholder: "请输入关键字",
-          showCancelButton: false,
-          cancelText: "取消",
+          mode: "pointer",
+          current: 1,
+          total: 4,
+          simple: false,
           disabled: false,
         },
         propTypes: {
-          value: "string",
-          placeholder: "string",
-          showCancelButton: "bool",
-          cancelText: "string",
+          mode: ["button", "number", "pointer"],
+          current: "number",
+          total: "string",
+          simple: "bool",
           disabled: "bool",
         },
         defaultProps: {
-          value: "张三",
-          placeholder: "请输入关键字",
-          showCancelButton: false,
-          cancelText: "取消",
+          mode: "pointer",
+          current: 1,
+          total: 4,
+          simple: false,
           disabled: false,
         },
+        style: { width: "100%" },
+      },
+      {
+        id: 534463,
+        type: "SegmentedControl",
+        state: 1,
+        props: {
+          tintColor: "#2DB7F5",
+          disabled: false,
+          selectedIndex: 0,
+          values: ["附近", "发现"],
+        },
+        propTypes: {
+          tintColor: "string",
+          disabled: "bool",
+          selectedIndex: "number",
+          values: "array",
+        },
+        defaultProps: {
+          tintColor: "#2DB7F5",
+          disabled: false,
+          selectedIndex: 0,
+          values: ["Segment1", "Segment2"],
+        },
         style: {},
+      },
+      {
+        id: 534437,
+        type: "Tabs",
+        state: 1,
+        props: {
+          tabs: [{ title: "首页" }, { title: "发现" }, { title: "我的" }],
+
+          initialPage: 0,
+          swipeable: true,
+          animated: true,
+          prerenderingSiblingsNumber: 1,
+          tabBarBackgroundColor: "white",
+          tabBarActiveTextColor: "green",
+          tabBarInactiveTextColor: "gray",
+          tabBarTextStyle: { fontSize: 16 },
+        },
+        propTypes: {
+          tabs: "array",
+          tabBarPosition: "string",
+          initialPage: "number",
+          swipeable: "bool",
+          animated: "bool",
+          prerenderingSiblingsNumber: "number",
+          tabBarBackgroundColor: "string",
+          tabBarActiveTextColor: "string",
+          tabBarInactiveTextColor: "string",
+          tabBarTextStyle: "style",
+        },
+        defaultProps: {
+          tabs: [{ title: "First Tab" }, { title: "Second Tab" }, { title: "Third Tab" }],
+          tabBarPosition: "bottom",
+          initialPage: 0,
+          swipeable: false,
+          animated: true,
+          prerenderingSiblingsNumber: 1,
+          tabBarBackgroundColor: "white",
+          tabBarActiveTextColor: "green",
+          tabBarInactiveTextColor: "gray",
+          tabBarTextStyle: { fontSize: 16 },
+        },
+        style: { width: "100%", height: 30 },
       },
       {
         id: 534456,
@@ -483,7 +545,6 @@ export const DataComponet = [
       },
     ],
   },
-
   {
     type: "进度展示",
     data: [
@@ -578,72 +639,6 @@ export const DataComponet = [
       },
     ],
   },
-  {
-    type: "数据展示",
-    data: [
-      {
-        id: 6344691,
-        type: "Carousel",
-        state: 2,
-        props: {
-          dataItem: [
-            { url: "https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png" },
-            { url: "https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png" },
-          ],
-          selectedIndex: 0,
-          autoplay: true,
-          infinite: true,
-          autoplayInterval: 3000,
-          dots: true,
-          vertical: false,
-          imgStyle: {
-            height: 150,
-          },
-        },
-        propTypes: {
-          dataItem: "array",
-          selectedIndex: "number",
-          autoplay: "bool",
-          infinite: "bool",
-          autoplayInterval: "number",
-          dots: "bool",
-          vertical: "bool",
-          imgStyle: "style",
-        },
-        defaultProps: {
-          autoplay: true,
-          infinite: true,
-          autoplayInterval: 3000,
-          dots: true,
-          vertical: false,
-        },
-        style: { width: "100%" },
-      },
-      {
-        id: 634472,
-        type: "NoticeBar",
-        state: 2,
-        props: {
-          mode: "closable",
-          titles:
-            "这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，这是一个通知栏，........",
-          marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } },
-        },
-        propTypes: {
-          mode: ["closable", "link"],
-          marqueeProps: "array",
-          titles: "string",
-        },
-        defaultProps: {
-          mode: "closable",
-          marqueeProps: { loop: true, style: { fontSize: 12, color: "red" } },
-          title: "这是一个通知栏.........",
-        },
-        style: { width: "100%" },
-      },
-    ],
-  },
-
   {
     type: "List列表项",
     data: [
