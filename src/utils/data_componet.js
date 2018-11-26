@@ -1,152 +1,34 @@
 export const DataComponet = [
   {
-    type: "布局容器",
-    data: [
-      {
-        id: 5344321211,
-        type: "Flex",
-        state: 1, //1:代表基础组件 2：代表组成组件
-        isLayout: 1,
-        props: {
-          direction: "row",
-          wrap: "nowrap",
-          align: "center",
-          justify: "around",
-        },
-        propTypes: {},
-        defaultProps: {},
-        style: {},
-      },
-      {
-        id: 634482,
-        type: "Line",
-        state: 2,
-        props: {
-          showType: "lg",
-        },
-        propTypes: {
-          showType: ["sm", "lg"],
-        },
-        defaultProps: {},
-        style: {},
-      },
-      {
-        id: 6344833,
-        isLayout: 1,
-        type: "WhiteSpace",
-        state: 1,
-        props: {
-          size: "lg",
-        },
-        propTypes: {
-          size: ["xs", "sm", "md", "lg", "xl"],
-        },
-        defaultProps: {},
-        style: {},
-      },
-      {
-        id: 6344834,
-        isLayout: 1,
-        type: "WingBlank",
-        state: 1,
-        props: {
-          size: "lg",
-        },
-        propTypes: {
-          size: ["sm", "md", "lg"],
-        },
-        defaultProps: {},
-        style: {},
-      },
-    ],
-  },
-
-  {
     type: "基本组件",
     data: [
-      {
-        id: 534440,
-        type: "Checkbox",
-        state: 1,
-
-        props: {
-          defaultChecked: false,
-          checked: true,
-          disabled: false,
-
-          title: "单项选择",
-        },
-        propTypes: {
-          defaultChecked: "bool",
-          checked: "bool",
-          disabled: "bool",
-          title: "string",
-        },
-        defaultProps: {
-          defaultChecked: false,
-          checked: true,
-          disabled: false,
-          title: "单项选择",
-        },
-        style: { width: 28, height: 28, margin: 5 },
-      },
-      {
-        id: 5344461,
-        type: "Badge",
-        state: 1,
-        props: {
-          size: "large",
-          text: "20",
-          corner: false,
-          dot: false,
-          overflowCount: 99,
-        },
-        propTypes: {
-          size: ["large", "small"],
-          text: "string",
-          corner: "bool",
-          dot: "bool",
-          overflowCount: "number",
-        },
-        defaultProps: {
-          size: "large",
-          text: "15",
-          corner: false,
-          dot: false,
-          overflowCount: 99,
-        },
-        style: {},
-      },
-      {
-        id: 5344591,
-        type: "Icon",
-        state: 1,
-        props: {
-          type: "cross-circle-o",
-          size: "md",
-          color: "red",
-        },
-        propTypes: {
-          type: [
-            "check-circle",
-            "check",
-            "check-circle-o",
-            "cross-circle",
-            "cross",
-            "cross-circle-o",
-            "up",
-            "down",
-            "left",
-            "right",
-            "ellipsis",
-            "question-circle",
-          ],
-          size: ["xxs", "xs", "sm", "md", "lg"],
-          color: "string",
-        },
-        defaultProps: {},
-        style: {},
-      },
+      // {
+      //   id: 5344461,
+      //   type: "Badge",
+      //   state: 1,
+      //   props: {
+      //     size: "large",
+      //     text: "20",
+      //     corner: false,
+      //     dot: false,
+      //     overflowCount: 99,
+      //   },
+      //   propTypes: {
+      //     size: ["large", "small"],
+      //     text: "string",
+      //     corner: "bool",
+      //     dot: "bool",
+      //     overflowCount: "number",
+      //   },
+      //   defaultProps: {
+      //     size: "large",
+      //     text: "15",
+      //     corner: false,
+      //     dot: false,
+      //     overflowCount: 99,
+      //   },
+      //   style: {},
+      // },
 
       {
         id: 534429,
@@ -186,109 +68,62 @@ export const DataComponet = [
         style: {},
       },
       {
-        id: 6344701,
-        type: "Tag",
-        state: 2,
-        props: {
-          small: false,
-          disabled: false,
-          closable: true,
-          selected: true,
-          content: "美女",
-        },
-        propTypes: {
-          small: "bool",
-          disabled: "bool",
-          closable: "bool",
-          selected: "bool",
-          content: "string",
-        },
-        defaultProps: {
-          small: false,
-          disabled: false,
-          closable: true,
-          selected: true,
-          content: "美女",
-        },
-        style: { width: 30, height: 25, margin: 5 },
-      },
-      {
-        id: 5344341,
-        type: "Switch",
+        id: 5344591,
+        type: "Icon",
         state: 1,
         props: {
-          checked: false,
-          disabled: false,
+          type: "cross-circle-o",
+          size: "md",
+          color: "red",
         },
         propTypes: {
-          checked: "bool",
-          disabled: "bool",
-        },
-        defaultProps: {
-          checked: true,
-          disabled: false,
-        },
-        style: { margin: 5 },
-      },
-
-      {
-        id: 5344321,
-        type: "Button",
-        state: 1, //1:代表基础组件 2：代表组成组件
-        props: {
-          type: "primary",
-          children: "确定",
-          size: "large",
-          loading: true,
-          disabled: false,
-        },
-        propTypes: {
-          type: ["primary", "ghost", "warning"],
-          children: "string",
-          disabled: "bool",
-          loading: "bool",
-          size: ["large", "small"],
+          type: [
+            "check-circle",
+            "check",
+            "check-circle-o",
+            "cross-circle",
+            "cross",
+            "cross-circle-o",
+            "up",
+            "down",
+            "left",
+            "right",
+            "ellipsis",
+            "question-circle",
+          ],
+          size: ["xxs", "xs", "sm", "md", "lg"],
+          color: "string",
         },
         defaultProps: {},
         style: {},
       },
-      {
-        id: 534455,
-        type: "ImagePicker",
-        state: 1,
-        props: {
-          files: [
-            {
-              url: "https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg",
-              id: "2121",
-            },
-            {
-              url: "https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg",
-              id: "2122",
-            },
-          ],
-          selectable: true,
-        },
-        propTypes: {
-          files: "array",
-          selectable: "bool",
-        },
-        defaultProps: {
-          files: [
-            {
-              url: "https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png",
-              id: "2121",
-            },
-            {
-              url: "https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png",
-              id: "2122",
-            },
-          ],
-          selectable: true,
-        },
-        style: {},
-      },
-
+      // {
+      //   id: 6344701,
+      //   type: "Tag",
+      //   state: 2,
+      //   props: {
+      //     small: false,
+      //     disabled: false,
+      //     closable: true,
+      //     selected: true,
+      //     content: "美女",
+      //   },
+      //   propTypes: {
+      //     small: "bool",
+      //     disabled: "bool",
+      //     closable: "bool",
+      //     selected: "bool",
+      //     content: "string",
+      //   },
+      //   defaultProps: {
+      //     small: false,
+      //     disabled: false,
+      //     closable: true,
+      //     selected: true,
+      //     content: "美女",
+      //   },
+      //   style: { width: 30, height: 25, margin: 5 },
+      // },
       {
         id: 534445,
         type: "SearchBar",
@@ -315,6 +150,115 @@ export const DataComponet = [
         },
         style: {},
       },
+
+      {
+        id: 5344321,
+        type: "Button",
+        state: 1, //1:代表基础组件 2：代表组成组件
+        props: {
+          type: "primary",
+          children: "确定",
+          size: "large",
+          loading: true,
+          disabled: false,
+        },
+        propTypes: {
+          type: ["primary", "ghost", "warning"],
+          children: "string",
+          disabled: "bool",
+          loading: "bool",
+          size: ["large", "small"],
+        },
+        defaultProps: {},
+        style: {},
+      },
+      {
+        id: 5344341,
+        type: "Switch",
+        state: 1,
+        props: {
+          checked: false,
+          disabled: false,
+        },
+        propTypes: {
+          checked: "bool",
+          disabled: "bool",
+        },
+        defaultProps: {
+          checked: true,
+          disabled: false,
+        },
+        style: { margin: 5 },
+      },
+      {
+        id: 634478,
+        type: "Slider",
+
+        state: 2,
+        props: {
+          min: 0,
+          max: 100,
+          step: 1,
+          value: 50,
+          disabled: true,
+
+          maximumTrackTintColor: "blue",
+        },
+        propTypes: {
+          min: "number",
+          max: "number",
+          step: "number",
+          value: "number",
+          disabled: "bool",
+          maximumTrackTintColor: "string",
+        },
+        defaultProps: {
+          min: 0,
+          max: 100,
+          step: 1,
+          value: 30,
+          disabled: false,
+          maximumTrackTintColor: "blue",
+        },
+        style: { width: "100%", height: 10, margin: 10 },
+      },
+
+      // {
+      //   id: 534455,
+      //   type: "ImagePicker",
+      //   state: 1,
+      //   props: {
+      //     files: [
+      //       {
+      //         url: "https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg",
+      //         id: "2121",
+      //       },
+      //       {
+      //         url: "https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg",
+      //         id: "2122",
+      //       },
+      //     ],
+      //     selectable: true,
+      //   },
+      //   propTypes: {
+      //     files: "array",
+      //     selectable: "bool",
+      //   },
+      //   defaultProps: {
+      //     files: [
+      //       {
+      //         url: "https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png",
+      //         id: "2121",
+      //       },
+      //       {
+      //         url: "https://zos.alipayobjects.com/rmsportal/WCxfiPKoDDHwLBM.png",
+      //         id: "2122",
+      //       },
+      //     ],
+      //     selectable: true,
+      //   },
+      //   style: {},
+      // },
     ],
   },
 
@@ -412,35 +356,61 @@ export const DataComponet = [
         },
         style: { width: "100%", height: 30 },
       },
-
       {
-        id: 5344361,
-        type: "Pagination",
+        id: 534440,
+        type: "Checkbox",
         state: 1,
 
         props: {
-          mode: "pointer",
-          current: 1,
-          total: 4,
-          simple: false,
+          defaultChecked: false,
+          checked: true,
           disabled: false,
+
+          title: "单项选择",
         },
         propTypes: {
-          mode: ["button", "number", "pointer"],
-          current: "number",
-          total: "string",
-          simple: "bool",
+          defaultChecked: "bool",
+          checked: "bool",
           disabled: "bool",
+          title: "string",
         },
         defaultProps: {
-          mode: "pointer",
-          current: 1,
-          total: 4,
-          simple: false,
+          defaultChecked: false,
+          checked: true,
           disabled: false,
+          title: "单项选择",
         },
-        style: { width: "100%" },
+        style: { width: 28, height: 28, margin: 5 },
       },
+
+      // {
+      //   id: 5344361,
+      //   type: "Pagination",
+      //   state: 1,
+
+      //   props: {
+      //     mode: "pointer",
+      //     current: 1,
+      //     total: 4,
+      //     simple: false,
+      //     disabled: false,
+      //   },
+      //   propTypes: {
+      //     mode: ["button", "number", "pointer"],
+      //     current: "number",
+      //     total: "string",
+      //     simple: "bool",
+      //     disabled: "bool",
+      //   },
+      //   defaultProps: {
+      //     mode: "pointer",
+      //     current: 1,
+      //     total: 4,
+      //     simple: false,
+      //     disabled: false,
+      //   },
+      //   style: { width: "100%" },
+      // },
       {
         id: 534463,
         type: "SegmentedControl",
@@ -545,102 +515,70 @@ export const DataComponet = [
       },
     ],
   },
+  // {
+  //   type: "进度展示",
+  //   data: [
+  //     {
+  //       id: 534431,
+  //       type: "ActivityIndicator",
+  //       state: 1,
+  //       props: {
+  //         animating: true,
+  //         size: "small",
+  //         toast: false,
+  //         text: "加载中",
+  //         color: "gray",
+  //       },
+  //       propTypes: {
+  //         animating: "bool",
+  //         size: ["small", "large"],
+  //         toast: "bool",
+  //         text: "string",
+  //         color: "string",
+  //       },
+  //       defaultProps: {
+  //         animating: true,
+  //         size: "small",
+  //         toast: false,
+  //         text: "加载中",
+  //         color: "gray",
+  //       },
+  //       style: { backgroundColor: "gray", height: 50, width: 50 },
+  //     },
+  //     {
+  //       id: 534443,
+  //       type: "Progress",
+  //       state: 1,
+  //       props: {
+  //         percent: 10,
+  //         position: "normal",
+  //         unfilled: true,
+  //         barStyle: {
+  //           backgroundColor: "blue",
+  //           margin: 5,
+  //           borderWidth: 1,
+  //           height: 10,
+  //         },
+  //       },
+  //       propTypes: {
+  //         percent: "number",
+  //         position: ["fixed", "normal"],
+  //         unfilled: "bool",
+  //         barStyle: "style",
+  //       },
+  //       defaultProps: {
+  //         percent: 0,
+  //         position: "normal",
+  //         unfilled: true,
+  //         barStyle: { backgroundColor: "blue", margin: 5 },
+  //       },
+  //       style: { width: "100%", height: 20, backgroundColor: "white" },
+  //     },
+
+  //   ],
+  // },
   {
-    type: "进度展示",
-    data: [
-      {
-        id: 534431,
-        type: "ActivityIndicator",
-        state: 1,
-        props: {
-          animating: true,
-          size: "small",
-          toast: false,
-          text: "加载中",
-          color: "gray",
-        },
-        propTypes: {
-          animating: "bool",
-          size: ["small", "large"],
-          toast: "bool",
-          text: "string",
-          color: "string",
-        },
-        defaultProps: {
-          animating: true,
-          size: "small",
-          toast: false,
-          text: "加载中",
-          color: "gray",
-        },
-        style: { backgroundColor: "gray", height: 50, width: 50 },
-      },
-      {
-        id: 534443,
-        type: "Progress",
-        state: 1,
-        props: {
-          percent: 10,
-          position: "normal",
-          unfilled: true,
-          barStyle: {
-            backgroundColor: "blue",
-            margin: 5,
-            borderWidth: 1,
-            height: 10,
-          },
-        },
-        propTypes: {
-          percent: "number",
-          position: ["fixed", "normal"],
-          unfilled: "bool",
-          barStyle: "style",
-        },
-        defaultProps: {
-          percent: 0,
-          position: "normal",
-          unfilled: true,
-          barStyle: { backgroundColor: "blue", margin: 5 },
-        },
-        style: { width: "100%", height: 20, backgroundColor: "white" },
-      },
-
-      {
-        id: 634478,
-        type: "Slider",
-
-        state: 2,
-        props: {
-          min: 0,
-          max: 100,
-          step: 1,
-          value: 50,
-          disabled: true,
-
-          maximumTrackTintColor: "blue",
-        },
-        propTypes: {
-          min: "number",
-          max: "number",
-          step: "number",
-          value: "number",
-          disabled: "bool",
-          maximumTrackTintColor: "string",
-        },
-        defaultProps: {
-          min: 0,
-          max: 100,
-          step: 1,
-          value: 30,
-          disabled: false,
-          maximumTrackTintColor: "blue",
-        },
-        style: { width: "100%", height: 10, margin: 10 },
-      },
-    ],
-  },
-  {
-    type: "List列表项",
+    type: "表单组件",
     data: [
       {
         id: 634463,
@@ -990,9 +928,69 @@ export const DataComponet = [
       },
     ],
   },
-
   {
-    type: "组合样式",
+    type: "布局组件",
+    data: [
+      {
+        id: 5344321211,
+        type: "Flex",
+        state: 1, //1:代表基础组件 2：代表组成组件
+        isLayout: 1,
+        props: {
+          direction: "row",
+          wrap: "nowrap",
+          align: "center",
+          justify: "around",
+        },
+        propTypes: {},
+        defaultProps: {},
+        style: {},
+      },
+      {
+        id: 634482,
+        type: "Line",
+        state: 2,
+        props: {
+          showType: "lg",
+        },
+        propTypes: {
+          showType: ["sm", "lg"],
+        },
+        defaultProps: {},
+        style: {},
+      },
+      {
+        id: 6344833,
+        isLayout: 1,
+        type: "WhiteSpace",
+        state: 1,
+        props: {
+          size: "lg",
+        },
+        propTypes: {
+          size: ["xs", "sm", "md", "lg", "xl"],
+        },
+        defaultProps: {},
+        style: {},
+      },
+      {
+        id: 6344834,
+        isLayout: 1,
+        type: "WingBlank",
+        state: 1,
+        props: {
+          size: "lg",
+        },
+        propTypes: {
+          size: ["sm", "md", "lg"],
+        },
+        defaultProps: {},
+        style: {},
+      },
+    ],
+  },
+  {
+    type: "组合组件",
     data: [
       {
         id: 634477,
@@ -1185,130 +1183,130 @@ export const DataComponet = [
     ],
   },
 
-  {
-    type: "弹窗布局",
-    data: [
-      {
-        id: 634483,
-        type: "DialogOne",
-        state: 2,
-        props: {
-          title: "重置密码错误",
-          btnSureText: "确定",
-          btnCancelText: "取消",
-          showCancel: true,
-          mainStyle: {
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 5,
-            backgroundColor: "#00BFFF",
-            width: 200,
-            height: 200,
-          },
-          imgStyle: {
-            width: 50,
-            height: 50,
-            margin: 10,
-          },
-          contentStyle: {
-            color: "black",
-            fontSize: 15,
-            margin: 10,
-          },
-          btnCancelStyle: {
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "gray",
-            borderRadius: 10,
-            width: 80,
-            height: 30,
-            margin: 5,
-          },
-          btnCancelTextStyle: {
-            color: "white",
-            fontSize: 15,
-          },
-          btnSureStyle: {
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#02C558",
-            borderRadius: 10,
-            width: 80,
-            height: 30,
-            margin: 5,
-          },
-          btnSureTextStyle: {
-            color: "white",
-            fontSize: 15,
-          },
-        },
-        propTypes: {
-          title: "string",
-          btnText: "string",
-          showCancel: "bool",
-          mainStyle: "style",
-          imgStyle: "style",
-          contentStyle: "style",
-          btnSureStyle: "style",
-          btnSureTextStyle: "style",
-          btnCancelStyle: "style",
-          btnCancelTextStyle: "style",
-        },
-        defaultProps: {},
-        style: {},
-      },
-      {
-        id: 634484,
-        type: "DialogTwo",
-        state: 2,
-        props: {
-          title: "天翼乐享套餐128元-聊天版",
-          contentText:
-            "1.月使用费用1.月使用费用1.月使用费用1.月使用费用,1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用",
+  // {
+  //   type: "弹窗布局",
+  //   data: [
+  //     {
+  //       id: 634483,
+  //       type: "DialogOne",
+  //       state: 2,
+  //       props: {
+  //         title: "重置密码错误",
+  //         btnSureText: "确定",
+  //         btnCancelText: "取消",
+  //         showCancel: true,
+  //         mainStyle: {
+  //           justifyContent: "center",
+  //           alignItems: "center",
+  //           borderRadius: 5,
+  //           backgroundColor: "#00BFFF",
+  //           width: 200,
+  //           height: 200,
+  //         },
+  //         imgStyle: {
+  //           width: 50,
+  //           height: 50,
+  //           margin: 10,
+  //         },
+  //         contentStyle: {
+  //           color: "black",
+  //           fontSize: 15,
+  //           margin: 10,
+  //         },
+  //         btnCancelStyle: {
+  //           justifyContent: "center",
+  //           alignItems: "center",
+  //           backgroundColor: "gray",
+  //           borderRadius: 10,
+  //           width: 80,
+  //           height: 30,
+  //           margin: 5,
+  //         },
+  //         btnCancelTextStyle: {
+  //           color: "white",
+  //           fontSize: 15,
+  //         },
+  //         btnSureStyle: {
+  //           justifyContent: "center",
+  //           alignItems: "center",
+  //           backgroundColor: "#02C558",
+  //           borderRadius: 10,
+  //           width: 80,
+  //           height: 30,
+  //           margin: 5,
+  //         },
+  //         btnSureTextStyle: {
+  //           color: "white",
+  //           fontSize: 15,
+  //         },
+  //       },
+  //       propTypes: {
+  //         title: "string",
+  //         btnText: "string",
+  //         showCancel: "bool",
+  //         mainStyle: "style",
+  //         imgStyle: "style",
+  //         contentStyle: "style",
+  //         btnSureStyle: "style",
+  //         btnSureTextStyle: "style",
+  //         btnCancelStyle: "style",
+  //         btnCancelTextStyle: "style",
+  //       },
+  //       defaultProps: {},
+  //       style: {},
+  //     },
+  //     {
+  //       id: 634484,
+  //       type: "DialogTwo",
+  //       state: 2,
+  //       props: {
+  //         title: "天翼乐享套餐128元-聊天版",
+  //         contentText:
+  //           "1.月使用费用1.月使用费用1.月使用费用1.月使用费用,1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用1.月使用费用",
 
-          mainStyle: {
-            borderRadius: 8,
-            backgroundColor: "#00BFFF",
-            width: 300,
-            height: 200,
-            margin: 10,
-          },
-          secondStyle: {
-            alignItems: "center",
-            backgroundColor: "#02C558",
-            borderTopLeftRadius: 8,
-            borderTopRightRadius: 8,
-          },
-          titleStyle: {
-            color: "white",
-            fontSize: 15,
-            flex: 1,
-            textAlign: "center",
-          },
-          imgStyle: {
-            width: 20,
-            height: 20,
-            margin: 10,
-          },
-          contentStyle: {
-            color: "black",
-            padding: 10,
-            fontSize: 15,
-            height: "100%",
-          },
-        },
-        propTypes: {
-          title: "string",
-          contentText: "string",
-          mainStyle: "style",
-          secondStyle: "style",
-          titleStyle: "style",
-          imgStyle: "style",
-          contentStyle: "style",
-        },
-        defaultProps: {},
-        style: {},
-      },
-    ],
-  },
+  //         mainStyle: {
+  //           borderRadius: 8,
+  //           backgroundColor: "#00BFFF",
+  //           width: 300,
+  //           height: 200,
+  //           margin: 10,
+  //         },
+  //         secondStyle: {
+  //           alignItems: "center",
+  //           backgroundColor: "#02C558",
+  //           borderTopLeftRadius: 8,
+  //           borderTopRightRadius: 8,
+  //         },
+  //         titleStyle: {
+  //           color: "white",
+  //           fontSize: 15,
+  //           flex: 1,
+  //           textAlign: "center",
+  //         },
+  //         imgStyle: {
+  //           width: 20,
+  //           height: 20,
+  //           margin: 10,
+  //         },
+  //         contentStyle: {
+  //           color: "black",
+  //           padding: 10,
+  //           fontSize: 15,
+  //           height: "100%",
+  //         },
+  //       },
+  //       propTypes: {
+  //         title: "string",
+  //         contentText: "string",
+  //         mainStyle: "style",
+  //         secondStyle: "style",
+  //         titleStyle: "style",
+  //         imgStyle: "style",
+  //         contentStyle: "style",
+  //       },
+  //       defaultProps: {},
+  //       style: {},
+  //     },
+  //   ],
+  // },
 ];
