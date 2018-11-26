@@ -1,6 +1,7 @@
 import * as Whale from "components";
 import * as Whales from "combinations";
 import styles from "./center.less";
+import iphone from "../../../assets/web/iphone.png";
 
 const DroppableContent = Whale.DroppableContent;
 const DraggableContent = Whale.DraggableContent;
@@ -75,6 +76,7 @@ const CenterContent = props => {
   return (
     <div>
       <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
+        <img className={styles.iphoneImg} src={iphone} alt="" />
         <div
           className={styles.centerMain}
           // style={{
