@@ -9,7 +9,7 @@ class StyleInputItem extends React.Component {
     this.handleBlur = this.handleBlur.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       value: nextProps.value,
     });
@@ -23,12 +23,12 @@ class StyleInputItem extends React.Component {
     this.props.changeStyleItemProp({
       id: this.props.typeId,
       key: this.props.type,
-      value: this.props.isNumber ? parseInt(event.target.value) : event.target.value,
+      value: this.props.isNumber ? parseInt(event.target.value, 10) : event.target.value,
     });
   }
 
   render() {
-    let { value, id } = this.state;
+    let { value } = this.state;
     const { type, isNumber } = this.props;
     return (
       <div>

@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   secondaryStyle: {
-    margin: 10,
     justifyContent: "center",
     alignItems: "center",
     margin: 5,

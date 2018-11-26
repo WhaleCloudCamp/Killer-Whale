@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { List } from "antd-mobile";
 
 export default class Lists extends React.Component {

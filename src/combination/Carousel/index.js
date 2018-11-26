@@ -1,6 +1,6 @@
 import { Carousel } from "antd-mobile";
 import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { Image } from "react-native";
 
 export default class Carousels extends React.Component {
   renderItem = dataItem => {
@@ -23,9 +23,3 @@ export default class Carousels extends React.Component {
     return <Carousel {...this.props}>{this.renderItem(this.props.dataItem)}</Carousel>;
   }
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    backgroundColor: "white",
-  },
-});

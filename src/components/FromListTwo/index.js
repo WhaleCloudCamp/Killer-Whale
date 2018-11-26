@@ -1,32 +1,19 @@
 import React from "react";
-import {
-  Form,
-  Input,
-  Tooltip,
-  Icon,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button,
-  AutoComplete,
-} from "antd";
+import { Form, Input, Row, Col, Button } from "antd";
 
 const FormItem = Form.Item;
-const Option = Select.Option;
-const AutoCompleteOption = AutoComplete.Option;
 const immerObj = (data, newData) => {
   Object.keys(data).map((key, index) => {
     const keynames = key.split("-");
     if (keynames.length > 1) {
       newData[keynames[1]][keynames[2]][keynames[3]] =
         typeof newData[keynames[1]][keynames[2]][keynames[3]] === "number"
-          ? parseInt(data[key])
+          ? parseInt(data[key], 10)
           : data[key];
     } else {
-      newData[key] = typeof newData[key] === "number" ? parseInt(data[key]) : data[key];
+      newData[key] = typeof newData[key] === "number" ? parseInt(data[key], 10) : data[key];
     }
+    return key;
   });
   return newData;
 };

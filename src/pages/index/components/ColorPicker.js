@@ -22,7 +22,7 @@ export default class ColorPicker extends Component {
       color: props.color,
     };
   }
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ color: nextProps.color });
   }
   handleClick = () => {

@@ -1,7 +1,6 @@
 import React from "react";
 import { DropTarget } from "react-dnd";
 
-const grid = 8;
 const getListStyle = (canDrop, dropStyle) => ({
   // background: isDraggingOver ? "lightblue" : "lightgrey",
   //   padding: grid,

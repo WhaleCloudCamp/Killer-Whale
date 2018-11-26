@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableHighlight } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import icon from "../../assets/home_package_tittle.png";
 
 export default class ItemTypeOne extends React.Component {
@@ -55,7 +55,6 @@ export default class ItemTypeOne extends React.Component {
 const styles = StyleSheet.create({
   secondaryStyle: {
     flexDirection: "row",
-    margin: 10,
     alignItems: "center",
     margin: 5,
   },

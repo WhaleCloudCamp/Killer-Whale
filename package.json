@@ -9,8 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write \"src/**/*.js\"",
     "lint": "eslint --ext .js src",
-    "format": "concurrently \"prettier\" \"npm run lint --fix\"",
-    "precommit": "npm run format"
+    "format": "concurrently \"prettier\" \"npm run lint --fix\""
   },
   "repository": {
     "type": "git",
@@ -46,15 +45,8 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.0",
-    "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
     "umi": "^2.2.7",
     "umi-plugin-react": "^1.2.3"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }

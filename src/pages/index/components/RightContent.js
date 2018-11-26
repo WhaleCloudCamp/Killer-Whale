@@ -4,7 +4,7 @@ import styles from "./right.less";
 
 const RightContent = ({ showItemData, changeItemProp }) => {
   const { id, component } = showItemData;
-  const { type, props, style, propTypes } = component;
+  const { type, props, propTypes } = component;
 
   return (
     <div>

@@ -2,7 +2,6 @@ import React from "react";
 import { DropTarget } from "react-dnd";
 import styles from "./index.less";
 import deleteIcon from "../../assets/web/delete.png";
-const grid = 8;
 const getListStyle = (canDrop, dropStyle) => ({
   // background: "lightgrey",
   //   padding: grid,

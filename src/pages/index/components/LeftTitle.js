@@ -1,4 +1,3 @@
-import * as Whale from "components";
 import styles from "./left.less";
 import logo from "assets/logo.png";
 

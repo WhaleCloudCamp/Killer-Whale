@@ -1,10 +1,8 @@
-import React, { Component, Fragment } from "react";
-import { Row, Col } from "antd";
+import React from "react";
 import styles from "./rightItem.less";
 import InputItem from "./InputItem";
 import SelectItem from "./SelectItem";
 import RightStyle from "./RightStyle";
-import ColorPicker from "./ColorPicker";
 import ColorItem from "./ColorItem";
 
 const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {

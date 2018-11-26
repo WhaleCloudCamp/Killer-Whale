@@ -9,7 +9,7 @@ class InputItem extends React.Component {
     this.handleBlur = this.handleBlur.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       value: nextProps.value,
     });
@@ -28,8 +28,8 @@ class InputItem extends React.Component {
   }
 
   render() {
-    let { value, id } = this.state;
-    const { handleBlur, type, isNumber, parentId } = this.props;
+    let { value } = this.state;
+    const { type, isNumber } = this.props;
     return (
       <div>
         <div className={styles.inputMain}>

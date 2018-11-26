@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Grid } from "antd-mobile";
 import "antd-mobile/lib/grid/style";

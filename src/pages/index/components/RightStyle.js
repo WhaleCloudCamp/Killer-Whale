@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import { Row, Col } from "antd";
+import React from "react";
 import styles from "./rightItem.less";
 import StyleInputItem from "./StyleInputItem";
 import { Accordion } from "antd-mobile";
@@ -52,18 +51,7 @@ class RightStyle extends React.Component {
                   changeItemProp={this.changeStyleItemProp}
                 />
               );
-            } else if (typeof value[items] == "string") {
-              return (
-                <StyleInputItem
-                  typeId={type}
-                  type={items}
-                  value={value[items]}
-                  key={items}
-                  changeStyleItemProp={this.changeStyleItemProp}
-                  isNumber={false}
-                />
-              );
-            } else if (typeof value[items] == "number") {
+            } else if (typeof value[items] === "number") {
               return (
                 <StyleInputItem
                   typeId={type}
@@ -72,6 +60,17 @@ class RightStyle extends React.Component {
                   key={items}
                   changeStyleItemProp={this.changeStyleItemProp}
                   isNumber={true}
+                />
+              );
+            } else {
+              return (
+                <StyleInputItem
+                  typeId={type}
+                  type={items}
+                  value={value[items]}
+                  key={items}
+                  changeStyleItemProp={this.changeStyleItemProp}
+                  isNumber={false}
                 />
               );
             }

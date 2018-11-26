@@ -1,5 +1,5 @@
 import { InputItem } from "antd-mobile";
-import React, { Component } from "react";
+import React from "react";
 import { Text, Image, StyleSheet } from "react-native";
 import imgurl from "../../assets/phone.png";
 

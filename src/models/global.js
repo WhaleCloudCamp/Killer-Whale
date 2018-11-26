@@ -1,13 +1,7 @@
 import { gPage } from "services/api";
 import { notification, message } from "antd";
 
-import {
-  getTestSouData,
-  getTestComData,
-  addComponent,
-  moveComponent,
-  deleteComponent,
-} from "utils/data_utils";
+import { getTestSouData, addComponent, moveComponent, deleteComponent } from "utils/data_utils";
 
 export default {
   namespace: "global",
@@ -64,7 +58,7 @@ export default {
     *delItem({ payload }, { call, put, select }) {
       console.log("delItem");
 
-      const { sourceData, views, showPage } = yield select(state => state.global);
+      const { views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
       const data = deleteComponent(components, payload.id);
       yield put({
@@ -191,7 +185,7 @@ export default {
                 payload.value = payload.value === "true";
                 break;
               case "number":
-                payload.value = parseInt(payload.value);
+                payload.value = parseInt(payload.value, 10);
                 break;
               case "array":
                 payload.value = JSON.parse(payload.value);
@@ -232,15 +226,17 @@ export default {
 
       const { views } = yield select(state => state.global);
       if (views.length === 1) return message.error("至少要保留一个页面");
-      views.map((item, index) => {
-        if (item.name === payload.name) {
-          views.splice(index, 1);
+      const newViews = [];
+      views.map(item => {
+        if (item.name !== payload.name) {
+          newViews.push(item);
         }
+        return item;
       });
       yield put({
         type: "save",
         payload: {
-          views: views,
+          views: newViews,
         },
       });
     },
@@ -253,6 +249,7 @@ export default {
         if (item.name === payload.name) {
           showPageNew = index;
         }
+        return item;
       });
       yield put({
         type: "save",

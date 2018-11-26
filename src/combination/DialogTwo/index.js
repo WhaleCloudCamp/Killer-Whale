@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Image, View, TouchableHighlight, ScrollView, TextInput } from "react-native";
+import { Text, Image, View, TouchableHighlight, TextInput } from "react-native";
 import imgClose from "../../assets/dark_close.png";
 
 export default class DialogTwo extends React.Component {

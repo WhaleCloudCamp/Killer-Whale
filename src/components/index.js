@@ -1,5 +1,3 @@
-import { from } from "rxjs";
-
 export { default as DraggableContentShow } from "./DraggableContentShow/index";
 export { default as DraggableContent } from "./DraggableContent/index";
 export { default as DroppableContent } from "./DroppableContent/index";

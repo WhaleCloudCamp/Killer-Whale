@@ -25,7 +25,6 @@ function collect(connect, monitor) {
     isDragging: monitor.isDragging(),
   };
 }
-const grid = 20;
 const getItemStyle = (isDragging, canDrop, isFlex) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
