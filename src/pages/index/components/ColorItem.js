@@ -4,17 +4,15 @@ import ColorPicker from "./ColorPicker";
 
 export default class ColorItem extends React.Component {
   render() {
-    let { key, type, parentId, color } = this.props;
-
+    let { type, parentId, color } = this.props;
     return (
-      <div key={key}>
+      <div>
         <div className={styles.colorMain}>
           <span className={styles.colorText}> {type}</span>
 
           <div className={styles.colorContant}>{color}</div>
           <div className={styles.colorChoose}>
             <ColorPicker
-              key={key}
               type={type}
               parentId={parentId}
               pickerType="sketch"
