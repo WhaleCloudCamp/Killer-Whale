@@ -13,6 +13,7 @@ const cardSource = {
       data: props.itemData,
       index: props.index,
       parentId: props.parentId,
+      isLayout: props.isLayout || "",
     };
     return item;
   },
@@ -25,17 +26,17 @@ function collect(connect, monitor) {
     isDragging: monitor.isDragging(),
   };
 }
-const getItemStyle = (isDragging, canDrop, isFlex) => ({
+const getItemStyle = (isDragging, canDrop, isLayout) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
   background: isDragging ? "lightgreen" : "",
   // outline: canDrop ? "1px dotted" : "1px"
-  borderWidth: canDrop ? "1px" : isFlex ? "1px" : "0",
+  borderWidth: canDrop ? "1px" : isLayout ? "1px" : "0",
   // borderWidth: "1px",
   borderStyle: canDrop ? "dotted" : "dashed",
   paddingLeft: canDrop ? "10px" : "0",
   paddingRight: canDrop ? "10px" : "0",
-  position: isFlex ? "relative" : "",
+  position: isLayout ? "relative" : "",
 
   // styles we need to apply on draggables
 });
@@ -112,7 +113,7 @@ const chessSquareTarget = {
     if (!item.index && item.index !== 0 && monitor.isOver({ shallow: true })) {
       console.log("item.index", item.index);
       console.log("props.itemData", props.itemData);
-      if (props.itemData.component && props.itemData.component.type === "Flex") {
+      if (props.itemData.component && props.itemData.component.isLayout) {
         const parentId = props.itemData.id;
         props.onDropAction &&
           props.onDropAction({
@@ -154,30 +155,13 @@ const DraggableContent = ({
   isDragging,
   itemData,
 }) => {
-  const isFlex = itemData.component && itemData.component.isLayout;
+  const isLayout = itemData.component && itemData.component.isLayout;
   return (
     connectDropTarget &&
     connectDragSource &&
     connectDropTarget(
       connectDragSource(
-        <div style={getItemStyle(isDragging, canDrop, isFlex)} onClick={onClick}>
-          {
-            //   isFlex&& <div
-            //   style={{
-            //     fontSize: "16px",
-            //     background: "red",
-            //     top: "0",
-            //     position: "absolute",
-            //     color: "white",
-            //     right: "0",
-            //     zIndex: "99"
-            //   }}
-            // >
-            //   {
-            //     itemData.component.type
-            //   }
-            // </div>
-          }
+        <div style={getItemStyle(isDragging, canDrop, isLayout)} onClick={onClick}>
           {children}
         </div>
       )

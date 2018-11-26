@@ -32,6 +32,7 @@ export const DataComponet = [
       },
       {
         id: 6344833,
+        isLayout: 1,
         type: "WhiteSpace",
         state: 1,
         props: {
@@ -45,6 +46,7 @@ export const DataComponet = [
       },
       {
         id: 6344834,
+        isLayout: 1,
         type: "WingBlank",
         state: 1,
         props: {

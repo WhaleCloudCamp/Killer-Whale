@@ -12,6 +12,12 @@ const LeftContent = ({ sourceData = [], viewsData, gPage, dPage, changeShowPage 
     const name = prompt("请输入新页面英文名");
     if (name) gPage && gPage({ name: name, components: JSON.parse(JSON.stringify(item)) });
   };
+  const typeName = {
+    Flex: "弹性布局",
+    Line: "线条",
+    WhiteSpace: "上下留白",
+    WingBlank: "两翼留白",
+  };
 
   return (
     <Collapse
@@ -60,8 +66,8 @@ const LeftContent = ({ sourceData = [], viewsData, gPage, dPage, changeShowPage 
                               {Com && (
                                 <Com
                                   style={{
-                                    borderStyle: items.type === "Flex" ? "dashed" : "none",
-                                    borderWidth: items.type === "Flex" ? "1px" : "0",
+                                    borderStyle: items.isLayout ? "dashed" : "none",
+                                    borderWidth: items.isLayout ? "1px" : "0",
                                     ...items.style,
                                   }}
                                   {...items.props}
@@ -77,7 +83,7 @@ const LeftContent = ({ sourceData = [], viewsData, gPage, dPage, changeShowPage 
                             fontSize: "12px",
                           }}
                         >
-                          {items.type}
+                          {typeName[items.type] || items.type}
                         </div>
                       </DraggableContent>
                     </Col>
