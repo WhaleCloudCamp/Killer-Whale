@@ -8,8 +8,11 @@
     "build": "umi build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write \"src/**/*.js\"",
-    "lint": "eslint --ext .js src",
-    "format": "concurrently \"prettier\" \"npm run lint --fix\""
+    "lint:style": "stylelint \"src/**/*.less\" --syntax less",
+    "lint": "eslint --ext .js src  && npm run lint:style",
+    "lint:fix": "eslint --fix --ext .js src && npm run lint:style",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js"
   },
   "repository": {
     "type": "git",
@@ -45,8 +48,25 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
+    "stylelint": "^9.8.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0",
     "umi": "^2.2.7",
     "umi-plugin-react": "^1.2.3"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.less": "stylelint --syntax less"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
   }
 }
