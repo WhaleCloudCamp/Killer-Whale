@@ -79,6 +79,9 @@ body,
         }
       }
     }
+    .am-accordion-content {
+      overflow: visible !important;
+    }
   }
   .am-accordion-item-active {
     .am-accordion-header {
@@ -90,21 +93,12 @@ body,
   }
 }
 
-.am-accordion {
-  .am-accordion-item {
-    .am-accordion-content {
-      overflow: visible !important;
-    }
-  }
-}
-
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   html:not([data-scale]) .am-accordion .am-accordion-item .am-accordion-header {
     border-bottom: none;
   }
   html:not([data-scale]) .am-accordion .am-accordion-item .am-accordion-header::after {
-    content: '';
+    content: "";
     position: absolute;
     background-color: #ddd;
     display: block;
