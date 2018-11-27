@@ -325,37 +325,6 @@ export const DataComponet = [
         },
         style: { width: "100%", height: 10, margin: 10 },
       },
-      {
-        id: 534442,
-        type: "Stepper",
-        state: 1,
-
-        props: {
-          min: 1,
-          max: 100,
-          step: 1,
-          value: 50,
-          disabled: false,
-          showNumber: true,
-        },
-        propTypes: {
-          min: "number",
-          max: "number",
-          step: "number",
-          value: "number",
-          disabled: "bool",
-          showNumber: "bool",
-        },
-        defaultProps: {
-          min: 1,
-          max: 100,
-          step: 1,
-          value: 50,
-          disabled: false,
-          showNumber: true,
-        },
-        style: { width: "100%", height: 30 },
-      },
 
       {
         id: 5344361,
@@ -429,6 +398,7 @@ export const DataComponet = [
           disabled: "bool",
           showType: "bool",
           title: "string",
+          textStyle: "style",
         },
         defaultProps: {
           checked: true,
@@ -436,7 +406,6 @@ export const DataComponet = [
           showType: true,
 
           title: "单项选择标签",
-          textStyle: "style",
         },
         style: { margin: 5 },
       },
@@ -541,6 +510,7 @@ export const DataComponet = [
           tabBarActiveTextColor: "green",
           tabBarInactiveTextColor: "gray",
           tabBarTextStyle: { fontSize: 16 },
+          tabBarUnderlineStyle: { borderColor: "blue" },
         },
         propTypes: {
           tabs: "array",
@@ -553,6 +523,7 @@ export const DataComponet = [
           tabBarActiveTextColor: "string",
           tabBarInactiveTextColor: "string",
           tabBarTextStyle: "style",
+          tabBarUnderlineStyle: "style",
         },
         defaultProps: {
           tabs: [{ title: "First Tab" }, { title: "Second Tab" }, { title: "Third Tab" }],

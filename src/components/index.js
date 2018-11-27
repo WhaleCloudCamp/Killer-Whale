@@ -9,7 +9,6 @@ export { default as Checkbox } from "./Checkbox/index";
 export { default as Pagination } from "./Pagination/index";
 export { default as Tabs } from "./Tabs/index";
 
-export { default as Stepper } from "./Stepper/index";
 export { default as Progress } from "./Progress/index";
 export { default as SearchBar } from "./SearchBar/index";
 export { default as Badge } from "./Badge/index";
