@@ -190,38 +190,6 @@ export const DataComponet = [
         },
         style: { margin: 5 },
       },
-      {
-        id: 634478,
-        type: "Slider",
-
-        state: 2,
-        props: {
-          min: 0,
-          max: 100,
-          step: 1,
-          value: 50,
-          disabled: true,
-
-          maximumTrackTintColor: "blue",
-        },
-        propTypes: {
-          min: "number",
-          max: "number",
-          step: "number",
-          value: "number",
-          disabled: "bool",
-          maximumTrackTintColor: "string",
-        },
-        defaultProps: {
-          min: 0,
-          max: 100,
-          step: 1,
-          value: 30,
-          disabled: false,
-          maximumTrackTintColor: "blue",
-        },
-        style: { width: "100%", height: 10, margin: 10 },
-      },
 
       // {
       //   id: 534455,
@@ -326,17 +294,18 @@ export const DataComponet = [
         style: { width: "100%" },
       },
       {
-        id: 534442,
-        type: "Stepper",
-        state: 1,
+        id: 634478,
+        type: "Slider",
 
+        state: 2,
         props: {
-          min: 1,
+          min: 0,
           max: 100,
           step: 1,
           value: 50,
-          disabled: false,
-          showNumber: true,
+          disabled: true,
+
+          maximumTrackTintColor: "blue",
         },
         propTypes: {
           min: "number",
@@ -344,28 +313,55 @@ export const DataComponet = [
           step: "number",
           value: "number",
           disabled: "bool",
-          showNumber: "bool",
+          maximumTrackTintColor: "string",
         },
         defaultProps: {
-          min: 1,
+          min: 0,
           max: 100,
           step: 1,
-          value: 50,
+          value: 30,
           disabled: false,
-          showNumber: true,
+          maximumTrackTintColor: "blue",
         },
-        style: { width: "100%", height: 30 },
+        style: { width: "100%", height: 10, margin: 10 },
       },
+
       {
-        id: 534440,
-        type: "Checkbox",
+        id: 5344361,
+        type: "Pagination",
         state: 1,
 
+        props: {
+          mode: "pointer",
+          current: 1,
+          total: 4,
+          simple: false,
+          disabled: false,
+        },
+        propTypes: {
+          mode: ["button", "number", "pointer"],
+          current: "number",
+          total: "string",
+          simple: "bool",
+          disabled: "bool",
+        },
+        defaultProps: {
+          mode: "pointer",
+          current: 1,
+          total: 4,
+          simple: false,
+          disabled: false,
+        },
+        style: { width: "100%" },
+      },
+      {
+        id: 634466,
+        type: "CheckboxItem",
+        state: 2,
         props: {
           defaultChecked: false,
           checked: true,
           disabled: false,
-
           title: "单项选择",
         },
         propTypes: {
@@ -380,37 +376,115 @@ export const DataComponet = [
           disabled: false,
           title: "单项选择",
         },
-        style: { width: 28, height: 28, margin: 5 },
+        style: { margin: 5 },
       },
+      {
+        id: 6344661,
+        type: "RadioItem",
+        state: 2,
+        props: {
+          checked: true,
+          disabled: false,
+          showType: false,
+          title: "单项选择标签",
+          textStyle: {
+            marginLeft: 10,
+            fontSize: 15,
+            color: "black",
+          },
+        },
+        propTypes: {
+          checked: "bool",
+          disabled: "bool",
+          showType: "bool",
+          title: "string",
+          textStyle: "style",
+        },
+        defaultProps: {
+          checked: true,
+          disabled: false,
+          showType: true,
 
+          title: "单项选择标签",
+        },
+        style: { margin: 5 },
+      },
       // {
-      //   id: 5344361,
-      //   type: "Pagination",
+      //   id: 534440,
+      //   type: "Checkbox",
       //   state: 1,
 
       //   props: {
-      //     mode: "pointer",
-      //     current: 1,
-      //     total: 4,
-      //     simple: false,
+      //     defaultChecked: false,
+      //     checked: true,
       //     disabled: false,
+
+      //     title: "单项选择",
       //   },
       //   propTypes: {
-      //     mode: ["button", "number", "pointer"],
-      //     current: "number",
-      //     total: "string",
-      //     simple: "bool",
+      //     defaultChecked: "bool",
+      //     checked: "bool",
       //     disabled: "bool",
+      //     title: "string",
       //   },
       //   defaultProps: {
-      //     mode: "pointer",
-      //     current: 1,
-      //     total: 4,
-      //     simple: false,
+      //     defaultChecked: false,
+      //     checked: true,
       //     disabled: false,
+      //     title: "单项选择",
       //   },
-      //   style: { width: "100%" },
+      //   style: { width: 28, height: 28, margin: 5 },
       // },
+      {
+        id: 534456,
+        type: "Picker",
+        state: 2,
+        props: {
+          data: [
+            [
+              {
+                label: "2013",
+                value: "2013",
+              },
+              {
+                label: "2014",
+                value: "2014",
+              },
+            ],
+            [
+              {
+                label: "春",
+                value: "春",
+              },
+              {
+                label: "夏",
+                value: "夏",
+              },
+            ],
+            [
+              {
+                label: "春",
+                value: "春",
+              },
+              {
+                label: "夏",
+                value: "夏",
+              },
+            ],
+          ],
+          cascade: false,
+          title: "数据",
+          content: "数据选择",
+        },
+        propTypes: {
+          data: "array",
+          cascade: "bool",
+          title: "string",
+          content: "string",
+        },
+        defaultProps: {},
+        style: { width: 200, height: 100 },
+      },
       {
         id: 534463,
         type: "SegmentedControl",
@@ -450,6 +524,7 @@ export const DataComponet = [
           tabBarActiveTextColor: "green",
           tabBarInactiveTextColor: "gray",
           tabBarTextStyle: { fontSize: 16 },
+          tabBarUnderlineStyle: { borderColor: "blue" },
         },
         propTypes: {
           tabs: "array",
@@ -462,6 +537,7 @@ export const DataComponet = [
           tabBarActiveTextColor: "string",
           tabBarInactiveTextColor: "string",
           tabBarTextStyle: "style",
+          tabBarUnderlineStyle: "style",
         },
         defaultProps: {
           tabs: [{ title: "First Tab" }, { title: "Second Tab" }, { title: "Third Tab" }],
@@ -476,42 +552,6 @@ export const DataComponet = [
           tabBarTextStyle: { fontSize: 16 },
         },
         style: { width: "100%", height: 30 },
-      },
-      {
-        id: 534456,
-        type: "PickerView",
-        state: 1,
-        props: {
-          data: [
-            [
-              {
-                label: "2013",
-                value: "2013",
-              },
-              {
-                label: "2014",
-                value: "2014",
-              },
-            ],
-            [
-              {
-                label: "春",
-                value: "春",
-              },
-              {
-                label: "夏",
-                value: "夏",
-              },
-            ],
-          ],
-          cascade: false,
-        },
-        propTypes: {
-          data: "array",
-          cascade: "bool",
-        },
-        defaultProps: {},
-        style: { width: 200, height: 100 },
       },
     ],
   },
@@ -601,61 +641,7 @@ export const DataComponet = [
         },
         style: { margin: 5 },
       },
-      {
-        id: 634466,
-        type: "CheckboxItem",
-        state: 2,
-        props: {
-          defaultChecked: false,
-          checked: true,
-          disabled: false,
-          title: "单项选择",
-        },
-        propTypes: {
-          defaultChecked: "bool",
-          checked: "bool",
-          disabled: "bool",
-          title: "string",
-        },
-        defaultProps: {
-          defaultChecked: false,
-          checked: true,
-          disabled: false,
-          title: "单项选择",
-        },
-        style: { margin: 5 },
-      },
-      {
-        id: 6344661,
-        type: "RadioItem",
-        state: 2,
-        props: {
-          checked: true,
-          disabled: false,
-          showType: true,
-          title: "单项选择标签",
-          textStyle: {
-            marginLeft: 10,
-            fontSize: 15,
-            color: "black",
-          },
-        },
-        propTypes: {
-          checked: "bool",
-          disabled: "bool",
-          showType: "bool",
-          title: "string",
-        },
-        defaultProps: {
-          checked: true,
-          disabled: false,
-          showType: true,
 
-          title: "单项选择标签",
-          textStyle: "style",
-        },
-        style: { margin: 5 },
-      },
       {
         id: 6344681,
         type: "InputItem",
@@ -1026,30 +1012,30 @@ export const DataComponet = [
           data: [
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
           ],
-          columnNum: 4,
+
           hasLine: false,
-          showType: 1,
+          showType: "1",
         },
         propTypes: {
           title: "string",
           data: "array",
           hasLine: "bool",
-          showType: "number",
+          showType: ["1", "2"],
           columnNum: "number",
         },
         defaultProps: {
