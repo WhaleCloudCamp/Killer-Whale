@@ -15,3 +15,4 @@ export { default as ItemTypeOne } from "../combination/ItemTypeOne/index";
 export { default as Line } from "../combination/Line/index";
 export { default as DialogOne } from "../combination/DialogOne/index";
 export { default as DialogTwo } from "../combination/DialogTwo/index";
+export { default as Picker } from "../combination/Picker/index";

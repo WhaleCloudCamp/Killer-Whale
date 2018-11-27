@@ -7,7 +7,7 @@ export default class QuickEntry extends React.Component {
   render() {
     return (
       <View style={styles.main}>
-        {this.props.showType === 1 ? (
+        {this.props.showType === "1" ? (
           <View style={styles.quick}>
             <View style={[styles.lump, this.props.lump]} />
             <Text style={[styles.textStyle, this.props.textStyle]}>{this.props.title}</Text>
