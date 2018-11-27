@@ -385,7 +385,7 @@ export const DataComponet = [
         props: {
           checked: true,
           disabled: false,
-          showType: true,
+          showType: false,
           title: "单项选择标签",
           textStyle: {
             marginLeft: 10,
@@ -437,8 +437,8 @@ export const DataComponet = [
       // },
       {
         id: 534456,
-        type: "PickerView",
-        state: 1,
+        type: "Picker",
+        state: 2,
         props: {
           data: [
             [
@@ -461,12 +461,26 @@ export const DataComponet = [
                 value: "夏",
               },
             ],
+            [
+              {
+                label: "春",
+                value: "春",
+              },
+              {
+                label: "夏",
+                value: "夏",
+              },
+            ],
           ],
           cascade: false,
+          title: "数据",
+          content: "数据选择",
         },
         propTypes: {
           data: "array",
           cascade: "bool",
+          title: "string",
+          content: "string",
         },
         defaultProps: {},
         style: { width: 200, height: 100 },
@@ -998,30 +1012,30 @@ export const DataComponet = [
           data: [
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
             {
               icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
-              text: "手机安装",
+              text: "入口一",
             },
           ],
-          columnNum: 4,
+
           hasLine: false,
-          showType: 1,
+          showType: "1",
         },
         propTypes: {
           title: "string",
           data: "array",
           hasLine: "bool",
-          showType: "number",
+          showType: ["1", "2"],
           columnNum: "number",
         },
         defaultProps: {
