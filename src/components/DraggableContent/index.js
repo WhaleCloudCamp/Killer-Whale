@@ -37,7 +37,7 @@ const getItemStyle = (isDragging, canDrop, isLayout) => ({
   paddingLeft: canDrop ? "10px" : "0",
   paddingRight: canDrop ? "10px" : "0",
   position: isLayout ? "relative" : "",
-
+  width: "-webkit-fill-available",
   // styles we need to apply on draggables
 });
 

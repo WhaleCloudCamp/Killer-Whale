@@ -9,20 +9,9 @@ import CenterTitle from "./components/CenterTitle";
 import RightContent from "./components/RightContent";
 import RightTitle from "./components/RightTitle";
 import DeleteDroppable from "../../components/DeleteDroppable";
-// import classnames from "classnames";
-
-// import phone from "assets/phone.png";
 
 const App = ({ global, dispatch }) => {
-  const {
-    cneterscale = 100,
-    sourceData,
-
-    views,
-    showPage,
-    showItemData,
-  } = global;
-  // console.log(views);
+  const { cneterscale = 100, sourceData, views, showPage, showItemData } = global;
 
   const { components = [], name = "" } = views[showPage];
   const handleChange = value => dispatch({ type: "global/changeScale", payload: value });
