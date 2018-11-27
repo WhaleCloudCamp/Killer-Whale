@@ -30,7 +30,7 @@ const App = ({ global, dispatch }) => {
   const onAction = action => dispatch(action);
 
   const clickDrag = (item, e) => {
-    e.stopPropagation && e.stopPropagation();
+    e && e.stopPropagation && e.stopPropagation();
     dispatch({ type: "global/showItem", payload: item });
   };
 
