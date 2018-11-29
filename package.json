@@ -30,8 +30,8 @@
     "hash": "^0.2.1",
     "react-art": "^16.6.3",
     "react-color": "^2.14.1",
-    "react-dnd": "^6.0.0",
-    "react-dnd-html5-backend": "^6.0.0",
+    "react-dnd": "^7.0.0",
+    "react-dnd-html5-backend": "^7.0.0",
     "react-native-web": "^0.9.8"
   },
   "devDependencies": {

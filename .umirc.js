@@ -17,31 +17,32 @@ export default {
             /service\.(j|t)sx?$/,
             /models\//,
             /components\//,
-            /services\//
-          ]
-        }
-      }
-    ]
+            /services\//,
+          ],
+        },
+      },
+    ],
   ],
+  history: "hash",
   extraBabelPlugins: [
     [
       "import",
       {
         libraryName: "use-components-library",
         libraryDirectory: "es",
-        style: true
-      }
-    ]
+        style: true,
+      },
+    ],
   ],
   alias: {
     "react-native$": "react-native-web",
     "use-components-library": "antd-mobile",
     components: path.resolve(__dirname, "src/components/index"),
-    combinations:path.resolve(__dirname,"src/combination/index.js"),
+    combinations: path.resolve(__dirname, "src/combination/index.js"),
     utils: path.resolve(__dirname, "src/utils"),
     services: path.resolve(__dirname, "src/services"),
     assets: path.resolve(__dirname, "src/assets"),
-    models: path.resolve(__dirname, "src/models")
+    models: path.resolve(__dirname, "src/models"),
     // "../style/images/arrow-down.png":"../style/images/arrow-down@3x.png",
     // "../style/images/arrow-up.png":"../style/images/arrow-up@3x.png",
     // "../style/images/arrow.png":"../style/images/arrow@3x.png",
@@ -64,12 +65,11 @@ export default {
     // "./style/assets/up.png":"./style/assets/up@3x.png",
     // "react-native/Libraries/StyleSheet/setNormalizedColorAlpha":path.resolve(__dirname, "src/compatibleTools/setNormalizedColorAlpha")
   },
-  extraBabelIncludes: [/whale-rn/, /react-native/],
   proxy: {
     "/api/": {
       target: "http://localhost:3000/",
       changeOrigin: true,
-      pathRewrite: { "^/api": "" }
-    }
+      pathRewrite: { "^/api": "" },
+    },
   },
 };
