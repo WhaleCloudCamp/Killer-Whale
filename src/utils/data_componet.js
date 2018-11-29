@@ -159,7 +159,7 @@ export const DataComponet = [
           type: "primary",
           children: "确定",
           size: "large",
-          loading: true,
+          loading: false,
           disabled: false,
         },
         propTypes: {
@@ -945,20 +945,20 @@ export const DataComponet = [
         defaultProps: {},
         style: {},
       },
-      {
-        id: 6344833,
-        isLayout: 1,
-        type: "WhiteSpace",
-        state: 1,
-        props: {
-          size: "lg",
-        },
-        propTypes: {
-          size: ["xs", "sm", "md", "lg", "xl"],
-        },
-        defaultProps: {},
-        style: {},
-      },
+      // {
+      //   id: 6344833,
+      //   isLayout: 1,
+      //   type: "WhiteSpace",
+      //   state: 1,
+      //   props: {
+      //     size: "lg",
+      //   },
+      //   propTypes: {
+      //     size: ["xs", "sm", "md", "lg", "xl"],
+      //   },
+      //   defaultProps: {},
+      //   style: {},
+      // },
       {
         id: 6344834,
         isLayout: 1,
