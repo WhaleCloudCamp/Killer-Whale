@@ -5,7 +5,7 @@ import iphone from "../../../assets/web/iphone.png";
 
 const DroppableContent = Whale.DroppableContent;
 const DraggableContent = Whale.DraggableContent;
-const RederComponents = (components, clickDrag, onDropAction, parentId) => {
+const RederComponents = (components, clickDrag, onDropAction, parentId, showItemData) => {
   return components.map((item, index) => {
     const { component, id, childrenCom } = item;
     let Com = null;
@@ -26,7 +26,7 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
     }
     const comProps = Object.assign({}, component.props, otherProps);
     if (childrenCom && childrenCom.length > 0) {
-      const childDom = RederComponents(childrenCom, clickDrag, onDropAction, id);
+      const childDom = RederComponents(childrenCom, clickDrag, onDropAction, id, showItemData);
       return (
         <DraggableContent
           itemData={item}
@@ -34,6 +34,7 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
           index={index}
           onDropAction={onDropAction}
           parentId={parentId}
+          showItemData={showItemData}
           onClick={e => clickDrag(item, e)}
         >
           {Com && (
@@ -56,6 +57,7 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
           index={index}
           onDropAction={onDropAction}
           parentId={parentId}
+          showItemData={showItemData}
           onClick={e => clickDrag(item, e)}
         >
           {Com && (
@@ -72,7 +74,7 @@ const RederComponents = (components, clickDrag, onDropAction, parentId) => {
   });
 };
 const CenterContent = props => {
-  const { cneterscale, onDropAction, components, clickDrag } = props;
+  const { cneterscale, onDropAction, components, clickDrag, showItemData } = props;
   return (
     <div>
       <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
@@ -85,7 +87,7 @@ const CenterContent = props => {
         >
           <div className={styles.centerDiv}>
             <DroppableContent onDropAction={onDropAction}>
-              {RederComponents(components, clickDrag, onDropAction, "whalemainroot")}
+              {RederComponents(components, clickDrag, onDropAction, "whalemainroot", showItemData)}
             </DroppableContent>
           </div>
         </div>

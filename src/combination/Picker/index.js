@@ -12,9 +12,7 @@ export default class Pickers extends React.Component {
           cascade={this.props.cascade}
           title={this.props.title}
         >
-          <List.Item arrow="horizontal" last>
-            {this.props.content}
-          </List.Item>
+          <List.Item arrow="horizontal">{this.props.content}</List.Item>
         </Picker>
       </View>
     );
