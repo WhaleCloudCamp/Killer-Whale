@@ -75,6 +75,7 @@ const App = ({ global, dispatch }) => {
             cneterscale={cneterscale}
             onDropAction={onAction}
             components={components}
+            showItemData={showItemData}
             clickDrag={clickDrag}
           />
           <DeleteDroppable onDropAction={onAction} />

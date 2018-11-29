@@ -26,21 +26,25 @@ function collect(connect, monitor) {
     isDragging: monitor.isDragging(),
   };
 }
-const getItemStyle = (isDragging, canDrop, isLayout) => ({
-  // some basic styles to make the items look a bit nicer
-  userSelect: "none",
-  background: isDragging ? "lightgreen" : "",
-  // outline: canDrop ? "1px dotted" : "1px"
-  borderWidth: canDrop ? "1px" : isLayout ? "1px" : "0",
-  // borderWidth: "1px",
-  borderStyle: canDrop ? "dotted" : "dashed",
-  paddingLeft: canDrop ? "10px" : "0",
-  paddingRight: canDrop ? "10px" : "0",
-  position: isLayout ? "relative" : "",
-  width: "-webkit-fill-available",
-  // styles we need to apply on draggables
-});
+const getItemStyle = (isDragging, canDrop, isLayout, isSelect) => {
+  console.log("isSelect", isSelect);
 
+  return {
+    // some basic styles to make the items look a bit nicer
+    userSelect: "none",
+    background: isDragging ? "lightgreen" : "",
+    // outline: canDrop ? "1px dotted" : "1px"
+    borderWidth: canDrop ? "1px" : isLayout || isSelect ? "1px" : "0",
+    // borderWidth: "1px",
+    borderStyle: canDrop || isSelect ? "dotted" : "dashed",
+    paddingLeft: canDrop ? "10px" : "0",
+    paddingRight: canDrop ? "10px" : "0",
+    position: isLayout ? "relative" : "",
+    width: "-webkit-fill-available",
+
+    // styles we need to apply on draggables
+  };
+};
 const chessSquareTarget = {
   canDrop(props, monitor) {
     return true;
@@ -154,14 +158,24 @@ const DraggableContent = ({
   connectDropTarget,
   isDragging,
   itemData,
+  showItemData,
 }) => {
   const isLayout = itemData.component && itemData.component.isLayout;
+
   return (
     connectDropTarget &&
     connectDragSource &&
     connectDropTarget(
       connectDragSource(
-        <div style={getItemStyle(isDragging, canDrop, isLayout)} onClick={onClick}>
+        <div
+          style={getItemStyle(
+            isDragging,
+            canDrop,
+            isLayout,
+            showItemData && showItemData.id === itemData.id
+          )}
+          onClick={onClick}
+        >
           {children}
         </div>
       )
