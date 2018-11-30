@@ -112,11 +112,22 @@ export default {
     },
     *addItem({ payload }, { call, put, select }) {
       console.log("addItem");
+      let { parentId, item, index } = payload;
+      if (parentId && parentId !== "whalemainroot") {
+        console.log(parentId);
 
+        console.log("中转站");
+
+        yield put({
+          type: "addchildrenCom",
+          payload,
+        });
+        return;
+      }
       const { sourceData, views, showPage } = yield select(state => state.global);
       const { components } = views[showPage];
-      if (payload.index === "max") payload.index = components.length;
-      const data = addComponent(sourceData, components, payload.item, payload.index);
+      if (index === "max") index = components.length;
+      const data = addComponent(sourceData, components, item, index);
       views[showPage].components = data.centerData;
       yield put({
         type: "save",
