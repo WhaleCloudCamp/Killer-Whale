@@ -43,13 +43,15 @@ class RightStyle extends React.Component {
                 /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value[items]))
             ) {
               return (
-                <ColorItem
-                  key={items}
-                  type={items}
-                  parentId={type}
-                  color={value[items]}
-                  changeItemProp={this.changeStyleItemProp}
-                />
+                <div className={styles.inputMains}>
+                  <ColorItem
+                    key={items}
+                    type={items}
+                    parentId={type}
+                    color={value[items]}
+                    changeItemProp={this.changeStyleItemProp}
+                  />
+                </div>
               );
             } else if (typeof value[items] === "number") {
               return (

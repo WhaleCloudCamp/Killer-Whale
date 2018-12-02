@@ -11,11 +11,18 @@ import RightTitle from "./components/RightTitle";
 import DeleteDroppable from "../../components/DeleteDroppable";
 
 const App = ({ global, dispatch }) => {
-  const { cneterscale = 100, sourceData, views, showPage, showItemData } = global;
+  const {
+    hidevalue = "true",
+    cneterscale = 100,
+    sourceData,
+    views,
+    showPage,
+    showItemData,
+  } = global;
 
   const { components = [], name = "" } = views[showPage];
   const handleChange = value => dispatch({ type: "global/changeScale", payload: value });
-
+  const handleHide = value => dispatch({ type: "global/changeHide", payload: value });
   const onAction = action => dispatch(action);
 
   const clickDrag = (item, e) => {
@@ -70,9 +77,10 @@ const App = ({ global, dispatch }) => {
             minWidth: "435px",
           }}
         >
-          <CenterTitle handleChange={handleChange} pageName={name} />
+          <CenterTitle handleChange={handleChange} pageName={name} handleHide={handleHide} />
           <CenterContent
             cneterscale={cneterscale}
+            hidevalue={hidevalue}
             onDropAction={onAction}
             components={components}
             showItemData={showItemData}

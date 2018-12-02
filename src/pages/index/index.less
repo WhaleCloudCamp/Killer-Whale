@@ -17,6 +17,9 @@
   .colclass {
     flex-shrink: 0;
     overflow: auto;
+    ::-webkit-scrollbar {
+      display: none;
+    }
     .content {
       display: flex;
       flex-direction: column;
@@ -32,6 +35,6 @@
     }
   }
 }
-.colclass:not(:last-child) {
-  border-right: 1px solid rgb(212, 220, 226);
-}
+// .colclass:not(:last-child) {
+//   // border-right: 1px solid rgb(212, 220, 226);
+// }
