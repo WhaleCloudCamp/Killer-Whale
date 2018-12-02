@@ -1,7 +1,7 @@
 import * as Whale from "components";
 import * as Whales from "combinations";
 import styles from "./center.less";
-import iphone from "../../../assets/web/iphone.png";
+import iphone from "../../../assets/bkiphone.png";
 
 const DroppableContent = Whale.DroppableContent;
 const DraggableContent = Whale.DraggableContent;
@@ -74,25 +74,50 @@ const RederComponents = (components, clickDrag, onDropAction, parentId, showItem
   });
 };
 const CenterContent = props => {
-  const { cneterscale, onDropAction, components, clickDrag, showItemData } = props;
-  return (
-    <div>
-      <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
-        <img className={styles.iphoneImg} src={iphone} alt="" />
-        <div
-          className={styles.centerMain}
-          // style={{
-          //   transform: `scale(${cneterscale / 100})`
-          // }}
-        >
-          <div className={styles.centerDiv}>
-            <DroppableContent onDropAction={onDropAction}>
-              {RederComponents(components, clickDrag, onDropAction, "whalemainroot", showItemData)}
-            </DroppableContent>
+  const { hidevalue, cneterscale, onDropAction, components, clickDrag, showItemData } = props;
+
+  if (hidevalue === "true") {
+    return (
+      <div
+        style={{
+          height: "100%",
+          background: "#EDF0F5",
+          boxShadow: "0 6px 18px 0 rgba(0,132,255,0.06) inset",
+        }}
+      >
+        <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
+          <img className={styles.iphoneImg} src={iphone} alt="" />
+          <div
+            className={styles.centerMain}
+            // style={{
+            //   transform: `scale(${cneterscale / 100})`
+            // }}
+          >
+            <div className={styles.centerDiv}>
+              <DroppableContent onDropAction={onDropAction}>
+                {RederComponents(
+                  components,
+                  clickDrag,
+                  onDropAction,
+                  "whalemainroot",
+                  showItemData
+                )}
+              </DroppableContent>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div
+        style={{
+          height: "100%",
+          background: "#EDF0F5",
+          boxShadow: "0 6px 18px 0 rgba(0,132,255,0.06) inset",
+        }}
+      />
+    );
+  }
 };
 export default CenterContent;

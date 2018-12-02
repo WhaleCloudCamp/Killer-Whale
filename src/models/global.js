@@ -10,7 +10,7 @@ export default {
     showPage: 0,
     cneterscale: 100,
     sourceData: getTestSouData(),
-
+    hidevalue: "true",
     components: [],
     showItemData: {},
   },
@@ -34,7 +34,7 @@ export default {
       let pageIndex = showPage;
       if (!views || views.length === 0 || views.length < showPage || !views[showPage].components) {
         views.push({
-          name: "home",
+          name: "Home",
           components: [],
         });
         pageIndex = 0;
@@ -52,6 +52,14 @@ export default {
         type: "save",
         payload: {
           cneterscale: payload,
+        },
+      });
+    },
+    *changeHide({ payload }, { call, put, select }) {
+      yield put({
+        type: "save",
+        payload: {
+          hidevalue: payload,
         },
       });
     },

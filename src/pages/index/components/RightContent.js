@@ -10,7 +10,7 @@ const RightContent = ({ showItemData, changeItemProp }) => {
     <div>
       <div className={styles.dlEdpT}>
         <div className={styles.hNfACA}>
-          <h3 className={styles.gxBwYJ}>类型:</h3>
+          <div className={styles.gxBwYJ}>类型:</div>
           <div className={styles.ggjvuQ}>{type}</div>
         </div>
         <div className={styles.line} />

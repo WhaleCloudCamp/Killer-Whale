@@ -8,7 +8,7 @@ import ColorItem from "./ColorItem";
 const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
   return (
     <div className={styles.kpJPge}>
-      <h3 className={styles.bbDADm}>{title}</h3>
+      <div className={styles.bbDADm}>{title}</div>
       <div className={styles.line} />
       <div>
         {Object.keys(data).map(item => {

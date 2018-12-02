@@ -1,5 +1,5 @@
 import styles from "./left.less";
-import logo from "assets/logo.png";
+import logo from "assets/web/logo.png";
 
 const LeftTitle = ({ sourceData = [] }) => {
   return (

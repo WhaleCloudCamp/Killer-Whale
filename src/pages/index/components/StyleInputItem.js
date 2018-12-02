@@ -31,7 +31,7 @@ class StyleInputItem extends React.Component {
     let { value } = this.state;
     const { type, isNumber } = this.props;
     return (
-      <div>
+      <div className={styles.inputMains}>
         <div className={styles.inputMain}>
           <span className={styles.inputText}> {type}</span>
           <input

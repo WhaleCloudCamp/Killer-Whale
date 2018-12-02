@@ -1,14 +1,20 @@
-.centerTip {
-  height: 40px;
+.centerTipMain {
+  height: 55px;
   width: 100%;
-  border-bottom: 1px solid #d4dce2;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+.centerTip {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   padding: 0 14px;
-  // border-left: 1px solid #D4DCE2;
-  // border-right: 1px solid #D4DCE2;
+  background: #fff;
+  // box-shadow: 0 6px 18px 0 rgba(0,132,255,0.06);
 }
 .containerSize {
   margin: 0 10px;
@@ -24,47 +30,34 @@
   justify-content: center;
   align-items: center;
   transform-origin: 50% 0;
-  margin-top: 95px;
+  margin-top: 115px;
 }
 .centerDiv {
   width: 375px;
   height: 667px;
   overflow-y: auto;
   overflow-x: hidden;
-  // border: 1px solid #d4dce2;
-  // margin-top: 5px;
-  // border-top: none;
-  // 定位
-  // position: absolute;
-  // top: 5px;
-  // left: 30px;
 }
 .iphone {
-  // background-image: url('../../../assets/web/iphone.png');
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: 100%;
-  // height: 865px;
-  // width: 430px;
-  // margin: 0 auto;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // margin-top: 20px;
-  // transform-origin: center top 0px;
   display: flex;
   justify-content: center;
-  transform-origin: top;
-  margin-top: 20px;
+  // box-shadow:0 0 10px red inset;
+  // box-shadow: 0 6px 18px 0 rgba(0,132,255,0.06) inset;
 }
 .iphoneImg {
   position: absolute;
+  margin-top: 20px;
   height: 861px;
   width: 430px;
   z-index: -1;
 }
 .selectStyle {
   color: #0084ff;
+}
+
+.selectMain {
+  position: absolute;
+  right: 10px;
 }
 .ant-select-sm .ant-select-selection--single {
   height: 24px;
