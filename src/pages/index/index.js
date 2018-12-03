@@ -76,6 +76,7 @@ const App = ({ global, dispatch }) => {
           style={{
             minWidth: "435px",
             background: "#EDF0F5",
+            overflow: "hidden",
           }}
         >
           <CenterTitle handleChange={handleChange} pageName={name} handleHide={handleHide} />
