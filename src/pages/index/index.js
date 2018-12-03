@@ -75,6 +75,7 @@ const App = ({ global, dispatch }) => {
           className={styles.colclass}
           style={{
             minWidth: "435px",
+            background: "#EDF0F5",
           }}
         >
           <CenterTitle handleChange={handleChange} pageName={name} handleHide={handleHide} />

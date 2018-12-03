@@ -41,8 +41,6 @@ const CenterTitle = ({ handleHide, handleChange, pageName }) => {
           <Option value="75">75%</Option>
           <Option value="90">90%</Option>
           <Option value="100">100%</Option>
-          <Option value="120">120%</Option>
-          <Option value="150">150%</Option>
         </Select>
       </div>
     </div>
