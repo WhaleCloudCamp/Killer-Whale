@@ -19,7 +19,6 @@ const RederComponents = (components, clickDrag, onDropAction, parentId, showItem
       component.props = {};
     }
     let otherProps = {};
-    console.log(component.type);
 
     if (component.isLayout) {
       otherProps.parentId = id;
@@ -83,6 +82,7 @@ const CenterContent = props => {
           height: "100%",
           background: "#EDF0F5",
           boxShadow: "0 6px 18px 0 rgba(0,132,255,0.06) inset",
+          overflow: "scroll",
         }}
       >
         <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>

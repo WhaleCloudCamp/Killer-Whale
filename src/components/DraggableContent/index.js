@@ -27,8 +27,6 @@ function collect(connect, monitor) {
   };
 }
 const getItemStyle = (isDragging, canDrop, isLayout, isSelect) => {
-  console.log("isSelect", isSelect);
-
   return {
     // some basic styles to make the items look a bit nicer
     userSelect: "none",

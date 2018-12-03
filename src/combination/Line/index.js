@@ -3,7 +3,6 @@ import { View, StyleSheet } from "react-native";
 
 export default class Line extends React.Component {
   render() {
-    console.warn(this.props.showType);
     return (
       <View>
         {this.props.showType === "lg" ? (
