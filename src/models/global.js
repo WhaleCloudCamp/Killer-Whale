@@ -1,5 +1,6 @@
 import { gPage } from "services/api";
 import { notification, message } from "antd";
+import key from "keymaster";
 
 import { getTestSouData, addComponent, moveComponent, deleteComponent } from "utils/data_utils";
 
@@ -22,6 +23,29 @@ export default {
         });
       });
     },
+    keyEvent({ dispatch }) {
+      key("up", () => {
+        dispatch({
+          type: "keyMoveItem",
+          payload: {
+            type: "up",
+          },
+        });
+      });
+      key("down", () => {
+        dispatch({
+          type: "keyMoveItem",
+          payload: {
+            type: "down",
+          },
+        });
+      });
+      key("backspace,del,delete", () => {
+        dispatch({
+          type: "keyDeleteItem",
+        });
+      });
+    },
   },
   reducers: {
     save(state, action) {
@@ -29,6 +53,51 @@ export default {
     },
   },
   effects: {
+    *keyDeleteItem({ payload }, { call, put, select }) {
+      const { showItemData } = yield select(state => state.global);
+      if (showItemData && showItemData.id) {
+        yield put({
+          type: "delItem",
+          payload: {
+            id: showItemData.id,
+          },
+        });
+      }
+    },
+    *keyMoveItem({ payload }, { call, put, select }) {
+      const { showItemData } = yield select(state => state.global);
+      const { type } = payload;
+      if (showItemData && showItemData.id) {
+        let nextIndex = "";
+        if (type === "up" && showItemData.index !== 0) {
+          nextIndex = showItemData.index - 1 < 0 ? 0 : showItemData.index - 1;
+        } else if (type === "down" && showItemData.index !== showItemData.maxLength - 1) {
+          nextIndex = showItemData.index + 1;
+        }
+        if (!nextIndex && nextIndex !== 0) return;
+        yield put({
+          type: "moveItem",
+          payload: {
+            dragIndex: showItemData.index,
+            hoverIndex: nextIndex,
+            parentId: showItemData.parentId,
+          },
+        });
+        yield put({
+          type: "save",
+          payload: {
+            showItemData: { ...showItemData, index: nextIndex },
+          },
+        });
+
+        // yield put({
+        //   type: "delItem",
+        //   payload: {
+        //     id: showItemData.id,
+        //   },
+        // });
+      }
+    },
     *initComponents({ payload }, { call, put, select }) {
       const { views, showPage } = yield select(state => state.global);
       let pageIndex = showPage;
@@ -64,21 +133,27 @@ export default {
       });
     },
     *delItem({ payload }, { call, put, select }) {
-      console.log("delItem");
-
-      const { views, showPage } = yield select(state => state.global);
+      const { views, showPage, showItemData } = yield select(state => state.global);
       const { components } = views[showPage];
       const data = deleteComponent(components, payload.id);
-      yield put({
-        type: "save",
-        payload: {
-          components: data,
-        },
-      });
+      if (showItemData && showItemData.id === payload.id) {
+        yield put({
+          type: "save",
+          payload: {
+            components: data,
+            showItemData: {},
+          },
+        });
+      } else {
+        yield put({
+          type: "save",
+          payload: {
+            components: data,
+          },
+        });
+      }
     },
     *addchildrenCom({ payload }, { call, put, select }) {
-      console.log("addchildrenCom");
-
       const { sourceData, views, showPage } = yield select(state => state.global);
       let { components } = views[showPage];
       const { index, parentId, item } = payload;
@@ -98,34 +173,17 @@ export default {
         return arrs;
       }
       components = findComAndAddComponent(components, parentId, item);
-      // components.map(com => {
-      //   if (com.id === parentId) {
-      //     const childrenCom = com.childrenCom;
-      //     let itemIndex = index === "max" ? childrenCom.length : index;
-      //     const data = addComponent(sourceData, childrenCom, item, itemIndex);
-      //     com.childrenCom = data.centerData;
-      //   }
-      //   return com;
-      // });
       views[showPage].components = components;
-      console.log(views);
-
       yield put({
         type: "save",
         payload: {
-          // sourceData: data.leftData,
           views: views,
         },
       });
     },
     *addItem({ payload }, { call, put, select }) {
-      console.log("addItem");
       let { parentId, item, index } = payload;
       if (parentId && parentId !== "whalemainroot") {
-        console.log(parentId);
-
-        console.log("中转站");
-
         yield put({
           type: "addchildrenCom",
           payload,
@@ -175,7 +233,6 @@ export default {
       });
     },
     *showItem({ payload }, { call, put }) {
-      console.log("showItem");
       const data = Object.assign({}, payload || {});
       yield put({
         type: "save",
@@ -185,12 +242,6 @@ export default {
       });
     },
     *changeItemProp({ payload }, { call, put, select }) {
-      // payload={
-      //   id:12,
-      //   key:'sdsa',
-      //   value:'121'
-      // }
-      console.log("changeItemProp");
       const { id, key, value } = payload;
       if (!id) return;
       const { views, showPage } = yield select(state => state.global);

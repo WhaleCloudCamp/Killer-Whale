@@ -1,7 +1,7 @@
 import request from "utils/request";
 
 export async function gPage(params) {
-  return request("/api/page", {
+  return request("/page", {
     method: "POST",
     body: {
       ...params,

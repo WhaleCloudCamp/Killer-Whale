@@ -34,14 +34,24 @@ const RederComponents = (components, clickDrag, onDropAction, parentId, showItem
           onDropAction={onDropAction}
           parentId={parentId}
           showItemData={showItemData}
-          onClick={e => clickDrag(item, e)}
+          onClick={e =>
+            clickDrag(
+              { ...item, parentId: parentId, index: index, maxLength: components.length },
+              e
+            )
+          }
         >
           {Com && (
             <Com
               style={component.style}
               {...comProps}
               key={`centerPanel${component.type}${id}`}
-              onClick={e => clickDrag(item, e)}
+              onClick={e =>
+                clickDrag(
+                  { ...item, parentId: parentId, index: index, maxLength: components.length },
+                  e
+                )
+              }
             >
               {childDom}
             </Com>
@@ -57,13 +67,23 @@ const RederComponents = (components, clickDrag, onDropAction, parentId, showItem
           onDropAction={onDropAction}
           parentId={parentId}
           showItemData={showItemData}
-          onClick={e => clickDrag(item, e)}
+          onClick={e =>
+            clickDrag(
+              { ...item, parentId: parentId, index: index, maxLength: components.length },
+              e
+            )
+          }
         >
           {Com && (
             <Com
               style={component.style}
               {...comProps}
-              onClick={e => clickDrag(item, e)}
+              onClick={e =>
+                clickDrag(
+                  { ...item, parentId: parentId, index: index, maxLength: components.length },
+                  e
+                )
+              }
               key={`centerPanel${component.type}${id}`}
             />
           )}
@@ -75,49 +95,37 @@ const RederComponents = (components, clickDrag, onDropAction, parentId, showItem
 const CenterContent = props => {
   const { hidevalue, cneterscale, onDropAction, components, clickDrag, showItemData } = props;
 
-  if (hidevalue === "true") {
-    return (
-      <div
-        style={{
-          height: "100%",
-          background: "#EDF0F5",
-          boxShadow: "0 6px 18px 0 rgba(0,132,255,0.06) inset",
-          overflow: "scroll",
-        }}
-      >
-        <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
-          <img className={styles.iphoneImg} src={iphone} alt="" />
-          <div
-            className={styles.centerMain}
-            // style={{
-            //   transform: `scale(${cneterscale / 100})`
-            // }}
-          >
-            <div className={styles.centerDiv}>
-              <DroppableContent onDropAction={onDropAction}>
-                {RederComponents(
-                  components,
-                  clickDrag,
-                  onDropAction,
-                  "whalemainroot",
-                  showItemData
-                )}
-              </DroppableContent>
-            </div>
+  return (
+    <div
+      style={{
+        height: "100%",
+        background: "#EDF0F5",
+        boxShadow: "0 6px 18px 0 rgba(0,132,255,0.06) inset",
+        overflow: "scroll",
+      }}
+    >
+      <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
+        <img
+          className={styles.iphoneImg}
+          src={iphone}
+          alt=""
+          style={{ display: hidevalue === "true" ? "block" : "none" }}
+        />
+        <div
+          className={styles.centerMain}
+          style={{
+            marginTop: hidevalue === "true" ? "115px" : "0",
+            background: "white",
+          }}
+        >
+          <div className={styles.centerDiv}>
+            <DroppableContent onDropAction={onDropAction}>
+              {RederComponents(components, clickDrag, onDropAction, "whalemainroot", showItemData)}
+            </DroppableContent>
           </div>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div
-        style={{
-          height: "100%",
-          background: "#EDF0F5",
-          boxShadow: "0 6px 18px 0 rgba(0,132,255,0.06) inset",
-        }}
-      />
-    );
-  }
+    </div>
+  );
 };
 export default CenterContent;

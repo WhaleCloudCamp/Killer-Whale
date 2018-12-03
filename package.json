@@ -28,6 +28,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "hash": "^0.2.1",
+    "keymaster": "^1.6.2",
     "react-art": "^16.6.3",
     "react-color": "^2.14.1",
     "react-dnd": "^7.0.0",
