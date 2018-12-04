@@ -43,7 +43,6 @@ class StyleInputItem extends React.Component {
             onBlur={this.handleBlur}
           />
         </div>
-        <div className={styles.line} />
       </div>
     );
   }

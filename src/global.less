@@ -3,6 +3,19 @@ body,
 #root {
   height: 100%;
   background-color: white;
+  .am-accordion {
+    position: relative;
+    border: none;
+  }
+  .am-accordion .am-accordion-item .am-accordion-content .am-accordion-content-box {
+    font-size: 15px;
+    color: #333;
+    position: relative;
+    border-bottom: none;
+  }
+  .am-accordion .am-accordion-item .am-accordion-header {
+    border-bottom: none !important;
+  }
 }
 
 .ant-collapse {
@@ -109,22 +122,37 @@ body,
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  html:not([data-scale]) .am-accordion {
+    border-top: none;
+  }
+  html:not([data-scale]) .am-accordion::before {
+    display: none !important;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  html:not([data-scale])
+    .am-accordion
+    .am-accordion-item
+    .am-accordion-content
+    .am-accordion-content-box {
+    border: none;
+    border-bottom: none;
+  }
+  html:not([data-scale])
+    .am-accordion
+    .am-accordion-item
+    .am-accordion-content
+    .am-accordion-content-box::after {
+    display: none !important;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   html:not([data-scale]) .am-accordion .am-accordion-item .am-accordion-header {
     border-bottom: none;
   }
   html:not([data-scale]) .am-accordion .am-accordion-item .am-accordion-header::after {
-    content: "";
-    position: absolute;
-    background-color: #ddd;
-    display: block;
-    z-index: 1;
-    top: auto;
-    right: auto;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0 !important;
-    transform-origin: 50% 100%;
-    transform: scaleY(0.5);
+    display: none !important;
   }
 }

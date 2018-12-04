@@ -1,7 +1,6 @@
 import { gPage } from "services/api";
 import { notification, message } from "antd";
 import key from "keymaster";
-
 import { getTestSouData, addComponent, moveComponent, deleteComponent } from "utils/data_utils";
 
 export default {
@@ -280,8 +279,6 @@ export default {
       });
     },
     *gPage({ payload }, { call, put, select }) {
-      console.log("gPage");
-
       const { views } = yield select(state => state.global);
       views.push(payload);
       yield put({
@@ -292,8 +289,6 @@ export default {
       });
     },
     *dPage({ payload }, { call, put, select }) {
-      console.log("dPage");
-
       const { views } = yield select(state => state.global);
       if (views.length === 1) return message.error("至少要保留一个页面");
       const newViews = [];
@@ -311,8 +306,6 @@ export default {
       });
     },
     *changeShowPage({ payload }, { call, put, select }) {
-      console.log("changeShowPage");
-
       const { views, showPage } = yield select(state => state.global);
       let showPageNew = showPage;
       views.map((item, index) => {
@@ -329,12 +322,8 @@ export default {
       });
     },
     *downloadCode({ payload }, { call, put, select }) {
-      console.log("downloadCode");
-
       const { views } = yield select(state => state.global);
-      console.log(views);
       const response = yield call(gPage, { views });
-      console.log(response);
       if (response && response.filePath) {
         notification.success({
           message: "将在新页面中下载，请关闭弹窗拦截",

@@ -43,37 +43,32 @@ class RightStyle extends React.Component {
                 /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value[items]))
             ) {
               return (
-                <div key={items} className={styles.inputMains}>
-                  <ColorItem
-                    key={items}
-                    type={items}
-                    parentId={type}
-                    color={value[items]}
-                    changeItemProp={this.changeStyleItemProp}
-                  />
+                <div>
+                  <div className={styles.line} />
+                  <div key={items} className={styles.inputMains}>
+                    <ColorItem
+                      key={items}
+                      type={items}
+                      parentId={type}
+                      color={value[items]}
+                      changeItemProp={this.changeStyleItemProp}
+                    />
+                  </div>
                 </div>
-              );
-            } else if (typeof value[items] === "number") {
-              return (
-                <StyleInputItem
-                  typeId={type}
-                  type={items}
-                  value={value[items]}
-                  key={items}
-                  changeStyleItemProp={this.changeStyleItemProp}
-                  isNumber={true}
-                />
               );
             } else {
               return (
-                <StyleInputItem
-                  typeId={type}
-                  type={items}
-                  value={value[items]}
-                  key={items}
-                  changeStyleItemProp={this.changeStyleItemProp}
-                  isNumber={false}
-                />
+                <div>
+                  <div className={styles.line} />
+                  <StyleInputItem
+                    typeId={type}
+                    type={items}
+                    value={value[items]}
+                    key={items}
+                    changeStyleItemProp={this.changeStyleItemProp}
+                    isNumber={typeof value[items] === "number"}
+                  />
+                </div>
               );
             }
           })}

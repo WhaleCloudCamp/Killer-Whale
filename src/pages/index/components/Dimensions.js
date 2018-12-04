@@ -14,7 +14,6 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
         {Object.keys(data).map(item => {
           if (typeof types[item] === "string" || !types[item]) {
             //增加判断，属性名包含color且值为正确的颜色,几个常用的颜色单词和所有的#开头色值
-
             if (
               (item.includes("Color") || item.includes("color")) &&
               ([
@@ -54,13 +53,16 @@ const Dimensions = ({ title, data, types, parentId, changeItemProp }) => {
               );
             } else if (types[item] === "style") {
               return (
-                <RightStyle
-                  type={item}
-                  key={item}
-                  value={data[item]}
-                  parentId={parentId}
-                  changeItemProp={changeItemProp}
-                />
+                <>
+                  <RightStyle
+                    type={item}
+                    key={item}
+                    value={data[item]}
+                    parentId={parentId}
+                    changeItemProp={changeItemProp}
+                  />
+                  <div className={styles.line} />
+                </>
               );
             } else if (types[item] === "array") {
               return null;

@@ -37,7 +37,6 @@ export default class ColorItem extends React.Component {
             />
           </div>
         </div>
-        <div className={styles.line} />
       </div>
     );
   }

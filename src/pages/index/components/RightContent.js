@@ -16,7 +16,7 @@ const RightContent = ({ showItemData, changeItemProp }) => {
         <div className={styles.line} />
       </div>
 
-      {type !== "Flex" && (
+      {type !== "Flex" ? (
         <Dimensions
           title="属性"
           data={props}
@@ -24,9 +24,7 @@ const RightContent = ({ showItemData, changeItemProp }) => {
           parentId={id}
           changeItemProp={changeItemProp}
         />
-      )}
-
-      {type === "Flex" && (
+      ) : (
         <FlexBox data={props} types={propTypes} parentId={id} changeItemProp={changeItemProp} />
       )}
     </div>
