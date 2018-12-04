@@ -8,7 +8,7 @@ export default {
   state: {
     views: [],
     showPage: 0,
-    cneterscale: 100,
+    cneterscale: 75,
     sourceData: getTestSouData(),
     hidevalue: "true",
     components: [],
@@ -102,7 +102,7 @@ export default {
       let pageIndex = showPage;
       if (!views || views.length === 0 || views.length < showPage || !views[showPage].components) {
         views.push({
-          name: "Home",
+          name: "home",
           components: [],
         });
         pageIndex = 0;
@@ -280,6 +280,15 @@ export default {
     },
     *gPage({ payload }, { call, put, select }) {
       const { views } = yield select(state => state.global);
+      const getPageName = (view, name) => {
+        const check = views.filter(item => item.name === name);
+        if (check.length) {
+          return getPageName(view, (name += "_"));
+        } else {
+          return name;
+        }
+      };
+      payload.name = getPageName(views, payload.name);
       views.push(payload);
       yield put({
         type: "save",
@@ -289,7 +298,7 @@ export default {
       });
     },
     *dPage({ payload }, { call, put, select }) {
-      const { views } = yield select(state => state.global);
+      const { views, showPage } = yield select(state => state.global);
       if (views.length === 1) return message.error("至少要保留一个页面");
       const newViews = [];
       views.map(item => {
@@ -298,9 +307,12 @@ export default {
         }
         return item;
       });
+      console.log(newViews);
+
       yield put({
         type: "save",
         payload: {
+          showPage: showPage - 1 < 0 ? 0 : showPage - 1,
           views: newViews,
         },
       });
@@ -329,7 +341,7 @@ export default {
           message: "将在新页面中下载，请关闭弹窗拦截",
           description: "如果没有正确下载，请联系开发人员",
         });
-        window.open(`http://localhost:3000/download/?filePath=${response.filePath}`);
+        window.open(`http://47.107.34.177:3000/download/?filePath=${response.filePath}`);
       }
       yield put({
         type: "save",

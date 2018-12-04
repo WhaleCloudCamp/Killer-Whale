@@ -1,17 +1,10 @@
 import * as Whale from "components";
 import * as Whales from "combinations";
-import { Collapse, Button, Row, Col, Popconfirm } from "antd";
+import { Collapse, Button, Row, Col } from "antd";
 import styless from "./left.less";
 const Panel = Collapse.Panel;
 const DraggableContent = Whale.DraggableContentShow;
-const LeftContent = ({ sourceData = [], viewsData, gPage, dPage, changeShowPage }) => {
-  const confirm = item => {
-    dPage && dPage(item);
-  };
-  const createPage = (item = []) => {
-    const name = prompt("请输入新页面英文名");
-    if (name) gPage && gPage({ name: name, components: JSON.parse(JSON.stringify(item)) });
-  };
+const LeftContent = ({ sourceData = [], viewsData, changeShowPage, showPage }) => {
   const typeName = {
     Flex: "弹性布局",
     Line: "线条",
@@ -43,114 +36,116 @@ const LeftContent = ({ sourceData = [], viewsData, gPage, dPage, changeShowPage 
     StepperItem: "计步器",
   };
 
+  const pageCollapse = (views, page) => {
+    return (
+      <div className="ant-collapse" style={{ overflow: "auto", flex: "1 1 0%" }}>
+        {views.map(view => (
+          <div
+            className={
+              page && page.name === view.name
+                ? "ant-collapse-item ant-collapse-item-active"
+                : "ant-collapse-item"
+            }
+            onClick={() => changeShowPage(view)}
+            key={view.name}
+          >
+            <div className="ant-collapse-header" role="button" tabIndex="0" aria-expanded="false">
+              <i className="anticon anticon-right arrow">
+                <svg
+                  viewBox="64 64 896 896"
+                  className=""
+                  data-icon="right"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z" />
+                </svg>
+              </i>
+              {view.name}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
   return (
-    <Collapse
-      style={{
-        overflow: "auto",
-        flex: 1,
-      }}
-    >
-      {sourceData.length > 0 &&
-        sourceData.map((item, index) => {
-          return (
-            <Panel header={item.type + "（" + item.data.length + "）"} key={item.type}>
-              <Row>
-                {item.data.map((items, index) => {
-                  let Com = null;
-                  if (items.state === 1) {
-                    Com = Whale[items.type];
-                  } else {
-                    Com = Whales[items.type];
-                  }
-
-                  if (!items.props) {
-                    items.props = {};
-                  }
-                  return (
-                    <Col
-                      span={12}
-                      style={{
-                        textAlign: "center",
-                        position: "relative",
-                      }}
-                      key={"leftPanel" + items.id}
-                    >
-                      <DraggableContent
-                        itemData={items}
-                        // key={"leftPanel" + items.id}
+    <div>
+      <Collapse
+        style={{
+          overflow: "auto",
+          flex: 1,
+        }}
+      >
+        {sourceData.length > 0 &&
+          sourceData.map((item, index) => {
+            return (
+              <Panel header={item.type + "（" + item.data.length + "）"} key={item.type}>
+                <Row>
+                  {item.data.map((items, index) => {
+                    let Com = null;
+                    if (items.state === 1) {
+                      Com = Whale[items.type];
+                    } else {
+                      Com = Whales[items.type];
+                    }
+                    if (!items.props) {
+                      items.props = {};
+                    }
+                    return (
+                      <Col
+                        span={12}
+                        style={{
+                          textAlign: "center",
+                          position: "relative",
+                        }}
+                        key={"leftPanel" + items.id}
                       >
-                        <div className={styless.com}>
-                          <div>
-                            <div
-                              style={{
-                                width: "375px",
-                                transform: "scale(0.35)",
-                              }}
-                            >
-                              {Com && (
-                                <Com
-                                  style={{
-                                    borderStyle: items.isLayout ? "dashed" : "none",
-                                    borderWidth: items.isLayout ? "1px" : "0",
-                                    ...items.style,
-                                  }}
-                                  {...items.props}
-                                />
-                              )}
+                        <DraggableContent
+                          itemData={items}
+                          // key={"leftPanel" + items.id}
+                        >
+                          <div className={styless.com}>
+                            <div>
+                              <div
+                                style={{
+                                  width: "375px",
+                                  transform: "scale(0.35)",
+                                }}
+                              >
+                                {Com && (
+                                  <Com
+                                    style={{
+                                      borderStyle: items.isLayout ? "dashed" : "none",
+                                      borderWidth: items.isLayout ? "1px" : "0",
+                                      ...items.style,
+                                    }}
+                                    {...items.props}
+                                  />
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
-
-                        <div
-                          style={{
-                            color: "#7E869F",
-                            fontSize: "12px",
-                          }}
-                        >
-                          {typeName[items.type] || items.type}
-                        </div>
-                      </DraggableContent>
-                    </Col>
-                  );
-                })}
-              </Row>
-            </Panel>
-          );
-        })}
-      {viewsData &&
-        viewsData.length > 0 &&
-        viewsData.map((item, index) => {
-          return (
-            <Panel header={item.name} key={item.name}>
-              <Row type="flex" justify="space-around">
-                <Col>
-                  <Button type="primary" onClick={() => changeShowPage(item)}>
-                    切换
-                  </Button>
-                </Col>
-                <Col>
-                  <Button onClick={() => createPage(item.components)}>复制</Button>
-                </Col>
-                <Col>
-                  <Popconfirm
-                    title="确定删除这个页面吗?"
-                    onConfirm={() => confirm(item)}
-                    okText="确定"
-                    cancelText="取消"
-                  >
-                    <Button type="danger">删除</Button>
-                  </Popconfirm>
-                </Col>
-              </Row>
-            </Panel>
-          );
-        })}
-      {viewsData && (
-        <Panel header="新增页面" key="newpagebjsdbasb">
-          <Button onClick={() => createPage()}>新增</Button>
-        </Panel>
-      )}
-    </Collapse>
+                          <div
+                            style={{
+                              color: "#7E869F",
+                              fontSize: "12px",
+                            }}
+                          >
+                            {typeName[items.type] || items.type}
+                          </div>
+                        </DraggableContent>
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </Panel>
+            );
+          })}
+      </Collapse>
+      {viewsData && viewsData.length > 0 && pageCollapse(viewsData, showPage)}
+    </div>
   );
 };
 export default LeftContent;

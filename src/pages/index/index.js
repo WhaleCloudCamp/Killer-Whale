@@ -54,16 +54,15 @@ const App = ({ global, dispatch }) => {
           <div>
             <LeftTitle />
             <Tabs tabs={tabs} initialPage={0}>
-              <div style={{ display: "flex", backgroundColor: "#fff" }}>
+              <div style={{ backgroundColor: "#fff" }}>
                 <LeftContent sourceData={sourceData} />
               </div>
 
-              <div style={{ display: "flex", backgroundColor: "#fff" }}>
+              <div style={{ backgroundColor: "#fff" }}>
                 <LeftContent
                   viewsData={views}
-                  gPage={gPage}
-                  dPage={dPage}
                   changeShowPage={changeShowPage}
+                  showPage={views[showPage]}
                 />
               </div>
             </Tabs>
@@ -79,7 +78,14 @@ const App = ({ global, dispatch }) => {
             overflow: "hidden",
           }}
         >
-          <CenterTitle handleChange={handleChange} pageName={name} handleHide={handleHide} />
+          <CenterTitle
+            changeShowPage={changeShowPage}
+            handleChange={handleChange}
+            views={views}
+            showPage={showPage}
+            handleHide={handleHide}
+            hidevalue={hidevalue}
+          />
           <CenterContent
             cneterscale={cneterscale}
             hidevalue={hidevalue}
@@ -91,7 +97,7 @@ const App = ({ global, dispatch }) => {
           <DeleteDroppable onDropAction={onAction} />
         </Col>
         <Col span={6} className={styles.colclass}>
-          <RightTitle onAction={onAction} />
+          <RightTitle onAction={onAction} gPage={gPage} dPage={dPage} showPage={views[showPage]} />
           {showItemData && showItemData.id && (
             <RightContent showItemData={showItemData} changeItemProp={changeItemProp} />
           )}

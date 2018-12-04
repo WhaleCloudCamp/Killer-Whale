@@ -104,7 +104,10 @@ const CenterContent = props => {
         overflow: "scroll",
       }}
     >
-      <div className={styles.iphone} style={{ transform: `scale(${cneterscale / 100})` }}>
+      <div
+        className={styles.iphone}
+        style={{ transform: `scale(${cneterscale / 100})`, transformOrigin: "50% 0" }}
+      >
         <img
           className={styles.iphoneImg}
           src={iphone}
@@ -114,7 +117,7 @@ const CenterContent = props => {
         <div
           className={styles.centerMain}
           style={{
-            marginTop: hidevalue === "true" ? "115px" : "0",
+            marginTop: hidevalue === "true" ? "115px" : "30px",
             background: "white",
           }}
         >
